@@ -1,2 +1,2 @@
 # benji
-Benjamin Franklin Design System
+Franklin Templeton Design System
