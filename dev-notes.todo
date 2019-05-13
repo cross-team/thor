@@ -1,9 +1,10 @@
-v0.1.0:
+v0.1.0 Storybook Configured:
     ✔ Run `create-react-app .` inside the project folder. @done(19-05-13 17:34)
     ✔ Add @storybook/react, @babel/core and babel-loader `yarn add @storybook/react babel-loader @babel/core -D`. @done(19-05-13 17:34)
     ✔ Add a npm script:`{..., "scripts": {..., "storybook": "start-storybook",... }}` @done(19-05-13 17:34)
     ✔ Create the config file `.storybook/config.js` @done(19-05-13 17:34)
-v0.1.1:    
+
+v0.1.1 Add Storybook Addons:    
     ☐ Create button sample component & update stories to use new button instead storybook demo's.
     ☐ Install & Configure `Actions` Addon https://github.com/storybooks/storybook/tree/master/addons/actions
     ☐ Install & Configure `Knobs` Addon https://github.com/storybooks/storybook/tree/master/addons/knobs
