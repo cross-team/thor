@@ -14,7 +14,7 @@ You will also see any lint errors in the console.
 
 ### `npm run storybook`
 
-Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
+Open [http://localhost:3100](http://localhost:3100) to view it in the browser.
 
 ### `npm test`
 
