@@ -4,16 +4,16 @@ v0.1.0 Storybook Configured:
     ✔ Add a npm script:`{..., "scripts": {..., "storybook": "start-storybook",... }}` @done(19-05-13 17:34)
     ✔ Create the config file `.storybook/config.js` @done(19-05-13 17:34)
 
-v0.1.1 Add Linter, Prettier & Toolings:
+v0.1.1 Add Linter, Prettier, Husky & Sample Button Component :
     ✔ Install ESLint. `yarn add eslint eslint-plugin-react -D` @done(19-05-14 15:34)
     ✔ Add lint npm script: `{..., "scripts": {..., "lint": "eslint src",... }}` @done(19-05-14 15:34)
     ✔ Create config file `.eslinrc`. @done(19-05-14 15:34)
     ✔ Add prettier `yarn add prettier eslint-config-prettier eslint-plugin-prettier -D` @done(19-05-14 15:34)
     ✔ Add husky `yarn add husky lint-staged pretty-quick -D` @done(19-05-14 15:35)
+    ✔ Create button sample component & update stories to use new button instead storybook demo's. @done(19-05-14 15:36)
     ✔ Add prop-types & styled-components `yarn add prop-types styled-components -D` @done(19-05-14 15:35)
 
 v0.1.2 Add Storybook Addons:    
-    ☐ Create button sample component & update stories to use new button instead storybook demo's.
     ☐ Install & Configure `Actions` Addon https://github.com/storybooks/storybook/tree/master/addons/actions
     ☐ Install & Configure `Knobs` Addon https://github.com/storybooks/storybook/tree/master/addons/knobs
     ☐ Install & Configure `Info` Addon https://github.com/storybooks/storybook/tree/master/addons/info
