@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Styled from './styles';
 
 function Button({ children, variant, accent, ...props }) {
-  let color = '#0000ff'; /*theme.primary*/
+  let color = "#0000ff"; /*theme.primary*/
   if (accent) {
     if (accent === 'secondary' || accent === 'primary') {
       color = '#ff0000'; /*theme[accent]*/
