@@ -2,30 +2,39 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Styled from './styles';
 
-function Button({ children, variant, accent, ...props }) {
-  let color = '#0000ff'; /*theme.primary*/
+function Button({ children, variant, accent, onClick, ...props }) {
+  let color = '#39adb5'; /*theme.primary*/
   if (accent) {
     if (accent === 'secondary' || accent === 'primary') {
-      color = '#ff0000'; /*theme[accent]*/
+      color = '#e53935'; /*theme[accent]*/
     } else {
       color = accent;
     }
   }
   return (
-    <Styled.StyledButtom variant={variant} accent={color} {...props}>
+    <Styled.StyledButtom
+      variant={variant}
+      accent={color}
+      onClick={onClick}
+      {...props}
+    >
       <Styled.ButtonContent>{children}</Styled.ButtonContent>
     </Styled.StyledButtom>
   );
 }
 
 Button.propTypes = {
+  accent: PropTypes.string,
   children: PropTypes.any,
   variant: PropTypes.oneOf(['filled', 'outlined', 'link']),
-  accent: PropTypes.string
+  onClick: PropTypes.func
 };
 
 Button.defaultProps = {
-  variant: 'filled'
+  variant: 'filled',
+  onClick() {
+    console.debug('Button clicked...');
+  }
 };
 
 export default Button;

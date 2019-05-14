@@ -1,20 +1,16 @@
 {
-    "extends": [
-        "react-app",
-        "prettier", 
-        "prettier/react"
+  "extends": ["react-app", "prettier", "prettier/react"],
+  "plugins": ["prettier"],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
     ],
-    "plugins": ["prettier"],
-    "rules": {
-        "react/jsx-filename-extension": [
-          1,
-          {
-            "extensions": [".js", ".jsx"]
-          }
-        ],
-        "react/prop-types": 0,
-        "no-underscore-dangle": 0,
-        "import/imports-first": ["error", "absolute-first"],
-        "import/newline-after-import": "error"
-    }
+    "react/prop-types": 0,
+    "no-underscore-dangle": 0,
+    "import/imports-first": ["error", "absolute-first"],
+    "import/newline-after-import": "error"
+  }
 }
