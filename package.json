@@ -16,9 +16,6 @@
     "storybook": "start-storybook -p 3100 -s public",
     "build-storybook": "build-storybook -s public -c .storybook -o build-storybook"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -36,6 +33,12 @@
     "@storybook/react": "^5.0.11",
     "babel-loader": "^8.0.6",
     "eslint": "^5.16.0",
-    "eslint-plugin-react": "^7.13.0"
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.13.0",
+    "husky": "^2.3.0",
+    "lint-staged": "^8.1.6",
+    "prettier": "^1.17.1",
+    "pretty-quick": "^1.10.0"
   }
 }

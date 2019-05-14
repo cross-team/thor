@@ -8,7 +8,8 @@ v0.1.1 Add Linter & Prettier:
     ☐ Install ESLint. `yarn add eslint eslint-plugin-react -D`
     ☐ Add lint npm script: `{..., "scripts": {..., "lint": "eslint src",... }}`
     ☐ Create config file `.eslinrc`.
-    ☐ `yarn add prettier eslint-config-prettier eslint-plugin-prettier -D`
+    ☐ Add prettier `yarn add prettier eslint-config-prettier eslint-plugin-prettier -D`
+    ☐ Add husky `yarn add husky lint-staged pretty-quick -D`
 
 v0.1.2 Add Storybook Addons:    
     ☐ Create button sample component & update stories to use new button instead storybook demo's.
