@@ -1,2 +1,2 @@
-# benji
+# Thor
 Franklin Templeton Design System
