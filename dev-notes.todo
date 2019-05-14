@@ -13,10 +13,13 @@ v0.2.0 Add Linter, Prettier, Husky & Sample Button Component :
     ✔ Create button sample component & update stories to use new button instead storybook demo's. @done(19-05-14 15:36)
     ✔ Add prop-types & styled-components `yarn add prop-types styled-components -D` @done(19-05-14 15:35)
 
-v0.3.0 Add Storybook Addons:    
-    ☐ Install & Configure `Actions` Addon https://github.com/storybooks/storybook/tree/master/addons/actions
-    ☐ Install & Configure `Knobs` Addon https://github.com/storybooks/storybook/tree/master/addons/knobs
-    ☐ Install & Configure `Info` Addon https://github.com/storybooks/storybook/tree/master/addons/info
+v0.3.0 Add Storybook Addons:
+    ✔ Install `Info` storybook addon `yarn add @storybook/addon-info -D` @done(19-05-14 16:49)
+    ✔ Configure `Info` storybook addon https://github.com/storybooks/storybook/tree/master/addons/info @done(19-05-14 16:49)
+    ☐ Install `Knobs` storybook addon `yarn add @storybook/addon-knobs -D`
+    ☐ Configure `Knobs` storybook addon https://github.com/storybooks/storybook/tree/master/addons/knobs
+    ☐ Install `Actions` storybook addon `yarn add @storybook/addon-actions -D`
+    ☐ Configure `Actions` storybook addon https://github.com/storybooks/storybook/tree/master/addons/actions
     ☐ Install & Configure Storybook dark theme.
 
 v0.4.0 Add & Configure Tests:
