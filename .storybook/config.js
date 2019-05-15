@@ -1,10 +1,13 @@
-import { configure, addDecorator } from '@storybook/react';
+import { configure, addParameters, addDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
+import { themes } from '@storybook/theming';
 
-function loadStories() {
-  require('../src/stories');
-}
+addParameters({
+  options: {
+    theme: themes.dark
+  }
+});
 
 addDecorator(
   withInfo({
@@ -14,5 +17,9 @@ addDecorator(
 );
 
 addDecorator(withKnobs);
+
+function loadStories() {
+  require('../src/stories');
+}
 
 configure(loadStories, module);
