@@ -35,7 +35,7 @@ Button.defaultProps = {
   disabled: false,
   variant:  'filled',
   onClick() {
-    console.debug('Button clicked...');
+    console.log('Button clicked...');
   }
 };
 

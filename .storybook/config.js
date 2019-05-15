@@ -2,6 +2,11 @@ import { configure, addParameters, addDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { themes } from '@storybook/theming';
+import '@storybook/addon-console';
+
+function loadStories() {
+  require('../src/stories/Button');
+}
 
 addParameters({
   options: {
@@ -17,9 +22,5 @@ addDecorator(
 );
 
 addDecorator(withKnobs);
-
-function loadStories() {
-  require('../src/stories');
-}
 
 configure(loadStories, module);
