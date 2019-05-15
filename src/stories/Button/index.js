@@ -5,9 +5,9 @@ import Button from 'components/core/Button';
 
 const label = 'Variant';
 const options = {
-  Filled:   'filled',
+  Filled: 'filled',
   Outlined: 'outlined',
-  Link:     'link'
+  Link: 'link'
 };
 const defaultValue = 'filled';
 const groupId = 'Default';
@@ -23,7 +23,7 @@ storiesOf('Button', module)
     </Button>
   ))
   .add('with emoji', () => (
-    <Button accent={'primary'}>
+    <Button accent="primary">
       <span role="img" aria-label="so cool">
         😀 😎 👍 💯
       </span>

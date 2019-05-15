@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 const styles = {
   StyledButtom: styled.button`
-    background-color: ${({ accent, variant }) =>
-      variant === 'filled' ? accent : ''};
+    background-color: ${({ accent, variant }) => (variant === 'filled' ? accent : '')};
     border: ${({ accent, variant }) =>
       `1px solid ${variant === 'outlined' ? accent : 'transparent'}`};
     border-radius: 3px !important;
@@ -16,8 +15,7 @@ const styles = {
     text-shadow: none;
     white-space: nowrap;
     &:hover {
-      text-decoration: ${({ variant }) =>
-        variant === 'link' ? 'underline' : ''};
+      text-decoration: ${({ variant }) => (variant === 'link' ? 'underline' : '')};
       transform: scale(1.05);
     }
     &:focus {
