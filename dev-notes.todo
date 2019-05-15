@@ -23,6 +23,8 @@ v0.3.0 Add Storybook Addons:
     ✔ Install `Console` storybook addon `yarn add @storybook/addon-console -D` @done(19-05-15 11:23)
     ✔ Configure `Console` storybook addon https://github.com/storybooks/storybook-addon-console @done(19-05-15 11:23)
     ✔ Install & Configure Storybook dark theme. `yarn add @storybook/theming -D` @done(19-05-15 10:50)
+    ☐ Add clean script for react-app & storybook-app.
+    ☐ Add prod script for react-app & storybook-app.
 
 v0.4.0 Add & Configure Tests:
     ☐ ...
