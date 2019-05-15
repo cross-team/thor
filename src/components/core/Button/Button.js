@@ -24,14 +24,16 @@ function Button({ children, variant, accent, onClick, ...props }) {
 }
 
 Button.propTypes = {
-  accent: PropTypes.string,
+  color:    PropTypes.string,
   children: PropTypes.any,
-  variant: PropTypes.oneOf(['filled', 'outlined', 'link']),
-  onClick: PropTypes.func
+  disabled: PropTypes.bool,
+  variant:  PropTypes.oneOf(['filled', 'outlined', 'link']),
+  onClick:  PropTypes.func
 };
 
 Button.defaultProps = {
-  variant: 'filled',
+  disabled: false,
+  variant:  'filled',
   onClick() {
     console.debug('Button clicked...');
   }
