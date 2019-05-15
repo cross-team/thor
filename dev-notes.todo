@@ -13,7 +13,7 @@ v0.2.0 Add Linter, Prettier, Husky & Sample Button Component :
     ✔ Create button sample component & update stories to use new button instead storybook demo's. @done(19-05-14 15:36)
     ✔ Add prop-types & styled-components `yarn add prop-types styled-components -D` @done(19-05-14 15:35)
 
-v0.3.0 Add Storybook Addons:
+v0.3.0 Add Storybook Addons & Refactor:
     ✔ Install `Info` storybook addon `yarn add @storybook/addon-info -D` @done(19-05-14 16:49)
     ✔ Configure `Info` storybook addon https://github.com/storybooks/storybook/tree/master/addons/info @done(19-05-14 16:49)
     ✔ Install `Knobs` storybook addon `yarn add @storybook/addon-knobs -D` @done(19-05-15 10:26)
@@ -27,13 +27,15 @@ v0.3.0 Add Storybook Addons:
     ✔ Add prod script for react-app & storybook-app. @done(19-05-15 13:40)
     ✔ Refactor ESLint & Prettier rules. @done(19-05-15 13:40)
 
-v0.4.0 Add & Configure Tests:
+v0.4.0 Create Storybook live webapp:
+    ✔ Create Dockerfile for thor-storybook production build. @done(19-05-15 17:03)
+    ✔ Create Dockerfile for thor-webapp production build. @done(19-05-15 17:03)
+    ✔ Add nginx configuration. @done(19-05-15 17:03)
+
+v0.5.0 Add & Configure Tests:
     ☐ ...
 
-v0.5.0 Add & Configure Theme provider:
-    ☐ ...
-
-v0.6.0 Create Dockerfile for deployment:
+v0.6.0 Add & Configure Theme provider:
     ☐ ...
 
 v0.7.0 Add Storybook Brand Customization:
