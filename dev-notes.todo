@@ -5,7 +5,7 @@ v0.1.0 Storybook Configured:
     ✔ Create the config file `.storybook/config.js` @done(19-05-13 17:34)
 
 v0.2.0 Add Linter, Prettier, Husky & Sample Button Component :
-    ✔ Install ESLint. `yarn add eslint eslint-plugin-react -D` @done(19-05-14 15:34)
+    ✔ Install ESLint. `yarn add eslint eslint-config-airbnb -D` @done(19-05-14 15:34)
     ✔ Add lint npm script: `{..., "scripts": {..., "lint": "eslint src",... }}` @done(19-05-14 15:34)
     ✔ Create config file `.eslinrc`. @done(19-05-14 15:34)
     ✔ Add prettier `yarn add prettier eslint-config-prettier eslint-plugin-prettier -D` @done(19-05-14 15:34)
@@ -23,8 +23,9 @@ v0.3.0 Add Storybook Addons:
     ✔ Install `Console` storybook addon `yarn add @storybook/addon-console -D` @done(19-05-15 11:23)
     ✔ Configure `Console` storybook addon https://github.com/storybooks/storybook-addon-console @done(19-05-15 11:23)
     ✔ Install & Configure Storybook dark theme. `yarn add @storybook/theming -D` @done(19-05-15 10:50)
-    ☐ Add clean script for react-app & storybook-app.
-    ☐ Add prod script for react-app & storybook-app.
+    ✔ Add clean script for react-app & storybook-app. @done(19-05-15 13:40)
+    ✔ Add prod script for react-app & storybook-app. @done(19-05-15 13:40)
+    ✔ Refactor ESLint & Prettier rules. @done(19-05-15 13:40)
 
 v0.4.0 Add & Configure Tests:
     ☐ ...
