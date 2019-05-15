@@ -5,7 +5,7 @@ import { themes } from '@storybook/theming';
 import '@storybook/addon-console';
 
 function loadStories() {
-  require('../src/stories/Button');
+  require('stories/Button');
 }
 
 addParameters({
