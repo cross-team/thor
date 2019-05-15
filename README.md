@@ -1,8 +1,30 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Using Docker to run Thor-Storybook:
+
+If you currently have docker install you can build a new image with the following command.
+
+`docker build -t thor-storybook:latest -f ./docker/thor-storybook/Dockerfile .`
+
+Oce you have a docker image ready you can run it with the following command.
+
+`docker run -p 3005:80 thor-storybook:latest`
 
 In the project directory, you can run:
+
+## Using Docker to run Thor-WebApp:
+
+If you currently have docker install you can build a new image with the following command.
+
+`docker build -t thor-webapp:latest -f ./docker/thor-webapp/Dockerfile .`
+
+Oce you have a docker image ready you can run it with the following command.
+
+`docker run -p 3006:80 thor-webapp:latest`
+
+In the project directory, you can run:
+
+## Available NPM Scripts:
 
 ### `npm start`
 

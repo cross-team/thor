@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'components/core/Button';
-import logo from 'logo.svg';
+import logo from 'logo.png';
 import 'App.css';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit
-          <code>src/App.js</code>
+          <code> src/App.js </code>
           and save to reload.
         </p>
         <a
@@ -21,7 +21,9 @@ function App() {
         >
           Learn React
         </a>
-        <Button>Click Me!</Button>
+        <div>
+          <Button>Click Me!</Button>
+        </div>
       </header>
     </div>
   );
