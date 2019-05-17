@@ -7,7 +7,7 @@ const label = 'Variant';
 const options = {
   Filled: 'filled',
   Outlined: 'outlined',
-  Link: 'link'
+  Link: 'link',
 };
 const defaultValue = 'filled';
 const groupId = 'Default';

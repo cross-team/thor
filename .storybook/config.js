@@ -6,20 +6,21 @@ import '@storybook/addon-console';
 
 function loadStories() {
   require('stories/Button');
+  require('stories/Showcase');
 }
 
 addParameters({
   options: {
-    theme: themes.dark
-  }
+    theme: themes.dark,
+  },
 });
 
-addDecorator(
-  withInfo({
-    header: false,
-    inline: true
-  })
-);
+// addDecorator(
+//   withInfo({
+//     header: false,
+//     inline: true
+//   })
+// );
 
 addDecorator(withKnobs);
 
