@@ -23,7 +23,7 @@ Button.propTypes = {
   children: PropTypes.element,
   disabled: PropTypes.bool,
   variant: PropTypes.oneOf(['filled', 'outlined', 'link']),
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
@@ -34,7 +34,7 @@ Button.defaultProps = {
   onClick() {
     // eslint-disable-next-line no-console
     console.log('Button clicked...');
-  }
+  },
 };
 
 export default Button;

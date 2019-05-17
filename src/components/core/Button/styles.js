@@ -24,7 +24,7 @@ const styles = {
   `,
   ButtonContent: styled.span`
     display: flex;
-  `
+  `,
 };
 
 export default styles;
