@@ -1,0 +1,7 @@
+{
+  "build/umd/franklin-thor.production.min.js": {
+    "bundled": 18402,
+    "minified": 5908,
+    "gzipped": 2211
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "@franklin-thor/playground",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
+  "keywords": [],
+  "author": "Alejandro Junco <ale911115@gmail.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cross-team/thor.git"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "storybook": "NODE_PATH=src start-storybook -p 3100 -s public",
+    "clean-storybook": "rimraf build-storybook",
+    "build-storybook": "cross-env NODE_PATH=src build-storybook -s public -c .storybook -o build-storybook",
+    "dist-storybook": "NODE_ENV=production npm-run-all clean-storybook build-storybook"
+  },
+  "bugs": {
+    "url": "https://github.com/cross-team/thor/issues"
+  },
+  "homepage": "https://github.com/cross-team/thor#readme",
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1",
+    "@franklin-thor/core": "^0.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-console": "^1.1.0",
+    "@storybook/addon-info": "^5.0.11",
+    "@storybook/addon-knobs": "^5.0.11",
+    "@storybook/react": "^5.0.11",
+    "@storybook/theming": "^5.0.11",
+    "babel-loader": "^8.0.6"
+  }
+}
