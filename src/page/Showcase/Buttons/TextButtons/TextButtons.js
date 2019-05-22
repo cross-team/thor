@@ -39,11 +39,6 @@ function TextButtons(props) {
           multiple
           type="file"
         />
-        <label htmlFor="text-button-file">
-          <Button component="span" className={classes.button}>
-            Upload
-          </Button>
-        </label>
       </div>
     </div>
   );

@@ -2,5 +2,5 @@
   "compilerOptions": {
     "baseUrl": "src"
   },
-  "include": ["src"]
+  "include": ["src", "packages/playground/src/stories", "packages/franklin-thor/src/Button"]
 }

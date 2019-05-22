@@ -11,17 +11,17 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "storybook": "NODE_PATH=src start-storybook -p 3100 -s public",
     "clean": "rimraf build",
-    "clean-storybook": "rimraf build-storybook",
     "build": "react-scripts build",
-    "build-storybook": "cross-env NODE_PATH=src build-storybook -s public -c .storybook -o build-storybook",
     "dist": "npm-run-all clean build",
-    "dist-storybook": "NODE_ENV=production npm-run-all clean-storybook build-storybook",
     "lint-staged": "cross-env NODE_ENV=production lint-staged",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src"
+    "lint": "eslint . --cache --report-unused-disable-directives",
+    "lint:ci": "eslint . --report-unused-disable-directives",
+    "lint:fix": "eslint . --cache --fix",
+    "prettier": "npx babel-node ./scripts/prettier.js",
+    "prettier:all": "npx babel-node ./scripts/prettier.js write"
   },
   "browserslist": {
     "production": [
@@ -36,27 +36,50 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
-    "@material-ui/core": "^3.9.3",
-    "@material-ui/icons": "^3.0.2",
-    "@storybook/addon-actions": "^5.0.11",
-    "@storybook/addon-console": "^1.1.0",
-    "@storybook/addon-info": "^5.0.11",
-    "@storybook/addon-knobs": "^5.0.11",
-    "@storybook/react": "^5.0.11",
-    "@storybook/theming": "^5.0.11",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.4.4",
     "babel-loader": "^8.0.6",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-optimize-clsx": "^2.0.0",
+    "babel-plugin-react-remove-properties": "^0.3.0",
+    "babel-plugin-transform-dev-warning": "^0.1.1",
+    "babel-plugin-transform-react-constant-elements": "^6.23.0",
     "cross-env": "^5.2.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.2.0",
-    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "glob": "^7.1.4",
+    "glob-gitignore": "^1.0.14",
     "husky": "^2.3.0",
+    "lerna": "^3.14.1",
     "lint-staged": "^8.1.6",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.17.1",
     "pretty-quick": "^1.10.0",
     "rimraf": "^2.6.3",
-    "storybook-addon-material-ui": "^0.9.0-alpha.19"
-  }
+    "rollup": "^1.12.3",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-node-resolve": "^5.0.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-size-snapshot": "^0.8.0",
+    "rollup-plugin-terser": "^5.0.0"
+  },
+  "resolutions": {
+    "@franklin-thor/core": "^0.1.0"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

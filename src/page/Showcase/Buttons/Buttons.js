@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import ContainedButtons from './ContainedButtons';
@@ -13,7 +14,6 @@ const styles = theme => ({
 function Buttons(props) {
   const { classes } = props;
 
-  console.log(JSON.stringify(classes.buttonsSection, null, 2));
   return (
     <div>
       <Typography variant={'h4'}>Buttons</Typography>
@@ -22,5 +22,9 @@ function Buttons(props) {
     </div>
   );
 }
+
+Buttons.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(Buttons);
