@@ -1,8 +1,8 @@
 {
   "name": "@franklin-thor/core",
   "private": false,
-  "author": "Alejandro Junco <ale911115@gmail.com>",
-  "version": "0.1.0",
+  "author": "Cross Team",
+  "version": "1.0.0",
   "description": "React components that implement Google's Material Design.",
   "repository": {
     "type": "git",

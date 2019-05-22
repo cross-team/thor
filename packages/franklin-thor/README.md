@@ -1,11 +1,15 @@
-# `@franklin-thor/core`
+# @franklin-thor/core
 
-> TODO: description
+React components that implement Google's Material Design.
 
-## Usage
+## Installation
 
-```
-const core = require('@franklin-thor/core');
+Install the package in your project directory with:
 
-// TODO: DEMONSTRATE API
+```sh
+// with npm
+npm install @franklin-thor/core
+
+// with yarn
+yarn add @franklin-thor/core
 ```
