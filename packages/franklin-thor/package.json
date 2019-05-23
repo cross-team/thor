@@ -2,7 +2,7 @@
   "name": "@franklin-thor/core",
   "private": false,
   "author": "Cross Team",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React components that implement Google's Material Design.",
   "repository": {
     "type": "git",
