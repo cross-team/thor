@@ -1,7 +1,7 @@
 {
   "name": "@franklin-thor/playground",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "author": "Cross Team",
   "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
   "keywords": [],
@@ -15,6 +15,7 @@
   },
   "homepage": "https://github.com/cross-team/thor#readme",
   "scripts": {
+    "env": "env",
     "start": "react-scripts start",
     "storybook": "NODE_PATH=src start-storybook -p 3100 -s public",
     "clean-storybook": "rimraf build-storybook",
@@ -28,6 +29,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "@franklin-thor/core": "^1.0.0",
     "@storybook/addon-actions": "^5.0.11",
     "@storybook/addon-console": "^1.1.0",
     "@storybook/addon-info": "^5.0.11",
@@ -35,6 +38,7 @@
     "@storybook/react": "^5.0.11",
     "@storybook/theming": "^5.0.11",
     "babel-loader": "^8.0.6",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "react-scripts": "3.0.1"
   },
   "sideEffects": false,
@@ -43,5 +47,20 @@
   },
   "engines": {
     "node": ">=8.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.4.5"
   }
 }

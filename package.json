@@ -1,15 +1,9 @@
 {
-  "name": "thor",
-  "version": "0.1.0",
+  "name": "@franklin-thor/workspace",
+  "version": "1.0.0",
   "private": true,
   "author": "Cross Team",
-  "dependencies": {
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
-    "styled-components": "^4.2.0"
-  },
+  "description": "Franklin-Thor workspace package",
   "scripts": {
     "start": "react-scripts start",
     "clean": "rimraf build",
@@ -24,26 +18,22 @@
     "prettier": "npx babel-node ./scripts/prettier.js",
     "prettier:all": "npx babel-node ./scripts/prettier.js write"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
     "@babel/node": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/plugin-transform-object-assign": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.6",
+    "babel-plugin-istanbul": "^5.1.4",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-optimize-clsx": "^2.0.0",
+    "babel-plugin-preval": "^3.0.1",
     "babel-plugin-react-remove-properties": "^0.3.0",
     "babel-plugin-transform-dev-warning": "^0.1.1",
     "babel-plugin-transform-react-constant-elements": "^6.23.0",
@@ -51,6 +41,7 @@
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.2.0",
+    "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
@@ -77,6 +68,16 @@
     "@franklin-thor/core": "^1.0.0"
   },
   "sideEffects": false,
+  "nyc": {
+    "include": [
+      "packages/franklin-thor/src/**/*.js"
+    ],
+    "exclude": [
+      "**/*.test.js"
+    ],
+    "sourceMap": false,
+    "instrument": false
+  },
   "engines": {
     "node": ">=8.0.0"
   },

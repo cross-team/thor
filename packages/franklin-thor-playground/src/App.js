@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '@franklin-thor/core';
 // import { MuiThemeProvider } from '@material-ui/core/styles';
 // import theme from 'themes/default';
 import logo from './logo.png';

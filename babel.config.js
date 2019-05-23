@@ -34,7 +34,7 @@ const defaultAlias = {
 const productionPlugins = [
   'babel-plugin-transform-react-constant-elements',
   'babel-plugin-transform-dev-warning',
-  ['babel-plugin-react-remove-properties', { properties: ['data-mui-test'] }],
+  ['babel-plugin-react-remove-properties', { properties: ['data-ftt-test'] }],
   [
     'babel-plugin-transform-react-remove-prop-types',
     {

@@ -27,27 +27,24 @@ async function includeFileInBuild(file) {
 async function createModulePackages({ from, to }) {
   const directoryPackages = glob.sync('*/index.js', { cwd: from }).map(path.dirname);
 
-  // await Promise.all(
-  //   directoryPackages.map(async directoryPackage => {
-  //     const packageJson = {
-  //       sideEffects: false,
-  //       module: path.join('../esm', directoryPackage, 'index.js'),
-  //       typings: './index.d.ts',
-  //     };
-  //     const packageJsonPath = path.join(to, directoryPackage, 'package.json');
+  await Promise.all(
+    directoryPackages.map(async directoryPackage => {
+      const packageJsonPath = path.join(to, directoryPackage, 'package.json');
 
-  //     const [typingsExist] = await Promise.all([
-  //       fse.exists(path.join(to, directoryPackage, 'index.d.ts')),
-  //       fse.writeFile(packageJsonPath, JSON.stringify(packageJson, null, 2)),
-  //     ]);
+      return packageJsonPath;
+    }),
+  );
+}
 
-  //     if (!typingsExist) {
-  //       throw new Error(`index.d.ts for ${directoryPackage} is missing`);
-  //     }
+async function typescriptCopy({ from, to }) {
+  if (!(await fse.exists(to))) {
+    console.warn(`path ${to} does not exists`);
+    return [];
+  }
 
-  //     return packageJsonPath;
-  //   }),
-  // );
+  const files = glob.sync('**/*.d.ts', { cwd: from });
+  const cmds = files.map(file => fse.copy(path.resolve(from, file), path.resolve(to, file)));
+  return Promise.all(cmds);
 }
 
 async function createPackageFile() {
@@ -76,7 +73,7 @@ async function prepend(file, string) {
 }
 
 async function addLicense(packageData) {
-  const license = `/** @license Franklin-Thor v${packageData.version}
+  const license = `/** @license Material-UI v${packageData.version}
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -86,8 +83,8 @@ async function addLicense(packageData) {
     [
       './index.js',
       './esm/index.js',
-      './umd/franklin-thor.development.js',
-      './umd/franklin-thor.production.min.js',
+      './umd/material-ui.development.js',
+      './umd/material-ui.production.min.js',
     ].map(async file => {
       try {
         await prepend(path.resolve(buildPath, file), license);
@@ -108,8 +105,8 @@ async function run() {
 
     await Promise.all(
       [
-        // use enhanced readme from workspace root for `@franklin-thor/core`
-        packageData.name === '@franklin-thor/core' ? '../../README.md' : './README.md',
+        // use enhanced readme from workspace root for `@material-ui/core`
+        packageData.name === '@material-ui/core' ? '../../README.md' : './README.md',
         '../../CHANGELOG.md',
         '../../LICENSE',
       ].map(file => includeFileInBuild(file)),
@@ -118,7 +115,7 @@ async function run() {
     await addLicense(packageData);
 
     // TypeScript
-    // await typescriptCopy({ from: srcPath, to: buildPath });
+    await typescriptCopy({ from: srcPath, to: buildPath });
 
     await createModulePackages({ from: srcPath, to: buildPath });
   } catch (err) {
