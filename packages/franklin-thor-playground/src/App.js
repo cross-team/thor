@@ -1,19 +1,10 @@
 import React from 'react';
 import { Button } from '@franklin-thor/core';
-// import { MuiThemeProvider } from '@material-ui/core/styles';
-// import theme from 'themes/default';
 import logo from './logo.png';
 import './App.css';
 
-// console.log(window.env.BABEL_ENV)
-
-// function Button() {
-//   return (<button>Pepe</button>)
-// }
-
 function App() {
   return (
-    // <MuiThemeProvider theme={theme}>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -33,7 +24,6 @@ function App() {
         <Button>asl</Button>
       </header>
     </div>
-    // </MuiThemeProvider>
   );
 }
 
