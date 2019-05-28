@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import Styled from './styles';
 
 function Button({ children, variant, accent, onClick, ...props }) {
   let color = '#39adb5'; /* theme.primary */

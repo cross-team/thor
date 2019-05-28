@@ -39,7 +39,7 @@ module.exports = {
     ['@babel/plugin-proposal-object-rest-spread', { loose: true }],
     '@babel/plugin-transform-runtime',
   ],
-  ignore: [/@babel[\\|/]runtime/], // Fix a Windows issue.
+  // ignore: [/@babel[\\|/]runtime/], // Fix a Windows issue.
   env: {
     cjs: {
       plugins: productionPlugins,
@@ -82,18 +82,10 @@ module.exports = {
     },
     test: {
       sourceMaps: 'both',
-      presets: [
-        [
-          '@babel/preset-env',
-          {
-            modules: 'commonjs',
-            debug: false,
-          },
-        ],
-        '@babel/preset-flow',
-        '@babel/preset-react',
-      ],
-      plugins: ['@babel/plugin-syntax-dynamic-import', '@babel/plugin-proposal-class-properties'],
+      // presets: [
+      //   ['@babel/preset-env', { targets: { node: 'current' } }],
+      // ],
+      // plugins: productionPlugins,
     },
   },
 };

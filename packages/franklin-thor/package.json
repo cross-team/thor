@@ -40,6 +40,7 @@
   },
   "devDependencies": {
     "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.8.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24"
   },
   "gitHead": "7b8d99fe7c128123cfd8eba3f562c8ca40e8537b"
