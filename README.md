@@ -22,3 +22,4 @@ Inside
 #### Publishing npm packages:
 
 Inside the workspace root folder run `lerna publish` and follow the instructions.
+x
