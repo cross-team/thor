@@ -3,7 +3,7 @@ import Button from '../Button';
 let component;
 
 beforeEach(() => {
-  component = shallow(<Button variant="outlin" id="btn-test" />);
+  component = shallow(<Button variant="outline" id="btn-test" />);
 });
 
 describe('<Button /> rendering', () => {
