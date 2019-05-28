@@ -26,5 +26,6 @@ module.exports = {
   // Whether to use watchman for file crawling
   watchman: true,
   setupFilesAfterEnv: ['jest-enzyme'],
+  snapshotSerializers: ['enzyme-to-json/serializer'],
   testEnvironment: 'enzyme',
 };

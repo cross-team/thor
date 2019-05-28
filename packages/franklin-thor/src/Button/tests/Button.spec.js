@@ -1,13 +1,14 @@
 import Button from '../Button';
 
-let wrapper;
+let component;
 
 beforeEach(() => {
-  wrapper = shallow(<Button id="btn-test" />);
+  component = shallow(<Button variant="outline" id="btn-test" />);
 });
 
 describe('<Button /> rendering', () => {
   it('should render one <Button>', () => {
-    expect(wrapper.find('#btn-test')).toHaveLength(1);
+    expect(component.find('#btn-test')).toHaveLength(1);
+    expect(component).toMatchSnapshot();
   });
 });
