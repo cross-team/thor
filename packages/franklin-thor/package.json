@@ -1,0 +1,46 @@
+{
+  "name": "@franklin-thor/core",
+  "private": true,
+  "author": "Cross Team",
+  "version": "1.0.0",
+  "description": "React components that implement Google's Material Design.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cross-team/thor.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cross-team/thor/issues"
+  },
+  "homepage": "https://github.com/cross-team/thor#readme",
+  "scripts": {
+    "build": "yarn build:cjs && yarn build:esm && yarn build:es && yarn build:umd && yarn build:copy-files",
+    "build:cjs": "cross-env NODE_ENV=production BABEL_ENV=cjs babel --config-file ../../babel.config.js ./src --out-dir ./build --ignore \"**/*.test.js\"",
+    "build:esm": "cross-env NODE_ENV=production BABEL_ENV=esm babel --config-file ../../babel.config.js ./src --out-dir ./build/esm --ignore \"**/*.test.js\"",
+    "build:es": "cross-env NODE_ENV=production BABEL_ENV=es babel --config-file ../../babel.config.js ./src --out-dir ./build/es --ignore \"**/*.test.js\"",
+    "build:umd": "cross-env BABEL_ENV=production-umd rollup -c scripts/rollup.config.js",
+    "build:copy-files": "node ../../scripts/copy-files.js",
+    "prebuild": "rimraf build",
+    "release": "yarn build && npm publish build --tag next",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24"
+  },
+  "gitHead": "7b8d99fe7c128123cfd8eba3f562c8ca40e8537b"
+}
