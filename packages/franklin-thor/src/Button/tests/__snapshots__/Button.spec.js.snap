@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> rendering should render one <Button> 1`] = `
+<button
+  accent="#e53935"
+  disabled={false}
+  id="btn-test"
+  onClick={[Function]}
+  type="button"
+  variant="outline"
+>
+  <span />
+</button>
+`;
