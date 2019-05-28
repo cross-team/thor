@@ -1,10 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, text, select } from '@storybook/addon-knobs';
-import Button from '@franklin-thor/core';
-
-console.log('Aquiii!!!!!!!');
-console.log(JSON.stringify(Button, null, 2));
+import Button from '@franklin-thor/core/Button';
 
 const label = 'Variant';
 const options = {

@@ -1,8 +1,8 @@
 {
   "name": "@franklin-thor/core",
-  "private": false,
+  "private": true,
   "author": "Cross Team",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "React components that implement Google's Material Design.",
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
     "build:copy-files": "node ../../scripts/copy-files.js",
     "prebuild": "rimraf build",
     "release": "yarn build && npm publish build --tag next",
-    "test": "cd ../../ && cross-env NODE_ENV=test mocha 'packages/franklin-thor/**/*.test.js' --exclude '**/node_modules/**'"
+    "test": "jest"
   },
   "peerDependencies": {
     "react": "^16.8.0",
@@ -41,5 +41,6 @@
   "devDependencies": {
     "@babel/preset-react": "^7.0.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24"
-  }
+  },
+  "gitHead": "7b8d99fe7c128123cfd8eba3f562c8ca40e8537b"
 }

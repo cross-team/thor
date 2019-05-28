@@ -5,6 +5,7 @@
   "author": "Cross Team",
   "description": "Franklin-Thor workspace package",
   "scripts": {
+    "env": "env",
     "start": "react-scripts start",
     "clean": "rimraf build",
     "build": "react-scripts build",
@@ -29,6 +30,7 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-istanbul": "^5.1.4",
     "babel-plugin-module-resolver": "^3.2.0",
@@ -38,6 +40,8 @@
     "babel-plugin-transform-dev-warning": "^0.1.1",
     "babel-plugin-transform-react-constant-elements": "^6.23.0",
     "cross-env": "^5.2.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.2",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.2.0",
@@ -63,9 +67,6 @@
     "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-size-snapshot": "^0.8.0",
     "rollup-plugin-terser": "^5.0.0"
-  },
-  "resolutions": {
-    "@franklin-thor/core": "^1.0.0"
   },
   "sideEffects": false,
   "nyc": {

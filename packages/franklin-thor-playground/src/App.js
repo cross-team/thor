@@ -5,6 +5,12 @@ import { Button } from '@franklin-thor/core';
 import logo from './logo.png';
 import './App.css';
 
+// console.log(window.env.BABEL_ENV)
+
+// function Button() {
+//   return (<button>Pepe</button>)
+// }
+
 function App() {
   return (
     // <MuiThemeProvider theme={theme}>
@@ -24,6 +30,7 @@ function App() {
         >
           Learn React
         </a>
+        <Button>asl</Button>
       </header>
     </div>
     // </MuiThemeProvider>

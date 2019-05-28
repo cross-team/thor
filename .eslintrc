@@ -48,12 +48,5 @@
         "newlines-between": "never"
       }
     ]
-  },
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "paths": ["src"]
-      }
-    }
   }
 }
