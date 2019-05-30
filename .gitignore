@@ -13,6 +13,7 @@ build
 build-storybook
 
 # misc
+.idea
 .DS_Store
 .env
 .env.local
