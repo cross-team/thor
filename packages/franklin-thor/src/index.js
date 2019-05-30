@@ -1,12 +1,11 @@
-// export {
-//   createMuiTheme,
-//   createStyles,
-//   makeStyles,
-//   MuiThemeProvider,
-//   styled,
-//   withStyles,
-//   withTheme,
-// } from './styles';
+export {
+  createMuiTheme,
+  createStyles,
+  makeStyles,
+  MuiThemeProvider,
+  styled,
+  withStyles,
+  withTheme,
+} from '@material-ui/core';
 
-// eslint-disable-next-line import/prefer-default-export
 export { default as Button } from './Button';

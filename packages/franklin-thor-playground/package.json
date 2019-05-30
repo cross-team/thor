@@ -15,11 +15,10 @@
   },
   "homepage": "https://github.com/cross-team/thor#readme",
   "scripts": {
-    "start": "react-scripts start",
-    "storybook": "NODE_PATH=src start-storybook -p 3100 -s public",
-    "clean-storybook": "rimraf build-storybook",
-    "build-storybook": "cross-env NODE_PATH=src build-storybook -s public -c .storybook -o build-storybook",
-    "dist-storybook": "NODE_ENV=production npm-run-all clean-storybook build-storybook"
+    "start": "NODE_PATH=src start-storybook -p 3100 -s public",
+    "clean": "rimraf build-storybook",
+    "build": "cross-env NODE_PATH=src build-storybook -s public -c .storybook -o build-storybook",
+    "dist": "NODE_ENV=production npm-run-all clean-storybook build-storybook"
   },
   "peerDependencies": {
     "@franklin-thor/core": "^1.0.0",
@@ -28,7 +27,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
-    "@material-ui/core": "^4.0.1",
+    "@material-ui/icons": "^4.0.1",
     "@storybook/addon-actions": "^5.0.11",
     "@storybook/addon-console": "^1.1.0",
     "@storybook/addon-info": "^5.0.11",
