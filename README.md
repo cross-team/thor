@@ -1,6 +1,16 @@
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
-## Setup Development Environment
+## Getting Started
+
+Make sure Yarn is installed, if not, follow the [Yarn Install Guide.](https://yarnpkg.com/en/docs/install)
+
+Also make sure Lerna is globally installed, you can do so by running the following command:
+
+```sh
+yarn global add lerna
+```
+
+## Setting up the Development Environment
 
 #### Step 1:
 
