@@ -7,6 +7,9 @@ function loadStories() {
   require('stories/Button');
   require('stories/Showcase');
   require('stories/Checkboxes');
+  require('stories/Selects');
+  require('stories/Switches');
+  require('stories/TextFields');
 }
 
 addDecorator(withKnobs);
