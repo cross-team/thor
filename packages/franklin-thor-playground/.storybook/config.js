@@ -6,6 +6,7 @@ import '@storybook/addon-console';
 function loadStories() {
   require('stories/Button');
   require('stories/Showcase');
+  require('stories/Checkboxes');
 }
 
 addDecorator(withKnobs);
