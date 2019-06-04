@@ -1,34 +1,88 @@
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
-## Getting Started
+## Setting up the Development Environment
 
-Make sure Yarn is installed, if not, follow the [Yarn Install Guide.](https://yarnpkg.com/en/docs/install)
+### Start with your base
 
-Also make sure Lerna is globally installed, you can do so by running the following command:
+Before you start using Thor or Thor-playground you must have the following installed software installed on your development machine:
 
-```sh
+**We assume a clean machine and that these commands will be executed from the Command Line.**
+
+* [NodeJS](https://nodejs.org/en/): We started using node 10.15. 
+* [Docker](https://www.docker.com/products/docker-desktop): We use Docker containers to  and run Thor-playground locally.
+* [Git](https://git-scm.com/downloads): Git is our version control tool
+* [Yarn](https://yarnpkg.com/en/docs/install#mac-stable): Yarn is a modern package management application.
+
+Once these software applications are installed onto your local development machine continue by following the next steps:
+
+### Install Lerna Globally
+
+[Lerna](https://lerna.js.org/) is a tool that manages the development of multi-package projects within a single repository. Since Thor and Thor-playground will be developed and maintained together, Lerna will be a great tool to help manage the dependencies between both packages during the development cycle.
+
+Make sure [Lerna](https://lerna.js.org/) is **globally** installed by running the following command:
+
+```text
 yarn global add lerna
 ```
 
-## Setting up the Development Environment
+### Clone or Install the Code Repo
 
-#### Step 1:
+Using [BitBucket](https://confluence.atlassian.com/bitbucket/clone-a-repository-223217891.html) follow the instructions from within [Atlassian](https://confluence.atlassian.com/bitbucket/clone-a-repository-223217891.html)
 
-Inside the project root folder run: `lerna bootstrap`
+```text
+git clone <repo name> <directory path> | .
+```
 
-#### Step 2:
+Where &lt;repo name&gt; contains either https or SSH versions of said name, &lt;directory path&gt; denotes the location path on your development machine, or "." which denotes the current path.
 
-Inside
-`/packages/franklin-thor` run the following command: `yarn run build`
+You can also download the repo directly as a zip file if this option is made available from your version control provider.
 
-#### inside packages/franklin-thor/build run:
+The outcome of any one of these approaches is the codebase being loaded into the folder or your choice; thereby creating a **local repo**.
 
-`yarn link`
+### Apply Lerna to your Local Repo
 
-#### inside packages/franklin-thor-playground
+Inside the local repo root folder run:
 
-`yarn link "@franklin-thor/core"`
+```text
+lerna bootstrap
+```
 
-#### Publishing npm packages:
+This command will search through the current local repo and install any dependencies and cross-dependencies
 
-Inside the workspace root folder run `lerna publish` and follow the instructions.
+### Build Thor
+
+Change folders from your local repo's root folder to packages/franklin-thor and run a build
+
+```text
+cd /packages/franklin-thor
+yarn run build
+```
+
+the result will be a build of the current thor package.
+
+### Create your Link
+
+After you have built thor you must link available dependencies located within thor itself. 
+
+You should navigate to: /**packages/franklin-thor/build**
+
+```text
+yarn link
+```
+
+### Link Thor-Playground
+
+As a final step you should navigate to: /**packages/franklin-thor-playground**
+
+```text
+yarn link "@franklin-thor/core"
+```
+
+This step links the playground to the component library thor
+
+### Conclusion
+
+At this point your development environment should be ready and operational with the following packages installed:
+
+* **Thor**: Your component library 
+* **Thor-playground**: The component library storyboard and playground
