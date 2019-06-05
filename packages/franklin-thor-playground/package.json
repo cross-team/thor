@@ -16,16 +16,16 @@
   "homepage": "https://github.com/cross-team/thor#readme",
   "scripts": {
     "start": "NODE_PATH=src start-storybook -p 3100 -s public",
-    "clean": "rimraf build-storybook",
-    "build": "cross-env NODE_PATH=src build-storybook -s public -c .storybook -o build-storybook",
-    "dist": "NODE_ENV=production npm-run-all clean-storybook build-storybook"
+    "clean": "rimraf build",
+    "build": "cross-env NODE_PATH=src build-storybook -s public -c .storybook -o build",
+    "dist": "NODE_ENV=production npm-run-all clean build"
   },
   "peerDependencies": {
-    "@franklin-thor/core": "^1.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "@franklin-thor/core": "^1.0.0",
     "@babel/core": "^7.4.4",
     "@material-ui/icons": "^4.0.1",
     "@storybook/addon-actions": "^5.0.11",
@@ -36,9 +36,7 @@
     "@storybook/theming": "^5.0.11",
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "npm-run-all": "^4.1.5",
-    "react-scripts": "3.0.1",
-    "rimraf": "^2.6.3"
+    "react-scripts": "3.0.1"
   },
   "sideEffects": false,
   "publishConfig": {
