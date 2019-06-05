@@ -1,15 +1,16 @@
 # Stage 1 - the build process
 FROM node:10.15-alpine as build-deps
+RUN npm i lerna -g --loglevel notice
 WORKDIR /src
-COPY package.json package-lock.json nginx.conf ./
+COPY package.json nginx.conf ./
 
 RUN npm install
 COPY . ./
-RUN npm run dist-storybook
+RUN npm run dist
 
 # Stage 2 - the production environment
 FROM nginx:1.15-alpine
-COPY --from=build-deps /src/build-storybook /var/www
+COPY --from=build-deps /src/build /var/www
 COPY --from=build-deps /src/nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
