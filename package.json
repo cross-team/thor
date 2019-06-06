@@ -6,8 +6,6 @@
   "description": "Franklin-Thor workspace package",
   "scripts": {
     "env": "env",
-    "clean": "rimraf build",
-    "dist": "npm-run-all clean build",
     "lint-staged": "cross-env NODE_ENV=production lint-staged",
     "lint": "eslint . --cache --report-unused-disable-directives",
     "lint:ci": "eslint . --report-unused-disable-directives",
