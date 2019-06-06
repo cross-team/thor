@@ -1,0 +1,17 @@
+*/
+
+# add project directories to include here
+!/packages/franklin-thor-playground
+!/packages/franklin-thor
+!lerna.json
+!/scripts/copy-files.js
+!CHANGELOG.md
+!LICENSE
+!babel.config.js
+!package.json
+!nginx.conf
+
+# exclude these even in the included project directories
+node_modules
+packages/*/node_modules
+.git
