@@ -2,7 +2,7 @@
 
 If you currently have docker install you can build a new image with the following command.
 
-`docker build -t thor-storybook:latest -f ./docker/thor-storybook/Dockerfile .`
+`docker build -t thor-storybook:latest -f ./packages/franklin-thor-playground/Dockerfile .`
 
 Oce you have a docker image ready you can run it with the following command.
 
