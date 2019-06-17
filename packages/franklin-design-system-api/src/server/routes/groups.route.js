@@ -1,6 +1,6 @@
 // const joi = require('joi')
-const handler = require('../handlers/groups.handler');
-const validations = require('../utils/db/validations/groups.validations');
+const handler = require('../handlers/groups.handler')
+const validations = require('../utils/db/validations/groups.validations')
 const groupsRoutes = [
   {
     method: 'GET',
@@ -63,4 +63,4 @@ const groupsRoutes = [
     },
   },
 ];
-module.exports = groupsRoutes;
+module.exports = groupsRoutes
