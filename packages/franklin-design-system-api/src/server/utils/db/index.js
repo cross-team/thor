@@ -1,12 +1,13 @@
 /* eslint-disable no-underscore-dangle */
-const _ = require('lodash');
-require('dotenv').config();
+const _ = require('lodash')
+require('dotenv').config()
 
-const ObjectId = require('mongodb').ObjectId;
-const Connector = require('./connector');
+const ObjectId = require('mongodb').ObjectId
+const Connector = require('./connector')
+
 class Db {
   constructor() {
-    this._cleanup();
+    this._cleanup()
   }
 
   /**
@@ -14,17 +15,17 @@ class Db {
    * @param {connector} connector
    */
   async connect(connector) {
-    this.connector = connector === undefined ? Connector : connector;
-    this.connection = await this.connector.connect();
-    this.db = await this.connection.db(process.env.DB_DATABASE_DEV);
+    this.connector = connector === undefined ? Connector : connector
+    this.connection = await this.connector.connect()
+    this.db = await this.connection.db(process.env.DB_DATABASE_DEV)
   }
 
   /**
    * close an existing connection
    */
   async close() {
-    await this.connector.close(this.connection);
-    this._cleanup();
+    await this.connector.close(this.connection)
+    this._cleanup()
   }
 
   /**
@@ -34,22 +35,22 @@ class Db {
    * @param {array} flds
    */
   async get(model, qry, flds) {
-    const fields = _.isUndefined(flds) ? {} : flds;
-    const query = _.isUndefined(qry) ? {} : this._buildquery(qry);
+    const fields = _.isUndefined(flds) ? {} : flds
+    const query = _.isUndefined(qry) ? {} : this._buildquery(qry)
     return new Promise((resolve, reject) => {
       this.db
         .collection(model)
         .find(query, fields)
         .toArray()
         .then(res => {
-          this.close();
-          resolve(res.length === 0 ? [] : res);
+          this.close()
+          resolve(res.length === 0 ? [] : res)
         })
         .catch(err => {
-          this.close();
-          reject(err);
-        });
-    });
+          this.close()
+          reject(err)
+        })
+    })
   }
 
   /**
@@ -59,22 +60,22 @@ class Db {
    * @param {object} flds
    */
   async upsert(model, qry, flds) {
-    const options = _.isUndefined(qry._id) ? { upsert: true } : { upsert: false };
-    const fields = _.isUndefined(flds) ? { $set: {} } : { $set: flds };
-    const query = _.isUndefined(qry._id) ? {} : this._buildquery(qry);
+    const options = _.isUndefined(qry._id) ? { upsert: true } : { upsert: false }
+    const fields = _.isUndefined(flds) ? { $set: {} } : { $set: flds }
+    const query = _.isUndefined(qry._id) ? {} : this._buildquery(qry)
     return new Promise((resolve, reject) => {
       this.db
         .collection(model)
         .updateOne(query, fields, options)
         .then(res => {
-          this.close();
-          resolve(res.result);
+          this.close()
+          resolve(res.result)
         })
         .catch(err => {
-          this.close();
-          reject(err);
-        });
-    });
+          this.close()
+          reject(err)
+        })
+    })
   }
 
   /**
@@ -84,31 +85,31 @@ class Db {
    */
   async remove(model, qry, hard = null) {
     if (!(hard === null)) {
-      return this.upsert(model, qry, hard);
+      return this.upsert(model, qry, hard)
     }
-    const query = _.isUndefined(qry) ? {} : this._buildquery(qry);
+    const query = _.isUndefined(qry) ? {} : this._buildquery(qry)
     return new Promise((resolve, reject) => {
       this.db
         .collection(model)
         .deleteOne(query)
         .then(res => {
-          this.close();
-          resolve(res.length === 0 ? [] : res);
+          this.close()
+          resolve(res.length === 0 ? [] : res)
         })
         .catch(err => {
-          this.close();
-          reject(err);
-        });
-    });
+          this.close()
+          reject(err)
+        })
+    })
   }
 
   /**
    * cleans up the object upon init and also upon connection close
    */
   _cleanup() {
-    this.db = null;
-    this.connector = null;
-    this.connection = null;
+    this.db = null
+    this.connector = null
+    this.connection = null
   }
 
   /**
@@ -117,18 +118,18 @@ class Db {
    */
   _buildquery(values) {
     // these are the operators we're considering
-    const transformed = {};
+    const transformed = {}
     // $and
     if (!_.isUndefined(values.$and)) {
-      transformed.$and = this._tfmMongoId(values.$and);
+      transformed.$and = this._tfmMongoId(values.$and)
     }
     // _id
     if (!_.isUndefined(values._id)) {
-      const id = this._tfmMongoId([values])[0];
-      transformed._id = id._id;
+      const id = this._tfmMongoId([values])[0]
+      transformed._id = id._id
     }
     // back you go
-    return transformed;
+    return transformed
   }
 
   // TRANSFORMATIONS
@@ -137,16 +138,16 @@ class Db {
    * @param {Array} values
    */
   _tfmMongoId(values) {
-    const cleaned = [];
+    const cleaned = []
     // eslint-disable-next-line no-restricted-syntax
     for (const value of values) {
       if (!_.isUndefined(value._id)) {
-        value._id = ObjectId(value._id);
+        value._id = ObjectId(value._id)
       }
-      cleaned.push(value);
+      cleaned.push(value)
     }
-    return cleaned;
+    return cleaned
   }
 }
 
-module.exports = new Db();
+module.exports = new Db()
