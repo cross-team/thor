@@ -10,6 +10,7 @@ function loadStories() {
   require('stories/Selects');
   require('stories/Switches');
   require('stories/TextFields');
+  require('stories/MUIButton');
 }
 
 addDecorator(withKnobs);
