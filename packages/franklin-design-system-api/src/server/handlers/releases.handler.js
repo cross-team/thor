@@ -1,8 +1,8 @@
 const _ = require('lodash')
-const GroupsLib = require('../lib/groups.lib')
-const validation = require('../utils/db/validations/groups.validations')
+const releasesLib = require('../lib/releases.lib')
+const validation = require('../utils/db/validations/releases.validations')
 
-class GroupsHandler {
+class releasesHandler {
   /**
    * gets all docs for the specific query
    * @param {object} request
@@ -14,7 +14,7 @@ class GroupsHandler {
       if (!_.isUndefined(request.params.id)) {
         filters.push({ _id: request.params.id })
       }
-      return h.response(await GroupsLib.get(filters))
+      return h.response(await releasesLib.get(filters))
     } catch (err) {
       return h
         .response(err.message)
@@ -32,6 +32,7 @@ class GroupsHandler {
     try {
       const qry = {}
       const payload = request.payload
+      let values = {}
       // need an id to update
       if (_.isUndefined(request.params.id)) {
         throw new Error('No id made available for this update.')
@@ -41,8 +42,9 @@ class GroupsHandler {
       if (Object.keys(payload).length === 0 && payload.constructor === Object) {
         throw new Error('Nothing passed in payload to update.')
       }
-      validation.post.validate(payload)
-      return h.response(await GroupsLib.update(qry, payload))
+      values = validation.put.mapTo(payload)
+      validation.put.validate(values)
+      return h.response(await releasesLib.update(qry, values))
     } catch (err) {
       return h
         .response(err.message)
@@ -66,7 +68,7 @@ class GroupsHandler {
       }
       values = validation.post.build(payload)
       validation.post.validate(values)
-      return h.response(await GroupsLib.insert(values))
+      return h.response(await releasesLib.insert(values))
     } catch (err) {
       return h
         .response(err.message)
@@ -88,7 +90,7 @@ class GroupsHandler {
       } else {
         throw new Error('No ID passed to delete')
       }
-      return h.response(await GroupsLib.remove(qry))
+      return h.response(await releasesLib.remove(qry))
     } catch (err) {
       return h
         .response(err.message)
@@ -116,4 +118,4 @@ function transformQuery(query) {
   return filters
 }
 
-module.exports = new GroupsHandler()
+module.exports = new releasesHandler()
