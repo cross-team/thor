@@ -1,8 +1,15 @@
-# Buttons
+# MUI Component Documentation: Buttons
 
 [Material Guidelines](https://material.io/design/components/buttons.html#) - this is a link to the live documentation that had previously been pasted into [confluence](http://confluence.corp.frk.com:8090/display/EB/Buttons).  
 
-###### Usage
+### Interactive Demo
+
+<!---
+### [Interactive Demo - Link to Storybook]("tbd")
+--->
+
+---
+## Usage
 
 Buttons communicate actions that users can take. They are typically placed throughout your UI, in places like:
 - Dialogs
@@ -11,33 +18,88 @@ Buttons communicate actions that users can take. They are typically placed throu
 - Cards
 - Toolbars
 
-*Principles*
+### Principles
 
 Identifiable | Findable | Clear
 --- | --- | ---
-![Identifiable](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1vUQ-3wcD66cCcnbo1DYqH95tT0aYouKx%2Fbuttons-illos-01.png) | ![Findable](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F0B4V689etGs17WEhsSE5Yc2s3R0k%2Fbuttons-illos-02.png) | ![Clear](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F0B4V689etGs17emtNMnZoS0Q1b0E%2Fbuttons-illos-03.png)
+![Identifiable](assets/mio-design_assets_1vUQ-3wcD66cCcnbo1DYqH95tT0aYouKx_buttons-illos-01.png) | ![Findable](assets/mio-design_assets_0B4V689etGs17WEhsSE5Yc2s3R0k_buttons-illos-02.png) | ![Clear](assets/mio-design_assets_0B4V689etGs17emtNMnZoS0Q1b0E_buttons-illos-03.png)
+Buttons should indicate that they can trigger an action. | Buttons should be easy to find among other elements, including other buttons. | A button’s action and state should be clear.
 
-*Types*
-![Types](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1rI63_05lNHyMtSwrnzXJ1Erg0TbkSDTY%2Fbuttons-types-all.png)
+### Types
+![Types](assets/mio-design_assets_1rI63_05lNHyMtSwrnzXJ1Erg0TbkSDTY_buttons-types-all.png)
 
-###### Anatomy
+1. **Text button** (low emphasis)
+Text buttons are typically used for less important actions.
 
-###### Hierarchy and placement
+2. **Outlined Button** (medium emphasis)
+Outlined buttons are used for more emphasis than text buttons due to the stroke.
 
-###### Text button
+3. **Contained button** (high emphasis)
+Contained buttons have more emphasis, as they use use a color fill and shadow.
 
-###### Outlined button
+4. **Toggle button**
+Toggle buttons group a set of actions using layout and spacing. They’re used less often than other button types.
 
-###### Contained button
+---
+## Anatomy
 
-###### Toggle button
+Buttons contain one required element and four optional elements.
 
-###### Theming
+![Anatomy](assets/mio-design_assets_1CohpRuQZDOxIDHVQgMp4ly0VAZ8KW2jO_buttons-anatomy-all.png)
 
-###### Specs
+1. Text button
+A. Text label
+C. Icon (optional)
 
-###### Implementation
+2. Outlined button
+A. Text label
+B. Container
+C. Icon (optional)
 
+3. Contained button
+A. Text label
+B. Container
+C. Icon (optional)
+
+4. Toggle button
+A. Container
+C. Icon
+
+### Text label
+
+Text buttons and contained buttons use text labels, which describe the action that will occur if a user taps a button. If a text label is not used, an icon should be present to signify what the button does.
+
+By default Material uses capitalized button text labels (for languages that have capitalization). This is to distinguish the text label from surrounding text. If a text button does not use capitalization for button text, find another characteristic to distinguish it such as color, size, or placement.
+
+
+<!--- STOPPED HERE | JJAMES 2019.06.18 10:46 AM --->
+
+
+---
+## Hierarchy and placement
+
+---
+## Text button
+
+---
+## Outlined button
+
+---
+## Contained button
+
+---
+## Toggle button
+
+---
+## Theming
+
+---
+## Specs
+
+---
+## Implementation
+
+---
 [React Guidelines](https://material-ui.com/components/buttons/)
 
 [Storybook](http:// "This documentation will be embedded as a note in the corresponding storybook page for this component")
@@ -79,7 +141,7 @@ Toggle button
 Theming
 Specs
 Implementation
-Usage 
+Usage
 Buttons communicate actions that users can take. They are typically placed throughout your UI, in places like:
 
 Dialogs
@@ -127,12 +189,12 @@ Contained button (high emphasis)
 Contained buttons have more emphasis, as they use use a color fill and shadow.
 Toggle button
 Toggle buttons group a set of actions using layout and spacing. They’re used less often than other button types.
-Anatomy 
+Anatomy
 Buttons contain one required element and four optional elements.
 
 
 
-Text button 
+Text button
 A. Text label
 C. Icon (optional)
 
@@ -175,7 +237,7 @@ Don’t.
 
 Don’t wrap text. For maximum legibility, a text label should remain on a single line.
 
-Hierarchy and placement 
+Hierarchy and placement
 
 
 Hierarchy
@@ -240,7 +302,7 @@ Don’t.
 
 Don’t place a button below another button if there is space to place them side by side.
 
-Text button 
+Text button
 
 
 Usage
@@ -316,7 +378,7 @@ States are visual representations used to communicate the status of a component 
 
 Text button states
 
-Outlined button 
+Outlined button
 
 
 Usage
@@ -382,7 +444,7 @@ States are visual representations used to communicate the status of a component 
 
 Outlined button states
 
-Contained button 
+Contained button
 
 
 Usage
@@ -485,7 +547,7 @@ States are visual representations used to communicate the status of a component 
 
 Contained button states
 
-Toggle button 
+Toggle button
 
 
 Usage
@@ -528,7 +590,7 @@ States are visual representations used to communicate the status of a component 
 
 Toggle button states
 
-Theming 
+Theming
 
 
 Crane Material theme
@@ -660,7 +722,7 @@ Rounded
 
 50%
 
-*Crane buttons use an override of the small component shape category size value.
+*Crane buttons use an override of the small component shape category size value.*
 
 
 
@@ -1264,7 +1326,7 @@ Cut
 
 4dp; 4dp; 4dp; 4dp
 
-Specs 
+Specs
 Contained Button
 CMeasurement C
 36Measurement 36
@@ -1321,7 +1383,7 @@ flip
 
 Specs
 
-Implementation 
+Implementation
 Buttons implementation support for each platform is indicated below.
 
 
@@ -1347,4 +1409,3 @@ Status: Available
 
 Web Material Component
 Status: Available
-
