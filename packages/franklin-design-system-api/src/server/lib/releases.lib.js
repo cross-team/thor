@@ -1,7 +1,7 @@
 const Db = require('../utils/db')
-const model = require('../utils/db/models/groups.model')
+const model = require('../utils/db/models/releases.model')
 
-class Groups {
+class Releases {
   async get(values) {
     try {
       await Db.connect()
@@ -44,4 +44,4 @@ class Groups {
   }
 }
 
-module.exports = new Groups()
+module.exports = new Releases()

@@ -1,9 +1,9 @@
-const _ = require('lodash');
-const joi = require('joi');
-const constants = require('./constants.model');
+const _ = require('lodash')
+const joi = require('joi')
+const constants = require('./constants.model')
 
-const hardDelete = true;
-const name = 'groups';
+const hardDelete = true
+const name = 'groups'
 
 // DEFINITIONS
 const fields = {
@@ -14,7 +14,7 @@ const fields = {
     status: joi.string(),
     publish_on: joi.date(),
   },
-};
+}
 
 const defaults = {
   name: '',
@@ -24,25 +24,31 @@ const defaults = {
     status: 'DRAFT',
     publish_on: null,
   },
-};
+}
 
 // FUNCTIONS
 const mapToDefaults = input => {
-  const values = defaults;
-  values.name = !_.isUndefined(input.name) ? input.name : values.name;
-  values.type = !_.isUndefined(input.type) ? input.type : values.type;
-  values.description = !_.isUndefined(input.description) ? input.description : values.description;
-  values.publishing.status = !_.isUndefined(input.status) ? input.status : values.publishing.status;
+  const values = defaults
+  values.name = !_.isUndefined(input.name) ? input.name : values.name
+  values.type = !_.isUndefined(input.type) ? input.type : values.type
+  values.description = !_.isUndefined(input.description) ? input.description : values.description
+  values.publishing.status = !_.isUndefined(input.status) ? input.status : values.publishing.status
   values.publishing.publish_on = !_.isUndefined(input.publish_on)
     ? input.publish_on
-    : values.publishing.publish_on;
-  return values;
-};
+    : values.publishing.publish_on
+  return values
+}
 
 const mapToValidations = input => {
-  if (!constants.isIn(input.type, 'type')) throw new Error('Type is not valid');
-  if (!constants.isIn(input.publishing.status, 'status')) throw new Error('Status is not valid');
-};
+  // validate type
+  if (!_.isUndefined(input.type)) {
+    if (!constants.isIn(input.type, 'type')) throw new Error('Type is not valid')
+  }
+  // validate publishing status
+  if (!_.isUndefined(input.publishing)) {
+    if (!constants.isIn(input.publishing.status, 'status')) throw new Error('Status is not valid')
+  }
+}
 
 module.exports = {
   fields,
@@ -52,4 +58,4 @@ module.exports = {
   mapToValidations,
   hardDelete,
   name,
-};
+}

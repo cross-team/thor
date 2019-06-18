@@ -1,13 +1,13 @@
 // const joi = require('joi')
-const handler = require('../handlers/groups.handler')
-const validations = require('../utils/db/validations/groups.validations')
-const groupsRoutes = [
+const handler = require('../handlers/releases.handler')
+const validations = require('../utils/db/validations/releases.validations')
+const releasesRoutes = [
   {
     method: 'GET',
-    path: '/groups/',
+    path: '/releases/',
     options: {
       handler: handler.get,
-      description: 'Gets all groups',
+      description: 'Gets all releases',
       tags: ['api'],
       plugins: {},
       validate: {
@@ -17,20 +17,20 @@ const groupsRoutes = [
   },
   {
     method: 'GET',
-    path: '/groups/{id}',
+    path: '/releases/{id}',
     options: {
       handler: handler.get,
-      description: 'Gets a specific document by group id',
+      description: 'Gets a specific document by release id',
       tags: ['api'],
       plugins: {},
     },
   },
   {
     method: 'PUT',
-    path: '/groups/{id}',
+    path: '/releases/{id}',
     options: {
       handler: handler.update,
-      description: 'Updates a specific document by group id',
+      description: 'Updates a specific document by release id',
       tags: ['api'],
       plugins: {},
       validate: {
@@ -41,7 +41,7 @@ const groupsRoutes = [
   },
   {
     method: 'POST',
-    path: '/groups/',
+    path: '/releases/',
     options: {
       handler: handler.insert,
       description: 'Inserts a new document',
@@ -54,13 +54,13 @@ const groupsRoutes = [
   },
   {
     method: 'DELETE',
-    path: '/groups/{id}',
+    path: '/releases/{id}',
     options: {
       handler: handler.remove,
-      description: 'Deletea a specific document by group id',
+      description: 'Deletea a specific document by release id',
       tags: ['api'],
       plugins: {},
     },
   },
 ]
-module.exports = groupsRoutes
+module.exports = releasesRoutes

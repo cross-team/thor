@@ -4,6 +4,7 @@ require('dotenv').config()
 
 const ObjectId = require('mongodb').ObjectId
 const Connector = require('./connector')
+const flatten = require('../lib/flatten')
 
 class Db {
   constructor() {
@@ -54,22 +55,48 @@ class Db {
   }
 
   /**
-   * updates or inserts a document into a collection
+   * updates document into a collection
    * @param {string} model
    * @param {string} qry
    * @param {object} flds
    */
-  async upsert(model, qry, flds) {
-    const options = _.isUndefined(qry._id) ? { upsert: true } : { upsert: false }
-    const fields = _.isUndefined(flds) ? { $set: {} } : { $set: flds }
+  async update(model, qry, flds) {
+    const options = { upsert: false }
+    const fields = { $set: flatten.toDot(flds) }
     const query = _.isUndefined(qry._id) ? {} : this._buildquery(qry)
     return new Promise((resolve, reject) => {
       this.db
         .collection(model)
-        .updateOne(query, fields, options)
+        .update(query, fields, options)
         .then(res => {
           this.close()
-          resolve(res.result)
+          resolve({
+            matchedCount: res.matchedCount,
+          })
+        })
+        .catch(err => {
+          this.close()
+          reject(err)
+        })
+    })
+  }
+
+  /**
+   * inserts a document into a collection
+   * @param {string} model
+   * @param {object} flds
+   */
+  async insert(model, flds) {
+    return new Promise((resolve, reject) => {
+      this.db
+        .collection(model)
+        .insertOne(flds)
+        .then(res => {
+          this.close()
+          resolve({
+            insertedId: res.insertedId,
+            insertedCount: res.insertedCount,
+          })
         })
         .catch(err => {
           this.close()
@@ -85,7 +112,7 @@ class Db {
    */
   async remove(model, qry, hard = null) {
     if (!(hard === null)) {
-      return this.upsert(model, qry, hard)
+      return this.update(model, qry, hard)
     }
     const query = _.isUndefined(qry) ? {} : this._buildquery(qry)
     return new Promise((resolve, reject) => {
@@ -94,7 +121,9 @@ class Db {
         .deleteOne(query)
         .then(res => {
           this.close()
-          resolve(res.length === 0 ? [] : res)
+          resolve({
+            deletedCount: res.deletedCount,
+          })
         })
         .catch(err => {
           this.close()
