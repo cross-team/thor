@@ -3,7 +3,7 @@ const { fields, mapToDefaults, mapToValidations } = require('../models/groups.mo
 
 module.exports = {
   fields: { ...fields },
-  get: {
+  get:    {
     query: {
       name: fields.name,
       type: fields.type,
@@ -11,11 +11,11 @@ module.exports = {
   },
   put: {
     payload: {
-      name: fields.name,
-      type: fields.type,
+      name:        fields.name,
+      type:        fields.type,
       description: fields.description,
-      status: fields.publishing.status,
-      publish_on: fields.publishing.publish_on,
+      status:      fields.publishing.status,
+      publish_on:  fields.publishing.publish_on,
     },
     params: {
       id: joi.string().required(),
@@ -23,16 +23,16 @@ module.exports = {
   },
   post: {
     payload: {
-      name: fields.name,
-      type: fields.type,
+      name:        fields.name,
+      type:        fields.type,
       description: fields.description.allow(''),
-      status: fields.publishing.status,
-      publish_on: fields.publishing.publish_on,
+      status:      fields.publishing.status,
+      publish_on:  fields.publishing.publish_on,
     },
     params: {
       id: joi.string().required(),
     },
-    build: mapToDefaults,
+    build:    mapToDefaults,
     validate: mapToValidations,
   },
 }
