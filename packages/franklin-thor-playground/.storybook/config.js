@@ -11,7 +11,8 @@ function loadStories() {
   require('stories/Switches')
   require('stories/TextFields')
   require('stories/MuiButton')
-  require('stories/MuiCheckbox')
+  require('stories/MuiCheckboxes')
+  require('stories/MuiPickers')
 }
 
 addDecorator(withKnobs)
