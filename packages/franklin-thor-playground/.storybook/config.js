@@ -13,6 +13,7 @@ function loadStories() {
   require('stories/MuiButton')
   require('stories/MuiCheckboxes')
   require('stories/MuiPickers')
+  require('stories/MuiSelects')
 }
 
 addDecorator(withKnobs)
