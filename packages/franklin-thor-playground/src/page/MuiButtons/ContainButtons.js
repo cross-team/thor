@@ -1,6 +1,6 @@
 import React from 'react'
-// import MuiButton from '@material-ui/core/MuiButton';
-import { MuiButton, makeStyles } from '@franklin-thor/core'
+// import Button from '@material-ui/core/Button';
+import { Button, makeStyles } from '@franklin-thor/core'
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -16,21 +16,21 @@ export default function ContainedButtons() {
 
   return (
     <div>
-      <MuiButton variant="contained" className={classes.button}>
+      <Button variant="contained" className={classes.button}>
         Default
-      </MuiButton>
-      <MuiButton variant="contained" color="primary" className={classes.button}>
+      </Button>
+      <Button variant="contained" color="primary" className={classes.button}>
         Primary
-      </MuiButton>
-      <MuiButton variant="contained" color="secondary" className={classes.button}>
+      </Button>
+      <Button variant="contained" color="secondary" className={classes.button}>
         Secondary
-      </MuiButton>
-      <MuiButton variant="contained" color="secondary" disabled className={classes.button}>
+      </Button>
+      <Button variant="contained" color="secondary" disabled className={classes.button}>
         Disabled
-      </MuiButton>
-      <MuiButton variant="contained" href="#contained-buttons" className={classes.button}>
+      </Button>
+      <Button variant="contained" href="#contained-buttons" className={classes.button}>
         Link
-      </MuiButton>
+      </Button>
       <input
         accept="image/*"
         className={classes.input}
@@ -39,9 +39,9 @@ export default function ContainedButtons() {
         type="file"
       />
       <label htmlFor="contained-button-file">
-        <MuiButton variant="contained" component="span" className={classes.button}>
+        <Button variant="contained" component="span" className={classes.button}>
           Upload
-        </MuiButton>
+        </Button>
       </label>
     </div>
   )

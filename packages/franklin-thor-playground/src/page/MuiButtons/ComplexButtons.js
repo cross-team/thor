@@ -1,5 +1,5 @@
 import React from 'react'
-import { MuiButtonBase, MuiTypography, makeStyles } from '@franklin-thor/core'
+import { ButtonBase, Typography, makeStyles } from '@franklin-thor/core'
 
 const images = [
   {
@@ -98,7 +98,7 @@ export default function ButtonBases() {
   return (
     <div className={classes.root}>
       {images.map(image => (
-        <MuiButtonBase
+        <ButtonBase
           focusRipple
           key={image.title}
           className={classes.image}
@@ -115,7 +115,7 @@ export default function ButtonBases() {
           />
           <span className={classes.imageBackdrop} />
           <span className={classes.imageButton}>
-            <MuiTypography
+            <Typography
               component="span"
               variant="subtitle1"
               color="inherit"
@@ -123,9 +123,9 @@ export default function ButtonBases() {
             >
               {image.title}
               <span className={classes.imageMarked} />
-            </MuiTypography>
+            </Typography>
           </span>
-        </MuiButtonBase>
+        </ButtonBase>
       ))}
     </div>
   )

@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  MuiCheckbox,
-  MuiFormControl,
-  MuiFormGroup,
-  MuiFormControlLabel,
-  MuiFormLabel,
-} from '@franklin-thor/core'
+import { Checkbox, FormControl, FormGroup, FormControlLabel, FormLabel } from '@franklin-thor/core'
 
 function FormControlLabelPosition() {
   const [value, setValue] = React.useState('female')
@@ -15,35 +9,35 @@ function FormControlLabelPosition() {
   }
 
   return (
-    <MuiFormControl component="fieldset">
-      <MuiFormLabel component="legend">labelPlacement</MuiFormLabel>
-      <MuiFormGroup aria-label="position" name="position" value={value} onChange={handleChange} row>
-        <MuiFormControlLabel
+    <FormControl component="fieldset">
+      <FormLabel component="legend">labelPlacement</FormLabel>
+      <FormGroup aria-label="position" name="position" value={value} onChange={handleChange} row>
+        <FormControlLabel
           value="top"
-          control={<MuiCheckbox color="primary" />}
+          control={<Checkbox color="primary" />}
           label="Top"
           labelPlacement="top"
         />
-        <MuiFormControlLabel
+        <FormControlLabel
           value="start"
-          control={<MuiCheckbox color="primary" />}
+          control={<Checkbox color="primary" />}
           label="Start"
           labelPlacement="start"
         />
-        <MuiFormControlLabel
+        <FormControlLabel
           value="bottom"
-          control={<MuiCheckbox color="primary" />}
+          control={<Checkbox color="primary" />}
           label="Bottom"
           labelPlacement="bottom"
         />
-        <MuiFormControlLabel
+        <FormControlLabel
           value="end"
-          control={<MuiCheckbox color="primary" />}
+          control={<Checkbox color="primary" />}
           label="End"
           labelPlacement="end"
         />
-      </MuiFormGroup>
-    </MuiFormControl>
+      </FormGroup>
+    </FormControl>
   )
 }
 

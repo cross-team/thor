@@ -1,5 +1,5 @@
 import React from 'react'
-import { MuiButton, makeStyles } from '@franklin-thor/core'
+import { Button, makeStyles } from '@franklin-thor/core'
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -15,19 +15,19 @@ export default function TextButtons() {
 
   return (
     <div>
-      <MuiButton className={classes.button}>Default</MuiButton>
-      <MuiButton color="primary" className={classes.button}>
+      <Button className={classes.button}>Default</Button>
+      <Button color="primary" className={classes.button}>
         Primary
-      </MuiButton>
-      <MuiButton color="secondary" className={classes.button}>
+      </Button>
+      <Button color="secondary" className={classes.button}>
         Secondary
-      </MuiButton>
-      <MuiButton disabled className={classes.button}>
+      </Button>
+      <Button disabled className={classes.button}>
         Disabled
-      </MuiButton>
-      <MuiButton href="#text-buttons" className={classes.button}>
+      </Button>
+      <Button href="#text-buttons" className={classes.button}>
         Link
-      </MuiButton>
+      </Button>
       <input
         accept="image/*"
         className={classes.input}
@@ -36,9 +36,9 @@ export default function TextButtons() {
         type="file"
       />
       <label htmlFor="text-button-file">
-        <MuiButton component="span" className={classes.button}>
+        <Button component="span" className={classes.button}>
           Upload
-        </MuiButton>
+        </Button>
       </label>
     </div>
   )

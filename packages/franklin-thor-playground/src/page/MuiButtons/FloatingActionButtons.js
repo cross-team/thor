@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, MuiFab, MuiIcon } from '@franklin-thor/core'
+import { makeStyles, Fab, Icon } from '@franklin-thor/core'
 
 const useStyles = makeStyles(theme => ({
   fab: {
@@ -15,19 +15,19 @@ export default function FloatingActionButtons() {
 
   return (
     <div>
-      <MuiFab color="primary" aria-label="Add" className={classes.fab}>
-        <MuiIcon>edit_icon</MuiIcon>
-      </MuiFab>
-      <MuiFab color="secondary" aria-label="Edit" className={classes.fab}>
-        <MuiIcon>edit_icon</MuiIcon>
-      </MuiFab>
-      <MuiFab variant="extended" aria-label="Delete" className={classes.fab}>
-        <MuiIcon>edit_icon</MuiIcon>
+      <Fab color="primary" aria-label="Add" className={classes.fab}>
+        <Icon>edit_icon</Icon>
+      </Fab>
+      <Fab color="secondary" aria-label="Edit" className={classes.fab}>
+        <Icon>edit_icon</Icon>
+      </Fab>
+      <Fab variant="extended" aria-label="Delete" className={classes.fab}>
+        <Icon>edit_icon</Icon>
         Extended
-      </MuiFab>
-      <MuiFab disabled aria-label="Delete" className={classes.fab}>
-        <MuiIcon>edit_icon</MuiIcon>
-      </MuiFab>
+      </Fab>
+      <Fab disabled aria-label="Delete" className={classes.fab}>
+        <Icon>edit_icon</Icon>
+      </Fab>
     </div>
   )
 }

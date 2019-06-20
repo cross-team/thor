@@ -1,5 +1,5 @@
 import React from 'react'
-import { MuiCheckbox } from '@franklin-thor/core'
+import { Checkbox } from '@franklin-thor/core'
 
 export default function Checkboxes() {
   const [state, setState] = React.useState({
@@ -14,7 +14,7 @@ export default function Checkboxes() {
 
   return (
     <div>
-      <MuiCheckbox
+      <Checkbox
         checked={state.checkedA}
         onChange={handleChange('checkedA')}
         value="checkedA"
@@ -22,7 +22,7 @@ export default function Checkboxes() {
           'aria-label': 'primary checkbox',
         }}
       />
-      <MuiCheckbox
+      <Checkbox
         checked={state.checkedB}
         onChange={handleChange('checkedB')}
         value="checkedB"
@@ -31,20 +31,20 @@ export default function Checkboxes() {
           'aria-label': 'secondary checkbox',
         }}
       />
-      <MuiCheckbox
+      <Checkbox
         value="checkedC"
         inputProps={{
           'aria-label': 'uncontrolled-checkbox',
         }}
       />
-      <MuiCheckbox
+      <Checkbox
         disabled
         value="checkedD"
         inputProps={{
           'aria-label': 'disabled checkbox',
         }}
       />
-      <MuiCheckbox
+      <Checkbox
         disabled
         checked
         value="checkedE"
@@ -52,7 +52,7 @@ export default function Checkboxes() {
           'aria-label': 'disabled checked checkbox',
         }}
       />
-      <MuiCheckbox
+      <Checkbox
         checked={state.checkedF}
         onChange={handleChange('checkedF')}
         value="checkedF"
@@ -61,7 +61,7 @@ export default function Checkboxes() {
           'aria-label': 'indeterminate checkbox',
         }}
       />
-      <MuiCheckbox
+      <Checkbox
         defaultChecked
         color="default"
         value="checkedG"
