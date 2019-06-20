@@ -9,6 +9,7 @@ const healthCheckRoute = require('./routes/health-check.route')
 const healthCheckDbRoute = require('./routes/health-check-db.route')
 const groupsRoute = require('./routes/groups.route')
 const releasesRoute = require('./routes/releases.route')
+const tokensRoute = require('./routes/tokens.route')
 const DbChecker = require('./lib/health-check-db.lib')
 
 const host = process.env.NODE_HOST || '0.0.0.0'
@@ -31,7 +32,13 @@ module.exports = async () => {
   // Plugins
 
   // Routes
-  server.route([...healthCheckRoute, ...healthCheckDbRoute, ...groupsRoute, ...releasesRoute])
+  server.route([
+    ...healthCheckRoute,
+    ...healthCheckDbRoute,
+    ...groupsRoute,
+    ...releasesRoute,
+    ...tokensRoute,
+  ])
 
   return server
 }

@@ -29,6 +29,39 @@ class Db {
     this._cleanup()
   }
 
+  async aggregate(model, def) {
+    return new Promise((resolve, reject) => {
+      this.db
+        .collection(model)
+        .aggregate(def)
+        .toArray()
+        .then(res => {
+          this.close()
+          resolve(res.length === 0 ? [] : res)
+        })
+        .catch(err => {
+          this.close()
+          reject(err)
+        })
+    })
+  }
+
+  async aggregateAll(def) {
+    return new Promise((resolve, reject) => {
+      this.db.collection
+        .aggregate(def)
+        .toArray()
+        .then(res => {
+          this.close()
+          resolve(res.length === 0 ? [] : res)
+        })
+        .catch(err => {
+          this.close()
+          reject(err)
+        })
+    })
+  }
+
   /**
    * returns rows from a model
    * @param {string} model

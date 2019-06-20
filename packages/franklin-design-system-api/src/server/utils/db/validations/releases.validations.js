@@ -38,9 +38,6 @@ module.exports = {
       minor: fields.rel.minor,
       build: fields.rel.build,
     },
-    params: {
-      id: joi.string().required(),
-    },
     build: mapToDefaults,
     validate: mapToValidations,
   },
