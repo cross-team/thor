@@ -63,6 +63,7 @@ export {
   ExpansionPanel,
   ExpansionPanelActions,
   ExpansionPanelDetails,
+  ExpansionPanelSummary,
   // Material UI Feedback
   CircularProgress,
   LinearProgress,

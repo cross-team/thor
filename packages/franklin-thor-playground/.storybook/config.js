@@ -15,6 +15,11 @@ function loadStories() {
   require('stories/MuiPickers')
   require('stories/MuiSwitches')
   require('stories/MuiSelects')
+  require('stories/MuiTransferList')
+  require('stories/MuiAppBar')
+  require('stories/MuiPaper')
+  require('stories/MuiCard')
+  require('stories/MuiExpansionPanel')
 }
 
 addDecorator(withKnobs)
