@@ -1,36 +1,47 @@
-const Db = require('../utils/db');
+const Db = require('../utils/db')
+const model = require('../utils/db/models/groups.model')
 
 class Groups {
-  async get(id, filters) {
+  async get(values) {
     try {
-      id = id !== undefined ? { _id: id } : {};
-      await Db.connect();
-      let rows = await Db.get('groups', id);
-      return rows;
+      await Db.connect()
+      const filters = values.length === 0 ? {} : { $and: values }
+      const rows = await Db.get(model.name, filters)
+      return rows
     } catch (err) {
-      throw err;
+      throw err
     }
   }
 
-  async upsert(id, data) {
+  async update(qry, values) {
     try {
-      await Db.connect();
-      let rows = await Db.get('groups');
-      return rows;
+      await Db.connect()
+      const rows = await Db.update(model.name, qry, values)
+      return rows
     } catch (err) {
-      throw err;
+      throw err
     }
   }
 
-  async remove(id) {
+  async insert(values) {
     try {
-      await Db.connect();
-      let rows = await Db.get('groups');
-      return rows;
+      await Db.connect()
+      const rows = await Db.insert(model.name, values)
+      return rows
     } catch (err) {
-      throw err;
+      throw err
+    }
+  }
+
+  async remove(qry) {
+    try {
+      await Db.connect()
+      const rows = await Db.remove(model.name, qry, model.hardDelete ? null : model.hardDelete)
+      return rows
+    } catch (err) {
+      throw err
     }
   }
 }
 
-module.exports = new Groups();
+module.exports = new Groups()

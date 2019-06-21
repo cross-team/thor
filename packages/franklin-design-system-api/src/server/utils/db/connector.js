@@ -11,14 +11,12 @@ const MongoClientUrl = `mongodb://${process.env.DB_USER_DEV}:${process.env.DB_PA
 const assert = require('assert');
 
 class Connector {
-  constructor() {}
-
   /**
    * connect to available mongoDB
    * @see auth info in env vars
    */
   async connect() {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       MongoClient.connect(
         MongoClientUrl,
         {
@@ -31,10 +29,12 @@ class Connector {
       );
     });
   }
+
   /**
    * close open connection
    */
   async close(connection) {
+    // eslint-disable-next-line no-return-await
     return await connection.close();
   }
 }
