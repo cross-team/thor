@@ -23,8 +23,15 @@ function loadStories() {
   require('stories/MuiProgress')
   require('stories/MuiDialog')
   require('stories/MuiSnackbar')
+  require('stories/MuiBottomNavigation')
+  require('stories/MuiBreadcrumbs')
+  require('stories/MuiDrawers')
+  require('stories/MuiLinks')
+  require('stories/MuiMenus')
+  require('stories/MuiSteppers')
+  require('stories/MuiSteppers')
+  require('stories/MuiTabs')
 }
-
 addDecorator(withKnobs)
 
 configure(loadStories, module)
