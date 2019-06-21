@@ -19,6 +19,9 @@ function loadStories() {
   require('stories/MuiPaper')
   require('stories/MuiCard')
   require('stories/MuiExpansionPanel')
+  require('stories/MuiProgress')
+  require('stories/MuiDialog')
+  require('stories/MuiSnackbar')
   //require('stories/MuiSelects')
 }
 
