@@ -8,29 +8,11 @@ MUI Component (Avatar) > FTI Component (Badge)
 
 ## UI
 
-`width: 12px;
-height: 12px;`
+Material UI Defaults
 
 ## Text
 
-```
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 8px;
-line-height: 16px;
-/* or 200% */
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: -0.5px;
-```
-
-```
-/* White — High Emphasis */
-background: #FFFFFF;
-mix-blend-mode: normal;
-```
+Material UI Defaults
 
 ## Behavior
 
@@ -41,7 +23,9 @@ mix-blend-mode: normal;
 Reference:
 - [MUI: Letter Avatar](https://material-ui.com/components/avatars/#letter-avatars)
 
-## Usage (Iterations)
+## Usage
+
+### Iteractions
 
 | Iteration | Description | Token    | Text | Color   | Swatch |
 | ---       | ---         | ---      | ---  | ---     | ---  |
@@ -50,6 +34,15 @@ Reference:
 
 
 `The table above has been created manually as a template.  It should be created automatically from the token api.`
+
+
+### Dynamic/Static
+
+Static
+
+### Usage
+
+When, Where, How, Why?
 
 
 <br></br>   
