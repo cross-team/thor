@@ -1,6 +1,5 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import { MuiTextField } from '@franklin-thor/core'
+import { TextField, makeStyles } from '@franklin-thor/core'
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -19,7 +18,7 @@ export default function DateAndTimePickers() {
 
   return (
     <form className={classes.container} noValidate>
-      <MuiTextField
+      <TextField
         id="datetime-local"
         label="Next appointment"
         type="datetime-local"

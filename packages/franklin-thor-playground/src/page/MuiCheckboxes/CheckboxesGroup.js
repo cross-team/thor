@@ -1,11 +1,11 @@
 import React from 'react'
 import {
-  MuiCheckbox,
-  MuiFormControl,
-  MuiFormHelperText,
-  MuiFormGroup,
-  MuiFormControlLabel,
-  MuiFormLabel,
+  Checkbox,
+  FormControl,
+  FormHelperText,
+  FormGroup,
+  FormControlLabel,
+  FormLabel,
   makeStyles,
 } from '@franklin-thor/core'
 
@@ -35,46 +35,46 @@ export default function CheckboxesGroup() {
 
   return (
     <div className={classes.root}>
-      <MuiFormControl component="fieldset" className={classes.formControl}>
-        <MuiFormLabel component="legend">Assign responsibility</MuiFormLabel>
-        <MuiFormGroup>
-          <MuiFormControlLabel
-            control={<MuiCheckbox checked={gilad} onChange={handleChange('gilad')} value="gilad" />}
+      <FormControl component="fieldset" className={classes.formControl}>
+        <FormLabel component="legend">Assign responsibility</FormLabel>
+        <FormGroup>
+          <FormControlLabel
+            control={<Checkbox checked={gilad} onChange={handleChange('gilad')} value="gilad" />}
             label="Gilad Gray"
           />
-          <MuiFormControlLabel
-            control={<MuiCheckbox checked={jason} onChange={handleChange('jason')} value="jason" />}
+          <FormControlLabel
+            control={<Checkbox checked={jason} onChange={handleChange('jason')} value="jason" />}
             label="Jason Killian"
           />
-          <MuiFormControlLabel
+          <FormControlLabel
             control={
-              <MuiCheckbox checked={antoine} onChange={handleChange('antoine')} value="antoine" />
+              <Checkbox checked={antoine} onChange={handleChange('antoine')} value="antoine" />
             }
             label="Antoine Llorca"
           />
-        </MuiFormGroup>
-        <MuiFormHelperText>Be careful</MuiFormHelperText>
-      </MuiFormControl>
-      <MuiFormControl required error={error} component="fieldset" className={classes.formControl}>
-        <MuiFormLabel component="legend">Pick two</MuiFormLabel>
-        <MuiFormGroup>
-          <MuiFormControlLabel
-            control={<MuiCheckbox checked={gilad} onChange={handleChange('gilad')} value="gilad" />}
+        </FormGroup>
+        <FormHelperText>Be careful</FormHelperText>
+      </FormControl>
+      <FormControl required error={error} component="fieldset" className={classes.formControl}>
+        <FormLabel component="legend">Pick two</FormLabel>
+        <FormGroup>
+          <FormControlLabel
+            control={<Checkbox checked={gilad} onChange={handleChange('gilad')} value="gilad" />}
             label="Gilad Gray"
           />
-          <MuiFormControlLabel
-            control={<MuiCheckbox checked={jason} onChange={handleChange('jason')} value="jason" />}
+          <FormControlLabel
+            control={<Checkbox checked={jason} onChange={handleChange('jason')} value="jason" />}
             label="Jason Killian"
           />
-          <MuiFormControlLabel
+          <FormControlLabel
             control={
-              <MuiCheckbox checked={antoine} onChange={handleChange('antoine')} value="antoine" />
+              <Checkbox checked={antoine} onChange={handleChange('antoine')} value="antoine" />
             }
             label="Antoine Llorca"
           />
-        </MuiFormGroup>
-        <MuiFormHelperText>You can display an error</MuiFormHelperText>
-      </MuiFormControl>
+        </FormGroup>
+        <FormHelperText>You can display an error</FormHelperText>
+      </FormControl>
     </div>
   )
 }

@@ -1,11 +1,11 @@
 import React from 'react'
 import {
-  MuiNativeSelect,
-  MuiInputBase,
-  MuiInputLabel,
-  MuiMenuItem,
-  MuiFormControl,
-  MuiSelect,
+  NativeSelect,
+  InputBase,
+  InputLabel,
+  MenuItem,
+  FormControl,
+  Select,
   makeStyles,
   withStyles,
 } from '@franklin-thor/core'
@@ -44,7 +44,7 @@ const BootstrapInput = withStyles(theme => ({
       boxShadow: '0 0 0 0.2rem rgba(0,123,255,.25)',
     },
   },
-}))(MuiInputBase)
+}))(InputBase)
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -64,28 +64,28 @@ export default function CustomizedSelects() {
   }
   return (
     <form className={classes.root} autoComplete="off">
-      <MuiFormControl className={classes.margin}>
-        <MuiInputLabel htmlFor="age-customized-input">Age</MuiInputLabel>
+      <FormControl className={classes.margin}>
+        <InputLabel htmlFor="age-customized-input">Age</InputLabel>
         <BootstrapInput id="age-customized-input" />
-      </MuiFormControl>
-      <MuiFormControl className={classes.margin}>
-        <MuiInputLabel htmlFor="age-customized-select">Age</MuiInputLabel>
-        <MuiSelect
+      </FormControl>
+      <FormControl className={classes.margin}>
+        <InputLabel htmlFor="age-customized-select">Age</InputLabel>
+        <Select
           value={age}
           onChange={handleChange}
           input={<BootstrapInput name="age" id="age-customized-select" />}
         >
-          <MuiMenuItem value="">
+          <MenuItem value="">
             <em>None</em>
-          </MuiMenuItem>
-          <MuiMenuItem value={10}>Ten</MuiMenuItem>
-          <MuiMenuItem value={20}>Twenty</MuiMenuItem>
-          <MuiMenuItem value={30}>Thirty</MuiMenuItem>
-        </MuiSelect>
-      </MuiFormControl>
-      <MuiFormControl className={classes.margin}>
-        <MuiInputLabel htmlFor="age-customized-native-simple">Age</MuiInputLabel>
-        <MuiNativeSelect
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl className={classes.margin}>
+        <InputLabel htmlFor="age-customized-native-simple">Age</InputLabel>
+        <NativeSelect
           value={age}
           onChange={handleChange}
           input={<BootstrapInput name="age" id="age-customized-native-simple" />}
@@ -94,8 +94,8 @@ export default function CustomizedSelects() {
           <option value={10}>Ten</option>
           <option value={20}>Twenty</option>
           <option value={30}>Thirty</option>
-        </MuiNativeSelect>
-      </MuiFormControl>
+        </NativeSelect>
+      </FormControl>
     </form>
   )
 }

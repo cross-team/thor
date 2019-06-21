@@ -1,5 +1,5 @@
 import React from 'react'
-import { MuiButton, makeStyles } from '@franklin-thor/core'
+import { Button, makeStyles } from '@franklin-thor/core'
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -15,21 +15,21 @@ export default function OutlinedButtons() {
 
   return (
     <div>
-      <MuiButton variant="outlined" className={classes.button}>
+      <Button variant="outlined" className={classes.button}>
         Default
-      </MuiButton>
-      <MuiButton variant="outlined" color="primary" className={classes.button}>
+      </Button>
+      <Button variant="outlined" color="primary" className={classes.button}>
         Primary
-      </MuiButton>
-      <MuiButton variant="outlined" color="secondary" className={classes.button}>
+      </Button>
+      <Button variant="outlined" color="secondary" className={classes.button}>
         Secondary
-      </MuiButton>
-      <MuiButton variant="outlined" disabled className={classes.button}>
+      </Button>
+      <Button variant="outlined" disabled className={classes.button}>
         Disabled
-      </MuiButton>
-      <MuiButton variant="outlined" href="#outlined-buttons" className={classes.button}>
+      </Button>
+      <Button variant="outlined" href="#outlined-buttons" className={classes.button}>
         Link
-      </MuiButton>
+      </Button>
       <input
         accept="image/*"
         className={classes.input}
@@ -38,13 +38,13 @@ export default function OutlinedButtons() {
         type="file"
       />
       <label htmlFor="outlined-button-file">
-        <MuiButton variant="outlined" component="span" className={classes.button}>
+        <Button variant="outlined" component="span" className={classes.button}>
           Upload
-        </MuiButton>
+        </Button>
       </label>
-      <MuiButton variant="outlined" color="inherit" className={classes.button}>
+      <Button variant="outlined" color="inherit" className={classes.button}>
         Inherit
-      </MuiButton>
+      </Button>
     </div>
   )
 }

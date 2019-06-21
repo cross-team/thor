@@ -1,13 +1,13 @@
 import React from 'react'
 import {
-  MuiInput,
-  MuiOutlinedInput,
-  MuiFilledInput,
-  MuiInputLabel,
-  MuiMenuItem,
-  MuiFormHelperText,
-  MuiFormControl,
-  MuiSelect,
+  Input,
+  OutlinedInput,
+  FilledInput,
+  InputLabel,
+  MenuItem,
+  FormHelperText,
+  FormControl,
+  Select,
   makeStyles,
 } from '@franklin-thor/core'
 
@@ -47,9 +47,9 @@ export default function SimpleSelect() {
 
   return (
     <form className={classes.root} autoComplete="off">
-      <MuiFormControl className={classes.formControl}>
-        <MuiInputLabel htmlFor="age-simple">Age</MuiInputLabel>
-        <MuiSelect
+      <FormControl className={classes.formControl}>
+        <InputLabel htmlFor="age-simple">Age</InputLabel>
+        <Select
           value={values.age}
           onChange={handleChange}
           inputProps={{
@@ -57,155 +57,155 @@ export default function SimpleSelect() {
             id: 'age-simple',
           }}
         >
-          <MuiMenuItem value="">
+          <MenuItem value="">
             <em>None</em>
-          </MuiMenuItem>
-          <MuiMenuItem value={10}>Ten</MuiMenuItem>
-          <MuiMenuItem value={20}>Twenty</MuiMenuItem>
-          <MuiMenuItem value={30}>Thirty</MuiMenuItem>
-        </MuiSelect>
-      </MuiFormControl>
-      <MuiFormControl className={classes.formControl}>
-        <MuiInputLabel htmlFor="age-helper">Age</MuiInputLabel>
-        <MuiSelect
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl className={classes.formControl}>
+        <InputLabel htmlFor="age-helper">Age</InputLabel>
+        <Select
           value={values.age}
           onChange={handleChange}
-          input={<MuiInput name="age" id="age-helper" />}
+          input={<Input name="age" id="age-helper" />}
         >
-          <MuiMenuItem value="">
+          <MenuItem value="">
             <em>None</em>
-          </MuiMenuItem>
-          <MuiMenuItem value={10}>Ten</MuiMenuItem>
-          <MuiMenuItem value={20}>Twenty</MuiMenuItem>
-          <MuiMenuItem value={30}>Thirty</MuiMenuItem>
-        </MuiSelect>
-        <MuiFormHelperText>Some important helper text</MuiFormHelperText>
-      </MuiFormControl>
-      <MuiFormControl className={classes.formControl}>
-        <MuiSelect
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+        <FormHelperText>Some important helper text</FormHelperText>
+      </FormControl>
+      <FormControl className={classes.formControl}>
+        <Select
           value={values.age}
           onChange={handleChange}
           displayEmpty
           name="age"
           className={classes.selectEmpty}
         >
-          <MuiMenuItem value="">
+          <MenuItem value="">
             <em>None</em>
-          </MuiMenuItem>
-          <MuiMenuItem value={10}>Ten</MuiMenuItem>
-          <MuiMenuItem value={20}>Twenty</MuiMenuItem>
-          <MuiMenuItem value={30}>Thirty</MuiMenuItem>
-        </MuiSelect>
-        <MuiFormHelperText>Without label</MuiFormHelperText>
-      </MuiFormControl>
-      <MuiFormControl className={classes.formControl}>
-        <MuiInputLabel shrink htmlFor="age-label-placeholder">
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+        <FormHelperText>Without label</FormHelperText>
+      </FormControl>
+      <FormControl className={classes.formControl}>
+        <InputLabel shrink htmlFor="age-label-placeholder">
           Age
-        </MuiInputLabel>
-        <MuiSelect
+        </InputLabel>
+        <Select
           value={values.age}
           onChange={handleChange}
-          input={<MuiInput name="age" id="age-label-placeholder" />}
+          input={<Input name="age" id="age-label-placeholder" />}
           displayEmpty
           name="age"
           className={classes.selectEmpty}
         >
-          <MuiMenuItem value="">
+          <MenuItem value="">
             <em>None</em>
-          </MuiMenuItem>
-          <MuiMenuItem value={10}>Ten</MuiMenuItem>
-          <MuiMenuItem value={20}>Twenty</MuiMenuItem>
-          <MuiMenuItem value={30}>Thirty</MuiMenuItem>
-        </MuiSelect>
-        <MuiFormHelperText>Label + placeholder</MuiFormHelperText>
-      </MuiFormControl>
-      <MuiFormControl className={classes.formControl} disabled>
-        <MuiInputLabel htmlFor="name-disabled">Name</MuiInputLabel>
-        <MuiSelect
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+        <FormHelperText>Label + placeholder</FormHelperText>
+      </FormControl>
+      <FormControl className={classes.formControl} disabled>
+        <InputLabel htmlFor="name-disabled">Name</InputLabel>
+        <Select
           value={values.name}
           onChange={handleChange}
-          input={<MuiInput name="name" id="name-disabled" />}
+          input={<Input name="name" id="name-disabled" />}
         >
-          <MuiMenuItem value="">
+          <MenuItem value="">
             <em>None</em>
-          </MuiMenuItem>
-          <MuiMenuItem value="hai">Hai</MuiMenuItem>
-          <MuiMenuItem value="olivier">Olivier</MuiMenuItem>
-          <MuiMenuItem value="kevin">Kevin</MuiMenuItem>
-        </MuiSelect>
-        <MuiFormHelperText>Disabled</MuiFormHelperText>
-      </MuiFormControl>
-      <MuiFormControl className={classes.formControl} error>
-        <MuiInputLabel htmlFor="name-error">Name</MuiInputLabel>
-        <MuiSelect
+          </MenuItem>
+          <MenuItem value="hai">Hai</MenuItem>
+          <MenuItem value="olivier">Olivier</MenuItem>
+          <MenuItem value="kevin">Kevin</MenuItem>
+        </Select>
+        <FormHelperText>Disabled</FormHelperText>
+      </FormControl>
+      <FormControl className={classes.formControl} error>
+        <InputLabel htmlFor="name-error">Name</InputLabel>
+        <Select
           value={values.name}
           onChange={handleChange}
           name="name"
           renderValue={value => `⚠️  - ${value}`}
-          input={<MuiInput id="name-error" />}
+          input={<Input id="name-error" />}
         >
-          <MuiMenuItem value="">
+          <MenuItem value="">
             <em>None</em>
-          </MuiMenuItem>
-          <MuiMenuItem value="hai">Hai</MuiMenuItem>
-          <MuiMenuItem value="olivier">Olivier</MuiMenuItem>
-          <MuiMenuItem value="kevin">Kevin</MuiMenuItem>
-        </MuiSelect>
-        <MuiFormHelperText>Error</MuiFormHelperText>
-      </MuiFormControl>
-      <MuiFormControl className={classes.formControl}>
-        <MuiInputLabel htmlFor="name-readonly">Name</MuiInputLabel>
-        <MuiSelect
+          </MenuItem>
+          <MenuItem value="hai">Hai</MenuItem>
+          <MenuItem value="olivier">Olivier</MenuItem>
+          <MenuItem value="kevin">Kevin</MenuItem>
+        </Select>
+        <FormHelperText>Error</FormHelperText>
+      </FormControl>
+      <FormControl className={classes.formControl}>
+        <InputLabel htmlFor="name-readonly">Name</InputLabel>
+        <Select
           value={values.name}
           onChange={handleChange}
-          input={<MuiInput name="name" id="name-readonly" readOnly />}
+          input={<Input name="name" id="name-readonly" readOnly />}
         >
-          <MuiMenuItem value="">
+          <MenuItem value="">
             <em>None</em>
-          </MuiMenuItem>
-          <MuiMenuItem value="hai">Hai</MuiMenuItem>
-          <MuiMenuItem value="olivier">Olivier</MuiMenuItem>
-          <MuiMenuItem value="kevin">Kevin</MuiMenuItem>
-        </MuiSelect>
-        <MuiFormHelperText>Read only</MuiFormHelperText>
-      </MuiFormControl>
-      <MuiFormControl className={classes.formControl}>
-        <MuiInputLabel htmlFor="age-auto-width">Age</MuiInputLabel>
-        <MuiSelect
+          </MenuItem>
+          <MenuItem value="hai">Hai</MenuItem>
+          <MenuItem value="olivier">Olivier</MenuItem>
+          <MenuItem value="kevin">Kevin</MenuItem>
+        </Select>
+        <FormHelperText>Read only</FormHelperText>
+      </FormControl>
+      <FormControl className={classes.formControl}>
+        <InputLabel htmlFor="age-auto-width">Age</InputLabel>
+        <Select
           value={values.age}
           onChange={handleChange}
-          input={<MuiInput name="age" id="age-auto-width" />}
+          input={<Input name="age" id="age-auto-width" />}
           autoWidth
         >
-          <MuiMenuItem value="">
+          <MenuItem value="">
             <em>None</em>
-          </MuiMenuItem>
-          <MuiMenuItem value={10}>Ten</MuiMenuItem>
-          <MuiMenuItem value={20}>Twenty</MuiMenuItem>
-          <MuiMenuItem value={30}>Thirty</MuiMenuItem>
-        </MuiSelect>
-        <MuiFormHelperText>Auto width</MuiFormHelperText>
-      </MuiFormControl>
-      <MuiFormControl className={classes.formControl}>
-        <MuiSelect
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+        <FormHelperText>Auto width</FormHelperText>
+      </FormControl>
+      <FormControl className={classes.formControl}>
+        <Select
           value={values.age}
           onChange={handleChange}
           name="age"
           displayEmpty
           className={classes.selectEmpty}
         >
-          <MuiMenuItem value="" disabled>
+          <MenuItem value="" disabled>
             Placeholder
-          </MuiMenuItem>
-          <MuiMenuItem value={10}>Ten</MuiMenuItem>
-          <MuiMenuItem value={20}>Twenty</MuiMenuItem>
-          <MuiMenuItem value={30}>Thirty</MuiMenuItem>
-        </MuiSelect>
-        <MuiFormHelperText>Placeholder</MuiFormHelperText>
-      </MuiFormControl>
-      <MuiFormControl required className={classes.formControl}>
-        <MuiInputLabel htmlFor="age-required">Age</MuiInputLabel>
-        <MuiSelect
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+        <FormHelperText>Placeholder</FormHelperText>
+      </FormControl>
+      <FormControl required className={classes.formControl}>
+        <InputLabel htmlFor="age-required">Age</InputLabel>
+        <Select
           value={values.age}
           onChange={handleChange}
           name="age"
@@ -214,47 +214,47 @@ export default function SimpleSelect() {
           }}
           className={classes.selectEmpty}
         >
-          <MuiMenuItem value="">
+          <MenuItem value="">
             <em>None</em>
-          </MuiMenuItem>
-          <MuiMenuItem value={10}>Ten</MuiMenuItem>
-          <MuiMenuItem value={20}>Twenty</MuiMenuItem>
-          <MuiMenuItem value={30}>Thirty</MuiMenuItem>
-        </MuiSelect>
-        <MuiFormHelperText>Required</MuiFormHelperText>
-      </MuiFormControl>
-      <MuiFormControl variant="outlined" className={classes.formControl}>
-        <MuiInputLabel ref={inputLabel} htmlFor="outlined-age-simple">
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+        <FormHelperText>Required</FormHelperText>
+      </FormControl>
+      <FormControl variant="outlined" className={classes.formControl}>
+        <InputLabel ref={inputLabel} htmlFor="outlined-age-simple">
           Age
-        </MuiInputLabel>
-        <MuiSelect
+        </InputLabel>
+        <Select
           value={values.age}
           onChange={handleChange}
-          input={<MuiOutlinedInput labelWidth={labelWidth} name="age" id="outlined-age-simple" />}
+          input={<OutlinedInput labelWidth={labelWidth} name="age" id="outlined-age-simple" />}
         >
-          <MuiMenuItem value="">
+          <MenuItem value="">
             <em>None</em>
-          </MuiMenuItem>
-          <MuiMenuItem value={10}>Ten</MuiMenuItem>
-          <MuiMenuItem value={20}>Twenty</MuiMenuItem>
-          <MuiMenuItem value={30}>Thirty</MuiMenuItem>
-        </MuiSelect>
-      </MuiFormControl>
-      <MuiFormControl variant="filled" className={classes.formControl}>
-        <MuiInputLabel htmlFor="filled-age-simple">Age</MuiInputLabel>
-        <MuiSelect
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl variant="filled" className={classes.formControl}>
+        <InputLabel htmlFor="filled-age-simple">Age</InputLabel>
+        <Select
           value={values.age}
           onChange={handleChange}
-          input={<MuiFilledInput name="age" id="filled-age-simple" />}
+          input={<FilledInput name="age" id="filled-age-simple" />}
         >
-          <MuiMenuItem value="">
+          <MenuItem value="">
             <em>None</em>
-          </MuiMenuItem>
-          <MuiMenuItem value={10}>Ten</MuiMenuItem>
-          <MuiMenuItem value={20}>Twenty</MuiMenuItem>
-          <MuiMenuItem value={30}>Thirty</MuiMenuItem>
-        </MuiSelect>
-      </MuiFormControl>
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
     </form>
   )
 }

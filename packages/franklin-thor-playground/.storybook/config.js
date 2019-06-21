@@ -10,10 +10,11 @@ function loadStories() {
   //require('stories/Selects')
   //require('stories/Switches')
   //require('stories/TextFields')
-  //require('stories/MuiButton')
-  //require('stories/MuiCheckboxes')
-  //require('stories/MuiPickers')
+  require('stories/MuiButton')
+  require('stories/MuiCheckboxes')
+  require('stories/MuiPickers')
   require('stories/MuiSwitches')
+  require('stories/MuiSelects')
   require('stories/MuiTransferList')
   require('stories/MuiAppBar')
   require('stories/MuiPaper')
@@ -22,7 +23,6 @@ function loadStories() {
   require('stories/MuiProgress')
   require('stories/MuiDialog')
   require('stories/MuiSnackbar')
-  //require('stories/MuiSelects')
 }
 
 addDecorator(withKnobs)
