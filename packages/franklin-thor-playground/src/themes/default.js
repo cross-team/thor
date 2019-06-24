@@ -1,6 +1,6 @@
-import { createMuiTheme } from '@material-ui/core/styles';
-import defaultTokens from './default.tokens';
+import { createMuiTheme } from '@franklin-thor/core'
+import defaultTokens from './default.tokens'
 
-const theme = createMuiTheme(defaultTokens);
+const theme = createMuiTheme(defaultTokens)
 
-export default theme;
+export default theme
