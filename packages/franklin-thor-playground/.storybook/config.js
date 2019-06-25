@@ -44,6 +44,8 @@ function loadStories() {
   require('stories/MuiPopper')
   require('stories/MuiPortal')
   require('stories/MuiTransitions')
+  require('stories/FTIBadge')
+  require('stories/FTICancelAlert')
 }
 addDecorator(withKnobs)
 
