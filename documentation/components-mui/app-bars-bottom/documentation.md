@@ -10,7 +10,7 @@
 
 ## A bottom app bar displays navigation and key actions at the bottom of mobile screens.
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1PrVPyUvR5HvW5KcvIIy9s3T52Vy9jwN9%2Fbottom-app-bar-intro-20190621104306910.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1PrVPyUvR5HvW5KcvIIy9s3T52Vy9jwN9%2Fbottom-app-bar-intro.png)
 
 CONTENTS[Usage](https://material.io/design/components/#usage)[Anatomy](https://material.io/design/components/#anatomy)[Behavior](https://material.io/design/components/#behavior)[Theming](https://material.io/design/components/#theming)[Specs](https://material.io/design/components/#specs)[Implementation](https://material.io/design/components/#implementation)
 
@@ -34,19 +34,19 @@ Bottom app bars are actionable, flexible, and ergonomic.
 
 READ MORE
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1E17DU2gbgd7eVGPKxt2AYoxztpaNRP6M%2Fbottom-app-bar-illos-01-20190621104306901.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1E17DU2gbgd7eVGPKxt2AYoxztpaNRP6M%2Fbottom-app-bar-illos-01.png)
 
 ## Actionable
 
 Bottom app bars highlight important screen actions and raise awareness of the floating action button.
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F10Aso0V4_rLbm4Ri-ZHlYmgyyiHT7-LPX%2Fbottom-app-bar-illos-02-20190621104306910.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F10Aso0V4_rLbm4Ri-ZHlYmgyyiHT7-LPX%2Fbottom-app-bar-illos-02.png)
 
 ## Flexible
 
 A bottom app bar’s layout and actions change based on the needs of the screen.
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F15IBNsrUUn8BOGjsxelXVmuZD-Y7z_yIf%2Fbottom-app-bar-illos-03-20190621104306912.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F15IBNsrUUn8BOGjsxelXVmuZD-Y7z_yIf%2Fbottom-app-bar-illos-03.png)
 
 ## Ergonomic
 
@@ -79,13 +79,13 @@ Bottom app bars shouldn’t be used for:
 
 ------
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1jE77atbSz5gSZOwmVjo3dNUs0bLAJhES%2Fusage-when-do-20190621104306964.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1jE77atbSz5gSZOwmVjo3dNUs0bLAJhES%2Fusage-when-do.png)
 
 Do.
 
 Use a bottom app bar to provide convenient access to actions.
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F18qwRs2OFNaJalt44tgUzZmQ_zDSWNv5K%2Fusage-when-dont-20190621104306943.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F18qwRs2OFNaJalt44tgUzZmQ_zDSWNv5K%2Fusage-when-dont.png)
 
 Don’t.
 
@@ -97,7 +97,7 @@ Don’t use a bottom app bar on screens with one or no actions (other than a FAB
 
 Bottom app bars can contain actions that apply to the context of the current screen. They include a navigation menu control on the far left and a floating action button (when one is present). If included in a bottom app bar, an overflow menu control is placed at the end of other actions.
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1H4d0USCWDGIIP6ihya6whGdnbw8-UeDX%2Fanatomy-elements-20190621104306946.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1H4d0USCWDGIIP6ihya6whGdnbw8-UeDX%2Fanatomy-elements.png)
 
 1. ### Container
 
@@ -121,7 +121,7 @@ Bottom app bars have three different layouts based on the presence of a FAB and 
 
 ## Centered FAB
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F17DSHC0GjYYNyflJpSB63M9KVZhQDQw2h%2Fanatomy-fab-center-20190621104306961.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F17DSHC0GjYYNyflJpSB63M9KVZhQDQw2h%2Fanatomy-fab-center.png)
 
 Do.
 
@@ -129,7 +129,7 @@ Use bottom app bars on home screens that feature a navigation menu control and a
 
 ## End FAB
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F10Qk_VJHQ3TGxeQZA-R7GRtlNxPHkyI7j%2Fanatomy-fab-right-20190621104306956.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F10Qk_VJHQ3TGxeQZA-R7GRtlNxPHkyI7j%2Fanatomy-fab-right.png)
 
 Do.
 
@@ -137,7 +137,7 @@ Use a FAB on secondary screens that require a floating action button and three t
 
 ## No FAB
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1STHFRgIzHVCN_kx0Pzt8HfG6JEJOCGYz%2Fanatomy-fab-none-20190621104306959.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1STHFRgIzHVCN_kx0Pzt8HfG6JEJOCGYz%2Fanatomy-fab-none.png)
 
 Do.
 
@@ -145,7 +145,7 @@ When no floating action button is needed, the bottom app bar can accommodate a n
 
 ## Landscape
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F18GYA0RkKiqiUswp8BPHzEkNAGm_cIKGj%2Fanatomy-landscape-20190621104306980.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F18GYA0RkKiqiUswp8BPHzEkNAGm_cIKGj%2Fanatomy-landscape.png)
 
 Do.
 
@@ -166,15 +166,15 @@ When present, floating action buttons (FABs) are displayed on bottom app bars in
 
 Use an inset to increase the visual prominence of a FAB or accentuate customized element shapes. Refer to the [Theming](https://material.io/design/components/app-bars-bottom.html#theming) section for more guidance on inset FAB’s in a bottom app bar.
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1hIkcwMS6C3V2ZdFJmYV_VAIWPfU6dxXC%2Fanatomy-fab-overlap-20190621104306981.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1hIkcwMS6C3V2ZdFJmYV_VAIWPfU6dxXC%2Fanatomy-fab-overlap.png)
 
 Overlapping FAB
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1xkb-3HQEAsb0IA292GLCziMMh6QE1YIX%2Fanatomy-fab-cut-20190621104306986.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1xkb-3HQEAsb0IA292GLCziMMh6QE1YIX%2Fanatomy-fab-cut.png)
 
 Inset FAB
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1gXnDalMO0XMkGKSe-fqAfbSX_4kk9z-9%2Fanatomy-fab-dont-20190621104306996.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1gXnDalMO0XMkGKSe-fqAfbSX_4kk9z-9%2Fanatomy-fab-dont.png)
 
 Don’t.
 
@@ -231,7 +231,7 @@ READ MORE
 
 The bottom app bar has an elevation of 8dp. When paired with a FAB, the FAB’s resting and raised heights should be increased to remain visible above the bottom app bar.
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1Aefoiuq4s_kUV2iY71LOqS_9dd3HcPmw%2Fbehavior-elevation-section-20190621104307073.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1Aefoiuq4s_kUV2iY71LOqS_9dd3HcPmw%2Fbehavior-elevation-section.png)
 
 Content (0dp)Snackbar (6dp)Bottom app bar (8dp)Floating action button (12dp resting)Bottom navigation drawer (16dp)
 
@@ -245,13 +245,13 @@ This bottom navigation drawer opens from a bottom app bar. The drawer opens in f
 
 The bottom app bar can be covered by keyboards and other temporary surfaces. If your app requires frequent obstruction of the bar, another component should be used instead.
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1JCfj-_LZx0ymTOuCT5yw11qkbCiuV4K3%2Fbehavior-keyboard-do-20190621104307011.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1JCfj-_LZx0ymTOuCT5yw11qkbCiuV4K3%2Fbehavior-keyboard-do.png)
 
 Do.
 
 A keyboard can temporarily cover a bottom app bar.
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1cbgsJB28yCIKbnt3jyBiBrxgv7VxuhaL%2Fbehavior-keyboard-dont-20190621104307073.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1cbgsJB28yCIKbnt3jyBiBrxgv7VxuhaL%2Fbehavior-keyboard-dont.png)
 
 Don’t.
 
@@ -269,13 +269,13 @@ READ MORE
 
 A bottom app bar can display a navigation menu icon to open a bottom navigation drawer, but the bar doesn’t contain any navigation actions itself (such as Up navigation to a home screen or a close icon). App navigation should be placed in another component such as a top app bar, or embedded on-screen.
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1THzRVZz1_ZghhgaUfSmNWVpiCyPvvJQD%2Fplacement-navigation-do-20190621104307097.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1THzRVZz1_ZghhgaUfSmNWVpiCyPvvJQD%2Fplacement-navigation-do.png)
 
 Do.
 
 Provide navigation outside of a bottom app bar that allows users to return to the previous app screen.
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1k7UL1gpsimgUPk-kracQn1rztyopsWbV%2Fplacement-navigation-dont-20190621104307107.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1k7UL1gpsimgUPk-kracQn1rztyopsWbV%2Fplacement-navigation-dont.png)
 
 Don’t.
 
@@ -292,25 +292,25 @@ The following items benefit from specific placement:
 - Place actions, like Search, in a consistent location throughout the app
 - Place destructive actions, such as “Delete,” in the top app bar
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1uMIJeZicJJACwoQquyJO4o0ovLV2yrqx%2Fplacement-top-app-bar-do-20190621104307180.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1uMIJeZicJJACwoQquyJO4o0ovLV2yrqx%2Fplacement-top-app-bar-do.png)
 
 Do.
 
 Use a top app bar as a container for upwards navigation on secondary screens.
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F16oUEVJpU5zzTS5AqUgN75iFrLAPRIpYf%2Fplacement-top-app-bar-dont-20190621104307138.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F16oUEVJpU5zzTS5AqUgN75iFrLAPRIpYf%2Fplacement-top-app-bar-dont.png)
 
 Don’t.
 
 On a home screen, don’t place a navigation menu control in both a top and bottom app bar. Only one app bar should have this control.
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1axQM_eykG-5a7MzFhupQyQN0qc02du6k%2Fplacement-top-app-bar-bottom-primary-20190621104307179.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1axQM_eykG-5a7MzFhupQyQN0qc02du6k%2Fplacement-top-app-bar-bottom-primary.png)
 
 Do.
 
 Place an overflow menu as the last action between the app bars.
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1CN228lXZHmsznh_teYsS1IDuZ90Dkk_d%2Fplacement-top-app-bar-bottom-fixed-20190621104307180.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1CN228lXZHmsznh_teYsS1IDuZ90Dkk_d%2Fplacement-top-app-bar-bottom-fixed.png)
 
 Do.
 
@@ -324,13 +324,13 @@ A bottom app bar can provide consistent access to actions, such as navigation an
 
 To avoid obstruction, snackbars and toasts should animate in place vertically above a bottom app bar. Refer to [Snackbars](https://material.io/design/components/snackbars.html) for more guidance on its layout and positioning.
 
-<video aria-describedby="behavior-figure-caption-12" class="video-player__video animatable js-video-player js-video-load" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 0; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
+<video aria-describedby="behavior-figure-caption-12" class="video-player__video animatable js-video-player js-video-load anim-appear" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 1 !important; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
 
 Do.
 
 Inset a snackbar or toast above a bottom app bar and FAB.
 
-<video aria-describedby="behavior-figure-caption-13" class="video-player__video animatable js-video-player js-video-load" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 0; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
+<video aria-describedby="behavior-figure-caption-13" class="video-player__video animatable js-video-player js-video-load anim-appear" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 1 !important; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
 
 Don’t.
 
@@ -350,7 +350,7 @@ READ MORE
 
 This social media app’s bottom app bar has been customized using Material Theming. Areas of customization include color and shape.
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1XkzfKt_zJQXv0GWH4wy0tfNNI5dMfkmp%2Fappbarbottom-posivibes-ahero-20190621104307293.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1XkzfKt_zJQXv0GWH4wy0tfNNI5dMfkmp%2Fappbarbottom-posivibes-ahero.png)
 
 Posivibe’s customized bottom app bar
 
@@ -364,7 +364,7 @@ Posivibe’s customized bottom app bar
 
 Posivibe’s bottom app bar uses custom color on two elements: the container and icons.
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1XxtBEgwK5EtM-i0zlzxeEh1Fw5lN2IPQ%2Fappbarbottom-posivibes-color-20190621104307169.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1XxtBEgwK5EtM-i0zlzxeEh1Fw5lN2IPQ%2Fappbarbottom-posivibes-color.png)
 
 | Element   | Category   | Attribute    | Value       |
 | --------- | ---------- | ------------ | ----------- |
@@ -379,7 +379,7 @@ Posivibe’s bottom app bar uses custom color on two elements: the container and
 
 Posivibe’s bottom app bar uses a custom shape on the top edge of the container.
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1w7ALaXnbPwdPY5baAocfCv2Pyt748hJA%2Fappbarbottom-posivibes-shape-20190621104307186.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1w7ALaXnbPwdPY5baAocfCv2Pyt748hJA%2Fappbarbottom-posivibes-shape.png)
 
 | Element   | Attribute | Value                                         |
 | --------- | --------- | --------------------------------------------- |
@@ -458,7 +458,7 @@ Minimum 1, maximum of 2 actions aligned to opposite edge of navigation menu
 
 
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1a5wCJ3uuhMKzC4zkz6B0gJk7-o8hdAoh%2Fspec-bottomappbar-fab-center-20190621104307205.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1a5wCJ3uuhMKzC4zkz6B0gJk7-o8hdAoh%2Fspec-bottomappbar-fab-center.png)
 
 
 
@@ -522,7 +522,7 @@ Specs
 
 
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1PYMpzbVrpsxUIczDA422JTLYogsyeoz4%2Fspec-bottomappbar-fab-cut-20190621104307210.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1PYMpzbVrpsxUIczDA422JTLYogsyeoz4%2Fspec-bottomappbar-fab-cut.png)
 
 
 
@@ -596,7 +596,7 @@ Minimum 2, maximum of 4 actions aligned to opposite edge of the FAB
 
 
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1mF8EptVr7aT_u7luDwSZRhgLobvlHb5n%2Fspec-bottomappbar-fab-right-20190621104307211.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1mF8EptVr7aT_u7luDwSZRhgLobvlHb5n%2Fspec-bottomappbar-fab-right.png)
 
 
 
@@ -647,7 +647,7 @@ Minimum 2, maximum of 4 actions aligned on opposite edge of navigation menu
 
 
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F19rgPwToJHE6Q3tZJCgBtEXUdd1XQft-s%2Fspec-bottomappbar-fab-none-20190621104307216.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F19rgPwToJHE6Q3tZJCgBtEXUdd1XQft-s%2Fspec-bottomappbar-fab-none.png)
 
 
 
@@ -723,7 +723,7 @@ Minimum 1, maximum of 2 actions aligned to opposite edge of navigation menu
 
 
 
-![img](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1QanOs9DVHXk2-6B2ZPn51Od2ECsAMm0q%2Fspec-bottomappbar-landscape-20190621104307215.png)
+![img](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1QanOs9DVHXk2-6B2ZPn51Od2ECsAMm0q%2Fspec-bottomappbar-landscape.png)
 
 
 
@@ -739,30 +739,26 @@ Specs
 
 Bottom app bar implementation support for each platform is indicated below.
 
-[![Android Implementation-Bottom App Bar](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1UOOR5UqhIC0APfGUrC8bqVJl7LMAauOy%2Fimplementation-android-platform-20190621104307227.png)](https://material.io/go/android-app-bar-bottom/)
+[![Android Implementation-Bottom App Bar](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1UOOR5UqhIC0APfGUrC8bqVJl7LMAauOy%2Fimplementation-android-platform.png)](https://material.io/go/android-app-bar-bottom/)
 
 ## [Android Material Component](https://material.io/go/android-app-bar-bottom/)
 
 **Status:** Available
 
-[![IOS Implementation-Bottom App Bar](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F16rRVPzp8EoUZW4zm1FAzs7R6wnqScuD-%2Fimplementation-ios-platform-20190621104307234.png)](https://material.io/go/ios-app-bar-bottom/)
+[![IOS Implementation-Bottom App Bar](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F16rRVPzp8EoUZW4zm1FAzs7R6wnqScuD-%2Fimplementation-ios-platform.png)](https://material.io/go/ios-app-bar-bottom/)
 
 ## [iOS Material Component](https://material.io/go/ios-app-bar-bottom/)
 
 **Status:** Available
 
-[![Flutter Implementation-Bottom App Bar](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F1dIvdcFChoIXzBeE9HU2s5vsa5WM_h65O%2Fimplementation-flutter-platform-20190621104307235.png)](https://material.io/go/flutter-app-bar-bottom/)
+[![Flutter Implementation-Bottom App Bar](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1dIvdcFChoIXzBeE9HU2s5vsa5WM_h65O%2Fimplementation-flutter-platform.png)](https://material.io/go/flutter-app-bar-bottom/)
 
 ## [Flutter Material Component](https://material.io/go/flutter-app-bar-bottom/)
 
 **Status:** Available
 
-![Web Implementation-Bottom App Bar](/Users/jasonjames/repositories/thor/documentation/components-mui/app-bars-bottom/documentation.assets/mio-design%2Fassets%2F16XrmJMDj6ZcSgqlTBYkNCiq43L3M1bHg%2Fimplementation-web-platform-unavail-20190621104307237.png)
+![Web Implementation-Bottom App Bar](https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F16XrmJMDj6ZcSgqlTBYkNCiq43L3M1bHg%2Fimplementation-web-platform-unavail.png)
 
 ## Web Material Component
 
 **Status:** Planned
-
-
-
-## Up next
