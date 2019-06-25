@@ -117,3 +117,5 @@ export {
   GridListTile,
   GridListTileBar,
 } from '@material-ui/core'
+
+export { default as FTIBadge } from './FTIBadge'
