@@ -1,8 +1,12 @@
 # App Bars: Top
 
+(Material (Core) Component)
+
+Material.io Reference: https://material.io/design/components/app-bars-top.html
+
 ---
 
-# App bars: top 
+# App bars: top
 
 ## The top app bar displays information and actions relating to the current screen.
 
@@ -256,15 +260,12 @@ Upon scrolling, the top app bar can remain in place, or transform in the followi
 When the top app bar scrolls, its elevation above other elements becomes apparent.
 
 <video class="video-player__video animatable js-video-player js-video-load" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 0; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
-
 The top app bar disappears upon scrolling up, and appears upon scrolling down.
 
 <video class="video-player__video animatable js-video-player js-video-load" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 0; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
-
 Top app bars can be positioned at the same elevation as content. Upon scroll, they increase elevation and let content scroll behind them.
 
 <video class="video-player__video animatable js-video-player js-video-load" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 0; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
-
 When scrolling up, prominent top app bars using imagery can transform into normal top app bars. They should not return to prominent mode until the user scrolls back to the top of the page.
 
 
@@ -282,7 +283,6 @@ When a screen is resized, the top app bar resizes with it. Actions are consolida
 The actions move to the overflow menu from right to left, making the most-used action the last to be moved to the overflow menu.
 
 <video class="video-player__video animatable js-video-player js-video-load" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 0; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
-
 As a top app bar is resized, actions move to the overflow menu from right to left.
 
 Scaled down to 62.5%
@@ -311,7 +311,6 @@ When a top app bar transforms into a contextual action bar, the following change
 Upon closing, the contextual action bar transforms back into a top app bar.
 
 <video class="video-player__video animatable js-video-player js-video-load" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 0; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
-
 Top app bar transforming into a contextual action bar
 
 

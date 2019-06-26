@@ -1,6 +1,10 @@
-# MUI Component Documentation: Buttons
+# Buttons
+
+Material UI (Core) Component
 
 Reference: https://material.io/design/components/app-bars-bottom.html#
+
+
 
 ---
 
@@ -15,7 +19,6 @@ Reference: https://material.io/design/components/app-bars-bottom.html#
 This demo lets you preview the button component, its variations, and configuration options. Each tab displays a different type of button.
 
 <iframe class="js-scroll-to-iframe " src="https://material.io/inline-tools/button" style="background-repeat: no-repeat; box-sizing: border-box; border: 1px solid rgba(0, 0, 0, 0.12); width: 760px; transition: box-shadow 150ms linear 0s; height: 300px;"></iframe>
-
 CONTENTS[Usage](https://material.io/design/components/buttons.html#usage)[Anatomy](https://material.io/design/components/buttons.html#anatomy)[Hierarchy and placement](https://material.io/design/components/buttons.html#hierarchy-placement)[Text button](https://material.io/design/components/buttons.html#text-button)[Outlined button](https://material.io/design/components/buttons.html#outlined-button)[Contained button](https://material.io/design/components/buttons.html#contained-button)[Toggle button](https://material.io/design/components/buttons.html#toggle-button)[Theming](https://material.io/design/components/buttons.html#theming)[Specs](https://material.io/design/components/buttons.html#specs)[Implementation](https://material.io/design/components/buttons.html#implementation)
 
 ------
