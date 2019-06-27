@@ -1,8 +1,12 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 // import { boolean, text, select } from '@storybook/addon-knobs';
+import { ThemeProvider } from '@material-ui/styles'
+import theme from '../../themes/default'
 import SimpleTable from '../../page/MuiTable/SimpleTable'
 import DenseTable from '../../page/MuiTable/DenseTable'
 
-storiesOf('MuiTable', module).add('Simple Table', () => <SimpleTable />)
-storiesOf('MuiTable', module).add('Dense Table', () => <DenseTable />)
+storiesOf('MuiTable', module)
+  .addDecorator(getStory => <ThemeProvider theme={theme}>{getStory()}</ThemeProvider>)
+  .add('Simple Table', () => <SimpleTable />)
+  .add('Dense Table', () => <DenseTable />)

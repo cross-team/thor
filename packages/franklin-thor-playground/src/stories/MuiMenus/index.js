@@ -4,5 +4,6 @@ import { storiesOf } from '@storybook/react'
 import SimpleMenu from '../../page/MuiMenus/SimpleMenu'
 import MenuListComposition from '../../page/MuiMenus/MenuListComposition'
 
-storiesOf('MuiMenus', module).add('Simple Menu', () => <SimpleMenu />)
-storiesOf('MuiMenus', module).add('MenuList Composition', () => <MenuListComposition />)
+storiesOf('MuiMenus', module)
+  .add('Simple Menu', () => <SimpleMenu />)
+  .add('MenuList Composition', () => <MenuListComposition />)
