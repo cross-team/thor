@@ -22,7 +22,7 @@ class KanBanColumn extends React.Component {
 
   render() {
     const columnStyle = {
-      width: '25%',
+      flexBasis: '25%',
     }
     return (
       <div
