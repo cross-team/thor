@@ -1,7 +1,14 @@
 import { configure, addParameters, addDecorator } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
 import { withInfo } from '@storybook/addon-info'
+import { themes } from '@storybook/theming'
 import '@storybook/addon-console'
+
+addParameters({
+  options: {
+    theme: themes.dark,
+  },
+})
 
 function loadStories() {
   //require('stories/Button')
