@@ -47,6 +47,7 @@ function loadStories() {
   require('stories/FTIBadge')
   require('stories/FTICancelAlert')
   require('stories/FTICard')
+  require('stories/FTIKanBanColumn')
 }
 addDecorator(withKnobs)
 
