@@ -14,15 +14,6 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export default function FTIKanBanColumn(props) {
-  const [state, setState] = React.useState({
-    checkedA: true,
-    checkedB: true,
-  })
-
-  const handleChange = name => event => {
-    setState({ ...state, [name]: event.target.checked })
-  }
-
   const classes = useStyles()
   const type = props.type
 
