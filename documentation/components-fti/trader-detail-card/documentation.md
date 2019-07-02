@@ -48,11 +48,9 @@
 
 Dynamic or Static:
 
+![Trader Detail Card](assets/Trader Detail Card.png)
 
-
-The above text is static: 
-
-
+The above text is static: "TRADER FACTS"
 
 
 

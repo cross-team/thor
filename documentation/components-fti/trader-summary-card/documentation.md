@@ -48,11 +48,9 @@
 
 Dynamic or Static:
 
+![Trader Summary Card](assets/Trader Summary Card.png)
 
-
-The above text is static: 
-
-
+The above text is static: "TCA", "R-BPS", "U-RPS"
 
 
 

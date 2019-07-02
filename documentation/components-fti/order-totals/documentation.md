@@ -48,9 +48,9 @@
 
 Dynamic or Static:
 
+![344x260](assets/344x260.png)
 
-
-The above text is static: 
+The above text is static: "Selected Order Totals", "Names", "Managers", "Accounts", "Total Complete", "Orders", "Shares", "Title", "Shares", "Dollars"
 
 
 

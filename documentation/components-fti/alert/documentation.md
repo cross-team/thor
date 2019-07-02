@@ -48,9 +48,9 @@
 
 Dynamic or Static:
 
+![fti-Alert](assets/fti-Alert.png)
 
-
-The above text is static: 
+All of the above text is static. 
 
 
 

@@ -48,11 +48,9 @@
 
 Dynamic or Static:
 
+![fti-tca-option-2](assets/fti-tca-option-2.png)
 
-
-The above text is static: 
-
-
+The above text is static: "TCA", "R-BPS", "U-BPS"
 
 
 

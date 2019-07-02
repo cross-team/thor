@@ -48,9 +48,9 @@
 
 Dynamic or Static:
 
+![Progress](assets/Progress.png)
 
-
-The above text is static: 
+The above text is static: "Progress manager", "CANCEL"
 
 
 

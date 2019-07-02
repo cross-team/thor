@@ -44,6 +44,10 @@ MUI Component (Avatar) > FTI Component (Badge)
 | Dynamic or Static      | Static      |
 |                        |             |
 
+Dynamic or Static: n/a
+
+![fti-badge](assets/fti-badge.png)
+
 Behavior Reference: [MUI: Letter Avatar](https://material-ui.com/components/avatars/#letter-avatars)
 
 

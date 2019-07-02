@@ -48,11 +48,19 @@
 
 Dynamic or Static:
 
+![1024x40-Row-Header-Portfolios-2](assets/1024x40-Row-Header-Portfolios-2.png)
 
+![1024x40-Row-Data](assets/1024x40-Row-Data.png)
 
-The above text is static: 
+![1024x40-Row-Header-Portfolios-1](assets/1024x40-Row-Header-Portfolios-1.png)
 
+![1024x40-Row-Header-Portfolios-3](assets/1024x40-Row-Header-Portfolios-3.png)
 
+![1024x40-Row-Header-Portfolios-4](assets/1024x40-Row-Header-Portfolios-4.png)
+
+![1024x40-Row-Header-Portfolios](assets/1024x40-Row-Header-Portfolios.png)
+
+The above text is static: In the header, "Company Name", "Broker Name", "Manager Name"
 
 
 

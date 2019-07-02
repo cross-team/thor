@@ -48,9 +48,9 @@
 
 Dynamic or Static:
 
+![Menu](assets/Menu.png)
 
-
-The above text is static: 
+The above text is static: n/a
 
 
 
