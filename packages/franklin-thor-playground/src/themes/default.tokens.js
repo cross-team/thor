@@ -1,6 +1,6 @@
-import green from '@material-ui/core/colors/green'
-import orange from '@material-ui/core/colors/orange'
-import red from '@material-ui/core/colors/red'
+// import green from '@material-ui/core/colors/green'
+// import orange from '@material-ui/core/colors/orange'
+// import red from '@material-ui/core/colors/red'
 
 const tokens = {
   breakpoints: {
@@ -171,9 +171,9 @@ const tokens = {
     borderRadius: 4,
   },
   props: {},
-  spacing: {
-    unit: 8,
-  },
+  // spacing: {
+  //   unit: 8,
+  // },
   palette: {
     contrastThreshold: 3,
     tonalOffset: 0.2,
@@ -230,6 +230,11 @@ const tokens = {
       A100: 'hsla(0,0,90,1)',
       A400: 'hsla(0,0,90,1)',
       A200: 'hsla(0,0,90,1)',
+
+      main: 'hsla(220,100,50,1)',
+      light: 'hsla(220,100,95,1)',
+      dark: 'hsla(220,100,5,1)',
+      contrastText: '#fff',
     },
     surface: {
       appUi: '#191918',
@@ -242,10 +247,10 @@ const tokens = {
       menu: '#0D0D0C',
       snackbar: '#000000',
     },
-    type: {
-      active: '#E5E2DA',
-      inactive: '#666461',
-    },
+    // type: {
+    //   active: '#E5E2DA',
+    //   inactive: '#666461',
+    // },
     semantic: {
       positive: '#068062',
       negative: '#BA1C1C',
@@ -291,7 +296,7 @@ const tokens = {
       dark: '#d32f2f',
       contrastText: '#fff',
     },
-    // type:   'light',
+    type: 'dark',
     action: {
       hoverOpacity: 0.08,
       hover: 'rgba(0, 0, 0, 0.08)',
