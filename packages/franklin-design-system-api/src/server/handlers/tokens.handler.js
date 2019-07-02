@@ -54,7 +54,6 @@ class TokensHandler {
         throw new Error('Nothing passed in payload to update.')
       }
       values = validation.put.mapTo(payload)
-      validation.put.validate(values)
       return h.response(await tokensLib.update(qry, values))
     } catch (err) {
       return h
@@ -78,7 +77,6 @@ class TokensHandler {
         throw new Error('Nothing passed in payload to insert.')
       }
       values = validation.post.build(payload)
-      validation.post.validate(values)
       return h.response(await tokensLib.insert(values))
     } catch (err) {
       return h

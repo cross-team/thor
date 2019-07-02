@@ -2,10 +2,13 @@ const Db = require('../utils/db')
 const model = require('../utils/db/models/groups.model')
 
 class Groups {
-  async get(values) {
+  // eslint-disable-next-line no-unused-vars
+  async get(values, opr = '$and') {
     try {
-      await Db.connect()
-      const filters = values.length === 0 ? {} : { $and: values }
+      const filters = {}
+      if (values.length > 0) {
+        filters[opr] = values
+      }
       const rows = await Db.get(model.name, filters)
       return rows
     } catch (err) {
@@ -15,7 +18,6 @@ class Groups {
 
   async update(qry, values) {
     try {
-      await Db.connect()
       const rows = await Db.update(model.name, qry, values)
       return rows
     } catch (err) {
@@ -25,7 +27,6 @@ class Groups {
 
   async insert(values) {
     try {
-      await Db.connect()
       const rows = await Db.insert(model.name, values)
       return rows
     } catch (err) {
@@ -35,7 +36,6 @@ class Groups {
 
   async remove(qry) {
     try {
-      await Db.connect()
       const rows = await Db.remove(model.name, qry, model.hardDelete ? null : model.hardDelete)
       return rows
     } catch (err) {

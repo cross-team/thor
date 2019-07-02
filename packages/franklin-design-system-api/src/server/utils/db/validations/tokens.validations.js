@@ -1,5 +1,5 @@
 const joi = require('joi')
-const { fields, mapToDefaults, mapToValidations, mapToDoc } = require('../models/tokens.model')
+const { fields, mapToDefaults, mapToDoc, relationshipValDef } = require('../models/tokens.model')
 
 module.exports = {
   fields: { ...fields },
@@ -9,17 +9,17 @@ module.exports = {
       groups_theme_id: fields.groups.theme.id,
       groups_topic_id: fields.groups.topic.id,
     },
-    params: {
-      id: joi.string().required(),
-    },
+    //   params: {
+    //     id: joi.string().required(),
+    //   },
+    validate: relationshipValDef,
   },
   put: {
     payload: {
       groups_app_id: fields.groups.app.id,
       groups_theme_id: fields.groups.theme.id,
       groups_topic_id: fields.groups.topic.id,
-      key: fields.key,
-      value: fields.value,
+      value: fields.value.required(),
       caption: fields.caption.allow(''),
       release_id: fields.release_id,
     },
@@ -27,19 +27,17 @@ module.exports = {
       id: joi.string().required(),
     },
     mapTo: mapToDoc,
-    validate: mapToValidations,
   },
   post: {
     payload: {
-      groups_app_id: fields.groups.app.id.require(),
-      groups_theme_id: fields.groups.theme.id.require(),
-      groups_topic_id: fields.groups.topic.id.require(),
-      key: fields.key.require(),
-      value: fields.value.require(),
+      groups_app_id: fields.groups.app.id.required(),
+      groups_theme_id: fields.groups.theme.id.required(),
+      groups_topic_id: fields.groups.topic.id.required(),
+      key: fields.key.required(),
+      value: fields.value.required(),
       caption: fields.caption.allow(''),
-      release_id: fields.release_id.require(),
+      release_id: fields.release_id.required(),
     },
     build: mapToDefaults,
-    validate: mapToValidations,
   },
 }

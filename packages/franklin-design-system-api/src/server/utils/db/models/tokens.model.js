@@ -1,5 +1,7 @@
+/* eslint-disable no-restricted-syntax */
 const _ = require('lodash')
 const joi = require('joi')
+const sak = require('../../lib/sak')
 const constants = require('./constants.model')
 
 const hardDelete = true
@@ -43,21 +45,35 @@ const fields = {
   calculated_value: joi.string(),
 }
 
-const defaults = {
-  groups: {
-    APP: {
-      id: null,
-      name: '',
-    },
-    THEME: {
-      id: null,
-      name: '',
-    },
-    TOPIC: {
-      id: null,
-      name: '',
-    },
+const metaDS = {
+  created_on: null,
+  updated_on: null,
+  delete_on: null,
+}
+
+const groupsDS = {
+  app: {
+    id: null,
+    name: '',
   },
+  theme: {
+    id: null,
+    name: '',
+  },
+  topic: {
+    id: null,
+    name: '',
+  },
+}
+
+const relDS = {
+  major: 0,
+  minor: 0,
+  build: 1,
+}
+
+const defaults = {
+  groups: groupsDS,
   key: '',
   value: '',
   caption: '',
@@ -66,16 +82,8 @@ const defaults = {
     publish_on: null,
   },
   release_id: null,
-  rel: {
-    major: 0,
-    minor: 0,
-    build: 1,
-  },
-  meta: {
-    created_on: null,
-    updated_on: null,
-    delete_on: null,
-  },
+  rel: relDS,
+  meta: metaDS,
   based_on_key: '',
   calculated_value: '',
 }
@@ -128,76 +136,155 @@ const relationshipDef = [
   },
 ]
 
-const relationshipValDef = [
-  {
-    $facet: {
-      c1: [
-        {
-          $lookup: {
-            from: 'groups',
-          },
-        },
-      ],
-      c2: [{ $lookup: {} }],
-      c3: [{ $lookup: {} }],
-    },
-  },
-]
-
 // FUNCTIONS
 const mapToDefaults = input => {
   const values = defaults
-  values.name = !_.isUndefined(input.name) ? input.name : values.name
-  values.description = !_.isUndefined(input.description) ? input.description : values.description
-  values.publishing.status = !_.isUndefined(input.status) ? input.status : values.publishing.status
-  values.publishing.publish_on = !_.isUndefined(input.publish_on)
-    ? input.publish_on
-    : values.publishing.publish_on
-  values.rel.major = !_.isUndefined(input.major) ? input.major : values.rel.major
-  values.rel.minor = !_.isUndefined(input.minor) ? input.minor : values.rel.minor
-  values.rel.build = !_.isUndefined(input.build) ? input.build : values.rel.build
+  values.groups.app.id = !_.isUndefined(input.groups_app_id)
+    ? input.groups_app_id
+    : values.groups.app.id
+  values.groups.theme.id = !_.isUndefined(input.groups_theme_id)
+    ? input.groups_theme_id
+    : values.groups.theme.id
+  values.groups.topic.id = !_.isUndefined(input.groups_topic_id)
+    ? input.groups_topic_id
+    : values.groups.topic.id
+  values.key = !_.isUndefined(input.key) ? input.key : values.key
+  values.value = !_.isUndefined(input.value) ? input.value : values.value
+  values.caption = !_.isUndefined(input.caption) ? input.caption : values.caption
+  values.release_id = !_.isUndefined(input.release_id) ? input.release_id : values.release_id
+  values.meta = metaDS
   return values
 }
 
 const mapToDoc = input => {
   const values = {}
-  const publishing = {}
-  const rel = {}
-  if (!_.isUndefined(input.name)) {
-    values.name = input.name
+  const groups = groupsDS
+  const added = []
+  if (!_.isUndefined(input.value)) {
+    values.value = input.value
   }
-  if (!_.isUndefined(input.description)) {
-    values.description = input.description
+  if (!_.isUndefined(input.caption)) {
+    values.caption = input.caption
   }
-  if (!_.isUndefined(input.status)) {
-    publishing.status = input.status
+  if (!_.isUndefined(input.release_id)) {
+    values.release_id = input.release_id
+    values.rel = relDS
+    values.publishing = {}
   }
-  if (!_.isUndefined(input.publish_on)) {
-    publishing.publish_on = input.publish_on
+  if (!_.isUndefined(input.groups_app_id)) {
+    groups.app.id = input.groups_app_id
+    added.push(1)
+  } else {
+    delete groups.app
   }
-  if (!_.isUndefined(input.major)) {
-    rel.major = input.major
+  if (!_.isUndefined(input.groups_theme_id)) {
+    groups.theme.id = input.groups_theme_id
+    added.push(1)
+  } else {
+    delete groups.theme
   }
-  if (!_.isUndefined(input.minor)) {
-    rel.minor = input.minor
+  if (!_.isUndefined(input.groups_topic_id)) {
+    groups.topic.id = input.groups_topic_id
+    added.push(1)
+  } else {
+    delete groups.topic
   }
-  if (!_.isUndefined(input.build)) {
-    rel.build = input.build
-  }
-  if (Object.keys(publishing).length > 0 && publishing.constructor !== Object) {
-    values.publishing = publishing
-  }
-  if (Object.keys(rel).length > 0 && rel.constructor === Object) {
-    values.rel = rel
+  if (added.length > 0) {
+    values.groups = groups
   }
   return values
 }
 
-const mapToValidations = input => {
-  // validate publishing status
-  if (!_.isUndefined(input.publishing)) {
-    if (!constants.isIn(input.publishing.status, 'status')) throw new Error('Status is not valid')
+const validateReleases = (token, release) => {
+  const value = token
+  // release
+  if (!_.isUndefined(value.release_id)) {
+    if (release.length === 1) {
+      if (value.release_id.toString() === release[0]._id.toString()) {
+        value.rel.major = release[0].rel.major
+        value.rel.minor = release[0].rel.minor
+        value.rel.build = release[0].rel.build
+        // todo: update publishing
+        value.publishing.publish_on = release[0].publishing.publish_on
+        value.publishing.status = release[0].publishing.status
+        return value
+      }
+    }
   }
+  throw new Error('release ObjectId is not found.')
+}
+
+const validateGroups = (token, groups) => {
+  const value = token
+  const errors = []
+
+  // app
+  if (!_.isUndefined(value.groups.app) && !_.isNull(value.groups.app.id)) {
+    const appGroup = lookupDocId(value.groups.app.id, 'app', groups)
+    if (!appGroup) {
+      errors.push('app ObjectId is not found.')
+    } else {
+      value.groups.app.name = appGroup
+    }
+  }
+
+  // theme
+  if (!_.isUndefined(value.groups.theme) && !_.isNull(value.groups.theme.id)) {
+    const themeGroup = lookupDocId(value.groups.theme.id, 'theme', groups)
+    if (!themeGroup) {
+      errors.push('theme ObjectId is not found.')
+    } else {
+      value.groups.theme.name = themeGroup
+    }
+  }
+
+  // topic
+  if (!_.isUndefined(value.groups.topic) && !_.isNull(value.groups.topic.id)) {
+    const topicGroup = lookupDocId(value.groups.topic.id, 'topic', groups)
+    if (!topicGroup) {
+      errors.push('topic ObjectId is not found.')
+    } else {
+      value.groups.topic.name = topicGroup
+    }
+  }
+
+  // results
+  if (errors.length !== 0) {
+    throw new Error(errors.join(', '))
+  } else {
+    return value
+  }
+}
+
+const lookupDocId = (id, type, groups) => {
+  for (const group in groups) {
+    if (groups[group].type.toUpperCase() === type.toUpperCase()) {
+      if (id.toString() === groups[group]._id.toString()) {
+        return groups[group].name
+      }
+      break
+    }
+  }
+  return false
+}
+
+const addMeta = (type, value = {}) => {
+  const meta = value
+  const now = sak.getCurrentTimeStamp()
+  // eslint-disable-next-line default-case
+  switch (type) {
+    case 'update':
+      meta.updated_on = now
+      break
+    case 'create':
+      meta.updated_on = now
+      meta.created_on = now
+      break
+    case 'remove':
+      meta.delete_on = now
+      break
+  }
+  return meta
 }
 
 module.exports = {
@@ -205,9 +292,11 @@ module.exports = {
   defaults,
   constants,
   mapToDefaults,
-  mapToValidations,
   mapToDoc,
   hardDelete,
   name,
   relationshipDef,
+  validateGroups,
+  validateReleases,
+  addMeta,
 }
