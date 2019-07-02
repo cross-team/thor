@@ -3,17 +3,6 @@ const tokensLib = require('../lib/tokens.lib')
 const validation = require('../utils/db/validations/tokens.validations')
 
 class TokensHandler {
-  async graph(request, h) {
-    try {
-      return h.response(await tokensLib.aggregate('primary'))
-    } catch (err) {
-      return h
-        .response(err.message)
-        .code(500)
-        .takeover()
-    }
-  }
-
   /**
    * gets all docs for the specific query
    * @param {object} request
@@ -113,14 +102,14 @@ class TokensHandler {
 function transformQuery(query) {
   const filters = []
 
-  // type
-  if (query.type !== undefined) {
-    filters.push({ type: query.type })
+  // key
+  if (!_.isUndefined(query.key)) {
+    filters.push({ key: query.key })
   }
 
-  // name
-  if (query.name !== undefined) {
-    filters.push({ name: query.name })
+  // groups_app_id
+  if (!_.isUndefined(query.groups_app_id)) {
+    filters.push({ 'groups.app.id': query.groups_app_id })
   }
 
   // closeout

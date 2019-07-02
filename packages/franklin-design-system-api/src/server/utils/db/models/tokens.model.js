@@ -45,6 +45,7 @@ const fields = {
   calculated_value: joi.string(),
 }
 
+// data structures
 const metaDS = {
   created_on: null,
   updated_on: null,
@@ -72,15 +73,17 @@ const relDS = {
   build: 1,
 }
 
+const publishingDS = {
+  status: 'DRAFT',
+  publish_on: null,
+}
+
 const defaults = {
   groups: groupsDS,
   key: '',
   value: '',
   caption: '',
-  publishing: {
-    status: 'DRAFT',
-    publish_on: null,
-  },
+  publishing: publishingDS,
   release_id: null,
   rel: relDS,
   meta: metaDS,
@@ -153,6 +156,7 @@ const mapToDefaults = input => {
   values.caption = !_.isUndefined(input.caption) ? input.caption : values.caption
   values.release_id = !_.isUndefined(input.release_id) ? input.release_id : values.release_id
   values.meta = metaDS
+  values.publishing = publishingDS
   return values
 }
 
@@ -204,7 +208,10 @@ const validateReleases = (token, release) => {
         value.rel.major = release[0].rel.major
         value.rel.minor = release[0].rel.minor
         value.rel.build = release[0].rel.build
-        // todo: update publishing
+        // add publishing DS to token values
+        if (!_.isUndefined(value.publishing)) {
+          value.publishing = publishingDS
+        }
         value.publishing.publish_on = release[0].publishing.publish_on
         value.publishing.status = release[0].publishing.status
         return value

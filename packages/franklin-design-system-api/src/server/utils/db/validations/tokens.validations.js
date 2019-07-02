@@ -8,10 +8,8 @@ module.exports = {
       groups_app_id: fields.groups.app.id,
       groups_theme_id: fields.groups.theme.id,
       groups_topic_id: fields.groups.topic.id,
+      key: fields.key,
     },
-    //   params: {
-    //     id: joi.string().required(),
-    //   },
     validate: relationshipValDef,
   },
   put: {

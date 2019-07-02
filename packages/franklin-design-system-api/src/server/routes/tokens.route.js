@@ -4,19 +4,6 @@ const validations = require('../utils/db/validations/tokens.validations')
 const tokensRoutes = [
   {
     method: 'GET',
-    path: '/tokens/graph/',
-    options: {
-      handler: handler.graph,
-      description: 'Gets all tokens',
-      tags: ['api'],
-      plugins: {},
-      validate: {
-        query: validations.get.query,
-      },
-    },
-  },
-  {
-    method: 'GET',
     path: '/tokens/',
     options: {
       handler: handler.get,
