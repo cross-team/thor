@@ -17,16 +17,16 @@ class KanbanCard extends React.Component {
         style={cardStyle}
         draggable={true}
         onDragEnd={e => {
-          this.props.onDragEnd(e, this.props.project)
+          this.props.onDragEnd(e, this.props.order)
         }}
       >
         <Card>
           <CardContent>
             <Typography variant="h5" component="h2">
-              {this.props.project.name}
+              {this.props.order.name}
             </Typography>
             <Typography variant="body2" component="p">
-              {this.props.project.description}
+              {this.props.order.description}
             </Typography>
           </CardContent>
         </Card>

@@ -15,8 +15,8 @@ class KanBanColumn extends React.Component {
   }
 
   generateKanbanCards() {
-    return this.props.projects.slice(0).map(project => {
-      return <KanBanCard project={project} key={project.name} onDragEnd={this.props.onDragEnd} />
+    return this.props.orders.slice(0).map(order => {
+      return <KanBanCard order={order} key={order.name} onDragEnd={this.props.onDragEnd} />
     })
   }
 
@@ -37,7 +37,7 @@ class KanBanColumn extends React.Component {
       >
         <Paper>
           <Typography variant="h5" component="h3">
-            {this.props.stage}. {this.props.name} ({this.props.projects.length})
+            {this.props.stage}. {this.props.name} ({this.props.orders.length})
           </Typography>
           {this.generateKanbanCards()}
         </Paper>

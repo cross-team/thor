@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import KanBanColumn from '../KanBanColumn/KanBanColumn'
-import projectList from '../../assets/projectList'
+import orderList from '../../assets/orderList'
 
 class KanbanBoard extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       isLoading: true,
-      projects: [],
+      orders: [],
       draggedOverCol: 0,
     }
     this.handleOnDragEnter = this.handleOnDragEnter.bind(this)
@@ -21,7 +21,7 @@ class KanbanBoard extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({ projects: projectList, isLoading: false })
+    this.setState({ orders: orderList, isLoading: false })
   }
 
   //this is called when a Kanban card is dragged over a column (called by column)
@@ -30,12 +30,12 @@ class KanbanBoard extends React.Component {
   }
 
   //this is called when a Kanban card dropped over a column (called by card)
-  handleOnDragEnd(e, project) {
-    const updatedProjects = this.state.projects.slice(0)
-    updatedProjects.find(projectObject => {
-      return projectObject.name === project.name
-    }).project_stage = this.state.draggedOverCol
-    this.setState({ projects: updatedProjects })
+  handleOnDragEnd(e, order) {
+    const updatedOrders = this.state.orders.slice(0)
+    updatedOrders.find(orderObject => {
+      return orderObject.name === order.name
+    }).order_stage = this.state.draggedOverCol
+    this.setState({ orders: updatedOrders })
   }
 
   render() {
@@ -55,8 +55,8 @@ class KanbanBoard extends React.Component {
             <KanBanColumn
               name={column.name}
               stage={column.stage}
-              projects={this.state.projects.filter(project => {
-                return parseInt(project.project_stage, 10) === column.stage
+              orders={this.state.orders.filter(order => {
+                return parseInt(order.order_stage, 10) === column.stage
               })}
               onDragEnter={this.handleOnDragEnter}
               onDragEnd={this.handleOnDragEnd}
