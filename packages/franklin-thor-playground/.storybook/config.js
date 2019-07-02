@@ -46,6 +46,7 @@ function loadStories() {
   require('stories/MuiTransitions')
   require('stories/FTIBadge')
   require('stories/FTICancelAlert')
+  require('stories/FTICard')
 }
 addDecorator(withKnobs)
 
