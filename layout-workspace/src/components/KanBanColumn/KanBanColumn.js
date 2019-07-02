@@ -16,7 +16,7 @@ class KanBanColumn extends React.Component {
 
   generateKanbanCards() {
     return this.props.orders.slice(0).map(order => {
-      return <KanBanCard order={order} key={order.name} onDragEnd={this.props.onDragEnd} />
+      return <KanBanCard order={order} key={order.orderNum} onDragEnd={this.props.onDragEnd} />
     })
   }
 
