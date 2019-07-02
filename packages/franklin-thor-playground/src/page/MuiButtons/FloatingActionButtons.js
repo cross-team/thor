@@ -1,5 +1,7 @@
 import React from 'react'
-import { makeStyles, Fab, Icon } from '@franklin-thor/core'
+import { Fab, makeStyles } from '@franklin-thor/core'
+import { Add, Delete, Edit, Navigation } from '@franklin-thor/icons'
+// import AddIcon from '@material-ui/icons/Add'
 
 const useStyles = makeStyles(theme => ({
   fab: {
@@ -16,17 +18,17 @@ export default function FloatingActionButtons() {
   return (
     <div>
       <Fab color="primary" aria-label="Add" className={classes.fab}>
-        <Icon>edit_icon</Icon>
+        <Add />
       </Fab>
       <Fab color="secondary" aria-label="Edit" className={classes.fab}>
-        <Icon>edit_icon</Icon>
+        <Edit />
       </Fab>
       <Fab variant="extended" aria-label="Delete" className={classes.fab}>
-        <Icon>edit_icon</Icon>
+        <Navigation className={classes.extendedIcon} />
         Extended
       </Fab>
       <Fab disabled aria-label="Delete" className={classes.fab}>
-        <Icon>edit_icon</Icon>
+        <Delete />
       </Fab>
     </div>
   )

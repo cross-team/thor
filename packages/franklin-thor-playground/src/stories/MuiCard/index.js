@@ -1,8 +1,12 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 // import { boolean, text, select } from '@storybook/addon-knobs';
+import { ThemeProvider } from '@material-ui/styles'
+import theme from '../../themes/default'
 import SimpleCard from '../../page/MuiCard/SimpleCard'
 import MediaCard from '../../page/MuiCard/MediaCard'
 
-storiesOf('MuiCard', module).add('Simple Card', () => <SimpleCard />)
-storiesOf('MuiCard', module).add('Media Card', () => <MediaCard />)
+storiesOf('MuiCard', module)
+  .addDecorator(getStory => <ThemeProvider theme={theme}>{getStory()}</ThemeProvider>)
+  .add('Simple Card', () => <SimpleCard />)
+  .add('Media Card', () => <MediaCard />)

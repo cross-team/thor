@@ -25,8 +25,37 @@ class Db {
    * close an existing connection
    */
   async close() {
-    await this.connector.close(this.connection)
-    this._cleanup()
+    try {
+      if (!_.isUndefined(this.connector) && !_.isNull(this.connector)) {
+        await this.connector.close(this.connection)
+      }
+      this._cleanup()
+    } catch (err) {
+      throw new Error(err)
+    }
+  }
+
+  /**
+   * returns the relationships between tokens
+   * @param {string} model
+   * @param {JSON} def
+   */
+  async aggregate(model, def) {
+    await this.connect()
+    return new Promise((resolve, reject) => {
+      this.db
+        .collection(model)
+        .aggregate(def)
+        .toArray()
+        .then(res => {
+          this.close()
+          resolve(res.length === 0 ? [] : res)
+        })
+        .catch(err => {
+          this.close()
+          reject(err)
+        })
+    })
   }
 
   /**
@@ -38,6 +67,7 @@ class Db {
   async get(model, qry, flds) {
     const fields = _.isUndefined(flds) ? {} : flds
     const query = _.isUndefined(qry) ? {} : this._buildquery(qry)
+    await this.connect()
     return new Promise((resolve, reject) => {
       this.db
         .collection(model)
@@ -63,15 +93,16 @@ class Db {
   async update(model, qry, flds) {
     const options = { upsert: false }
     const fields = { $set: flatten.toDot(flds) }
+    await this.connect()
     const query = _.isUndefined(qry._id) ? {} : this._buildquery(qry)
     return new Promise((resolve, reject) => {
       this.db
         .collection(model)
-        .update(query, fields, options)
+        .updateMany(query, fields, options)
         .then(res => {
           this.close()
           resolve({
-            matchedCount: res.matchedCount,
+            matchedCount: res.matchedCount || res.result.nModified,
           })
         })
         .catch(err => {
@@ -87,6 +118,7 @@ class Db {
    * @param {object} flds
    */
   async insert(model, flds) {
+    await this.connect()
     return new Promise((resolve, reject) => {
       this.db
         .collection(model)
@@ -115,6 +147,7 @@ class Db {
       return this.update(model, qry, hard)
     }
     const query = _.isUndefined(qry) ? {} : this._buildquery(qry)
+    await this.connect()
     return new Promise((resolve, reject) => {
       this.db
         .collection(model)
@@ -152,6 +185,10 @@ class Db {
     if (!_.isUndefined(values.$and)) {
       transformed.$and = this._tfmMongoId(values.$and)
     }
+    // $or
+    if (!_.isUndefined(values.$or)) {
+      transformed.$or = this._tfmMongoId(values.$or)
+    }
     // _id
     if (!_.isUndefined(values._id)) {
       const id = this._tfmMongoId([values])[0]
@@ -163,7 +200,7 @@ class Db {
 
   // TRANSFORMATIONS
   /**
-   * loops through an array and addes mongoDB objectID
+   * loops through an array and adds mongoDB objectID
    * @param {Array} values
    */
   _tfmMongoId(values) {
