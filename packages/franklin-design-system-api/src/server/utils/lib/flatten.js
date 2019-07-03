@@ -13,6 +13,16 @@ const toDot = (obj, name = '') => {
   })
   return dot
 }
+const toDotArray = ary => {
+  const values = ary
+  Object.keys(ary).forEach(key => {
+    if (_.isUndefined(values[key]._id)) {
+      values[key] = toDot(values[key])
+    }
+  })
+  return values
+}
 module.exports = {
   toDot,
+  toDotArray,
 }

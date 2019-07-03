@@ -109,7 +109,17 @@ function transformQuery(query) {
 
   // groups_app_id
   if (!_.isUndefined(query.groups_app_id)) {
-    filters.push({ 'groups.app.id': query.groups_app_id })
+    filters.push({ groups: { app: { id: query.groups_app_id } } })
+  }
+
+  // groups_theme_id
+  if (!_.isUndefined(query.groups_theme_id)) {
+    filters.push({ groups: { theme: { id: query.groups_theme_id } } })
+  }
+
+  // groups_topic_id
+  if (!_.isUndefined(query.groups_topic_id)) {
+    filters.push({ groups: { topic: { id: query.groups_topic_id } } })
   }
 
   // closeout

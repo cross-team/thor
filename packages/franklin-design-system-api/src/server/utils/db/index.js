@@ -184,10 +184,12 @@ class Db {
     // $and
     if (!_.isUndefined(values.$and)) {
       transformed.$and = this._tfmMongoId(values.$and)
+      transformed.$and = flatten.toDotArray(transformed.$and)
     }
     // $or
     if (!_.isUndefined(values.$or)) {
       transformed.$or = this._tfmMongoId(values.$or)
+      transformed.$or = flatten.toDotArray(transformed.$or)
     }
     // _id
     if (!_.isUndefined(values._id)) {

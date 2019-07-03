@@ -1,5 +1,7 @@
 
 Todo:
   ✔ update publishing piece for token insert/update @done(19-07-02 12:21)
-  ☐ add get and remove for components
+  ✔ add get endpoint @done(19-07-03 00:07)
+  ☐ add remove endpoint
+  ☐ add meta data routine to release and groups endpoints
   ☐ create token json for thor 

@@ -36,6 +36,7 @@ class Groups {
 
   async remove(qry) {
     try {
+      // todo: code routine to handle harddelete. This should be the same routine for all endpoints
       const rows = await Db.remove(model.name, qry, model.hardDelete ? null : model.hardDelete)
       return rows
     } catch (err) {

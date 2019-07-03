@@ -4,7 +4,7 @@ const joi = require('joi')
 const sak = require('../../lib/sak')
 const constants = require('./constants.model')
 
-const hardDelete = true
+const hardDelete = false
 const name = 'tokens'
 
 // DEFINITIONS
