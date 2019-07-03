@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+
 const _ = require('lodash')
 const tokensLib = require('../lib/tokens.lib')
 const validation = require('../utils/db/validations/tokens.validations')
@@ -8,9 +10,10 @@ class TokensHandler {
    * @param {object} request
    * @param {object} h
    */
-  async get(request, h) {
+  static async get(request, h) {
     try {
-      const filters = transformQuery(request.query)
+      // console.log(this.innerName)
+      const filters = this._transformQuery(request.query)
       if (!_.isUndefined(request.params.id)) {
         filters.push({ _id: request.params.id })
       }
@@ -28,7 +31,7 @@ class TokensHandler {
    * @param {object} request
    * @param {object} h
    */
-  async update(request, h) {
+  static async update(request, h) {
     try {
       const qry = {}
       const payload = request.payload
@@ -57,7 +60,7 @@ class TokensHandler {
    * @param {object} request
    * @param {object} h
    */
-  async insert(request, h) {
+  static async insert(request, h) {
     try {
       const payload = request.payload
       let values = {}
@@ -80,7 +83,7 @@ class TokensHandler {
    * @param {object} request
    * @param {object} h
    */
-  async remove(request, h) {
+  static async remove(request, h) {
     try {
       const qry = {}
       if (!_.isUndefined(request.params.id)) {
@@ -96,34 +99,34 @@ class TokensHandler {
         .takeover()
     }
   }
-}
 
-// FUNCTIONS
-function transformQuery(query) {
-  const filters = []
+  // PRIVATE
+  static _transformQuery(query) {
+    const filters = []
 
-  // key
-  if (!_.isUndefined(query.key)) {
-    filters.push({ key: query.key })
+    // key
+    if (!_.isUndefined(query.key)) {
+      filters.push({ key: query.key })
+    }
+
+    // groups_app_id
+    if (!_.isUndefined(query.groups_app_id)) {
+      filters.push({ groups: { app: { id: query.groups_app_id } } })
+    }
+
+    // groups_theme_id
+    if (!_.isUndefined(query.groups_theme_id)) {
+      filters.push({ groups: { theme: { id: query.groups_theme_id } } })
+    }
+
+    // groups_topic_id
+    if (!_.isUndefined(query.groups_topic_id)) {
+      filters.push({ groups: { topic: { id: query.groups_topic_id } } })
+    }
+
+    // closeout
+    return filters
   }
-
-  // groups_app_id
-  if (!_.isUndefined(query.groups_app_id)) {
-    filters.push({ groups: { app: { id: query.groups_app_id } } })
-  }
-
-  // groups_theme_id
-  if (!_.isUndefined(query.groups_theme_id)) {
-    filters.push({ groups: { theme: { id: query.groups_theme_id } } })
-  }
-
-  // groups_topic_id
-  if (!_.isUndefined(query.groups_topic_id)) {
-    filters.push({ groups: { topic: { id: query.groups_topic_id } } })
-  }
-
-  // closeout
-  return filters
 }
 
 module.exports = new TokensHandler()

@@ -2,7 +2,7 @@ const Db = require('../utils/db')
 const model = require('../utils/db/models/releases.model')
 
 class Releases {
-  async get(values) {
+  static async get(values) {
     try {
       const filters = values.length === 0 ? {} : { $and: values }
       const rows = await Db.get(model.name, filters)
@@ -12,7 +12,7 @@ class Releases {
     }
   }
 
-  async update(qry, values) {
+  static async update(qry, values) {
     try {
       const rows = await Db.update(model.name, qry, values)
       return rows
@@ -21,7 +21,7 @@ class Releases {
     }
   }
 
-  async insert(values) {
+  static async insert(values) {
     try {
       const rows = await Db.insert(model.name, values)
       return rows
@@ -30,7 +30,7 @@ class Releases {
     }
   }
 
-  async remove(qry) {
+  static async remove(qry) {
     try {
       const rows = await Db.remove(model.name, qry, model.hardDelete ? null : model.hardDelete)
       return rows

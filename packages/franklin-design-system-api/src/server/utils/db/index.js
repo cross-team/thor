@@ -1,3 +1,4 @@
+/* eslint-disable import/order */
 /* eslint-disable no-underscore-dangle */
 const _ = require('lodash')
 require('dotenv').config()
@@ -205,7 +206,7 @@ class Db {
    * loops through an array and adds mongoDB objectID
    * @param {Array} values
    */
-  _tfmMongoId(values) {
+  static _tfmMongoId(values) {
     const cleaned = []
     // eslint-disable-next-line no-restricted-syntax
     for (const value of values) {

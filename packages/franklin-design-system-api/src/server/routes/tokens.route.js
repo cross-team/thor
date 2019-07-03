@@ -1,6 +1,6 @@
-// const joi = require('joi')
 const handler = require('../handlers/tokens.handler')
 const validations = require('../utils/db/validations/tokens.validations')
+
 const tokensRoutes = [
   {
     method: 'GET',

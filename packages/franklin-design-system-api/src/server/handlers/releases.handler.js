@@ -1,16 +1,17 @@
+/* eslint-disable no-underscore-dangle */
 const _ = require('lodash')
 const releasesLib = require('../lib/releases.lib')
 const validation = require('../utils/db/validations/releases.validations')
 
-class releasesHandler {
+class ReleasesHandler {
   /**
    * gets all docs for the specific query
    * @param {object} request
    * @param {object} h
    */
-  async get(request, h) {
+  static async get(request, h) {
     try {
-      const filters = transformQuery(request.query)
+      const filters = this._transformQuery(request.query)
       if (!_.isUndefined(request.params.id)) {
         filters.push({ _id: request.params.id })
       }
@@ -28,7 +29,7 @@ class releasesHandler {
    * @param {object} request
    * @param {object} h
    */
-  async update(request, h) {
+  static async update(request, h) {
     try {
       const qry = {}
       const payload = request.payload
@@ -58,7 +59,7 @@ class releasesHandler {
    * @param {object} request
    * @param {object} h
    */
-  async insert(request, h) {
+  static async insert(request, h) {
     try {
       const payload = request.payload
       let values = {}
@@ -82,7 +83,7 @@ class releasesHandler {
    * @param {object} request
    * @param {object} h
    */
-  async remove(request, h) {
+  static async remove(request, h) {
     try {
       const qry = {}
       if (!_.isUndefined(request.params.id)) {
@@ -98,24 +99,23 @@ class releasesHandler {
         .takeover()
     }
   }
+
+  static _transformQuery(query) {
+    const filters = []
+
+    // type
+    if (query.type !== undefined) {
+      filters.push({ type: query.type })
+    }
+
+    // name
+    if (query.name !== undefined) {
+      filters.push({ name: query.name })
+    }
+
+    // closeout
+    return filters
+  }
 }
 
-// FUNCTIONS
-function transformQuery(query) {
-  const filters = []
-
-  // type
-  if (query.type !== undefined) {
-    filters.push({ type: query.type })
-  }
-
-  // name
-  if (query.name !== undefined) {
-    filters.push({ name: query.name })
-  }
-
-  // closeout
-  return filters
-}
-
-module.exports = new releasesHandler()
+module.exports = new ReleasesHandler()

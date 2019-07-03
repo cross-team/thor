@@ -1,8 +1,7 @@
+/* eslint-disable no-console */
 require('dotenv').config()
-
+// eslint-disable-next-line import/order
 const Hapi = require('hapi')
-
-// Plugins
 
 // Routes
 const healthCheckRoute = require('./routes/health-check.route')

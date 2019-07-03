@@ -7,7 +7,7 @@ const releases = require('../lib/releases.lib')
 const sak = require('../utils/lib/sak')
 
 class Tokens {
-  async aggregate(key) {
+  static async aggregate(key) {
     try {
       const def = model.relationshipDef
       def[1].$project._id.$cond.if.$in[0] = key
@@ -21,7 +21,7 @@ class Tokens {
     }
   }
 
-  async get(values) {
+  static async get(values) {
     try {
       const filters = values.length === 0 ? {} : { $and: values }
       const rows = await Db.get(model.name, filters)
@@ -31,7 +31,7 @@ class Tokens {
     }
   }
 
-  async update(qry, values) {
+  static async update(qry, values) {
     try {
       // validate load groups
       let token = values
@@ -53,7 +53,7 @@ class Tokens {
     }
   }
 
-  async insert(values) {
+  static async insert(values) {
     try {
       let token = values
       // validate and load groups
@@ -81,7 +81,7 @@ class Tokens {
     }
   }
 
-  async remove(qry) {
+  static async remove(qry) {
     try {
       const rows = await Db.remove(model.name, qry, model.hardDelete ? null : model.hardDelete)
       return rows
@@ -96,7 +96,7 @@ class Tokens {
    * @return {object}
    */
 
-  async _validBasedOnToken(value) {
+  static async _validBasedOnToken(value) {
     const token = value
     if (token.value.startsWith('$')) {
       const basedOnKey = token.value.slice(1)
@@ -124,7 +124,7 @@ class Tokens {
     return token
   }
 
-  async _doesTokenKeyExist(value) {
+  static async _doesTokenKeyExist(value) {
     const tokenFilters = [{ key: value }]
     const tokenRows = await this.get(tokenFilters)
     if (tokenRows.length === 0) {
@@ -133,7 +133,7 @@ class Tokens {
     return true
   }
 
-  async _validateLoadGroups(values) {
+  static async _validateLoadGroups(values) {
     // validate against groups
     const groupsFilters = []
     if (!_.isUndefined(values.groups.app)) {
@@ -149,7 +149,7 @@ class Tokens {
     return model.validateGroups(values, groupRows)
   }
 
-  async _validateLoadReleases(token) {
+  static async _validateLoadReleases(token) {
     if (!_.isUndefined(token.release_id)) {
       const releaseFilters = [{ _id: token.release_id }]
       const releaseRows = await releases.get(releaseFilters)

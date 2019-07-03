@@ -3,7 +3,7 @@ const model = require('../utils/db/models/groups.model')
 
 class Groups {
   // eslint-disable-next-line no-unused-vars
-  async get(values, opr = '$and') {
+  static async get(values, opr = '$and') {
     try {
       const filters = {}
       if (values.length > 0) {
@@ -16,7 +16,7 @@ class Groups {
     }
   }
 
-  async update(qry, values) {
+  static async update(qry, values) {
     try {
       const rows = await Db.update(model.name, qry, values)
       return rows
@@ -25,7 +25,7 @@ class Groups {
     }
   }
 
-  async insert(values) {
+  static async insert(values) {
     try {
       const rows = await Db.insert(model.name, values)
       return rows
@@ -34,9 +34,8 @@ class Groups {
     }
   }
 
-  async remove(qry) {
+  static async remove(qry) {
     try {
-      // todo: code routine to handle harddelete. This should be the same routine for all endpoints
       const rows = await Db.remove(model.name, qry, model.hardDelete ? null : model.hardDelete)
       return rows
     } catch (err) {

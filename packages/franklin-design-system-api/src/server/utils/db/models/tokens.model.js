@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-restricted-syntax */
 const _ = require('lodash')
 const joi = require('joi')
@@ -199,6 +200,18 @@ const mapToDoc = input => {
   return values
 }
 
+const lookupDocId = (id, type, groups) => {
+  for (const group in groups) {
+    if (groups[group].type.toUpperCase() === type.toUpperCase()) {
+      if (id.toString() === groups[group]._id.toString()) {
+        return groups[group].name
+      }
+      break
+    }
+  }
+  return false
+}
+
 const validateReleases = (token, release) => {
   const value = token
   // release
@@ -261,18 +274,6 @@ const validateGroups = (token, groups) => {
   } else {
     return value
   }
-}
-
-const lookupDocId = (id, type, groups) => {
-  for (const group in groups) {
-    if (groups[group].type.toUpperCase() === type.toUpperCase()) {
-      if (id.toString() === groups[group]._id.toString()) {
-        return groups[group].name
-      }
-      break
-    }
-  }
-  return false
 }
 
 const addMeta = (type, value = {}) => {
