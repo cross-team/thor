@@ -3,6 +3,26 @@ const _ = require('lodash')
 const releasesLib = require('../lib/releases.lib')
 const validation = require('../utils/db/validations/releases.validations')
 
+// PRIVATE LOCAL FUNCTIONS - TRANFORMATIONS
+
+const _transformQuery = query => {
+  const filters = []
+
+  // type
+  if (query.type !== undefined) {
+    filters.push({ type: query.type })
+  }
+
+  // name
+  if (query.name !== undefined) {
+    filters.push({ name: query.name })
+  }
+
+  // closeout
+  return filters
+}
+
+// MAIN CLASS
 class ReleasesHandler {
   /**
    * gets all docs for the specific query
@@ -11,7 +31,7 @@ class ReleasesHandler {
    */
   static async get(request, h) {
     try {
-      const filters = this._transformQuery(request.query)
+      const filters = _transformQuery(request.query)
       if (!_.isUndefined(request.params.id)) {
         filters.push({ _id: request.params.id })
       }
@@ -99,23 +119,6 @@ class ReleasesHandler {
         .takeover()
     }
   }
-
-  static _transformQuery(query) {
-    const filters = []
-
-    // type
-    if (query.type !== undefined) {
-      filters.push({ type: query.type })
-    }
-
-    // name
-    if (query.name !== undefined) {
-      filters.push({ name: query.name })
-    }
-
-    // closeout
-    return filters
-  }
 }
 
-module.exports = new ReleasesHandler()
+module.exports = ReleasesHandler

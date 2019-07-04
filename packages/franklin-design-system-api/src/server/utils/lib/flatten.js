@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const _ = require('lodash')
 /**
  * used to prepare json for updates in mongodb... updates need dot notation for embedded docs

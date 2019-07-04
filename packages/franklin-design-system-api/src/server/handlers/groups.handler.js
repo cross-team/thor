@@ -3,6 +3,26 @@ const _ = require('lodash')
 const GroupsLib = require('../lib/groups.lib')
 const validation = require('../utils/db/validations/groups.validations')
 
+// PRIVATE LOCAL FUNCTIONS - TRANFORMATIONS
+
+const _transformQuery = query => {
+  const filters = []
+
+  // type
+  if (query.type !== undefined) {
+    filters.push({ type: query.type })
+  }
+
+  // name
+  if (query.name !== undefined) {
+    filters.push({ name: query.name })
+  }
+
+  // closeout
+  return filters
+}
+
+// MAIN CLASS
 class GroupsHandler {
   /**
    * gets all docs for the specific query
@@ -11,7 +31,7 @@ class GroupsHandler {
    */
   static async get(request, h) {
     try {
-      const filters = this._transformQuery(request.query)
+      const filters = _transformQuery(request.query)
       if (!_.isUndefined(request.params.id)) {
         filters.push({ _id: request.params.id })
       }
@@ -97,23 +117,6 @@ class GroupsHandler {
         .takeover()
     }
   }
-
-  static _transformQuery(query) {
-    const filters = []
-
-    // type
-    if (query.type !== undefined) {
-      filters.push({ type: query.type })
-    }
-
-    // name
-    if (query.name !== undefined) {
-      filters.push({ name: query.name })
-    }
-
-    // closeout
-    return filters
-  }
 }
 
-module.exports = new GroupsHandler()
+module.exports = GroupsHandler

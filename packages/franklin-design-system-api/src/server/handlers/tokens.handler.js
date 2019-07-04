@@ -4,6 +4,36 @@ const _ = require('lodash')
 const tokensLib = require('../lib/tokens.lib')
 const validation = require('../utils/db/validations/tokens.validations')
 
+// PRIVATE LOCAL FUNCTIONS - TRANFORMATIONS
+
+const _transformQuery = query => {
+  const filters = []
+
+  // key
+  if (!_.isUndefined(query.key)) {
+    filters.push({ key: query.key })
+  }
+
+  // groups_app_id
+  if (!_.isUndefined(query.groups_app_id)) {
+    filters.push({ groups: { app: { id: query.groups_app_id } } })
+  }
+
+  // groups_theme_id
+  if (!_.isUndefined(query.groups_theme_id)) {
+    filters.push({ groups: { theme: { id: query.groups_theme_id } } })
+  }
+
+  // groups_topic_id
+  if (!_.isUndefined(query.groups_topic_id)) {
+    filters.push({ groups: { topic: { id: query.groups_topic_id } } })
+  }
+
+  // closeout
+  return filters
+}
+
+// MAIN CLASS
 class TokensHandler {
   /**
    * gets all docs for the specific query
@@ -13,7 +43,7 @@ class TokensHandler {
   static async get(request, h) {
     try {
       // console.log(this.innerName)
-      const filters = this._transformQuery(request.query)
+      const filters = _transformQuery(request.query)
       if (!_.isUndefined(request.params.id)) {
         filters.push({ _id: request.params.id })
       }
@@ -99,34 +129,6 @@ class TokensHandler {
         .takeover()
     }
   }
-
-  // PRIVATE
-  static _transformQuery(query) {
-    const filters = []
-
-    // key
-    if (!_.isUndefined(query.key)) {
-      filters.push({ key: query.key })
-    }
-
-    // groups_app_id
-    if (!_.isUndefined(query.groups_app_id)) {
-      filters.push({ groups: { app: { id: query.groups_app_id } } })
-    }
-
-    // groups_theme_id
-    if (!_.isUndefined(query.groups_theme_id)) {
-      filters.push({ groups: { theme: { id: query.groups_theme_id } } })
-    }
-
-    // groups_topic_id
-    if (!_.isUndefined(query.groups_topic_id)) {
-      filters.push({ groups: { topic: { id: query.groups_topic_id } } })
-    }
-
-    // closeout
-    return filters
-  }
 }
 
-module.exports = new TokensHandler()
+module.exports = TokensHandler

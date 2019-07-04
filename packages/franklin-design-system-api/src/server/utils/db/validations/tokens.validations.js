@@ -33,7 +33,7 @@ module.exports = {
       groups_topic_id: fields.groups.topic.id.required(),
       key: fields.key.required(),
       value: fields.value.required(),
-      caption: fields.caption.allow(''),
+      caption: fields.caption.optional(),
       release_id: fields.release_id.required(),
     },
     build: mapToDefaults,
