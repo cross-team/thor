@@ -112,7 +112,7 @@ const relationshipDef = [
 
 // FUNCTIONS
 const mapToDefaults = input => {
-  const values = defaults
+  const values = { ...defaults }
   values.groups.app.id = !_.isUndefined(input.groups_app_id)
     ? input.groups_app_id
     : values.groups.app.id
@@ -133,7 +133,7 @@ const mapToDefaults = input => {
 
 const mapToDoc = input => {
   const values = {}
-  const groups = groupsDS
+  const groups = { ...groupsDS }
   const added = []
   if (!_.isUndefined(input.value)) {
     values.value = input.value
@@ -183,7 +183,7 @@ const lookupDocId = (id, type, groups) => {
 }
 
 const validateReleases = (token, release) => {
-  const value = token
+  const value = { ...token }
   // release
   if (!_.isUndefined(value.release_id)) {
     if (release.length === 1) {
@@ -205,7 +205,7 @@ const validateReleases = (token, release) => {
 }
 
 const validateGroups = (token, groups) => {
-  const value = token
+  const value = { ...token }
   const errors = []
 
   // app

@@ -22,7 +22,7 @@ const defaults = {
 
 // FUNCTIONS
 const mapToDefaults = input => {
-  const values = defaults
+  const values = { ...defaults }
   values.name = !_.isUndefined(input.name) ? input.name : values.name
   values.type = !_.isUndefined(input.type) ? input.type : values.type
   values.description = !_.isUndefined(input.description) ? input.description : values.description
@@ -38,7 +38,6 @@ const mapToValidations = input => {
 
 module.exports = {
   fields,
-  defaults,
   constants,
   mapToDefaults,
   mapToValidations,

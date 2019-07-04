@@ -14,10 +14,11 @@ const sak = require('../utils/lib/sak')
  * @return {object}
  */
 const _validBasedOnToken = async value => {
-  const token = value
+  const token = { ...value }
   if (token.value.startsWith('$')) {
     const basedOnKey = token.value.slice(1)
-    const tokenRows = await this.aggregate(basedOnKey)
+    // eslint-disable-next-line no-use-before-define
+    const tokenRows = await Tokens.aggregate(basedOnKey)
     // get the returning token from the list of linked tokens
     const basedOnToken = sak.findTokenKeyInArray(tokenRows, basedOnKey)
     if (!basedOnToken) {
@@ -78,7 +79,8 @@ const _validateLoadGroups = async values => {
  */
 const _doesTokenKeyExist = async value => {
   const tokenFilters = [{ key: value }]
-  const tokenRows = await this.get(tokenFilters)
+  // eslint-disable-next-line no-use-before-define
+  const tokenRows = await Tokens.get(tokenFilters)
   if (tokenRows.length === 0) {
     return false
   }
@@ -115,7 +117,7 @@ class Tokens {
   static async update(qry, values) {
     try {
       // validate load groups
-      let token = values
+      let token = { ...values }
       token = await _validateLoadGroups(token)
 
       // validate release
@@ -136,7 +138,7 @@ class Tokens {
 
   static async insert(values) {
     try {
-      let token = values
+      let token = { ...values }
       // validate and load groups
       token = await _validateLoadGroups(token)
 

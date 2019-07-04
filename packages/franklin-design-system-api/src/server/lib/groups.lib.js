@@ -20,7 +20,7 @@ class Groups {
 
   static async update(qry, values) {
     try {
-      const group = values
+      const group = { ...values }
       group.meta = sak.addMeta('update')
       const rows = await Db.update(model.name, qry, group)
       return rows
@@ -31,7 +31,7 @@ class Groups {
 
   static async insert(values) {
     try {
-      const group = values
+      const group = { ...values }
       group.meta = sak.addMeta('create', values.meta)
       const rows = await Db.insert(model.name, group)
       return rows

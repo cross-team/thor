@@ -16,7 +16,7 @@ class Releases {
 
   static async update(qry, values) {
     try {
-      const release = values
+      const release = { ...values }
       release.meta = sak.addMeta('update')
       const rows = await Db.update(model.name, qry, release)
       return rows
@@ -27,7 +27,7 @@ class Releases {
 
   static async insert(values) {
     try {
-      const release = values
+      const release = { ...values }
       release.meta = sak.addMeta('create', values.meta)
       const rows = await Db.insert(model.name, release)
       return rows

@@ -17,7 +17,7 @@ module.exports = {
       groups_app_id: fields.groups.app.id,
       groups_theme_id: fields.groups.theme.id,
       groups_topic_id: fields.groups.topic.id,
-      value: fields.value.required(),
+      value: fields.value,
       caption: fields.caption.allow(''),
       release_id: fields.release_id,
     },
