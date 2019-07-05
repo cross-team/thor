@@ -47,6 +47,21 @@ const metaFLD = {
   delete_on: joi.date(),
 }
 
+const groupsFLD = {
+  app: {
+    id: joi.string(),
+    name: joi.string(),
+  },
+  theme: {
+    id: joi.string(),
+    name: joi.string(),
+  },
+  topic: {
+    id: joi.string(),
+    name: joi.string(),
+  },
+}
+
 module.exports = {
   constants,
   isIn,
@@ -56,4 +71,5 @@ module.exports = {
   publishingFLD,
   relFLD,
   metaFLD,
+  groupsFLD,
 }

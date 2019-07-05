@@ -15,26 +15,31 @@ const sak = require('../utils/lib/sak')
  */
 const _validBasedOnToken = async value => {
   const token = { ...value }
-  if (token.value.startsWith('$')) {
-    const basedOnKey = token.value.slice(1)
-    // eslint-disable-next-line no-use-before-define
-    const tokenRows = await Tokens.aggregate(basedOnKey)
-    // get the returning token from the list of linked tokens
-    const basedOnToken = sak.findTokenKeyInArray(tokenRows, basedOnKey)
-    if (!basedOnToken) {
-      throw new Error('Token value entered is not an existing valid token.')
+  if (!_.isUndefined(token.value)) {
+    if (token.value.startsWith('$')) {
+      const basedOnKey = token.value.slice(1)
+      // eslint-disable-next-line no-use-before-define
+      const tokenRows = await Tokens.aggregate(basedOnKey)
+      // get the returning token from the list of linked tokens
+      const basedOnToken = sak.findTokenKeyInArray(tokenRows, basedOnKey)
+      if (!basedOnToken) {
+        throw new Error('Token value entered is not an existing valid token.')
+      } else {
+        token.based_on_key = basedOnKey
+      }
+      // obtain the root token and return it
+      if (
+        !_.isUndefined(basedOnToken.basedOnStructure) &&
+        basedOnToken.basedOnStructure.length > 0
+      ) {
+        token.calculated_value = basedOnToken.basedOnStructure[0].value
+      } else {
+        token.calculated_value = ''
+      }
     } else {
-      token.based_on_key = basedOnKey
-    }
-    // obtain the root token and return it
-    if (!_.isUndefined(basedOnToken.basedOnStructure) && basedOnToken.basedOnStructure.length > 0) {
-      token.calculated_value = basedOnToken.basedOnStructure[0].value
-    } else {
+      token.based_on_key = ''
       token.calculated_value = ''
     }
-  } else {
-    token.based_on_key = ''
-    token.calculated_value = ''
   }
   return token
 }
@@ -58,19 +63,22 @@ const _validateLoadReleases = async token => {
  * @param {object} values
  */
 const _validateLoadGroups = async values => {
-  // validate against groups
-  const groupsFilters = []
-  if (!_.isUndefined(values.groups.app)) {
-    groupsFilters.push({ _id: values.groups.app.id })
+  if (!_.isUndefined(values.groups)) {
+    // validate against groups
+    const groupsFilters = []
+    if (!_.isUndefined(values.groups.app)) {
+      groupsFilters.push({ _id: values.groups.app.id })
+    }
+    if (!_.isUndefined(values.groups.theme)) {
+      groupsFilters.push({ _id: values.groups.theme.id })
+    }
+    if (!_.isUndefined(values.groups.topic)) {
+      groupsFilters.push({ _id: values.groups.topic.id })
+    }
+    const groupRows = await groups.get(groupsFilters, '$or')
+    return model.validateGroups(values, groupRows)
   }
-  if (!_.isUndefined(values.groups.theme)) {
-    groupsFilters.push({ _id: values.groups.theme.id })
-  }
-  if (!_.isUndefined(values.groups.topic)) {
-    groupsFilters.push({ _id: values.groups.topic.id })
-  }
-  const groupRows = await groups.get(groupsFilters, '$or')
-  return model.validateGroups(values, groupRows)
+  return values
 }
 
 /**

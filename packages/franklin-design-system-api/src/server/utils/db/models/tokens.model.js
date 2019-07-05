@@ -9,20 +9,7 @@ const name = 'tokens'
 
 // DEFINITIONS
 const fields = {
-  groups: {
-    app: {
-      id: joi.string(),
-      name: joi.string(),
-    },
-    theme: {
-      id: joi.string(),
-      name: joi.string(),
-    },
-    topic: {
-      id: joi.string(),
-      name: joi.string(),
-    },
-  },
+  groups: constants.groupsFLD,
   key: joi.string(),
   value: joi.string(),
   caption: joi.string().allow(''),
