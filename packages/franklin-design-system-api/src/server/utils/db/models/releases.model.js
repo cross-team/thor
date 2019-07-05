@@ -2,41 +2,29 @@ const _ = require('lodash')
 const joi = require('joi')
 const constants = require('./constants.model')
 
-const hardDelete = true
+const hardDelete = false // switch to do a hard delete
 const name = 'releases'
 
 // DEFINITIONS
 const fields = {
   name: joi.string(),
-  description: joi.string(),
-  publishing: {
-    status: joi.string(),
-    publish_on: joi.date(),
-  },
-  rel: {
-    major: joi.number(),
-    minor: joi.number(),
-    build: joi.number(),
-  },
+  description: joi.string().allow(''),
+  publishing: constants.publishingFLD,
+  rel: constants.relFLD,
+  meta: constants.metaFLD,
 }
 
 const defaults = {
   name: '',
   description: '',
-  publishing: {
-    status: 'DRAFT',
-    publish_on: null,
-  },
-  rel: {
-    major: 0,
-    minor: 0,
-    build: 1,
-  },
+  publishing: constants.publishingDS,
+  rel: constants.relDS,
+  meta: constants.metaDS,
 }
 
 // FUNCTIONS
 const mapToDefaults = input => {
-  const values = defaults
+  const values = { ...defaults }
   values.name = !_.isUndefined(input.name) ? input.name : values.name
   values.description = !_.isUndefined(input.description) ? input.description : values.description
   values.publishing.status = !_.isUndefined(input.status) ? input.status : values.publishing.status
@@ -74,10 +62,10 @@ const mapToDoc = input => {
   if (!_.isUndefined(input.build)) {
     rel.build = input.build
   }
-  if (Object.keys(publishing).length > 0 && publishing.constructor !== Object) {
+  if (Object.keys(publishing).length > 0) {
     values.publishing = publishing
   }
-  if (Object.keys(rel).length > 0 && rel.constructor === Object) {
+  if (Object.keys(rel).length > 0) {
     values.rel = rel
   }
   return values
@@ -86,7 +74,9 @@ const mapToDoc = input => {
 const mapToValidations = input => {
   // validate publishing status
   if (!_.isUndefined(input.publishing)) {
-    if (!constants.isIn(input.publishing.status, 'status')) throw new Error('Status is not valid')
+    if (!_.isUndefined(input.publishing.status)) {
+      if (!constants.isIn(input.publishing.status, 'status')) throw new Error('Status is not valid')
+    }
   }
 }
 

@@ -1,16 +1,16 @@
-const HealthCheckDBLib = require('../lib/health-check-db.lib');
+const HealthCheckDBLib = require('../lib/health-check-db.lib')
 
 class HealthCheckDBHandler {
-  async check() {
+  static async check() {
     try {
-      return HealthCheckDBLib.check();
+      return HealthCheckDBLib.check()
     } catch (err) {
-      return h
+      return err
         .response(err.message)
         .code(500)
-        .takeover();
+        .takeover()
     }
   }
 }
 
-module.exports = new HealthCheckDBHandler();
+module.exports = HealthCheckDBHandler

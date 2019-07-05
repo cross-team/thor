@@ -1,4 +1,5 @@
-const handler = require('../handlers/health-check-db.handler');
+const handler = require('../handlers/health-check-db.handler')
+
 const healthCheckDbRoute = [
   {
     method: 'GET',
@@ -10,5 +11,5 @@ const healthCheckDbRoute = [
       plugins: {},
     },
   },
-];
-module.exports = healthCheckDbRoute;
+]
+module.exports = healthCheckDbRoute

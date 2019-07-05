@@ -14,8 +14,6 @@ module.exports = {
       name: fields.name,
       type: fields.type,
       description: fields.description,
-      status: fields.publishing.status,
-      publish_on: fields.publishing.publish_on,
     },
     params: {
       id: joi.string().required(),
@@ -23,11 +21,9 @@ module.exports = {
   },
   post: {
     payload: {
-      name: fields.name,
-      type: fields.type,
-      description: fields.description.allow(''),
-      status: fields.publishing.status,
-      publish_on: fields.publishing.publish_on,
+      name: fields.name.required(),
+      type: fields.type.required(),
+      description: fields.description.optional(),
     },
     build: mapToDefaults,
     validate: mapToValidations,

@@ -1,0 +1,10 @@
+
+Todo:
+  ✔ update publishing piece for token insert/update @done(19-07-02 12:21)
+  ✔ add get endpoint @done(19-07-03 00:07)
+  ✔ add remove endpoint to all @done(19-07-03 21:52)
+  ✔ refactor constants in model @done(19-07-03 21:52)
+  ☐ reset mlab db
+  ☐ load real tokens and config
+  ✔ add meta data routine to release and groups endpoints @done(19-07-03 21:53)
+  ☐ create token json for thor
