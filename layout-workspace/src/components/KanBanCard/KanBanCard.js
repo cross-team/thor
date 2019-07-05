@@ -1,13 +1,14 @@
-import React, { Component } from 'react'
-import { makeStyles, Card, CardContent, Typography, LinearProgress } from '@franklin-thor/core/'
+import React from 'react'
+import { Card, CardContent, Typography, LinearProgress } from '@material-ui/core/'
+import { makeStyles } from '@material-ui/styles/'
 import AccountIcon from '@material-ui/icons/InsertDriveFileOutlined'
 import SwapIcon from '@material-ui/icons/SwapHorizontalCircle'
 import GroupIcon from '@material-ui/icons/Group'
 import LocationIcon from '@material-ui/icons/LocationCityOutlined'
 import TraderIcon from '@material-ui/icons/AccountCircleOutlined'
-import FTIBadge from '@franklin-thor/fti/FTIBadge'
+import FTIBadge from '@franklin-thor/core/FTIBadge'
+import Button from '@material-ui/core/Button'
 
-/*
 const useStyles = makeStyles(theme => ({
   icon: {
     width: '12px',
@@ -39,107 +40,129 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const classes = useStyles()
-*/
+export default function KanBanCard(props) {
+  const classes = useStyles()
 
-class KanbanCard extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
-
-  render() {
-    const icon = {
-      width: '12px',
-      height: '12px',
-    }
-    const container = {
-      display: 'flex',
-      alignItems: 'center',
-    }
-    const progress = {
-      width: '100px',
-    }
-    const cardContainer = {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      // maxWidth: '344px'
-    }
-    const rightContainer = {
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-    }
-    const leftContent = {
-      flexBasis: '50%',
-    }
-    const rightContent = {
-      flexBasis: '50%',
-    }
-
-    return (
-      <div
-        draggable={true}
-        onDragEnd={e => {
-          this.props.onDragEnd(e, this.props.order)
-        }}
-      >
-        <Card style={cardContainer}>
-          <CardContent style={leftContent}>
-            <div style={container}>
-              <AccountIcon style={icon} />
-              <Typography variant="caption">{this.props.order.actNum}</Typography>
+  return (
+    <div
+      draggable={true}
+      onDragEnd={e => {
+        props.onDragEnd(e, props.order)
+      }}
+    >
+      <Card className={classes.cardContainer}>
+        <CardContent className={classes.leftContent}>
+          <div className={classes.container}>
+            <AccountIcon className={classes.icon} />
+            <Typography variant="caption">{props.order.actNum}</Typography>
+          </div>
+          <div className={classes.container}>
+            <FTIBadge type={props.order.type} className={classes.icon} />
+            <Typography variant="h4">{props.order.traderName}</Typography>
+          </div>
+          <LinearProgress
+            className={classes.progress}
+            variant="determinate"
+            value={props.order.progress}
+          />
+          <Typography variant="caption">
+            {props.order.current} OF {props.order.max} - {props.order.progress}%
+          </Typography>
+          <br />
+          <Typography variant="caption">USD {props.order.money}</Typography>
+        </CardContent>
+        <CardContent className={classes.rightContent}>
+          <div className={classes.rightContainer}>
+            <div>
+              <AccountIcon className={classes.icon} />
+              <Typography variant="caption">{props.order.orderNum}</Typography>
             </div>
-            <div style={container}>
-              <FTIBadge type={this.props.order.type} style={icon} />
-              <Typography variant="h4">{this.props.order.traderName}</Typography>
-            </div>
-            <LinearProgress
-              style={progress}
-              variant="determinate"
-              value={this.props.order.progress}
-            />
-            <Typography variant="caption">
-              {this.props.order.current} OF {this.props.order.max} - {this.props.order.progress}%
-            </Typography>
-            <br />
-            <Typography variant="caption">USD {this.props.order.money}</Typography>
-          </CardContent>
-          <CardContent style={rightContent}>
-            <div style={rightContainer}>
-              <div>
-                <AccountIcon style={icon} />
-                <Typography variant="caption">{this.props.order.orderNum}</Typography>
+            {props.order.automated ? <SwapIcon /> : <div></div>}
+          </div>
+          <div className={classes.rightContainer}>
+            <div>
+              <div className={classes.container}>
+                <GroupIcon className={classes.icon} />
+                <Typography variant="caption">{props.order.group}</Typography>
               </div>
-              {this.props.order.automated ? <SwapIcon /> : <div></div>}
-            </div>
-            <div style={rightContainer}>
-              <div>
-                <div style={container}>
-                  <GroupIcon style={icon} />
-                  <Typography variant="caption">{this.props.order.group}</Typography>
-                </div>
-                <div style={container}>
-                  <LocationIcon style={icon} />
-                  <Typography variant="caption">{this.props.order.location}</Typography>
-                </div>
-                <div style={container}>
-                  <TraderIcon style={icon} />
-                  <Typography variant="caption">{this.props.order.trader}</Typography>
-                </div>
+              <div className={classes.container}>
+                <LocationIcon className={classes.icon} />
+                <Typography variant="caption">{props.order.location}</Typography>
               </div>
-              <div>
-                <Typography variant="h4">{this.props.order.priceCurrent}</Typography>
-                <Typography variant="body2">{this.props.order.priceChange}</Typography>
-                <Typography variant="body2">{this.props.order.percentChange}</Typography>
+              <div className={classes.container}>
+                <TraderIcon className={classes.icon} />
+                <Typography variant="caption">{props.order.trader}</Typography>
               </div>
             </div>
-          </CardContent>
-        </Card>
-      </div>
-    )
-  }
+            <div>
+              <Typography variant="h4">{props.order.priceCurrent}</Typography>
+              <Typography variant="body2">{props.order.priceChange}</Typography>
+              <Typography variant="body2">{props.order.percentChange}</Typography>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+    /*
+    <div
+      draggable={true}
+      onDragEnd={e => {
+        props.onDragEnd(e, props.order)
+      }}
+    >
+      <Card className={classes.cardContainer}>
+        <CardContent className={classes.leftContent}>
+          <div className={classes.container}>
+            <AccountIcon className={classes.icon} />
+            <Typography variant="caption">{props.order.actNum}</Typography>
+          </div>
+          <div className={classes.container}>
+            <FTIBadge type={props.order.type} className={classes.icon} />
+            <Typography variant="h4">{props.order.traderName}</Typography>
+          </div>
+          <LinearProgress
+          className={classes.progress}
+            variant="determinate"
+            value={props.order.progress}
+          />
+          <Typography variant="caption">
+            {props.order.current} OF {props.order.max} - {props.order.progress}%
+          </Typography>
+          <br />
+          <Typography variant="caption">USD {props.order.money}</Typography>
+        </CardContent>
+        <CardContent className={classes.rightContent}>
+          <div className={classes.rightContainer}>
+            <div>
+              <AccountIcon className={classes.icon} />
+              <Typography variant="caption">{props.order.orderNum}</Typography>
+            </div>
+            {props.order.automated ? <SwapIcon /> : <div></div>}
+          </div>
+          <div className={classes.rightContainer}>
+            <div>
+              <div className={classes.container}>
+                <GroupIcon className={classes.icon} />
+                <Typography variant="caption">{props.order.group}</Typography>
+              </div>
+              <div className={classes.container}>
+                <LocationIcon className={classes.icon} />
+                <Typography variant="caption">{props.order.location}</Typography>
+              </div>
+              <div className={classes.container}>
+                <TraderIcon className={classes.icon} />
+                <Typography variant="caption">{props.order.trader}</Typography>
+              </div>
+            </div>
+            <div>
+              <Typography variant="h4">{props.order.priceCurrent}</Typography>
+              <Typography variant="body2">{props.order.priceChange}</Typography>
+              <Typography variant="body2">{props.order.percentChange}</Typography>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+    */
+  )
 }
-
-export default KanbanCard

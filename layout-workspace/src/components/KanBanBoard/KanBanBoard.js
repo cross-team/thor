@@ -33,7 +33,7 @@ class KanbanBoard extends React.Component {
   handleOnDragEnd(e, order) {
     const updatedOrders = this.state.orders.slice(0)
     updatedOrders.find(orderObject => {
-      return orderObject.name === order.name
+      return orderObject.orderNum === order.orderNum
     }).order_stage = this.state.draggedOverCol
     this.setState({ orders: updatedOrders })
   }
