@@ -57,7 +57,7 @@ export default function KanBanCard(props) {
             <Typography variant="caption">{props.order.actNum}</Typography>
           </div>
           <div className={classes.container}>
-            <FTIBadge type={props.order.type} className={classes.icon} />
+            {/*<FTIBadge type={props.order.type} className={classes.icon} />*/}
             <Typography variant="h4">{props.order.traderName}</Typography>
           </div>
           <LinearProgress

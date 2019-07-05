@@ -2,9 +2,6 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
-import Grid from '@material-ui/core/Grid'
-import SearchIcon from '@material-ui/icons/Search'
-import TextField from '@material-ui/core/TextField'
 import IconButton from '@material-ui/core/IconButton'
 import ClearIcon from '@material-ui/icons/Clear'
 
@@ -50,15 +47,6 @@ export default function SettingsView() {
           Settings
         </Typography>
       </Paper>
-
-      <Grid container spacing={1} alignItems="flex-end">
-        <Grid item>
-          <SearchIcon />
-        </Grid>
-        <Grid item>
-          <TextField id="input-with-icon-grid" label="Find" />
-        </Grid>
-      </Grid>
     </div>
   )
 }

@@ -1,49 +1,62 @@
-import React, { Component } from 'react'
+import React, { Component, useEffect } from 'react'
 import KanBanCard from '../KanBanCard/KanBanCard'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
+import Switch from '@material-ui/core/Switch'
+import { display } from '@material-ui/system'
 
-class KanBanColumn extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { mouseIsHovering: false }
-  }
+const useStyles = makeStyles(theme => ({
+  container: {
+    width: '100%',
+  },
+  root: {
+    display: 'flex',
+    width: '100%',
+    height: '80vh',
+    alignItems: 'stretch',
+  },
+}))
 
-  componentWillReceiveProps(nextProps) {
-    this.state = { mouseIsHovering: false }
-  }
+export default function KanBanColumn(props) {
+  const [state, setState] = React.useState({
+    mouseIsHovering: false,
+  })
 
-  generateKanbanCards() {
-    return this.props.orders.slice(0).map(order => {
-      return <KanBanCard order={order} key={order.orderNum} onDragEnd={this.props.onDragEnd} />
+  const classes = useStyles()
+
+  useEffect(() => {
+    setState({ ...state, mouseIsHovering: false })
+  }, [props])
+
+  const generateKanbanCards = () => {
+    return props.orders.slice(0).map(order => {
+      return <KanBanCard order={order} key={order.orderNum} onDragEnd={props.onDragEnd} />
     })
   }
 
-  render() {
-    const columnStyle = {
-      flexBasis: '25%',
-    }
-    return (
-      <div
-        style={columnStyle}
-        onDragEnter={e => {
-          this.setState({ mouseIsHovering: true })
-          this.props.onDragEnter(e, this.props.stage)
-        }}
-        onDragExit={e => {
-          this.setState({ mouseIsHovering: false })
-        }}
-      >
+  return (
+    <div
+      className={classes.root}
+      onDragEnter={e => {
+        setState({ ...state, mouseIsHovering: true })
+        props.onDragEnter(e, props.stage)
+      }}
+      onDragExit={e => {
+        setState({ ...state, mouseIsHovering: true })
+      }}
+    >
+      <Paper className={classes.container}>
         <Paper>
-          <Typography variant="h5" component="h3">
-            {this.props.stage}. {this.props.name} ({this.props.orders.length})
-          </Typography>
-          {this.generateKanbanCards()}
+          <Typography variant="body2">{props.name}</Typography>
+          <Switch defaultChecked value="checkedF" color="default" />
+          <Typography variant="body1">Order Size</Typography>
         </Paper>
-      </div>
-    )
-  }
+        {/*<Typography variant="h5" component="h3">
+          {this.props.stage}. {this.props.name} ({this.props.orders.length})
+        </Typography>*/}
+        {generateKanbanCards()}
+      </Paper>
+    </div>
+  )
 }
-
-export default KanBanColumn
