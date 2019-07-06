@@ -4,7 +4,7 @@ const _ = require('lodash')
 const Db = require('../utils/db')
 const model = require('../utils/db/models/themes.model')
 const groups = require('../lib/groups.lib')
-// const sak = require('../utils/lib/sak')
+const sak = require('../utils/lib/sak')
 
 // MAIN CLASS
 class Themes {
@@ -16,19 +16,29 @@ class Themes {
 
   async set(appId, themeId) {
     try {
-      let groupFilters = [{ _id: appId }, { type: 'APP' }]
+      let groupFilters = [{ _id: appId }]
       let groupRows = await groups.get(groupFilters)
-      if (groupRows.length === 0) {
+      if (
+        _.isUndefined(groupRows[0]) ||
+        _.isUndefined(groupRows[0].type) ||
+        groupRows[0].type !== 'APP'
+      ) {
         throw new Error('Submitted app id is not found')
+      } else {
+        this.appId = appId
       }
-      this.appId = appId
       groupRows = []
-      groupFilters = [{ _id: themeId }, { type: 'THEME' }]
+      groupFilters = [{ _id: themeId }]
       groupRows = await groups.get(groupFilters)
-      if (groupRows.length === 0) {
+      if (
+        _.isUndefined(groupRows[0]) ||
+        _.isUndefined(groupRows[0].type) ||
+        groupRows[0].type !== 'THEME'
+      ) {
         throw new Error('Submitted theme id is not found')
+      } else {
+        this.themeId = themeId
       }
-      this.themeId = themeId
     } catch (err) {
       throw err
     }
@@ -42,7 +52,11 @@ class Themes {
     if (rows.length > 0) {
       this._clearout()
       for (const topic of rows) {
-        this.theme[topic._id] = this._buildKeys(topic.keys)
+        if (topic._id !== 'root-level') {
+          this.theme[topic._id] = this._buildKeys(topic.keys)
+        } else {
+          this.theme = _.merge(this.theme, this._buildKeys(topic.keys))
+        }
       }
     }
     return this.theme
@@ -69,7 +83,7 @@ class Themes {
         this._buildKeysObject(token)
       } else {
         // standard
-        standard[token.key] = token.value
+        standard[token.key] = sak.toNumberIfNumber(token.value)
       }
     }
     const topic = { ...standard, ...this.array_tokens, ...this.obj_tokens }
@@ -87,7 +101,7 @@ class Themes {
       this.array_tokens[keyName] = []
     }
     // add value and index
-    this.array_tokens[key[0]].splice(parseInt(keySubName, 10), 0, token.value)
+    this.array_tokens[key[0]].splice(parseInt(keySubName, 10), 0, sak.toNumberIfNumber(token.value))
 
     return true
   }
@@ -102,7 +116,7 @@ class Themes {
       this.obj_tokens[keyName] = {}
     }
     // add value and index
-    this.obj_tokens[keyName][keySubName] = token.value
+    this.obj_tokens[keyName][keySubName] = sak.toNumberIfNumber(token.value)
 
     return true
   }
