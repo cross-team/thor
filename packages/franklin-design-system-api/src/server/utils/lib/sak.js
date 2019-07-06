@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 /**
  * returns token based on key
  * @param {Array} ary
@@ -13,6 +14,17 @@ const findTokenKeyInArray = (ary, token) => {
     }
   }
   return false
+}
+
+/**
+ * converts a string to a number if the string is a number
+ * @param {string} value
+ */
+const toNumberIfNumber = value => {
+  if (!isNaN(value)) {
+    return +value
+  }
+  return value
 }
 
 /**
@@ -51,4 +63,5 @@ module.exports = {
   findTokenKeyInArray,
   getCurrentTimeStamp,
   addMeta,
+  toNumberIfNumber,
 }
