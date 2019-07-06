@@ -18,11 +18,7 @@ class Themes {
     try {
       let groupFilters = [{ _id: appId }]
       let groupRows = await groups.get(groupFilters)
-      if (
-        _.isUndefined(groupRows[0]) ||
-        _.isUndefined(groupRows[0].type) ||
-        groupRows[0].type !== 'APP'
-      ) {
+      if (_.isUndefined(groupRows[0]) || _.isUndefined(groupRows[0]["type"]) || groupRows[0]["type"] !== "APP") {
         throw new Error('Submitted app id is not found')
       } else {
         this.appId = appId
@@ -30,11 +26,7 @@ class Themes {
       groupRows = []
       groupFilters = [{ _id: themeId }]
       groupRows = await groups.get(groupFilters)
-      if (
-        _.isUndefined(groupRows[0]) ||
-        _.isUndefined(groupRows[0].type) ||
-        groupRows[0].type !== 'THEME'
-      ) {
+      if (_.isUndefined(groupRows[0]) || _.isUndefined(groupRows[0]["type"]) || groupRows[0]["type"] !== "THEME") {
         throw new Error('Submitted theme id is not found')
       } else {
         this.themeId = themeId
@@ -52,10 +44,10 @@ class Themes {
     if (rows.length > 0) {
       this._clearout()
       for (const topic of rows) {
-        if (topic._id !== 'root-level') {
+        if (topic._id !== "root-level") {
           this.theme[topic._id] = this._buildKeys(topic.keys)
         } else {
-          this.theme = _.merge(this.theme, this._buildKeys(topic.keys))
+          this.theme = _.merge(this.theme, this._buildKeys(topic.keys)) 
         }
       }
     }
