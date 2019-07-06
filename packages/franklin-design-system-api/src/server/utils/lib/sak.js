@@ -1,4 +1,20 @@
 /* eslint-disable no-restricted-globals */
+/* eslint-disable no-restricted-globals */
+/**
+ * returns token based on key
+ * @param {Array} ary
+ * @param {Object} token
+ */
+const splitInTwo = (str, delimiter) => {
+  const result = { val1: '', val2: '' }
+  const index = str.indexOf(delimiter)
+  if (index !== -1) {
+    result.val1 = str.substring(0, index)
+    result.val2 = str.substring(index + 1)
+  }
+  return result
+}
+
 /**
  * returns token based on key
  * @param {Array} ary
@@ -64,4 +80,5 @@ module.exports = {
   getCurrentTimeStamp,
   addMeta,
   toNumberIfNumber,
+  splitInTwo,
 }

@@ -93,30 +93,26 @@ class Themes {
 
   _buildKeysArray(token) {
     // break out the key
-    const key = _.split(token.key, '|')
-    const keyName = key[0]
-    const keySubName = key[1]
+    const key = sak.splitInTwo(token.key, '|')
     // check if array exist... if not create it
-    if (_.isUndefined(this.array_tokens[keyName])) {
-      this.array_tokens[keyName] = []
+    if (_.isUndefined(this.array_tokens[key.val1])) {
+      this.array_tokens[key.val1] = []
     }
     // add value and index
-    this.array_tokens[key[0]].splice(parseInt(keySubName, 10), 0, sak.toNumberIfNumber(token.value))
+    this.array_tokens[key.val1].splice(parseInt(key.val2, 10), 0, sak.toNumberIfNumber(token.value))
 
     return true
   }
 
   _buildKeysObject(token) {
     // break out the key
-    const key = _.split(token.key, ':')
-    const keyName = key[0]
-    const keySubName = key[1]
+    const key = sak.splitInTwo(token.key, ':')
     // check if array exist... if not create it
-    if (_.isUndefined(this.obj_tokens[keyName])) {
-      this.obj_tokens[keyName] = {}
+    if (_.isUndefined(this.obj_tokens[key.val1])) {
+      this.obj_tokens[key.val1] = {}
     }
     // add value and index
-    this.obj_tokens[keyName][keySubName] = sak.toNumberIfNumber(token.value)
+    this.obj_tokens[key.val1][key.val2] = sak.toNumberIfNumber(token.value)
 
     return true
   }
