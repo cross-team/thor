@@ -20,8 +20,8 @@ class Themes {
       let groupRows = await groups.get(groupFilters)
       if (
         _.isUndefined(groupRows[0]) ||
-        _.isUndefined(groupRows[0].type) ||
-        groupRows[0].type !== 'APP'
+        _.isUndefined(groupRows[0]['type']) ||
+        groupRows[0]['type'] !== 'APP'
       ) {
         throw new Error('Submitted app id is not found')
       } else {
@@ -32,8 +32,8 @@ class Themes {
       groupRows = await groups.get(groupFilters)
       if (
         _.isUndefined(groupRows[0]) ||
-        _.isUndefined(groupRows[0].type) ||
-        groupRows[0].type !== 'THEME'
+        _.isUndefined(groupRows[0]['type']) ||
+        groupRows[0]['type'] !== 'THEME'
       ) {
         throw new Error('Submitted theme id is not found')
       } else {
