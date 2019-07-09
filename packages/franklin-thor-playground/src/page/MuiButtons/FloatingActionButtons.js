@@ -1,6 +1,6 @@
 import React from 'react'
 import { Fab, makeStyles } from '@franklin-thor/core'
-import { Add, Delete, Edit, Navigation } from '@franklin-thor/icons'
+import { Add, Delete, Edit, Navigation, FontAwesomeIcon, faCoffee } from '@franklin-thor/icons'
 // import AddIcon from '@material-ui/icons/Add'
 
 const useStyles = makeStyles(theme => ({
@@ -18,7 +18,7 @@ export default function FloatingActionButtons() {
   return (
     <div>
       <Fab color="primary" aria-label="Add" className={classes.fab}>
-        <Add />
+        <FontAwesomeIcon icon={faCoffee} />
       </Fab>
       <Fab color="secondary" aria-label="Edit" className={classes.fab}>
         <Edit />
