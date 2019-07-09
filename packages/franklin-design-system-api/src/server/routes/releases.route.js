@@ -1,6 +1,6 @@
-// const joi = require('joi')
 const handler = require('../handlers/releases.handler')
 const validations = require('../utils/db/validations/releases.validations')
+
 const releasesRoutes = [
   {
     method: 'GET',

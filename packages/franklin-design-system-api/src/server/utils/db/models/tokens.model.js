@@ -1,54 +1,24 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-restricted-syntax */
 const _ = require('lodash')
 const joi = require('joi')
-const sak = require('../../lib/sak')
 const constants = require('./constants.model')
 
-const hardDelete = true
+const hardDelete = false // switch to do a hard delete
 const name = 'tokens'
 
 // DEFINITIONS
 const fields = {
-  groups: {
-    app: {
-      id: joi.string(),
-      name: joi.string(),
-    },
-    theme: {
-      id: joi.string(),
-      name: joi.string(),
-    },
-    topic: {
-      id: joi.string(),
-      name: joi.string(),
-    },
-  },
+  groups: constants.groupsFLD,
   key: joi.string(),
   value: joi.string(),
-  caption: joi.string(),
-  publishing: {
-    status: joi.string(),
-    publish_on: joi.date(),
-  },
+  caption: joi.string().allow(''),
+  publishing: constants.publishingFLD,
   release_id: joi.string(),
-  rel: {
-    major: joi.number(),
-    minor: joi.number(),
-    build: joi.number(),
-  },
-  meta: {
-    created_on: joi.date(),
-    updated_on: joi.date(),
-    delete_on: joi.date(),
-  },
+  rel: constants.relFLD,
+  meta: constants.metaFLD,
   based_on_key: joi.string(),
   calculated_value: joi.string(),
-}
-
-const metaDS = {
-  created_on: null,
-  updated_on: null,
-  delete_on: null,
 }
 
 const groupsDS = {
@@ -66,24 +36,15 @@ const groupsDS = {
   },
 }
 
-const relDS = {
-  major: 0,
-  minor: 0,
-  build: 1,
-}
-
 const defaults = {
   groups: groupsDS,
   key: '',
   value: '',
   caption: '',
-  publishing: {
-    status: 'DRAFT',
-    publish_on: null,
-  },
+  publishing: constants.publishingDS,
   release_id: null,
-  rel: relDS,
-  meta: metaDS,
+  rel: constants.relDS,
+  meta: constants.metaDS,
   based_on_key: '',
   calculated_value: '',
 }
@@ -138,7 +99,7 @@ const relationshipDef = [
 
 // FUNCTIONS
 const mapToDefaults = input => {
-  const values = defaults
+  const values = { ...defaults }
   values.groups.app.id = !_.isUndefined(input.groups_app_id)
     ? input.groups_app_id
     : values.groups.app.id
@@ -152,13 +113,14 @@ const mapToDefaults = input => {
   values.value = !_.isUndefined(input.value) ? input.value : values.value
   values.caption = !_.isUndefined(input.caption) ? input.caption : values.caption
   values.release_id = !_.isUndefined(input.release_id) ? input.release_id : values.release_id
-  values.meta = metaDS
+  values.meta = constants.metaDS
+  values.publishing = constants.publishingDS
   return values
 }
 
 const mapToDoc = input => {
   const values = {}
-  const groups = groupsDS
+  const groups = { ...groupsDS }
   const added = []
   if (!_.isUndefined(input.value)) {
     values.value = input.value
@@ -168,7 +130,7 @@ const mapToDoc = input => {
   }
   if (!_.isUndefined(input.release_id)) {
     values.release_id = input.release_id
-    values.rel = relDS
+    values.rel = constants.relDS
     values.publishing = {}
   }
   if (!_.isUndefined(input.groups_app_id)) {
@@ -195,8 +157,20 @@ const mapToDoc = input => {
   return values
 }
 
+const lookupDocId = (id, type, groups) => {
+  for (const group in groups) {
+    if (groups[group].type.toUpperCase() === type.toUpperCase()) {
+      if (id.toString() === groups[group]._id.toString()) {
+        return groups[group].name
+      }
+      break
+    }
+  }
+  return false
+}
+
 const validateReleases = (token, release) => {
-  const value = token
+  const value = { ...token }
   // release
   if (!_.isUndefined(value.release_id)) {
     if (release.length === 1) {
@@ -204,7 +178,10 @@ const validateReleases = (token, release) => {
         value.rel.major = release[0].rel.major
         value.rel.minor = release[0].rel.minor
         value.rel.build = release[0].rel.build
-        // todo: update publishing
+        // add publishing DS to token values
+        if (!_.isUndefined(value.publishing)) {
+          value.publishing = constants.publishingDS
+        }
         value.publishing.publish_on = release[0].publishing.publish_on
         value.publishing.status = release[0].publishing.status
         return value
@@ -215,7 +192,7 @@ const validateReleases = (token, release) => {
 }
 
 const validateGroups = (token, groups) => {
-  const value = token
+  const value = { ...token }
   const errors = []
 
   // app
@@ -256,37 +233,6 @@ const validateGroups = (token, groups) => {
   }
 }
 
-const lookupDocId = (id, type, groups) => {
-  for (const group in groups) {
-    if (groups[group].type.toUpperCase() === type.toUpperCase()) {
-      if (id.toString() === groups[group]._id.toString()) {
-        return groups[group].name
-      }
-      break
-    }
-  }
-  return false
-}
-
-const addMeta = (type, value = {}) => {
-  const meta = value
-  const now = sak.getCurrentTimeStamp()
-  // eslint-disable-next-line default-case
-  switch (type) {
-    case 'update':
-      meta.updated_on = now
-      break
-    case 'create':
-      meta.updated_on = now
-      meta.created_on = now
-      break
-    case 'remove':
-      meta.delete_on = now
-      break
-  }
-  return meta
-}
-
 module.exports = {
   fields,
   defaults,
@@ -298,5 +244,4 @@ module.exports = {
   relationshipDef,
   validateGroups,
   validateReleases,
-  addMeta,
 }

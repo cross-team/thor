@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 /**
  * returns token based on key
  * @param {Array} ary
@@ -16,6 +17,17 @@ const findTokenKeyInArray = (ary, token) => {
 }
 
 /**
+ * converts a string to a number if the string is a number
+ * @param {string} value
+ */
+const toNumberIfNumber = value => {
+  if (!isNaN(value)) {
+    return +value
+  }
+  return value
+}
+
+/**
  * returns timestamp for all services
  */
 const getCurrentTimeStamp = () => {
@@ -23,7 +35,33 @@ const getCurrentTimeStamp = () => {
   return now
 }
 
+/**
+ *
+ * @param {string} type
+ * @param {object} value
+ */
+const addMeta = (type, value = {}) => {
+  const meta = value
+  const now = getCurrentTimeStamp()
+  // eslint-disable-next-line default-case
+  switch (type) {
+    case 'update':
+      meta.updated_on = now
+      break
+    case 'create':
+      meta.updated_on = now
+      meta.created_on = now
+      break
+    case 'remove':
+      meta.delete_on = now
+      break
+  }
+  return meta
+}
+
 module.exports = {
   findTokenKeyInArray,
   getCurrentTimeStamp,
+  addMeta,
+  toNumberIfNumber,
 }

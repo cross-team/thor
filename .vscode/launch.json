@@ -14,7 +14,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${workspaceFolder}/packages/franklin-design-system-api/src/server/handlers/groups.handler.js"
+      "program": "${workspaceFolder}/packages/franklin-thor-playground/"
     }
   ]
 }

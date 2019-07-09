@@ -1,17 +1,17 @@
-require('dotenv').config();
+require('dotenv').config()
 
-const Connector = require('../utils/db/connector');
+const Connector = require('../utils/db/connector')
 
 class DbChecker {
-  async check() {
+  static async check() {
     try {
-      let client = await Connector.connect();
-      await Connector.close(client);
-      return true;
+      const client = await Connector.connect()
+      await Connector.close(client)
+      return true
     } catch (err) {
-      throw err;
+      throw err
     }
   }
 }
 
-module.exports = new DbChecker();
+module.exports = DbChecker

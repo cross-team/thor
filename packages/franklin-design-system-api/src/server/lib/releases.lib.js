@@ -1,8 +1,10 @@
 const Db = require('../utils/db')
 const model = require('../utils/db/models/releases.model')
+const sak = require('../utils/lib/sak')
 
+// MAIN CLASS
 class Releases {
-  async get(values) {
+  static async get(values) {
     try {
       const filters = values.length === 0 ? {} : { $and: values }
       const rows = await Db.get(model.name, filters)
@@ -12,27 +14,35 @@ class Releases {
     }
   }
 
-  async update(qry, values) {
+  static async update(qry, values) {
     try {
-      const rows = await Db.update(model.name, qry, values)
+      const release = { ...values }
+      release.meta = sak.addMeta('update')
+      const rows = await Db.update(model.name, qry, release)
       return rows
     } catch (err) {
       throw err
     }
   }
 
-  async insert(values) {
+  static async insert(values) {
     try {
-      const rows = await Db.insert(model.name, values)
+      const release = { ...values }
+      release.meta = sak.addMeta('create', values.meta)
+      const rows = await Db.insert(model.name, release)
       return rows
     } catch (err) {
       throw err
     }
   }
 
-  async remove(qry) {
+  static async remove(qry) {
     try {
-      const rows = await Db.remove(model.name, qry, model.hardDelete ? null : model.hardDelete)
+      let flds = null
+      if (!model.hardDelete) {
+        flds = { meta: sak.addMeta('remove') }
+      }
+      const rows = await Db.remove(model.name, qry, flds)
       return rows
     } catch (err) {
       throw err
@@ -40,4 +50,4 @@ class Releases {
   }
 }
 
-module.exports = new Releases()
+module.exports = Releases

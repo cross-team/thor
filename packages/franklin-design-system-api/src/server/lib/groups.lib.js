@@ -1,9 +1,11 @@
 const Db = require('../utils/db')
 const model = require('../utils/db/models/groups.model')
+const sak = require('../utils/lib/sak')
 
+// MAIN CLASS
 class Groups {
   // eslint-disable-next-line no-unused-vars
-  async get(values, opr = '$and') {
+  static async get(values, opr = '$and') {
     try {
       const filters = {}
       if (values.length > 0) {
@@ -16,27 +18,35 @@ class Groups {
     }
   }
 
-  async update(qry, values) {
+  static async update(qry, values) {
     try {
-      const rows = await Db.update(model.name, qry, values)
+      const group = { ...values }
+      group.meta = sak.addMeta('update')
+      const rows = await Db.update(model.name, qry, group)
       return rows
     } catch (err) {
       throw err
     }
   }
 
-  async insert(values) {
+  static async insert(values) {
     try {
-      const rows = await Db.insert(model.name, values)
+      const group = { ...values }
+      group.meta = sak.addMeta('create', values.meta)
+      const rows = await Db.insert(model.name, group)
       return rows
     } catch (err) {
       throw err
     }
   }
 
-  async remove(qry) {
+  static async remove(qry) {
     try {
-      const rows = await Db.remove(model.name, qry, model.hardDelete ? null : model.hardDelete)
+      let flds = null
+      if (!model.hardDelete) {
+        flds = { meta: sak.addMeta('remove') }
+      }
+      const rows = await Db.remove(model.name, qry, flds)
       return rows
     } catch (err) {
       throw err
@@ -44,4 +54,4 @@ class Groups {
   }
 }
 
-module.exports = new Groups()
+module.exports = Groups
