@@ -9,7 +9,7 @@ function Shell() {
     <div>
       <TopNav />
       <FilterBar />
-      <KanBanBoardClass />
+      <KanBanBoard />
     </div>
   )
 }

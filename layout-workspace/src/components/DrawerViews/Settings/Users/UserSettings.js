@@ -8,9 +8,11 @@ import ListItemText from '@material-ui/core/ListItemText'
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
-import ClearIcon from '@material-ui/icons/Clear'
-import ArrowIcon from '@material-ui/icons/ArrowForwardIosRounded'
+import ClearIcon from '@material-ui/icons/ClearRounded'
+import AddIcon from '@material-ui/icons/AddRounded'
 import SearchIcon from '@material-ui/icons/Search'
+import ArrowBackIcon from '@material-ui/icons/ArrowBackIosRounded'
+import ArrowForwardIcon from '@material-ui/icons/ArrowForwardIosRounded'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -35,11 +37,11 @@ const useStyles = makeStyles(theme => ({
   buttonContainer: {
     width: '100%',
     display: 'flex',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
   },
 }))
 
-export default function SettingsView(props) {
+export default function UserSettings(props) {
   const classes = useStyles()
 
   return (
@@ -50,13 +52,21 @@ export default function SettingsView(props) {
             edge="start"
             color="inherit"
             aria-label="List"
+            onClick={props.updateView('settings')}
+          >
+            <ArrowBackIcon />
+          </IconButton>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="List"
             onClick={props.toggleDrawer(false)}
           >
             <ClearIcon />
           </IconButton>
         </div>
         <Typography variant="h5" className={classes.headingText}>
-          Settings
+          Users
         </Typography>
       </div>
       <List>
@@ -66,34 +76,46 @@ export default function SettingsView(props) {
           </ListItemIcon>
           <TextField label="Find" />
         </ListItem>
-        <ListItem button onClick={props.updateView('userSettings')}>
-          <ListItemText primary="Users" />
+        <ListItem button onClick={props.updateView('newUser')}>
+          <ListItemText primary="Add New User" />
           <ListItemIcon>
-            <ArrowIcon />
-          </ListItemIcon>
-        </ListItem>
-        <ListItem button onClick={props.updateView('deskSettings')}>
-          <ListItemText primary="Desks" />
-          <ListItemIcon>
-            <ArrowIcon />
+            <AddIcon />
           </ListItemIcon>
         </ListItem>
         <ListItem button>
-          <ListItemText primary="Brokers" />
+          <ListItemText primary="Jacklyn Cameo" />
           <ListItemIcon>
-            <ArrowIcon />
+            <ArrowForwardIcon />
           </ListItemIcon>
         </ListItem>
         <ListItem button>
-          <ListItemText primary="Strategies" />
+          <ListItemText primary="Jasmin Dimick" />
           <ListItemIcon>
-            <ArrowIcon />
+            <ArrowForwardIcon />
           </ListItemIcon>
         </ListItem>
         <ListItem button>
-          <ListItemText primary="General" />
+          <ListItemText primary="Carolyn Feller" />
           <ListItemIcon>
-            <ArrowIcon />
+            <ArrowForwardIcon />
+          </ListItemIcon>
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="John Harris" />
+          <ListItemIcon>
+            <ArrowForwardIcon />
+          </ListItemIcon>
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="Jaqueline Harrison" />
+          <ListItemIcon>
+            <ArrowForwardIcon />
+          </ListItemIcon>
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="Lawrence Lambright" />
+          <ListItemIcon>
+            <ArrowForwardIcon />
           </ListItemIcon>
         </ListItem>
       </List>

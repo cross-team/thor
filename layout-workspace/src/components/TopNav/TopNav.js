@@ -1,5 +1,9 @@
 import React from 'react'
 import SettingsView from '../DrawerViews/Settings/SettingsView'
+import UserSettings from '../DrawerViews/Settings/Users/UserSettings'
+import UserAdmin from '../DrawerViews/Settings/Users/UserAdmin'
+import DeskSettings from '../DrawerViews/Settings/Desks/DeskSettings'
+import DeskAdmin from '../DrawerViews/Settings/Desks/DeskAdmin'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -37,20 +41,48 @@ const useStyles = makeStyles(theme => ({
 export default function TopNav(props) {
   const classes = useStyles()
   const [value, setValue] = React.useState(0)
+  const [drawer, setDrawer] = React.useState('')
   const [state, setState] = React.useState({
-    drawer: false,
+    drawerState: false,
   })
 
   const toggleDrawer = open => event => {
+    console.log('toggleDrawer()')
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return
     }
 
-    setState({ ...state, drawer: open })
+    setState({ ...state, drawerState: open })
   }
 
-  function handleChange(event, newValue) {
+  const handleChange = (event, newValue) => {
     setValue(newValue)
+  }
+
+  const updateView = view => event => {
+    changeDrawer(view)
+    toggleDrawer(true)(event)
+  }
+
+  const changeDrawer = view => {
+    setDrawer(view)
+    console.log('changeDrawer()')
+  }
+
+  const renderDrawer = () => {
+    if (drawer === '') {
+      return
+    } else if (drawer === 'settings') {
+      return <SettingsView toggleDrawer={toggleDrawer} updateView={updateView} />
+    } else if (drawer === 'userSettings') {
+      return <UserSettings toggleDrawer={toggleDrawer} updateView={updateView} />
+    } else if (drawer === 'deskSettings') {
+      return <DeskSettings toggleDrawer={toggleDrawer} updateView={updateView} />
+    } else if (drawer === 'newUser') {
+      return <UserAdmin toggleDrawer={toggleDrawer} updateView={updateView} />
+    } else if (drawer === 'newDesk') {
+      return <DeskAdmin toggleDrawer={toggleDrawer} updateView={updateView} />
+    }
   }
 
   return (
@@ -82,14 +114,14 @@ export default function TopNav(props) {
             <IconButton color="inherit" aria-label="User" onClick={toggleDrawer(true)}>
               <PersonIcon />
             </IconButton>
-            <IconButton color="inherit" aria-label="Settings" onClick={toggleDrawer(true)}>
+            <IconButton color="inherit" aria-label="Settings" onClick={updateView('settings')}>
               <SettingsIcon />
             </IconButton>
           </div>
         </Toolbar>
       </AppBar>
-      <Drawer anchor="right" open={state.drawer} onClose={toggleDrawer(false)}>
-        <SettingsView />
+      <Drawer anchor="right" open={state.drawerState} onClose={toggleDrawer(false)}>
+        {renderDrawer()}
       </Drawer>
     </div>
   )
