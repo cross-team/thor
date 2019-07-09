@@ -196,20 +196,3 @@ Documentation should be scaffolded in the same way the code is.  Like this docum
 #### Patterns & Master Patterns
 
 
-
-
-
-
-
-
-
-
-
-# Assets
-![Material UI Logo, Small](assets/material-ui-logo_small.png "Material UI Logo") Material UI
-
-# Discarded
-
-<img src="assets/material-ui-logo.svg" alt="alt text" width="20">
-
-![Material UI's Logo](assets/material-ui-logo.svg "Material UI's Logo")
