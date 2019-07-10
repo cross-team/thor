@@ -1,10 +1,11 @@
 import React from 'react'
 import Shell from './screens/Shell'
+import { Button } from '@franklin-thor/core'
 
 function App() {
   return (
     <div className="App">
-      <Shell />
+      <Button>something</Button>
     </div>
   )
 }

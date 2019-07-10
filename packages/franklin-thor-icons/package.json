@@ -25,8 +25,8 @@
     "test": "jest"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
