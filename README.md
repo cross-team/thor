@@ -70,14 +70,14 @@ the result will be a build of the current thor packages.
 After you have built thor you must link available dependencies located within thor itself. 
 
 Navigate to: /**packages/franklin-thor/build**
-run: `yarn run link`
+run: `yarn link`
 
 
 Navigate to: /**packages/franklin-thor-fti/build**
-run: `yarn run link`
+run: `yarn link`
 
 Navigate to: /**packages/franklin-thor-icons/build**
-run: `yarn run link`
+run: `yarn link`
 
 ### Link Thor-Playground
 
