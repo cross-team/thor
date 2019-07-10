@@ -51,7 +51,7 @@ This command will search through the current local repo and install any dependen
 
 ### Build Thor Packages
 
-Change folders to the following folders and run a build
+Change to the following folders and run a build
 
 ```text
 navigate to: packages/franklin-thor
@@ -68,7 +68,7 @@ navigate to: packages/franklin-thor-icons
 run: yarn run build
 ```
 
-the result will be a build of the current thor package.
+the result will be a build of the current thor packages.
 
 ### Create your Link
 
