@@ -49,13 +49,23 @@ lerna bootstrap
 
 This command will search through the current local repo and install any dependencies and cross-dependencies
 
-### Build Thor
+### Build Thor Packages
 
-Change folders from your local repo's root folder to packages/franklin-thor and run a build
+Change folders to the following folders and run a build
 
 ```text
-cd /packages/franklin-thor
-yarn run build
+navigate to: packages/franklin-thor
+run: yarn run build
+```
+
+```text
+navigate to: packages/franklin-thor-fti
+run: yarn run build
+```
+
+```text
+navigate to: packages/franklin-thor-icons
+run: yarn run build
 ```
 
 the result will be a build of the current thor package.
@@ -64,7 +74,19 @@ the result will be a build of the current thor package.
 
 After you have built thor you must link available dependencies located within thor itself. 
 
-You should navigate to: /**packages/franklin-thor/build**
+Navigate to: /**packages/franklin-thor/build**
+
+```text
+yarn link
+```
+
+Navigate to: /**packages/franklin-thor-fti/build**
+
+```text
+yarn link
+```
+
+Navigate to: /**packages/franklin-thor-icons/build**
 
 ```text
 yarn link
@@ -76,6 +98,14 @@ As a final step you should navigate to: /**packages/franklin-thor-playground**
 
 ```text
 yarn link "@franklin-thor/core"
+```
+
+```text
+yarn link "@franklin-thor/fti"
+```
+
+```text
+yarn link "@franklin-thor/icons"
 ```
 
 This step links the playground to the component library thor
