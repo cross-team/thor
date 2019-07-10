@@ -18,7 +18,11 @@ class Themes {
     try {
       let groupFilters = [{ _id: appId }]
       let groupRows = await groups.get(groupFilters)
-      if (_.isUndefined(groupRows[0]) || _.isUndefined(groupRows[0]["type"]) || groupRows[0]["type"] !== "APP") {
+      if (
+        _.isUndefined(groupRows[0]) ||
+        _.isUndefined(groupRows[0].type) ||
+        groupRows[0].type !== 'APP'
+      ) {
         throw new Error('Submitted app id is not found')
       } else {
         this.appId = appId
@@ -26,7 +30,11 @@ class Themes {
       groupRows = []
       groupFilters = [{ _id: themeId }]
       groupRows = await groups.get(groupFilters)
-      if (_.isUndefined(groupRows[0]) || _.isUndefined(groupRows[0]["type"]) || groupRows[0]["type"] !== "THEME") {
+      if (
+        _.isUndefined(groupRows[0]) ||
+        _.isUndefined(groupRows[0].type) ||
+        groupRows[0].type !== 'THEME'
+      ) {
         throw new Error('Submitted theme id is not found')
       } else {
         this.themeId = themeId
@@ -44,10 +52,10 @@ class Themes {
     if (rows.length > 0) {
       this._clearout()
       for (const topic of rows) {
-        if (topic._id !== "root-level") {
+        if (topic._id !== 'root-level') {
           this.theme[topic._id] = this._buildKeys(topic.keys)
         } else {
-          this.theme = _.merge(this.theme, this._buildKeys(topic.keys)) 
+          this.theme = _.merge(this.theme, this._buildKeys(topic.keys))
         }
       }
     }
@@ -75,7 +83,7 @@ class Themes {
         this._buildKeysObject(token)
       } else {
         // standard
-        standard[token.key] = sak.toNumberIfNumber(token.value)
+        standard[token.key] = sak.toNumberOrObj(token.value)
       }
     }
     const topic = { ...standard, ...this.array_tokens, ...this.obj_tokens }
@@ -85,30 +93,26 @@ class Themes {
 
   _buildKeysArray(token) {
     // break out the key
-    const key = _.split(token.key, '|')
-    const keyName = key[0]
-    const keySubName = key[1]
+    const key = sak.splitInTwo(token.key, '|')
     // check if array exist... if not create it
-    if (_.isUndefined(this.array_tokens[keyName])) {
-      this.array_tokens[keyName] = []
+    if (_.isUndefined(this.array_tokens[key.val1])) {
+      this.array_tokens[key.val1] = []
     }
     // add value and index
-    this.array_tokens[key[0]].splice(parseInt(keySubName, 10), 0, sak.toNumberIfNumber(token.value))
+    this.array_tokens[key.val1].splice(parseInt(key.val2, 10), 0, sak.toNumberOrObj(token.value))
 
     return true
   }
 
   _buildKeysObject(token) {
     // break out the key
-    const key = _.split(token.key, ':')
-    const keyName = key[0]
-    const keySubName = key[1]
+    const key = sak.splitInTwo(token.key, ':')
     // check if array exist... if not create it
-    if (_.isUndefined(this.obj_tokens[keyName])) {
-      this.obj_tokens[keyName] = {}
+    if (_.isUndefined(this.obj_tokens[key.val1])) {
+      this.obj_tokens[key.val1] = {}
     }
     // add value and index
-    this.obj_tokens[keyName][keySubName] = sak.toNumberIfNumber(token.value)
+    this.obj_tokens[key.val1][key.val2] = sak.toNumberOrObj(token.value)
 
     return true
   }
