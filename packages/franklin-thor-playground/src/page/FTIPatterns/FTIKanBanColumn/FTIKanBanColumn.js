@@ -1,9 +1,17 @@
 import React from 'react'
-import { makeStyles, Paper, Typography, Switch } from '@franklin-thor/core/'
+import {
+  makeStyles,
+  Paper,
+  Typography,
+  Switch,
+  Select,
+  FormControl,
+  MenuItem,
+} from '@franklin-thor/core/'
 import FTICard from '../FTICard/FTICard'
 
 const useStyles = makeStyles(theme => ({
-  container: {
+  column: {
     flexBasis: '25%',
   },
   root: {
@@ -11,19 +19,58 @@ const useStyles = makeStyles(theme => ({
     height: '100%',
     alignItems: 'stretch',
   },
+  topContainer: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
 }))
 
 export default function FTIKanBanColumn(props) {
   const classes = useStyles()
-  const type = props.type
+  const [values, setValues] = React.useState({
+    order: 'size',
+  })
+
+  function handleChange(event) {
+    setValues(oldValues => ({
+      ...oldValues,
+      [event.target.name]: event.target.value,
+    }))
+  }
 
   return (
     <div className={classes.root}>
-      <Paper className={classes.container}>
+      <Paper className={classes.column}>
         <Paper>
-          <Typography variant="body2">Desk Orders</Typography>
-          <Switch defaultChecked value="checkedF" color="default" />
-          <Typography variant="body1">Order Size</Typography>
+          <div className={classes.topContainer}>
+            <Typography variant="body2">Desk Orders</Typography>
+            <Switch defaultChecked value="checkedF" color="default" />
+          </div>
+          <form>
+            <FormControl className={classes.formControl}>
+              <Select
+                value={values.order}
+                onChange={handleChange}
+                displayEmpty
+                name="order"
+                className={classes.selectEmpty}
+              >
+                <MenuItem value={'size'}>Order Size</MenuItem>
+                <MenuItem value={'type'}>Order Type</MenuItem>
+                <MenuItem value={'status'}>Order Status</MenuItem>
+                <MenuItem value={'balance'}>Order Balance</MenuItem>
+                <MenuItem value={'company'}>Company</MenuItem>
+                <MenuItem value={'name'}>Trader Name</MenuItem>
+                <MenuItem value={'location'}>Trader Location</MenuItem>
+                <MenuItem value={'last'}>Last Price</MenuItem>
+                <MenuItem value={'close'}>Close Price</MenuItem>
+                <MenuItem value={'avg'}>Average Price</MenuItem>
+                <MenuItem value={'volume'}>% Volume</MenuItem>
+                <MenuItem value={'complete'}>% Complete</MenuItem>
+                <MenuItem value={'tca'}>TCA</MenuItem>
+              </Select>
+            </FormControl>
+          </form>
         </Paper>
         <FTICard
           actNum="01234-56789"
