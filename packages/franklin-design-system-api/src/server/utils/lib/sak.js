@@ -33,13 +33,21 @@ const findTokenKeyInArray = (ary, token) => {
 }
 
 /**
- * converts a string to a number if the string is a number
+ * converts a string to a number or object if the string is such
  * @param {string} value
  */
-const toNumberIfNumber = value => {
+const toNumberOrObj = value => {
+  // check if number
   if (!isNaN(value)) {
     return +value
   }
+
+  // check if object
+  if (value.charAt(0) === '{' && value.charAt(value.length - 1) === '}') {
+    return JSON.parse(value)
+  }
+
+  // if not just return
   return value
 }
 
@@ -79,6 +87,6 @@ module.exports = {
   findTokenKeyInArray,
   getCurrentTimeStamp,
   addMeta,
-  toNumberIfNumber,
+  toNumberOrObj,
   splitInTwo,
 }

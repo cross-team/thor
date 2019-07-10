@@ -7,6 +7,10 @@ const releasesRoutes = [
     path: '/releases/',
     options: {
       handler: handler.get,
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with '],
+      },
       description: 'Gets all releases',
       tags: ['api'],
       plugins: {},

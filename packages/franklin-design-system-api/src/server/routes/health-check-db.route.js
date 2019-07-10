@@ -6,6 +6,10 @@ const healthCheckDbRoute = [
     path: '/db/check',
     options: {
       handler: handler.check,
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with '],
+      },
       description: 'DB Health Check',
       tags: ['api'],
       plugins: {},

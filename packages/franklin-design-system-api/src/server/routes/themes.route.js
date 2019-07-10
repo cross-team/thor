@@ -7,6 +7,10 @@ const themeRoutes = [
     path: '/themes/',
     options: {
       handler: handler.get,
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with '],
+      },
       description: 'Gets all theme',
       tags: ['api'],
       plugins: {},

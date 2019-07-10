@@ -20,8 +20,8 @@ class Themes {
       let groupRows = await groups.get(groupFilters)
       if (
         _.isUndefined(groupRows[0]) ||
-        _.isUndefined(groupRows[0]['type']) ||
-        groupRows[0]['type'] !== 'APP'
+        _.isUndefined(groupRows[0].type) ||
+        groupRows[0].type !== 'APP'
       ) {
         throw new Error('Submitted app id is not found')
       } else {
@@ -32,8 +32,8 @@ class Themes {
       groupRows = await groups.get(groupFilters)
       if (
         _.isUndefined(groupRows[0]) ||
-        _.isUndefined(groupRows[0]['type']) ||
-        groupRows[0]['type'] !== 'THEME'
+        _.isUndefined(groupRows[0].type) ||
+        groupRows[0].type !== 'THEME'
       ) {
         throw new Error('Submitted theme id is not found')
       } else {
@@ -83,7 +83,7 @@ class Themes {
         this._buildKeysObject(token)
       } else {
         // standard
-        standard[token.key] = sak.toNumberIfNumber(token.value)
+        standard[token.key] = sak.toNumberOrObj(token.value)
       }
     }
     const topic = { ...standard, ...this.array_tokens, ...this.obj_tokens }
@@ -99,7 +99,7 @@ class Themes {
       this.array_tokens[key.val1] = []
     }
     // add value and index
-    this.array_tokens[key.val1].splice(parseInt(key.val2, 10), 0, sak.toNumberIfNumber(token.value))
+    this.array_tokens[key.val1].splice(parseInt(key.val2, 10), 0, sak.toNumberOrObj(token.value))
 
     return true
   }
@@ -112,7 +112,7 @@ class Themes {
       this.obj_tokens[key.val1] = {}
     }
     // add value and index
-    this.obj_tokens[key.val1][key.val2] = sak.toNumberIfNumber(token.value)
+    this.obj_tokens[key.val1][key.val2] = sak.toNumberOrObj(token.value)
 
     return true
   }
