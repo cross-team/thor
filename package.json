@@ -71,7 +71,9 @@
   "sideEffects": false,
   "nyc": {
     "include": [
-      "packages/franklin-thor/src/**/*.js"
+      "packages/franklin-thor/src/**/*.js",
+      "packages/franklin-thor-fti/src/**/*.js",
+      "packages/franklin-thor-icons/src/**/*.js"
     ],
     "exclude": [
       "**/*.test.js"

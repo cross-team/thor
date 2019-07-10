@@ -10,6 +10,10 @@ COPY packages/franklin-thor-playground/nginx.conf ./packages/franklin-thor-playg
 
 COPY packages/franklin-thor/package.json ./packages/franklin-thor/
 
+COPY packages/franklin-thor-fti/package.json ./packages/franklin-thor-fti/
+
+COPY packages/franklin-thor-icons/package.json ./packages/franklin-thor-icons/
+
 COPY . ./
 
 RUN lerna bootstrap
