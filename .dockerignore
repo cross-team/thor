@@ -3,6 +3,8 @@
 # add project directories to include here
 !/packages/franklin-thor-playground
 !/packages/franklin-thor
+!/packages/franklin-thor-fti
+!/packages/franklin-thor-icons
 !lerna.json
 !/scripts/copy-files.js
 !CHANGELOG.md

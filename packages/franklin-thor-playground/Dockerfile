@@ -10,14 +10,26 @@ COPY packages/franklin-thor-playground/nginx.conf ./packages/franklin-thor-playg
 
 COPY packages/franklin-thor/package.json ./packages/franklin-thor/
 
+COPY packages/franklin-thor-fti/package.json ./packages/franklin-thor-fti/
+
+COPY packages/franklin-thor-icons/package.json ./packages/franklin-thor-icons/
+
 COPY . ./
 
 RUN lerna bootstrap
 
 RUN cd packages/franklin-thor && yarn run build
-RUN cd packages/franklin-thor/build && yarn link 
+RUN cd packages/franklin-thor/build && yarn link
+
+RUN cd packages/franklin-thor-fti && yarn run build
+RUN cd packages/franklin-thor-fti/build && yarn link
+
+RUN cd packages/franklin-thor-icons && yarn run build
+RUN cd packages/franklin-thor-icons/build && yarn link
 
 RUN cd packages/franklin-thor-playground && yarn link "@franklin-thor/core"
+RUN cd packages/franklin-thor-playground && yarn link "@franklin-thor/fti"
+RUN cd packages/franklin-thor-playground && yarn link "@franklin-thor/icons"
 RUN cd packages/franklin-thor-playground && yarn run dist
 
 # Stage 2 - the production environment
