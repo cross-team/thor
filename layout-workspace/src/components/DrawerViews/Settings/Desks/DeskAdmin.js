@@ -74,7 +74,7 @@ const useStyles = makeStyles(theme => ({
   },
   chipContainer: {
     width: '96%',
-    backgroundColor: '#0D0D0C',
+    // backgroundColor: '#0D0D0C',
   },
   cardContainer: {
     maxWidth: '250px',

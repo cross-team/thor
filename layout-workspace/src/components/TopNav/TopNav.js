@@ -87,7 +87,7 @@ export default function TopNav(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" color="default">
         <Toolbar className={classes.appBar}>
           <div className={classes.leftContainer}>
             <IconButton edge="start" color="inherit" aria-label="Menu">
