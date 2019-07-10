@@ -15,9 +15,17 @@ COPY . ./
 RUN lerna bootstrap
 
 RUN cd packages/franklin-thor && yarn run build
-RUN cd packages/franklin-thor/build && yarn link 
+RUN cd packages/franklin-thor/build && yarn link
+
+RUN cd packages/franklin-thor-fti && yarn run build
+RUN cd packages/franklin-thor-fti/build && yarn link
+
+RUN cd packages/franklin-thor-icons && yarn run build
+RUN cd packages/franklin-thor-icons/build && yarn link
 
 RUN cd packages/franklin-thor-playground && yarn link "@franklin-thor/core"
+RUN cd packages/franklin-thor-playground && yarn link "@franklin-thor/fti"
+RUN cd packages/franklin-thor-playground && yarn link "@franklin-thor/icons"
 RUN cd packages/franklin-thor-playground && yarn run dist
 
 # Stage 2 - the production environment
