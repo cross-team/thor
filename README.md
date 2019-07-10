@@ -53,20 +53,15 @@ This command will search through the current local repo and install any dependen
 
 Change to the following folders and run a build
 
-```text
-navigate to: packages/franklin-thor
-run: yarn run build
-```
 
-```text
-navigate to: packages/franklin-thor-fti
-run: yarn run build
-```
+Navigate to: /**packages/franklin-thor/**
+run: `yarn run build`
 
-```text
-navigate to: packages/franklin-thor-icons
-run: yarn run build
-```
+Navigate to: /**packages/franklin-thor-fti/**
+run: `yarn run build`
+
+Navigate to: /**packages/franklin-thor-icons/**
+run: `yarn run build`
 
 the result will be a build of the current thor packages.
 
@@ -75,22 +70,14 @@ the result will be a build of the current thor packages.
 After you have built thor you must link available dependencies located within thor itself. 
 
 Navigate to: /**packages/franklin-thor/build**
+run: `yarn run link`
 
-```text
-yarn link
-```
 
 Navigate to: /**packages/franklin-thor-fti/build**
-
-```text
-yarn link
-```
+run: `yarn run link`
 
 Navigate to: /**packages/franklin-thor-icons/build**
-
-```text
-yarn link
-```
+run: `yarn run link`
 
 ### Link Thor-Playground
 
