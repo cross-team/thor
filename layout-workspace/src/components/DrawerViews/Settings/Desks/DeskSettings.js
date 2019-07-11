@@ -16,7 +16,7 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForwardIosRounded'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '256px',
+    width: '320px',
   },
   heading: {
     width: '256px',

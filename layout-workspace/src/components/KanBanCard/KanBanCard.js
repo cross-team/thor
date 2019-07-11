@@ -25,6 +25,11 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
+    minWidth: '256px',
+    margin: '8px',
+    backgroundColor: '#262524',
+    //border: 'solid 1px black',
+    //borderRadius: '4px',
     // maxWidth: '344px'
   },
   rightContainer: {
@@ -50,7 +55,7 @@ export default function KanBanCard(props) {
         props.onDragEnd(e, props.order)
       }}
     >
-      <Card className={classes.cardContainer}>
+      <Card className={classes.cardContainer} elevation="2">
         <CardContent className={classes.leftContent}>
           <div className={classes.container}>
             <AccountIcon className={classes.icon} />

@@ -12,7 +12,7 @@ import Switch from '@material-ui/core/Switch'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '256px',
+    width: '320px',
   },
   heading: {
     width: '256px',

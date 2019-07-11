@@ -28,7 +28,7 @@ import Chip from '@material-ui/core/Chip'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '256px',
+    width: '320px',
   },
   heading: {
     width: '256px',
