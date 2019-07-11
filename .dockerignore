@@ -6,6 +6,7 @@
 !/packages/franklin-thor-fti
 !/packages/franklin-thor-icons
 !lerna.json
+!.npmrc
 !/scripts/copy-files.js
 !CHANGELOG.md
 !LICENSE
