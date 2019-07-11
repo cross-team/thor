@@ -26,4 +26,4 @@ Please do not share the Font Awesome Pro account information above with anyone o
 
 I wanted to provide not only the key, but also the account information, in case Franklin Templeton needs to access it in the future.
 
-- Jason James, July 2019
+Jason James, July 2019
