@@ -16,28 +16,32 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForwardIosRounded'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '320px',
+    width: '256px',
   },
   heading: {
-    width: '256px',
+    width: '100%',
     height: '120px',
     display: 'block',
     // alignItems: 'flex-start',
     // justifyContent: 'flex-end',
     // flexFlow: 'row-reverse || wrap'
     position: 'relative',
+    backgroundColor: '#3377FF',
   },
   headingText: {
     // alignSelf: 'flex-end',
-    width: '100%',
     position: 'absolute',
     bottom: '0',
-    // padding:
+    paddingBottom: '16px',
+    paddingLeft: '16px',
   },
   buttonContainer: {
     width: '100%',
     display: 'flex',
     justifyContent: 'space-between',
+  },
+  backArrow: {
+    paddingLeft: '16px',
   },
 }))
 
@@ -53,6 +57,7 @@ export default function UserSettings(props) {
             color="inherit"
             aria-label="List"
             onClick={props.updateView('settings')}
+            className={classes.backArrow}
           >
             <ArrowBackIcon />
           </IconButton>

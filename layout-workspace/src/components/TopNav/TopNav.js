@@ -31,6 +31,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'row',
     justifyContent: 'space-between',
     flexWrap: 'nowrap',
+    backgroundColor: '#262624',
   },
   leftContainer: {
     // alignSelf: 'stretch',
@@ -93,7 +94,12 @@ export default function TopNav(props) {
             <IconButton edge="start" color="inherit" aria-label="Menu">
               <MenuIcon />
             </IconButton>
-            <Tabs value={value} onChange={handleChange} className={classes.tabGroup}>
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              className={classes.tabGroup}
+              indicatorColor="primary"
+            >
               <Tab label="Orders" />
               <Tab label="Executions" />
               <Tab label="Securities" />

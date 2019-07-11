@@ -14,7 +14,7 @@ import SearchIcon from '@material-ui/icons/Search'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '320px',
+    width: '256px',
   },
   heading: {
     width: '256px',
@@ -24,13 +24,14 @@ const useStyles = makeStyles(theme => ({
     // justifyContent: 'flex-end',
     // flexFlow: 'row-reverse || wrap'
     position: 'relative',
+    backgroundColor: '#3377FF',
   },
   headingText: {
     // alignSelf: 'flex-end',
-    width: '100%',
     position: 'absolute',
     bottom: '0',
-    // padding:
+    paddingBottom: '16px',
+    paddingLeft: '16px',
   },
   buttonContainer: {
     width: '100%',

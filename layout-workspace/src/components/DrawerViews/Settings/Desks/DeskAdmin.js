@@ -28,28 +28,32 @@ import Chip from '@material-ui/core/Chip'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '320px',
+    width: '256px',
   },
   heading: {
-    width: '256px',
+    width: '100%',
     height: '120px',
     display: 'block',
     // alignItems: 'flex-start',
     // justifyContent: 'flex-end',
     // flexFlow: 'row-reverse || wrap'
     position: 'relative',
+    backgroundColor: '#3377FF',
   },
   headingText: {
     // alignSelf: 'flex-end',
-    width: '100%',
     position: 'absolute',
     bottom: '0',
-    // padding:
+    paddingBottom: '16px',
+    paddingLeft: '16px',
   },
   buttonContainer: {
     width: '100%',
     display: 'flex',
     justifyContent: 'space-between',
+  },
+  backArrow: {
+    paddingLeft: '16px',
   },
   bar: {
     width: '100%',
@@ -66,7 +70,7 @@ const useStyles = makeStyles(theme => ({
   },
   switch: {
     display: 'flex',
-    alignItems: 'left',
+    alignItems: 'space-between',
   },
   button: {
     margin: theme.spacing(1),
@@ -137,6 +141,7 @@ export default function DeskAdmin(props) {
             color="inherit"
             aria-label="List"
             onClick={props.updateView('deskSettings')}
+            className={classes.backArrow}
           >
             <ArrowBackIcon />
           </IconButton>
@@ -244,12 +249,11 @@ export default function DeskAdmin(props) {
             }}
           />
 
-          <Card className={`${classes.cardContainer}, ${classes.margin}`}>
+          {/*<Card className={`${classes.cardContainer}, ${classes.margin}`}>
             <CardContent>
               <div className={classes.chipContainer}>
                 <Chip onDelete={handleDelete} avatar={<Avatar>FH</Avatar>} />
               </div>
-
               <List>
                 {[0, 1, 2, 3].map(value => {
                   const labelId = `checkbox-list-label-${value}`
@@ -277,7 +281,7 @@ export default function DeskAdmin(props) {
                 })}
               </List>
             </CardContent>
-          </Card>
+              </Card>*/}
 
           <TextField
             id="autoBroker"
