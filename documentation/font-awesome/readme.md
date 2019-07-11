@@ -4,6 +4,7 @@
 
 `B84E0EC6-0C7D-4F50-BB68-5CD51303D40E`
 
+
 ## Installing Font Awesome Using NPM
 
 Create a .npmrc file in the root of the folder and include:
@@ -12,6 +13,7 @@ Create a .npmrc file in the root of the folder and include:
 //npm.fontawesome.com/:_authToken=B84E0EC6-0C7D-4F50-BB68-5CD51303D40E`
 
 For more information, reference: https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers
+
 
 ## The Font Awesome Account Created for this Project
 
@@ -26,4 +28,10 @@ Please do not share the Font Awesome Pro account information above with anyone o
 
 I wanted to provide not only the key, but also the account information, in case Franklin Templeton needs to access it in the future.
 
-Jason James, July 2019
+
+## The 'local-copy' directory in this directory
+
+For purposes of reference and backup, I downloaded the pro and free font packages available today from Font Awesome and uploaded them to this folder.  These files should never need to be used, but I've uploaded them here for safe-keeping should there be any issues with the key in the future.  
+
+Jason James
+July 2019
