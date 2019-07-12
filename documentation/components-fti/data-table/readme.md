@@ -4,7 +4,9 @@
 
 The data table within the FTITable component on story book is built using material-table.
 
-To create it, you add various props to the MaterialTable component containing objects that provide the component with the information it needs to render the table and its appropriate rows and columns with their appropriate data. There is a columns prop where you specify the various column fields there's a data prop that contains an object for each row of the table containing their data points, and there's an option prop where you can set any additional options for the table
+To create it, you add various props to the MaterialTable component containing objects that provide the component with the information it needs to render the table and its appropriate rows and columns with their appropriate data. There is a columns prop where you specify the various column fields there's a data prop that contains an object for each row of the table containing their data points, and there's an option prop where you can set any additional options for the table. Below is an example of what is already in the FTITable.
+
+You can find additional documention on material-table's features here: https://material-table.com/#/
 ```
 <MaterialTable
         columns={[
