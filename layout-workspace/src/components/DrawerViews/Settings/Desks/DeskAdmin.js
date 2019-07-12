@@ -28,7 +28,7 @@ import Chip from '@material-ui/core/Chip'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '256px',
+    width: '320px',
   },
   heading: {
     width: '100%',
@@ -134,6 +134,7 @@ export default function DeskAdmin(props) {
 
   return (
     <div className={classes.root}>
+      {/* This div contains the heading of the drawers view */}
       <div className={classes.heading}>
         <div className={classes.buttonContainer}>
           <IconButton
@@ -161,6 +162,8 @@ export default function DeskAdmin(props) {
       <div className={classes.bar}>
         <Typography variant="caption">NEW DESK</Typography>
       </div>
+
+      {/* This form contains the inputs and buttons for adding a new desk */}
       <form className={classes.form}>
         <FormGroup>
           <TextField

@@ -47,6 +47,7 @@ export default function TopNav(props) {
     drawerState: false,
   })
 
+  // This function opens and closes the drawer
   const toggleDrawer = open => event => {
     console.log('toggleDrawer()')
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -56,20 +57,18 @@ export default function TopNav(props) {
     setState({ ...state, drawerState: open })
   }
 
+  // This function handles setting the state when the user clicks a tab
   const handleChange = (event, newValue) => {
     setValue(newValue)
   }
 
+  // This function updates the state on what's being displayed in the drawers and passed to each drawer view so that they may also control the view
   const updateView = view => event => {
-    changeDrawer(view)
+    setDrawer(view)
     toggleDrawer(true)(event)
   }
 
-  const changeDrawer = view => {
-    setDrawer(view)
-    console.log('changeDrawer()')
-  }
-
+  // This function renders the view into the drawer depending on the drawer value of the state
   const renderDrawer = () => {
     if (drawer === '') {
       return
@@ -90,6 +89,7 @@ export default function TopNav(props) {
     <div className={classes.root}>
       <AppBar position="static" color="default">
         <Toolbar className={classes.appBar}>
+          {/* This div contains the hamburger menu icon and the tab menu */}
           <div className={classes.leftContainer}>
             <IconButton edge="start" color="inherit" aria-label="Menu">
               <MenuIcon />
@@ -110,6 +110,8 @@ export default function TopNav(props) {
               <MoreIcon />
             </IconButton>
           </div>
+
+          {/* This div contains the various buttons that control the drawer */}
           <div className={classes.buttonGroup}>
             <IconButton color="inherit" aria-label="Search" onClick={toggleDrawer(true)}>
               <SearchIcon />
@@ -126,6 +128,7 @@ export default function TopNav(props) {
           </div>
         </Toolbar>
       </AppBar>
+
       <Drawer anchor="right" open={state.drawerState} onClose={toggleDrawer(false)}>
         {renderDrawer()}
       </Drawer>

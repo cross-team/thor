@@ -44,6 +44,7 @@ export default function FilterBar() {
     <div className={classes.root}>
       <AppBar position="static" color="default">
         <Toolbar variant="dense" className={classes.container}>
+          {/* This Grid contains the search input field */}
           <Grid container spacing={1} alignItems="flex-end">
             <Grid item>
               <SearchIcon />
@@ -52,6 +53,8 @@ export default function FilterBar() {
               <TextField id="input-with-icon-grid" label="Find" />
             </Grid>
           </Grid>
+
+          {/* This div contains icons that would switch between the KanBan/List views and the Auto-Order switch */}
           <div className={`${classes.container} ${classes.buttonContainer}`}>
             <IconButton color="inherit" aria-label="Columns">
               <ViewWeekIcon />

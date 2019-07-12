@@ -16,7 +16,7 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForwardIosRounded'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '256px',
+    width: '320px',
   },
   heading: {
     width: '100%',
@@ -50,6 +50,7 @@ export default function DeskSettings(props) {
 
   return (
     <div className={classes.root}>
+      {/* This div contains the heading of the drawers view */}
       <div className={classes.heading}>
         <div className={classes.buttonContainer}>
           <IconButton
@@ -74,6 +75,8 @@ export default function DeskSettings(props) {
           Desks
         </Typography>
       </div>
+
+      {/* This List contains the menu items of the drawer view */}
       <List>
         <ListItem>
           <ListItemIcon>

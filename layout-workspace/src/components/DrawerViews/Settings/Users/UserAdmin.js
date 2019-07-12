@@ -12,7 +12,7 @@ import Switch from '@material-ui/core/Switch'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '256px',
+    width: '320px',
   },
   heading: {
     width: '100%',
@@ -79,6 +79,7 @@ export default function UserAdmin(props) {
 
   return (
     <div className={classes.root}>
+      {/* This div contains the heading of the drawers view */}
       <div className={classes.heading}>
         <div className={classes.buttonContainer}>
           <IconButton
@@ -106,6 +107,8 @@ export default function UserAdmin(props) {
       <div className={classes.bar}>
         <Typography variant="caption">NEW USER</Typography>
       </div>
+
+      {/* This form contains the inputs and buttons for adding a new user */}
       <form className={classes.form}>
         <TextField
           id="fname"

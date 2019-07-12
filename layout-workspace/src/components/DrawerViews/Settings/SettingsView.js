@@ -14,10 +14,10 @@ import SearchIcon from '@material-ui/icons/Search'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '256px',
+    width: '320px',
   },
   heading: {
-    width: '256px',
+    width: '100%',
     height: '120px',
     display: 'block',
     // alignItems: 'flex-start',
@@ -38,6 +38,13 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'flex-end',
   },
+  listItem: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  listItemIcon: {
+    maxWidth: '24px',
+  },
 }))
 
 export default function SettingsView(props) {
@@ -45,6 +52,7 @@ export default function SettingsView(props) {
 
   return (
     <div className={classes.root}>
+      {/* This div contains the heading of the drawers view */}
       <div className={classes.heading}>
         <div className={classes.buttonContainer}>
           <IconButton
@@ -60,6 +68,8 @@ export default function SettingsView(props) {
           Settings
         </Typography>
       </div>
+
+      {/* This List contains the menu items of the drawer view */}
       <List>
         <ListItem>
           <ListItemIcon>
@@ -67,9 +77,9 @@ export default function SettingsView(props) {
           </ListItemIcon>
           <TextField label="Find" />
         </ListItem>
-        <ListItem button onClick={props.updateView('userSettings')}>
+        <ListItem button onClick={props.updateView('userSettings')} className={classes.listItem}>
           <ListItemText primary="Users" />
-          <ListItemIcon>
+          <ListItemIcon className={classes.listItemIcon}>
             <ArrowIcon />
           </ListItemIcon>
         </ListItem>
