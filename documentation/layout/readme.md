@@ -14,41 +14,30 @@ yarn start
 layout-workspace
 │   README.md
 │   package.json 
-│
-└───public
-│   
+└───public 
 └───src
 │   │   App.js
 │   │   index.js
-│
 └───assets
 │   │   orderList.json
-│
 └───components
     └───DrawerViews
     │   └───Settings
     │       │   SettingsView.js
-    │       │
     │       └───Desks
     │       │   │   DeskAdmin.js
     │       │   │   DeskSettings.js
-    │       │
     │       └───Users
     │           │   UserAdmin.js
     │           │   UserSettings.js
-    │
     └───FilterBar
     │   │   FilterBar.js
-    │
     └───KanBanBoard
     │   │   KanBanBoard.js
-    │
     └───KanBanCard
     │   │   KanBanCard.js
-    │
     └───KanBanColumn
     │   │   KanBanColumn.js
-    │
     └───TopNav
         │   TopNav.js
 ```
