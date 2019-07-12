@@ -8,23 +8,47 @@ yarn install
 cd layout-workspace/
 yarn start
 ```
-## Code Structure
+## Relevant Code Structure
 
 ```
-project
+layout-workspace
 │   README.md
-│   file001.txt    
+│   package.json 
 │
-└───folder1
-│   │   file011.txt
-│   │   file012.txt
-│   │
-│   └───subfolder1
-│       │   file111.txt
-│       │   file112.txt
-│       │   ...
+└───public
 │   
-└───folder2
-    │   file021.txt
-    │   file022.txt
+└───src
+│   │   App.js
+│   │   index.js
+│
+└───assets
+│   │   orderList.json
+│
+└───components
+    └───DrawerViews
+    │   └───Settings
+    │       │   SettingsView.js
+    │       │
+    │       └───Desks
+    │       │   │   DeskAdmin.js
+    │       │   │   DeskSettings.js
+    │       │
+    │       └───Users
+    │           │   UserAdmin.js
+    │           │   UserSettings.js
+    │
+    └───FilterBar
+    │   │   FilterBar.js
+    │
+    └───KanBanBoard
+    │   │   KanBanBoard.js
+    │
+    └───KanBanCard
+    │   │   KanBanCard.js
+    │
+    └───KanBanColumn
+    │   │   KanBanColumn.js
+    │
+    └───TopNav
+        │   TopNav.js
 ```
