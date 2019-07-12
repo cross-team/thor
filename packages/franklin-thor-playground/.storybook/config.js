@@ -11,12 +11,11 @@ addParameters({
 })
 
 function loadStories() {
-  //require('stories/Button')
-  //require('stories/Showcase')
-  //require('stories/Checkboxes')
-  //require('stories/Selects')
-  //require('stories/Switches')
-  //require('stories/TextFields')
+  require('stories/FTIBadge')
+  require('stories/FTICancelAlert')
+  require('stories/FTICard')
+  require('stories/FTIKanBanColumn')
+  require('stories/FTITable')
   require('stories/MuiButton')
   require('stories/MuiCheckboxes')
   require('stories/MuiPickers')
@@ -51,10 +50,6 @@ function loadStories() {
   require('stories/MuiPopper')
   require('stories/MuiPortal')
   require('stories/MuiTransitions')
-  require('stories/FTIBadge')
-  require('stories/FTICancelAlert')
-  require('stories/FTICard')
-  require('stories/FTIKanBanColumn')
 }
 addDecorator(withKnobs)
 
