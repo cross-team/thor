@@ -11,6 +11,9 @@ const releasesRoute = require('./routes/releases.route')
 const tokensRoute = require('./routes/tokens.route')
 const themesRoute = require('./routes/themes.route')
 const DbChecker = require('./lib/health-check-db.lib')
+const Inert = require('inert')
+const Vision = require('vision')
+const HapiSwagger = require('hapi-swagger')
 
 const host = process.env.NODE_HOST || '0.0.0.0'
 const port = process.env.NODE_PORT || 3000
@@ -30,7 +33,20 @@ module.exports = async () => {
   server.listener.keepAliveTimeout = 620e3
 
   // Plugins
-
+  const swaggerOptions = {
+    info: {
+      title: 'Design System API Documentation',
+      version: '0.1.0',
+    },
+  }
+  await server.register([
+    Inert,
+    Vision,
+    {
+      plugin: HapiSwagger,
+      options: swaggerOptions,
+    },
+  ])
   // Routes
   server.route([
     ...healthCheckRoute,
