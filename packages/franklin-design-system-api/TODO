@@ -4,7 +4,7 @@ Todo:
   ✔ add get endpoint @done(19-07-03 00:07)
   ✔ add remove endpoint to all @done(19-07-03 21:52)
   ✔ refactor constants in model @done(19-07-03 21:52)
-  ☐ reset mlab db
-  ☐ load real tokens and config
-  ✔ add meta data routine to release and groups endpoints @done(19-07-03 21:53)
-  ☐ create token json for thor
+  ✔ reset mlab db @done(19-07-16 18:21)
+  ✔ load real tokens and config @done(19-07-16 18:21)
+  ✔ add meta data routine to release and groups endpoints @done(19-07-16 18:21)
+  ✔ create token json for thor @done(19-07-16 18:21)
