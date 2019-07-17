@@ -12,6 +12,7 @@ const groupsRoutes = [
         additionalHeaders: ['cache-control', 'x-requested-with '],
       },
       description: 'Gets all groups',
+      notes: 'Returns an array of group objects',
       tags: ['api'],
       plugins: {},
       validate: {
