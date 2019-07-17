@@ -3,6 +3,7 @@
   "private": true,
   "author": "Cross Team",
   "version": "1.0.0",
+  "main": "./build",
   "description": "React components that implement Google's Material Design.",
   "repository": {
     "type": "git",
@@ -43,6 +44,5 @@
     "@material-ui/core": "^4.0.1",
     "babel-jest": "^24.8.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24"
-  },
-  "gitHead": "7b8d99fe7c128123cfd8eba3f562c8ca40e8537b"
+  }
 }

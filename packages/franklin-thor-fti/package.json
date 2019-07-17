@@ -3,6 +3,7 @@
   "private": true,
   "author": "Cross Team",
   "version": "1.0.0",
+  "main": "./build",
   "description": "Franklin Templeton Custom Components",
   "repository": {
     "type": "git",
