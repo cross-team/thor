@@ -4,6 +4,10 @@ const healthCheckRoute = [
     path: '/',
     options: {
       handler: (request, h) => h.response(),
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with '],
+      },
       description: 'Health Check',
       tags: ['api'],
       plugins: {
@@ -27,5 +31,5 @@ const healthCheckRoute = [
       },
     },
   },
-];
-module.exports = healthCheckRoute;
+]
+module.exports = healthCheckRoute

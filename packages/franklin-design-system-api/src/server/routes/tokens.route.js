@@ -7,6 +7,10 @@ const tokensRoutes = [
     path: '/tokens/',
     options: {
       handler: handler.get,
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with '],
+      },
       description: 'Gets all tokens',
       tags: ['api'],
       plugins: {},
