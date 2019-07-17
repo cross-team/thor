@@ -62,38 +62,14 @@ run: `yarn run build`
 Navigate to: /**packages/franklin-thor-icons/**
 run: `yarn run build`
 
-the result will be a build of the current thor packages.
+To build all packages run: `yarn build:all` in root directory.
 
-### Create your Link
+### Thor-Playground
 
-After you have built thor you must link available dependencies located within thor itself.
+If `yarn build:all` was not used to build all the packages and the build of the Thor packages were done independently, use `yarn build:clean`.
+This will remove the node_modules related to the packages and reinstall them with appropriate build files,
+required to be used with the playground.
 
-Navigate to: /**packages/franklin-thor/build**
-run: `yarn link`
-
-Navigate to: /**packages/franklin-thor-fti/build**
-run: `yarn link`
-
-Navigate to: /**packages/franklin-thor-icons/build**
-run: `yarn link`
-
-### Link Thor-Playground
-
-As a final step you should navigate to: /**packages/franklin-thor-playground**
-
-```text
-yarn link "@franklin-thor/core"
-```
-
-```text
-yarn link "@franklin-thor/fti"
-```
-
-```text
-yarn link "@franklin-thor/icons"
-```
-
-This step links the playground to the component library thor
 
 ### Conclusion
 
