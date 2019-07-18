@@ -11,7 +11,9 @@
     "lint:ci": "eslint . --report-unused-disable-directives",
     "lint:fix": "eslint . --cache --fix",
     "prettier": "npx babel-node ./scripts/prettier.js",
-    "prettier:all": "npx babel-node ./scripts/prettier.js write"
+    "prettier:all": "npx babel-node ./scripts/prettier.js write",
+    "build:all": "cd packages/franklin-thor-fti && yarn build && cd ../ && cd franklin-thor && yarn build && cd ../ && cd franklin-thor-icons && yarn build && cd .. && cd .. && lerna clean --yes && lerna bootstrap",
+    "build:clean": "lerna clean --yes && lerna bootstrap"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -85,7 +87,8 @@
     "node": ">=8.0.0"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "services/*"
   ],
   "dependencies": {}
 }
