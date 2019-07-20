@@ -11,6 +11,9 @@ module.exports = {
       build: fields.rel.build,
       rel: joi.string(),
     },
+    params: {
+      id: joi.string().required(),
+    },
   },
   put: {
     payload: {
@@ -40,5 +43,10 @@ module.exports = {
     },
     build: mapToDefaults,
     validate: mapToValidations,
+  },
+  delete: {
+    params: {
+      id: joi.string().required(),
+    },
   },
 }

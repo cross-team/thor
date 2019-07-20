@@ -11,7 +11,7 @@ const healthCheckDbRoute = [
         additionalHeaders: ['cache-control', 'x-requested-with '],
       },
       description: 'DB Health Check',
-      tags: ['api'],
+      tags: ['api', 'health-check'],
       plugins: {},
     },
   },

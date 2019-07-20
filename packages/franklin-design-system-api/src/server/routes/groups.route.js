@@ -1,10 +1,18 @@
 const handler = require('../handlers/groups.handler')
 const validations = require('../utils/db/validations/groups.validations')
 
-const groupsRoutes = [
+const EpBase = 'groups'
+
+const SwaggerTagsDesp = {
+  name: EpBase,
+  description:
+    'Allows for tokens to be grouped together in order to represent APPs, THEMES, TOPICS',
+}
+
+const Routes = [
   {
     method: 'GET',
-    path: '/v1/groups/',
+    path: `/v1/${EpBase}/`,
     options: {
       handler: handler.get,
       cors: {
@@ -13,7 +21,7 @@ const groupsRoutes = [
       },
       description: 'Gets all groups',
       notes: 'Returns an array of group objects',
-      tags: ['api'],
+      tags: ['api', EpBase],
       plugins: {},
       validate: {
         query: validations.get.query,
@@ -22,21 +30,24 @@ const groupsRoutes = [
   },
   {
     method: 'GET',
-    path: '/v1/groups/{id}',
+    path: `/v1/${EpBase}/{id}`,
     options: {
       handler: handler.get,
       description: 'Gets a specific document by group id',
-      tags: ['api'],
+      tags: ['api', EpBase],
       plugins: {},
+      validate: {
+        params: validations.get.params,
+      },
     },
   },
   {
     method: 'PUT',
-    path: '/v1/groups/{id}',
+    path: `/v1/${EpBase}/{id}`,
     options: {
       handler: handler.update,
       description: 'Updates a specific document by group id',
-      tags: ['api'],
+      tags: ['api', EpBase],
       plugins: {},
       validate: {
         params: validations.put.params,
@@ -46,11 +57,11 @@ const groupsRoutes = [
   },
   {
     method: 'POST',
-    path: '/v1/groups/',
+    path: `/v1/${EpBase}/`,
     options: {
       handler: handler.insert,
       description: 'Inserts a new document',
-      tags: ['api'],
+      tags: ['api', EpBase],
       plugins: {},
       validate: {
         payload: validations.post.payload,
@@ -59,13 +70,19 @@ const groupsRoutes = [
   },
   {
     method: 'DELETE',
-    path: '/v1/groups/{id}',
+    path: `/v1/${EpBase}/{id}`,
     options: {
       handler: handler.remove,
-      description: 'Deletea a specific document by group id',
-      tags: ['api'],
+      description: 'Delete a specific document by group id',
+      tags: ['api', EpBase],
       plugins: {},
+      validate: {
+        params: validations.delete.params,
+      },
     },
   },
 ]
-module.exports = groupsRoutes
+module.exports = {
+  Routes,
+  SwaggerTagsDesp,
+}
