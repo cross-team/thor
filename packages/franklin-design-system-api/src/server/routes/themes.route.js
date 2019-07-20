@@ -4,7 +4,7 @@ const validations = require('../utils/db/validations/themes.validations')
 const themeRoutes = [
   {
     method: 'GET',
-    path: '/themes/',
+    path: '/v1/themes/',
     options: {
       handler: handler.get,
       cors: {

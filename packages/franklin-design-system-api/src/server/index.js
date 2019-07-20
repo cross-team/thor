@@ -14,6 +14,7 @@ const DbChecker = require('./lib/health-check-db.lib')
 const Inert = require('inert')
 const Vision = require('vision')
 const HapiSwagger = require('hapi-swagger')
+const HapiApiVersion = require('hapi-api-version')
 
 const host = process.env.NODE_HOST || '0.0.0.0'
 const port = process.env.NODE_PORT || 3000
@@ -36,15 +37,26 @@ module.exports = async () => {
   const swaggerOptions = {
     info: {
       title: 'Design System API Documentation',
-      version: '0.1.0',
+      version: '1.0.0',
     },
   }
+
+  const apiVersionOptions = {
+    validVersions: [1],
+    defaultVersion: 1,
+    vendorName: 'fti',
+  }
+
   await server.register([
     Inert,
     Vision,
     {
       plugin: HapiSwagger,
       options: swaggerOptions,
+    },
+    {
+      plugin: HapiApiVersion,
+      options: apiVersionOptions,
     },
   ])
   // Routes

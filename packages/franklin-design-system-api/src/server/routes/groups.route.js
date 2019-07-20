@@ -4,7 +4,7 @@ const validations = require('../utils/db/validations/groups.validations')
 const groupsRoutes = [
   {
     method: 'GET',
-    path: '/groups/',
+    path: '/v1/groups/',
     options: {
       handler: handler.get,
       cors: {
@@ -22,7 +22,7 @@ const groupsRoutes = [
   },
   {
     method: 'GET',
-    path: '/groups/{id}',
+    path: '/v1/groups/{id}',
     options: {
       handler: handler.get,
       description: 'Gets a specific document by group id',
@@ -32,7 +32,7 @@ const groupsRoutes = [
   },
   {
     method: 'PUT',
-    path: '/groups/{id}',
+    path: '/v1/groups/{id}',
     options: {
       handler: handler.update,
       description: 'Updates a specific document by group id',
@@ -46,7 +46,7 @@ const groupsRoutes = [
   },
   {
     method: 'POST',
-    path: '/groups/',
+    path: '/v1/groups/',
     options: {
       handler: handler.insert,
       description: 'Inserts a new document',
@@ -59,7 +59,7 @@ const groupsRoutes = [
   },
   {
     method: 'DELETE',
-    path: '/groups/{id}',
+    path: '/v1/groups/{id}',
     options: {
       handler: handler.remove,
       description: 'Deletea a specific document by group id',

@@ -4,7 +4,7 @@ const validations = require('../utils/db/validations/releases.validations')
 const releasesRoutes = [
   {
     method: 'GET',
-    path: '/releases/',
+    path: '/v1/releases/',
     options: {
       handler: handler.get,
       cors: {
@@ -21,7 +21,7 @@ const releasesRoutes = [
   },
   {
     method: 'GET',
-    path: '/releases/{id}',
+    path: '/v1/releases/{id}',
     options: {
       handler: handler.get,
       description: 'Gets a specific document by release id',
@@ -31,7 +31,7 @@ const releasesRoutes = [
   },
   {
     method: 'PUT',
-    path: '/releases/{id}',
+    path: '/v1/releases/{id}',
     options: {
       handler: handler.update,
       description: 'Updates a specific document by release id',
@@ -45,7 +45,7 @@ const releasesRoutes = [
   },
   {
     method: 'POST',
-    path: '/releases/',
+    path: '/v1/releases/',
     options: {
       handler: handler.insert,
       description: 'Inserts a new document',
@@ -58,7 +58,7 @@ const releasesRoutes = [
   },
   {
     method: 'DELETE',
-    path: '/releases/{id}',
+    path: '/v1/releases/{id}',
     options: {
       handler: handler.remove,
       description: 'Deletea a specific document by release id',

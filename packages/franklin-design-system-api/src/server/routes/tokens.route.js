@@ -4,7 +4,7 @@ const validations = require('../utils/db/validations/tokens.validations')
 const tokensRoutes = [
   {
     method: 'GET',
-    path: '/tokens/',
+    path: '/v1/tokens/',
     options: {
       handler: handler.get,
       cors: {
@@ -21,7 +21,7 @@ const tokensRoutes = [
   },
   {
     method: 'GET',
-    path: '/tokens/{id}',
+    path: '/v1/tokens/{id}',
     options: {
       handler: handler.get,
       description: 'Gets a specific document by release id',
@@ -31,7 +31,7 @@ const tokensRoutes = [
   },
   {
     method: 'PUT',
-    path: '/tokens/{id}',
+    path: '/v1/tokens/{id}',
     options: {
       handler: handler.update,
       description: 'Updates a specific document by release id',
@@ -45,7 +45,7 @@ const tokensRoutes = [
   },
   {
     method: 'POST',
-    path: '/tokens/',
+    path: '/v1/tokens/',
     options: {
       handler: handler.insert,
       description: 'Inserts a new document',
@@ -58,7 +58,7 @@ const tokensRoutes = [
   },
   {
     method: 'DELETE',
-    path: '/tokens/{id}',
+    path: '/v1/tokens/{id}',
     options: {
       handler: handler.remove,
       description: 'Deletea a specific document by release id',
