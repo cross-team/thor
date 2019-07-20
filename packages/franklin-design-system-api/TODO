@@ -11,6 +11,7 @@ v1.0
 
 v1.1:
   ✔ add versions to api @done(19-07-19 19:48)
+  ✔ fix hapi-swagger endpoint view @done(19-07-19 21:24)
   ☐ solidify response object schema. build a responsebuilder
   ☐ finalize response codes
   ☐ include token meta dates as part of the endpoints responses

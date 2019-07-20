@@ -11,6 +11,9 @@ module.exports = {
       key: fields.key,
     },
     validate: relationshipValDef,
+    params: {
+      id: joi.string().required(),
+    },
   },
   put: {
     payload: {
@@ -37,5 +40,10 @@ module.exports = {
       release_id: fields.release_id.required(),
     },
     build: mapToDefaults,
+  },
+  delete: {
+    params: {
+      id: joi.string().required(),
+    },
   },
 }
