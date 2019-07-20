@@ -1,5 +1,5 @@
 
-Todo:
+v1.0
   ✔ update publishing piece for token insert/update @done(19-07-02 12:21)
   ✔ add get endpoint @done(19-07-03 00:07)
   ✔ add remove endpoint to all @done(19-07-03 21:52)
@@ -8,3 +8,14 @@ Todo:
   ✔ load real tokens and config @done(19-07-16 18:21)
   ✔ add meta data routine to release and groups endpoints @done(19-07-16 18:21)
   ✔ create token json for thor @done(19-07-16 18:21)
+
+v1.1:
+  ✔ add versions to api @done(19-07-19 19:48)
+  ☐ solidify response object schema. build a responsebuilder
+  ☐ finalize response codes
+  ☐ include token meta dates as part of the endpoints responses
+  ☐ add calculated_value to theme json object gen
+  ☐ add hard delete option to remove endpoints
+  ☐ add the ability to update a token and have all related token's calculated values updated.
+  ☐ add pagination to GET responses
+
