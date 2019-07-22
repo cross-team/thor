@@ -8,6 +8,9 @@ module.exports = {
       name: fields.name,
       type: fields.type,
     },
+    params: {
+      id: joi.string().required(),
+    },
   },
   put: {
     payload: {
@@ -27,5 +30,10 @@ module.exports = {
     },
     build: mapToDefaults,
     validate: mapToValidations,
+  },
+  delete: {
+    params: {
+      id: joi.string().required(),
+    },
   },
 }

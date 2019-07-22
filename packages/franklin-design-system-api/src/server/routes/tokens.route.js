@@ -1,14 +1,25 @@
 const handler = require('../handlers/tokens.handler')
 const validations = require('../utils/db/validations/tokens.validations')
 
-const tokensRoutes = [
+const EpBase = 'tokens'
+
+const SwaggerTagsDesp = {
+  name: EpBase,
+  description: 'Manage and maintain design tokens',
+}
+
+const Routes = [
   {
     method: 'GET',
-    path: '/tokens/',
+    path: `/v1/${EpBase}/`,
     options: {
       handler: handler.get,
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with '],
+      },
       description: 'Gets all tokens',
-      tags: ['api'],
+      tags: ['api', EpBase],
       plugins: {},
       validate: {
         query: validations.get.query,
@@ -17,21 +28,24 @@ const tokensRoutes = [
   },
   {
     method: 'GET',
-    path: '/tokens/{id}',
+    path: `/v1/${EpBase}/{id}`,
     options: {
       handler: handler.get,
       description: 'Gets a specific document by release id',
-      tags: ['api'],
+      tags: ['api', EpBase],
       plugins: {},
+      validate: {
+        query: validations.get.params,
+      },
     },
   },
   {
     method: 'PUT',
-    path: '/tokens/{id}',
+    path: `/v1/${EpBase}/{id}`,
     options: {
       handler: handler.update,
       description: 'Updates a specific document by release id',
-      tags: ['api'],
+      tags: ['api', EpBase],
       plugins: {},
       validate: {
         params: validations.put.params,
@@ -41,11 +55,11 @@ const tokensRoutes = [
   },
   {
     method: 'POST',
-    path: '/tokens/',
+    path: `/v1/${EpBase}/`,
     options: {
       handler: handler.insert,
       description: 'Inserts a new document',
-      tags: ['api'],
+      tags: ['api', EpBase],
       plugins: {},
       validate: {
         payload: validations.post.payload,
@@ -54,13 +68,19 @@ const tokensRoutes = [
   },
   {
     method: 'DELETE',
-    path: '/tokens/{id}',
+    path: `/v1/${EpBase}/{id}`,
     options: {
       handler: handler.remove,
-      description: 'Deletea a specific document by release id',
-      tags: ['api'],
+      description: 'Delete a specific document by release id',
+      tags: ['api', EpBase],
       plugins: {},
+      validate: {
+        query: validations.delete.params,
+      },
     },
   },
 ]
-module.exports = tokensRoutes
+module.exports = {
+  Routes,
+  SwaggerTagsDesp,
+}

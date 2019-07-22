@@ -1,4 +1,20 @@
 /* eslint-disable no-restricted-globals */
+/* eslint-disable no-restricted-globals */
+/**
+ * returns token based on key
+ * @param {Array} ary
+ * @param {Object} token
+ */
+const splitInTwo = (str, delimiter) => {
+  const result = { val1: '', val2: '' }
+  const index = str.indexOf(delimiter)
+  if (index !== -1) {
+    result.val1 = str.substring(0, index)
+    result.val2 = str.substring(index + 1)
+  }
+  return result
+}
+
 /**
  * returns token based on key
  * @param {Array} ary
@@ -17,13 +33,21 @@ const findTokenKeyInArray = (ary, token) => {
 }
 
 /**
- * converts a string to a number if the string is a number
+ * converts a string to a number or object if the string is such
  * @param {string} value
  */
-const toNumberIfNumber = value => {
+const toNumberOrObj = value => {
+  // check if number
   if (!isNaN(value)) {
     return +value
   }
+
+  // check if object
+  if (value.charAt(0) === '{' && value.charAt(value.length - 1) === '}') {
+    return JSON.parse(value)
+  }
+
+  // if not just return
   return value
 }
 
@@ -63,5 +87,6 @@ module.exports = {
   findTokenKeyInArray,
   getCurrentTimeStamp,
   addMeta,
-  toNumberIfNumber,
+  toNumberOrObj,
+  splitInTwo,
 }

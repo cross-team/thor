@@ -1,9 +1,12 @@
 */
 
 # add project directories to include here
-!/packages/franklin-thor-playground
+!/services/franklin-thor-playground
 !/packages/franklin-thor
+!/packages/franklin-thor-fti
+!/packages/franklin-thor-icons
 !lerna.json
+!.npmrc
 !/scripts/copy-files.js
 !CHANGELOG.md
 !LICENSE
@@ -14,4 +17,5 @@
 # exclude these even in the included project directories
 node_modules
 packages/*/node_modules
+services/*/node_modules
 .git
