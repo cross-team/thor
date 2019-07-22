@@ -5,7 +5,10 @@ import { Typography, IconButton } from '@franklin-thor/core/build'
 import { FontAwesomeIcon, faCommentAltLines } from '@franklin-thor/icons'
 import FTIBadge from '../FTIBadge/FTIBadge'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
+  root: {
+    maxWidth: '100%',
+  },
   container: {
     display: 'flex',
     flexWrap: 'nowrap',
@@ -16,13 +19,13 @@ const useStyles = makeStyles(theme => ({
   red: {
     color: '#DF4444',
   },
-}))
+})
 
-export default function FTITable(props) {
+export default function FTITable() {
   const classes = useStyles()
 
   return (
-    <div style={{ maxWidth: '100%' }}>
+    <div className={classes.root}>
       <MaterialTable
         columns={[
           {
