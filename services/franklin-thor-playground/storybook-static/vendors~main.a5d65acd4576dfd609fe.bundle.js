@@ -10589,8 +10589,11 @@ object-assign
       }
     },
     function(e, t, n) {
-      var r, o, i
-      /*! scrollbarWidth.js v0.1.3 | felixexter | MIT | https://github.com/felixexter/scrollbarWidth */ ;(o = []),
+      var r,
+        o,
+        i
+        /*! scrollbarWidth.js v0.1.3 | felixexter | MIT | https://github.com/felixexter/scrollbarWidth */
+      ;(o = []),
         void 0 ===
           (i =
             'function' ==
@@ -42613,14 +42616,15 @@ object-assign
     function(e, t, n) {
       ;(function(e, r) {
         var o
-        /**
-         * @license
-         * Lodash <https://lodash.com/>
-         * Copyright JS Foundation and other contributors <https://js.foundation/>
-         * Released under MIT license <https://lodash.com/license>
-         * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
-         * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-         */ ;(function() {
+          /**
+           * @license
+           * Lodash <https://lodash.com/>
+           * Copyright JS Foundation and other contributors <https://js.foundation/>
+           * Released under MIT license <https://lodash.com/license>
+           * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+           * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+           */
+        ;(function() {
           var i,
             a = 200,
             u = 'Unsupported core-js use. Try https://npms.io/search?q=ponyfill.',

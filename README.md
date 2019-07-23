@@ -70,7 +70,6 @@ If `yarn build:all` was not used to build all the packages and the build of the 
 This will remove the node_modules related to the packages and reinstall them with appropriate build files,
 required to be used with the playground.
 
-
 ### Conclusion
 
 At this point your development environment should be ready and operational with the following packages installed:

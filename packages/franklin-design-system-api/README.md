@@ -22,7 +22,7 @@ The data model is broken down into 3 basic structures:
 
 #### Groups
 
-Groups allows tokens to be gathered into different groups. In the following diagram the token for the color Grey has a value of \#CCCCCC but is also linked to different groups. 
+Groups allows tokens to be gathered into different groups. In the following diagram the token for the color Grey has a value of \#CCCCCC but is also linked to different groups.
 
 ![](./.doc/assets/groups.png)
 
@@ -38,40 +38,40 @@ So each token requires a existing app, theme and topic UID \(unique ID\) before 
 
 #### Releases
 
-Releases are express a major, minor and build number for the design token api. Each token must also be linked to an existing release. 
+Releases are express a major, minor and build number for the design token api. Each token must also be linked to an existing release.
 
 #### Tokens
 
 The tokens are the central piece of the design token api. they are used to express a key/value pair linked to a group and release UID. Basically each token has the following elements:
 
-* Group-App: The group for the app that the token is associated with.
-* Group-Theme: The group for the theme that the token is associated with.
-* Group-Topic: The group for the topic that the token is associated with.
-* Key: The associated key for the token. If a token is based on another token then the token is started with a "$" in the first character.
-* Value: The value associated with the token. 
+- Group-App: The group for the app that the token is associated with.
+- Group-Theme: The group for the theme that the token is associated with.
+- Group-Topic: The group for the topic that the token is associated with.
+- Key: The associated key for the token. If a token is based on another token then the token is started with a "\$" in the first character.
+- Value: The value associated with the token.
 
-  * Three different representation can be expressed via notation:
-    * 1. Subkey related within an object.
+  - Three different representation can be expressed via notation:
+    - 1. Subkey related within an object.
       2. Subkey expressed as an array
       3. Standard with no subkey.
 
   Examples are noted below
 
-* Caption: a caption describing the token
-* Publishing: Is an object containing publishing status and the publishing date for the token
-* Release id: The associated release id
-* Rel: The release object
-* Meta: Meta data related to the token
-* Base on key: When keys are related to another, this value represents the based on or related key value
-* Calculated value: The base value that is associated with the base on key. 
+- Caption: a caption describing the token
+- Publishing: Is an object containing publishing status and the publishing date for the token
+- Release id: The associated release id
+- Rel: The release object
+- Meta: Meta data related to the token
+- Base on key: When keys are related to another, this value represents the based on or related key value
+- Calculated value: The base value that is associated with the base on key.
 
 Some examples of Value notation:
 
-* Subkey related within an array.
+- Subkey related within an array.
 
-  * Grey:50
-  * Grey:100
-  * Grey:200
+  - Grey:50
+  - Grey:100
+  - Grey:200
 
   Would be expressed in the theme as:
 
@@ -83,11 +83,11 @@ Grey: [
 ]
 ```
 
-* Subkey related within an object.
+- Subkey related within an object.
 
-  * Grey\|font
-  * Grey\|weight
-  * Grey\|line-height
+  - Grey\|font
+  - Grey\|weight
+  - Grey\|line-height
 
   Would be expressed in the theme as:
 
@@ -103,7 +103,6 @@ Some examples of key association and their base on key value and calculated valu
 
 ![](./.doc/assets/token-relations.png)
 
-In the example above, The "White" token acts as a base. The "Primary" token is related to the "White token and gets its value. It is based on the "White" token and the calculated value is that of the "white" token. If the "White" token changes so does the tokens related to it. So changing the "white" token to another color would result in all related, directly as the "Primary" token is, or indirectly, as the "Button" token is, would change. 
+In the example above, The "White" token acts as a base. The "Primary" token is related to the "White token and gets its value. It is based on the "White" token and the calculated value is that of the "white" token. If the "White" token changes so does the tokens related to it. So changing the "white" token to another color would result in all related, directly as the "Primary" token is, or indirectly, as the "Button" token is, would change.
 
 The "Button" token inherits its value from the "Primary" token. In this case changes to the "White" token or the "Primary" token would result in a change to the "Button" token. For example, if the "Primary" token value would change to \#CCCCCC, this would "recouple" the "White" and "Primary" token from each other. However, since the "Primary" token and the "Button" token are related, that change would effect the "Button" token as well. The new "Button" token would have the Calculated value be "\#CCCCCC"
-
