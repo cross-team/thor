@@ -10,7 +10,7 @@ import {
 } from '@franklin-thor/core/'
 import FTICard from '../FTICard/FTICard'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
   column: {
     flexBasis: '25%',
   },
@@ -23,9 +23,9 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'space-between',
   },
-}))
+})
 
-export default function FTIKanBanColumn(props) {
+export default function FTIKanBanColumn() {
   const classes = useStyles()
   const [values, setValues] = React.useState({
     order: 'size',

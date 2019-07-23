@@ -10,13 +10,13 @@ theme.then(apiTheme =>
     .addDecorator(getStory => <ThemeProvider theme={apiTheme}>{getStory()}</ThemeProvider>)
     .add('FTI Card', () => (
       <FTICard
-        actNum="01234-56789"
+        actNum="0123456789"
         type="buy"
         traderName="MSFT"
         progress="77"
-        current="16,000"
-        max="20,000"
-        money="300,000"
+        current="16000"
+        max="20000"
+        money="300000"
         orderNum="17608"
         automated="true"
         group="H1H"

@@ -16,14 +16,10 @@ import {
   faUserCircle,
   faFile,
 } from '@franklin-thor/icons'
-import AccountIcon from '@material-ui/icons/InsertDriveFileOutlined'
-import SwapIcon from '@material-ui/icons/SwapHorizontalCircle'
-import GroupIcon from '@material-ui/icons/Group'
-import LocationIcon from '@material-ui/icons/LocationCityOutlined'
-import TraderIcon from '@material-ui/icons/AccountCircleOutlined'
 import FTIBadge from '../FTIBadge/FTIBadge'
+import PropTypes from 'prop-types'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
   icon: {
     width: '12px',
     height: '12px',
@@ -65,7 +61,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'flex-end',
   },
-}))
+})
 
 export default function FTICard(props) {
   const classes = useStyles()
@@ -142,4 +138,22 @@ export default function FTICard(props) {
       </Card>
     </div>
   )
+}
+
+FTICard.propTypes = {
+  actNum: PropTypes.number,
+  automated: PropTypes.bool,
+  current: PropTypes.number,
+  group: PropTypes.string,
+  location: PropTypes.string,
+  max: PropTypes.number,
+  money: PropTypes.number,
+  orderNum: PropTypes.number,
+  percentChange: PropTypes.string,
+  priceChange: PropTypes.string,
+  priceCurrent: PropTypes.number,
+  progress: PropTypes.number,
+  trader: PropTypes.string,
+  traderName: PropTypes.string,
+  type: PropTypes.string,
 }
