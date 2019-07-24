@@ -6,7 +6,6 @@ import SwapIcon from '@material-ui/icons/SwapHorizontalCircle'
 import GroupIcon from '@material-ui/icons/Group'
 import LocationIcon from '@material-ui/icons/LocationCityOutlined'
 import TraderIcon from '@material-ui/icons/AccountCircleOutlined'
-import FTIBadge from '@franklin-thor/core/FTIBadge'
 import Button from '@material-ui/core/Button'
 
 const useStyles = makeStyles(theme => ({
@@ -55,7 +54,7 @@ export default function KanBanCard(props) {
         props.onDragEnd(e, props.order)
       }}
     >
-      <Card className={classes.cardContainer} elevation="2">
+      <Card className={classes.cardContainer}>
         <CardContent className={classes.leftContent}>
           <div className={classes.container}>
             <AccountIcon className={classes.icon} />
