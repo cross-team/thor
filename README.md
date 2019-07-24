@@ -8,10 +8,10 @@ Before you start using Thor or Thor-playground you must have the following insta
 
 **We assume a clean machine and that these commands will be executed from the Command Line.**
 
-* [NodeJS](https://nodejs.org/en/): We started using node 10.15. 
-* [Docker](https://www.docker.com/products/docker-desktop): We use Docker containers to  and run Thor-playground locally.
-* [Git](https://git-scm.com/downloads): Git is our version control tool
-* [Yarn](https://yarnpkg.com/en/docs/install#mac-stable): Yarn is a modern package management application.
+- [NodeJS](https://nodejs.org/en/): We started using node 10.15.
+- [Docker](https://www.docker.com/products/docker-desktop): We use Docker containers to and run Thor-playground locally.
+- [Git](https://git-scm.com/downloads): Git is our version control tool
+- [Yarn](https://yarnpkg.com/en/docs/install#mac-stable): Yarn is a modern package management application.
 
 Once these software applications are installed onto your local development machine continue by following the next steps:
 
@@ -49,40 +49,30 @@ lerna bootstrap
 
 This command will search through the current local repo and install any dependencies and cross-dependencies
 
-### Build Thor
+### Build Thor Packages
 
-Change folders from your local repo's root folder to packages/franklin-thor and run a build
+Change to the following folders and run a build
 
-```text
-cd /packages/franklin-thor
-yarn run build
-```
+Navigate to: /**packages/franklin-thor/**
+run: `yarn run build`
 
-the result will be a build of the current thor package.
+Navigate to: /**packages/franklin-thor-fti/**
+run: `yarn run build`
 
-### Create your Link
+Navigate to: /**packages/franklin-thor-icons/**
+run: `yarn run build`
 
-After you have built thor you must link available dependencies located within thor itself. 
+To build all packages run: `yarn build:all` in root directory.
 
-You should navigate to: /**packages/franklin-thor/build**
+### Thor-Playground
 
-```text
-yarn link
-```
-
-### Link Thor-Playground
-
-As a final step you should navigate to: /**packages/franklin-thor-playground**
-
-```text
-yarn link "@franklin-thor/core"
-```
-
-This step links the playground to the component library thor
+If `yarn build:all` was not used to build all the packages and the build of the Thor packages were done independently, use `yarn build:clean`.
+This will remove the node_modules related to the packages and reinstall them with appropriate build files,
+required to be used with the playground.
 
 ### Conclusion
 
 At this point your development environment should be ready and operational with the following packages installed:
 
-* **Thor**: Your component library 
-* **Thor-playground**: The component library storyboard and playground
+- **Thor**: Your component library
+- **Thor-playground**: The component library storyboard and playground

@@ -1,66 +1,88 @@
-// const joi = require('joi')
 const handler = require('../handlers/groups.handler')
 const validations = require('../utils/db/validations/groups.validations')
-const groupsRoutes = [
+
+const EpBase = 'groups'
+
+const SwaggerTagsDesp = {
+  name: EpBase,
+  description:
+    'Allows for tokens to be grouped together in order to represent APPs, THEMES, TOPICS',
+}
+
+const Routes = [
   {
-    method:  'GET',
-    path:    '/groups/',
+    method: 'GET',
+    path: `/v1/${EpBase}/`,
     options: {
-      handler:     handler.get,
+      handler: handler.get,
+      cors: {
+        origin: ['*'],
+        additionalHeaders: ['cache-control', 'x-requested-with '],
+      },
       description: 'Gets all groups',
-      tags:        ['api'],
-      plugins:     {},
-      validate:    {
+      notes: 'Returns an array of group objects',
+      tags: ['api', EpBase],
+      plugins: {},
+      validate: {
         query: validations.get.query,
       },
     },
   },
   {
-    method:  'GET',
-    path:    '/groups/{id}',
+    method: 'GET',
+    path: `/v1/${EpBase}/{id}`,
     options: {
-      handler:     handler.get,
+      handler: handler.get,
       description: 'Gets a specific document by group id',
-      tags:        ['api'],
-      plugins:     {},
+      tags: ['api', EpBase],
+      plugins: {},
+      validate: {
+        params: validations.get.params,
+      },
     },
   },
   {
-    method:  'PUT',
-    path:    '/groups/{id}',
+    method: 'PUT',
+    path: `/v1/${EpBase}/{id}`,
     options: {
-      handler:     handler.update,
+      handler: handler.update,
       description: 'Updates a specific document by group id',
-      tags:        ['api'],
-      plugins:     {},
-      validate:    {
-        params:  validations.put.params,
+      tags: ['api', EpBase],
+      plugins: {},
+      validate: {
+        params: validations.put.params,
         payload: validations.put.payload,
       },
     },
   },
   {
-    method:  'POST',
-    path:    '/groups/',
+    method: 'POST',
+    path: `/v1/${EpBase}/`,
     options: {
-      handler:     handler.insert,
+      handler: handler.insert,
       description: 'Inserts a new document',
-      tags:        ['api'],
-      plugins:     {},
-      validate:    {
+      tags: ['api', EpBase],
+      plugins: {},
+      validate: {
         payload: validations.post.payload,
       },
     },
   },
   {
-    method:  'DELETE',
-    path:    '/groups/{id}',
+    method: 'DELETE',
+    path: `/v1/${EpBase}/{id}`,
     options: {
-      handler:     handler.remove,
-      description: 'Deletea a specific document by group id',
-      tags:        ['api'],
-      plugins:     {},
+      handler: handler.remove,
+      description: 'Delete a specific document by group id',
+      tags: ['api', EpBase],
+      plugins: {},
+      validate: {
+        params: validations.delete.params,
+      },
     },
   },
 ]
-module.exports = groupsRoutes
+module.exports = {
+  Routes,
+  SwaggerTagsDesp,
+}

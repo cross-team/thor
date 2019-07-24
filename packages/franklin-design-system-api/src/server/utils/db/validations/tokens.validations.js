@@ -8,18 +8,19 @@ module.exports = {
       groups_app_id: fields.groups.app.id,
       groups_theme_id: fields.groups.theme.id,
       groups_topic_id: fields.groups.topic.id,
+      key: fields.key,
     },
-    //   params: {
-    //     id: joi.string().required(),
-    //   },
     validate: relationshipValDef,
+    params: {
+      id: joi.string().required(),
+    },
   },
   put: {
     payload: {
       groups_app_id: fields.groups.app.id,
       groups_theme_id: fields.groups.theme.id,
       groups_topic_id: fields.groups.topic.id,
-      value: fields.value.required(),
+      value: fields.value,
       caption: fields.caption.allow(''),
       release_id: fields.release_id,
     },
@@ -35,9 +36,14 @@ module.exports = {
       groups_topic_id: fields.groups.topic.id.required(),
       key: fields.key.required(),
       value: fields.value.required(),
-      caption: fields.caption.allow(''),
+      caption: fields.caption.optional(),
       release_id: fields.release_id.required(),
     },
     build: mapToDefaults,
+  },
+  delete: {
+    params: {
+      id: joi.string().required(),
+    },
   },
 }
