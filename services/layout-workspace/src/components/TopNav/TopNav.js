@@ -34,7 +34,6 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: '#262624',
   },
   leftContainer: {
-    // alignSelf: 'stretch',
     display: 'flex',
   },
 }))

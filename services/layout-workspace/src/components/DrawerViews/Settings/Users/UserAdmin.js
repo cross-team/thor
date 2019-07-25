@@ -3,41 +3,14 @@ import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import Fab from '@material-ui/core/Fab'
 import Typography from '@material-ui/core/Typography'
-import IconButton from '@material-ui/core/IconButton'
-import ClearIcon from '@material-ui/icons/ClearRounded'
-import ArrowBackIcon from '@material-ui/icons/ArrowBackIosRounded'
 import FormGroup from '@material-ui/core/FormGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Switch from '@material-ui/core/Switch'
+import DrawerHeading from '../../../DrawerHeading/DrawerHeading'
 
 const useStyles = makeStyles(theme => ({
   root: {
     width: '320px',
-  },
-  heading: {
-    width: '100%',
-    height: '120px',
-    display: 'block',
-    // alignItems: 'flex-start',
-    // justifyContent: 'flex-end',
-    // flexFlow: 'row-reverse || wrap'
-    position: 'relative',
-    backgroundColor: '#3377FF',
-  },
-  headingText: {
-    // alignSelf: 'flex-end',
-    position: 'absolute',
-    bottom: '0',
-    paddingBottom: '16px',
-    paddingLeft: '16px',
-  },
-  buttonContainer: {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-  backArrow: {
-    paddingLeft: '16px',
   },
   bar: {
     width: '100%',
@@ -80,30 +53,13 @@ export default function UserAdmin(props) {
   return (
     <div className={classes.root}>
       {/* This div contains the heading of the drawers view */}
-      <div className={classes.heading}>
-        <div className={classes.buttonContainer}>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="List"
-            onClick={props.updateView('userSettings')}
-            className={classes.backArrow}
-          >
-            <ArrowBackIcon />
-          </IconButton>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="List"
-            onClick={props.toggleDrawer(false)}
-          >
-            <ClearIcon />
-          </IconButton>
-        </div>
-        <Typography variant="h5" className={classes.headingText}>
-          New Users Setup
-        </Typography>
-      </div>
+      <DrawerHeading
+        isChild={true}
+        parent="userSettings"
+        title="New User Setup"
+        updateView={props.updateView}
+        toggleDrawer={props.toggleDrawer}
+      />
       <div className={classes.bar}>
         <Typography variant="caption">NEW USER</Typography>
       </div>

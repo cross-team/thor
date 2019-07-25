@@ -2,58 +2,21 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import Fab from '@material-ui/core/Fab'
-import Card from '@material-ui/core/Card'
-import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
-import IconButton from '@material-ui/core/IconButton'
-import ClearIcon from '@material-ui/icons/ClearRounded'
-import Checkbox from '@material-ui/icons/CheckBox'
-import ArrowBackIcon from '@material-ui/icons/ArrowBackIosRounded'
 import FormGroup from '@material-ui/core/FormGroup'
 import FormControl from '@material-ui/core/FormControl'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Switch from '@material-ui/core/Switch'
-import Input from '@material-ui/core/Input'
 import OutlinedInput from '@material-ui/core/OutlinedInput'
 import Select from '@material-ui/core/Select'
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction'
-import ListItemText from '@material-ui/core/ListItemText'
-import Avatar from '@material-ui/core/Avatar'
-import Chip from '@material-ui/core/Chip'
+import DrawerHeading from '../../../DrawerHeading/DrawerHeading'
+import TraderSelect from '../../../TraderSelect/TraderSelect'
 
 const useStyles = makeStyles(theme => ({
   root: {
     width: '320px',
-  },
-  heading: {
-    width: '100%',
-    height: '120px',
-    display: 'block',
-    // alignItems: 'flex-start',
-    // justifyContent: 'flex-end',
-    // flexFlow: 'row-reverse || wrap'
-    position: 'relative',
-    backgroundColor: '#3377FF',
-  },
-  headingText: {
-    // alignSelf: 'flex-end',
-    position: 'absolute',
-    bottom: '0',
-    paddingBottom: '16px',
-    paddingLeft: '16px',
-  },
-  buttonContainer: {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-  backArrow: {
-    paddingLeft: '16px',
   },
   bar: {
     width: '100%',
@@ -66,7 +29,6 @@ const useStyles = makeStyles(theme => ({
   },
   margin: {
     margin: theme.spacing(1),
-    //marginRight: theme.spacing(1),
   },
   switch: {
     display: 'flex',
@@ -78,7 +40,6 @@ const useStyles = makeStyles(theme => ({
   },
   chipContainer: {
     width: '96%',
-    // backgroundColor: '#0D0D0C',
   },
   cardContainer: {
     maxWidth: '250px',
@@ -135,30 +96,13 @@ export default function DeskAdmin(props) {
   return (
     <div className={classes.root}>
       {/* This div contains the heading of the drawers view */}
-      <div className={classes.heading}>
-        <div className={classes.buttonContainer}>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="List"
-            onClick={props.updateView('deskSettings')}
-            className={classes.backArrow}
-          >
-            <ArrowBackIcon />
-          </IconButton>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="List"
-            onClick={props.toggleDrawer(false)}
-          >
-            <ClearIcon />
-          </IconButton>
-        </div>
-        <Typography variant="h5" className={classes.headingText}>
-          New Desk Setup
-        </Typography>
-      </div>
+      <DrawerHeading
+        isChild={true}
+        parent="deskSettings"
+        title="New Desk Setup"
+        updateView={props.updateView}
+        toggleDrawer={props.toggleDrawer}
+      />
       <div className={classes.bar}>
         <Typography variant="caption">NEW DESK</Typography>
       </div>
@@ -240,6 +184,19 @@ export default function DeskAdmin(props) {
           </FormControl>
 
           <TextField
+            id="autoBroker"
+            label="AUTO PLACE BROKER/EMS"
+            className={classes.margin}
+            value={values.autoBroker}
+            onChange={handleChange('autoBroker')}
+            margin="normal"
+            variant="outlined"
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+
+          <TextField
             id="autoId"
             label="AUTO PLACE COMP ID"
             className={classes.margin}
@@ -252,52 +209,7 @@ export default function DeskAdmin(props) {
             }}
           />
 
-          {/*<Card className={`${classes.cardContainer}, ${classes.margin}`}>
-            <CardContent>
-              <div className={classes.chipContainer}>
-                <Chip onDelete={handleDelete} avatar={<Avatar>FH</Avatar>} />
-              </div>
-              <List>
-                {[0, 1, 2, 3].map(value => {
-                  const labelId = `checkbox-list-label-${value}`
-
-                  return (
-                    <ListItem
-                      key={value}
-                      role={undefined}
-                      dense
-                      button
-                      onClick={handleToggle(value)}
-                    >
-                      <ListItemIcon>
-                        <Checkbox
-                          edge="start"
-                          checked={checked.indexOf(value) !== -1}
-                          tabIndex={-1}
-                          disableRipple
-                          inputProps={{ 'aria-labelledby': labelId }}
-                        />
-                      </ListItemIcon>
-                      <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
-                    </ListItem>
-                  )
-                })}
-              </List>
-            </CardContent>
-              </Card>*/}
-
-          <TextField
-            id="autoBroker"
-            label="AUTO PLACE BROKER/EMS"
-            className={classes.margin}
-            value={values.autoBroker}
-            onChange={handleChange('autoBroker')}
-            margin="normal"
-            variant="outlined"
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
+          <TraderSelect />
 
           <FormControl variant="outlined" className={classes.margin}>
             <InputLabel ref={inputLabel} htmlFor="traderId" shrink="true">
