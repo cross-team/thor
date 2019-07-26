@@ -209,7 +209,11 @@ export default function DeskAdmin(props) {
             }}
           />
 
-          <TraderSelect />
+          <TraderSelect label="INCLUDE TRADERS" />
+
+          <TraderSelect label="INCLUDE LOW TOUCH MANAGERS" />
+
+          <TraderSelect label="INCLUDE NO TOUCH MANAGERS" />
 
           <FormControl variant="outlined" className={classes.margin}>
             <InputLabel ref={inputLabel} htmlFor="traderId" shrink="true">

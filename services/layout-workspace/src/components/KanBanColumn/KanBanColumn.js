@@ -68,7 +68,7 @@ export default function KanBanColumn(props) {
         setState({ ...state, mouseIsHovering: true })
       }}
     >
-      <Paper className={classes.container}>
+      <div className={classes.container}>
         <Paper className={classes.header}>
           <div className={classes.topContainer}>
             <Typography variant="body2">{props.name}</Typography>
@@ -104,7 +104,7 @@ export default function KanBanColumn(props) {
           {this.props.stage}. {this.props.name} ({this.props.orders.length})
         </Typography>*/}
         {generateKanbanCards()}
-      </Paper>
+      </div>
     </div>
   )
 }

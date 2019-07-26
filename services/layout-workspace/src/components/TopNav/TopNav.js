@@ -67,22 +67,6 @@ export default function TopNav(props) {
     toggleDrawer(true)(event)
   }
 
-  const renderDrawer = () => {
-    if (drawer === '') {
-      return
-    } else if (drawer === 'settings') {
-      return <SettingsView toggleDrawer={toggleDrawer} updateView={updateView} />
-    } else if (drawer === 'userSettings') {
-      return <UserSettings toggleDrawer={toggleDrawer} updateView={updateView} />
-    } else if (drawer === 'deskSettings') {
-      return <DeskSettings toggleDrawer={toggleDrawer} updateView={updateView} />
-    } else if (drawer === 'newUser') {
-      return <UserAdmin toggleDrawer={toggleDrawer} updateView={updateView} />
-    } else if (drawer === 'newDesk') {
-      return <DeskAdmin toggleDrawer={toggleDrawer} updateView={updateView} />
-    }
-  }
-
   return (
     <div className={classes.root}>
       <AppBar position="static" color="default">
@@ -128,7 +112,24 @@ export default function TopNav(props) {
       </AppBar>
 
       <Drawer anchor="right" open={state.drawerState} onClose={toggleDrawer(false)}>
-        {renderDrawer()}{' '}
+        {(() => {
+          switch (drawer) {
+            case '':
+              break
+            case 'settings':
+              return <SettingsView toggleDrawer={toggleDrawer} updateView={updateView} />
+            case 'userSettings':
+              return <UserSettings toggleDrawer={toggleDrawer} updateView={updateView} />
+            case 'deskSettings':
+              return <DeskSettings toggleDrawer={toggleDrawer} updateView={updateView} />
+            case 'newUser':
+              return <UserAdmin toggleDrawer={toggleDrawer} updateView={updateView} />
+            case 'newDesk':
+              return <DeskAdmin toggleDrawer={toggleDrawer} updateView={updateView} />
+            default:
+              break
+          }
+        })()}
         {/* This function renders the view into the drawer depending on the drawer value of the state */}
       </Drawer>
     </div>

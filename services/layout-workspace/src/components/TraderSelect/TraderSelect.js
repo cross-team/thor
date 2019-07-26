@@ -14,12 +14,17 @@ import { log } from 'handlebars'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    height: '264',
     width: '94%',
+    margin: 'auto',
+    marginBottom: theme.spacing(1),
+  },
+  box: {
+    width: '100%',
     backgroundColor: '#333230',
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
+    overflow: 'auto',
   },
   chipContainer: {
     height: '43px',
@@ -63,28 +68,31 @@ export default function TraderSelect(props) {
   ))
 
   return (
-    <Paper className={classes.root}>
-      <Paper className={classes.chipContainer}>{chips}</Paper>
-      <List className={classes.root}>
-        {traderKeys.map(value => {
-          const labelId = `checkbox-list-label-${value}`
-          console.log(traders)
-          return (
-            <ListItem key={value} role={undefined} dense button onClick={handleToggle(value)}>
-              <ListItemIcon>
-                <Checkbox
-                  edge="start"
-                  checked={checked.indexOf(value) !== -1}
-                  tabIndex={-1}
-                  disableRipple
-                  inputProps={{ 'aria-labelledby': labelId }}
-                />
-              </ListItemIcon>
-              <ListItemText id={labelId} primary={`${traderValues[value]}`} />
-            </ListItem>
-          )
-        })}
-      </List>
-    </Paper>
+    <div className={classes.root}>
+      <Typography variant="caption">{props.label}</Typography>
+      <Paper className={classes.box}>
+        <Paper className={classes.chipContainer}>{chips}</Paper>
+        <List className={classes.root}>
+          {traderKeys.map(value => {
+            const labelId = `checkbox-list-label-${value}`
+            console.log(traders)
+            return (
+              <ListItem key={value} role={undefined} dense button onClick={handleToggle(value)}>
+                <ListItemIcon>
+                  <Checkbox
+                    edge="start"
+                    checked={checked.indexOf(value) !== -1}
+                    tabIndex={-1}
+                    disableRipple
+                    inputProps={{ 'aria-labelledby': labelId }}
+                  />
+                </ListItemIcon>
+                <ListItemText id={labelId} primary={`${traderValues[value]}`} />
+              </ListItem>
+            )
+          })}
+        </List>
+      </Paper>
+    </div>
   )
 }
