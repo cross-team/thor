@@ -67,7 +67,6 @@ export default function TopNav(props) {
     toggleDrawer(true)(event)
   }
 
-  // This function renders the view into the drawer depending on the drawer value of the state
   const renderDrawer = () => {
     if (drawer === '') {
       return
@@ -129,7 +128,8 @@ export default function TopNav(props) {
       </AppBar>
 
       <Drawer anchor="right" open={state.drawerState} onClose={toggleDrawer(false)}>
-        {renderDrawer()}
+        {renderDrawer()}{' '}
+        {/* This function renders the view into the drawer depending on the drawer value of the state */}
       </Drawer>
     </div>
   )

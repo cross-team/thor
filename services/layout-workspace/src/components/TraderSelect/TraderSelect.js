@@ -8,7 +8,9 @@ import {
   ListItemIcon,
   ListItemText,
   Checkbox,
+  Chip,
 } from '@material-ui/core'
+import { log } from 'handlebars'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -24,12 +26,24 @@ const useStyles = makeStyles(theme => ({
     width: '96%',
     backgroundColor: '#0D0D0C',
     margin: '5px',
+    display: 'flex',
+    alignItems: 'center',
+    overflow: 'auto',
   },
 }))
 
 export default function TraderSelect(props) {
   const classes = useStyles()
-  const [checked, setChecked] = React.useState([0])
+  const [checked, setChecked] = React.useState([])
+  const traders = {
+    0: '[CDA] Chistopher Darcy',
+    1: '[DJB] Don Johnson',
+    2: '[JKI] Jason Killian',
+    3: '[BMA] Beth Mason',
+    4: '[NRO] Nancy Robertson',
+  }
+  const traderKeys = Object.keys(traders)
+  const traderValues = Object.values(traders)
 
   const handleToggle = value => () => {
     const currentIndex = checked.indexOf(value)
@@ -44,13 +58,17 @@ export default function TraderSelect(props) {
     setChecked(newChecked)
   }
 
+  const chips = checked.map(value => (
+    <Chip label={traderValues[value]} className={classes.chip} color="primary" />
+  ))
+
   return (
     <Paper className={classes.root}>
-      <Paper className={classes.chipContainer}></Paper>
+      <Paper className={classes.chipContainer}>{chips}</Paper>
       <List className={classes.root}>
-        {[0, 1, 2, 3].map(value => {
+        {traderKeys.map(value => {
           const labelId = `checkbox-list-label-${value}`
-
+          console.log(traders)
           return (
             <ListItem key={value} role={undefined} dense button onClick={handleToggle(value)}>
               <ListItemIcon>
@@ -62,7 +80,7 @@ export default function TraderSelect(props) {
                   inputProps={{ 'aria-labelledby': labelId }}
                 />
               </ListItemIcon>
-              <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
+              <ListItemText id={labelId} primary={`${traderValues[value]}`} />
             </ListItem>
           )
         })}
