@@ -11,6 +11,7 @@ import Switch from '@material-ui/core/Switch'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormControl from '@material-ui/core/FormControl'
 import Grid from '@material-ui/core/Grid'
+import { Typography } from '@material-ui/core'
 
 const useStyles = makeStyles({
   root: {
@@ -22,9 +23,17 @@ const useStyles = makeStyles({
     justifyContent: 'space-between',
     flexWrap: 'nowrap',
     alignItems: 'center',
+    backgroundColor: '#000',
   },
-  switchLabel: {
-    // fontSize: '8px',
+  buttonContainer: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'flex-end',
+  },
+  switchContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
 })
 
@@ -35,6 +44,7 @@ export default function FilterBar() {
     <div className={classes.root}>
       <AppBar position="static" color="default">
         <Toolbar variant="dense" className={classes.container}>
+          {/* This Grid contains the search input field */}
           <Grid container spacing={1} alignItems="flex-end">
             <Grid item>
               <SearchIcon />
@@ -43,21 +53,18 @@ export default function FilterBar() {
               <TextField id="input-with-icon-grid" label="Find" />
             </Grid>
           </Grid>
-          <div className={classes.container}>
+
+          {/* This div contains icons that would switch between the KanBan/List views and the Auto-Order switch */}
+          <div className={`${classes.container} ${classes.buttonContainer}`}>
             <IconButton color="inherit" aria-label="Columns">
               <ViewWeekIcon />
             </IconButton>
             <IconButton color="inherit" aria-label="List">
               <ViewListIcon />
             </IconButton>
-            <FormControl component="fieldset">
-              <FormControlLabel
-                value="top"
-                control={<Switch color="primary" />}
-                label="AUTO-ORDERS ON"
-                labelPlacement="top"
-                className={classes.switchLabel}
-              />
+            <FormControl component="fieldset" className={classes.switchContainer}>
+              <Typography variant="caption">AUTO-ORDERS ON</Typography>
+              <Switch color="primary" />
             </FormControl>
           </div>
         </Toolbar>

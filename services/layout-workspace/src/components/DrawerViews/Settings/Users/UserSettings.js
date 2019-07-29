@@ -5,32 +5,27 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import TextField from '@material-ui/core/TextField'
-import ArrowIcon from '@material-ui/icons/ArrowForwardIosRounded'
+import AddIcon from '@material-ui/icons/AddRounded'
 import SearchIcon from '@material-ui/icons/Search'
-import DrawerHeading from '../../DrawerHeading/DrawerHeading'
+import ArrowForwardIcon from '@material-ui/icons/ArrowForwardIosRounded'
+import DrawerHeading from '../../../DrawerHeading/DrawerHeading'
 
 const useStyles = makeStyles(theme => ({
   root: {
     width: '320px',
   },
-  listItem: {
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-  listItemIcon: {
-    maxWidth: '24px',
-  },
 }))
 
-export default function SettingsView(props) {
+export default function UserSettings(props) {
   const classes = useStyles()
 
   return (
     <div className={classes.root}>
       {/* This div contains the heading of the drawers view */}
       <DrawerHeading
-        isChild={false}
-        title="Settings"
+        isChild={true}
+        parent="settings"
+        title="Users"
         updateView={props.updateView}
         toggleDrawer={props.toggleDrawer}
       />
@@ -42,34 +37,46 @@ export default function SettingsView(props) {
           </ListItemIcon>
           <TextField label="Find" />
         </ListItem>
-        <ListItem button onClick={props.updateView('userSettings')} className={classes.listItem}>
-          <ListItemText primary="Users" />
-          <ListItemIcon className={classes.listItemIcon}>
-            <ArrowIcon />
-          </ListItemIcon>
-        </ListItem>
-        <ListItem button onClick={props.updateView('deskSettings')}>
-          <ListItemText primary="Desks" />
+        <ListItem button onClick={props.updateView('newUser')}>
+          <ListItemText primary="Add New User" />
           <ListItemIcon>
-            <ArrowIcon />
+            <AddIcon />
           </ListItemIcon>
         </ListItem>
         <ListItem button>
-          <ListItemText primary="Brokers" />
+          <ListItemText primary="Jacklyn Cameo" />
           <ListItemIcon>
-            <ArrowIcon />
+            <ArrowForwardIcon />
           </ListItemIcon>
         </ListItem>
         <ListItem button>
-          <ListItemText primary="Strategies" />
+          <ListItemText primary="Jasmin Dimick" />
           <ListItemIcon>
-            <ArrowIcon />
+            <ArrowForwardIcon />
           </ListItemIcon>
         </ListItem>
         <ListItem button>
-          <ListItemText primary="General" />
+          <ListItemText primary="Carolyn Feller" />
           <ListItemIcon>
-            <ArrowIcon />
+            <ArrowForwardIcon />
+          </ListItemIcon>
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="John Harris" />
+          <ListItemIcon>
+            <ArrowForwardIcon />
+          </ListItemIcon>
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="Jaqueline Harrison" />
+          <ListItemIcon>
+            <ArrowForwardIcon />
+          </ListItemIcon>
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="Lawrence Lambright" />
+          <ListItemIcon>
+            <ArrowForwardIcon />
           </ListItemIcon>
         </ListItem>
       </List>

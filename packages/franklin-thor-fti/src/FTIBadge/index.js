@@ -1,8 +1,9 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Avatar from '@material-ui/core/Avatar'
+import PropTypes from 'prop-types'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
   buy: {
     backgroundColor: '#13BE95',
     color: '#fff',
@@ -21,7 +22,7 @@ const useStyles = makeStyles(theme => ({
     // height: '12px',
     // fontFamily: 'Roboto'
   },
-}))
+})
 
 export default function FTIBadge(props) {
   const classes = useStyles()
@@ -32,4 +33,8 @@ export default function FTIBadge(props) {
       <Avatar className={classes[props.type]}>{type === 'buy' ? 'B' : 'S'}</Avatar>
     </div>
   )
+}
+
+FTIBadge.propTypes = {
+  type: PropTypes.string,
 }

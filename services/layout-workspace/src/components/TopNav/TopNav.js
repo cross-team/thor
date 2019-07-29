@@ -1,5 +1,9 @@
 import React from 'react'
 import SettingsView from '../DrawerViews/Settings/SettingsView'
+import UserSettings from '../DrawerViews/Settings/Users/UserSettings'
+import UserAdmin from '../DrawerViews/Settings/Users/UserAdmin'
+import DeskSettings from '../DrawerViews/Settings/Desks/DeskSettings'
+import DeskAdmin from '../DrawerViews/Settings/Desks/DeskAdmin'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -27,9 +31,9 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'row',
     justifyContent: 'space-between',
     flexWrap: 'nowrap',
+    backgroundColor: '#262624',
   },
   leftContainer: {
-    // alignSelf: 'stretch',
     display: 'flex',
   },
 }))
@@ -37,31 +41,47 @@ const useStyles = makeStyles(theme => ({
 export default function TopNav(props) {
   const classes = useStyles()
   const [value, setValue] = React.useState(0)
+  const [drawer, setDrawer] = React.useState('')
   const [state, setState] = React.useState({
-    drawer: false,
+    drawerState: false,
   })
 
+  // This function opens and closes the drawer
   const toggleDrawer = open => event => {
+    console.log('toggleDrawer()')
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return
     }
 
-    setState({ ...state, drawer: open })
+    setState({ ...state, drawerState: open })
   }
 
-  function handleChange(event, newValue) {
+  // This function handles setting the state when the user clicks a tab
+  const handleChange = (event, newValue) => {
     setValue(newValue)
+  }
+
+  // This function updates the state on what's being displayed in the drawers and passed to each drawer view so that they may also control the view
+  const updateView = view => event => {
+    setDrawer(view)
+    toggleDrawer(true)(event)
   }
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" color="default">
         <Toolbar className={classes.appBar}>
+          {/* This div contains the hamburger menu icon and the tab menu */}
           <div className={classes.leftContainer}>
             <IconButton edge="start" color="inherit" aria-label="Menu">
               <MenuIcon />
             </IconButton>
-            <Tabs value={value} onChange={handleChange} className={classes.tabGroup}>
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              className={classes.tabGroup}
+              indicatorColor="primary"
+            >
               <Tab label="Orders" />
               <Tab label="Executions" />
               <Tab label="Securities" />
@@ -72,6 +92,8 @@ export default function TopNav(props) {
               <MoreIcon />
             </IconButton>
           </div>
+
+          {/* This div contains the various buttons that control the drawer */}
           <div className={classes.buttonGroup}>
             <IconButton color="inherit" aria-label="Search" onClick={toggleDrawer(true)}>
               <SearchIcon />
@@ -82,14 +104,33 @@ export default function TopNav(props) {
             <IconButton color="inherit" aria-label="User" onClick={toggleDrawer(true)}>
               <PersonIcon />
             </IconButton>
-            <IconButton color="inherit" aria-label="Settings" onClick={toggleDrawer(true)}>
+            <IconButton color="inherit" aria-label="Settings" onClick={updateView('settings')}>
               <SettingsIcon />
             </IconButton>
           </div>
         </Toolbar>
       </AppBar>
-      <Drawer anchor="right" open={state.drawer} onClose={toggleDrawer(false)}>
-        <SettingsView />
+
+      <Drawer anchor="right" open={state.drawerState} onClose={toggleDrawer(false)}>
+        {(() => {
+          switch (drawer) {
+            case '':
+              break
+            case 'settings':
+              return <SettingsView toggleDrawer={toggleDrawer} updateView={updateView} />
+            case 'userSettings':
+              return <UserSettings toggleDrawer={toggleDrawer} updateView={updateView} />
+            case 'deskSettings':
+              return <DeskSettings toggleDrawer={toggleDrawer} updateView={updateView} />
+            case 'newUser':
+              return <UserAdmin toggleDrawer={toggleDrawer} updateView={updateView} />
+            case 'newDesk':
+              return <DeskAdmin toggleDrawer={toggleDrawer} updateView={updateView} />
+            default:
+              break
+          }
+        })()}
+        {/* This function renders the view into the drawer depending on the drawer value of the state */}
       </Drawer>
     </div>
   )
