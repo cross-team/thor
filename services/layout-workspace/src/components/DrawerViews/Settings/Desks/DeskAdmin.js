@@ -93,6 +93,21 @@ export default function DeskAdmin(props) {
     alert('You clicked the delete icon.')
   }
 
+  const textField = (id, label) => (
+    <TextField
+      id={id}
+      label={label}
+      className={classes.margin}
+      value={values[id]}
+      onChange={handleChange({ id })}
+      margin="normal"
+      variant="outlined"
+      InputLabelProps={{
+        shrink: true,
+      }}
+    />
+  )
+
   return (
     <div className={classes.root}>
       {/* This div contains the heading of the drawers view */}
@@ -110,30 +125,8 @@ export default function DeskAdmin(props) {
       {/* This form contains the inputs and buttons for adding a new desk */}
       <form className={classes.form}>
         <FormGroup>
-          <TextField
-            id="location"
-            label="DESK LOCATION"
-            className={classes.margin}
-            value={values.location}
-            onChange={handleChange('location')}
-            margin="normal"
-            variant="outlined"
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-          <TextField
-            id="init"
-            label="NEW DESK INITIALS"
-            className={classes.margin}
-            value={values.init}
-            onChange={handleChange('init')}
-            margin="normal"
-            variant="outlined"
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
+          {textField('location', 'DESK LOCATION')}
+          {textField('init', 'NEW DESK INITIALS')}
 
           <div className={classes.switch}>
             <FormControlLabel
@@ -144,30 +137,8 @@ export default function DeskAdmin(props) {
             />
           </div>
 
-          <TextField
-            id="adv"
-            label="%ADV"
-            className={classes.margin}
-            value={values.adv}
-            onChange={handleChange('adv')}
-            margin="normal"
-            variant="outlined"
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-          <TextField
-            id="advName"
-            label="ADV NAME"
-            className={classes.margin}
-            value={values.advName}
-            onChange={handleChange('advName')}
-            margin="normal"
-            variant="outlined"
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
+          {textField('adv', '%ADV')}
+          {textField('advName', 'ADV NAME')}
 
           <FormControl variant="outlined" className={classes.margin}>
             <InputLabel ref={inputLabel} htmlFor="autoEx" shrink="true">
@@ -183,36 +154,11 @@ export default function DeskAdmin(props) {
             </Select>
           </FormControl>
 
-          <TextField
-            id="autoBroker"
-            label="AUTO PLACE BROKER/EMS"
-            className={classes.margin}
-            value={values.autoBroker}
-            onChange={handleChange('autoBroker')}
-            margin="normal"
-            variant="outlined"
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-
-          <TextField
-            id="autoId"
-            label="AUTO PLACE COMP ID"
-            className={classes.margin}
-            value={values.autoId}
-            onChange={handleChange('autoId')}
-            margin="normal"
-            variant="outlined"
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
+          {textField('autoBroker', 'AUTO PLACE BROKER/EMS')}
+          {textField('autoId', 'AUTO PLACE COMP ID')}
 
           <TraderSelect label="INCLUDE TRADERS" />
-
           <TraderSelect label="INCLUDE LOW TOUCH MANAGERS" />
-
           <TraderSelect label="INCLUDE NO TOUCH MANAGERS" />
 
           <FormControl variant="outlined" className={classes.margin}>
@@ -229,32 +175,8 @@ export default function DeskAdmin(props) {
             </Select>
           </FormControl>
 
-          <TextField
-            id="time"
-            label="TIME IN FORCE"
-            className={classes.margin}
-            value={values.time}
-            onChange={handleChange('time')}
-            margin="normal"
-            variant="outlined"
-            type="number"
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-          <TextField
-            id="limit"
-            label="UPPER ORDER LIMIT"
-            className={classes.margin}
-            value={values.limit}
-            onChange={handleChange('limit')}
-            margin="normal"
-            variant="outlined"
-            type="number"
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
+          {textField('time', 'TIME IN FORCE')}
+          {textField('limit', 'UPPER ORDER LIMIT')}
 
           <FormControl variant="outlined" className={classes.margin}>
             <InputLabel ref={inputLabel} htmlFor="excludeLimit" shrink="excludeLimit">
@@ -272,32 +194,8 @@ export default function DeskAdmin(props) {
             </Select>
           </FormControl>
 
-          <TextField
-            id="cwGroups"
-            label="CW GROUPS"
-            className={classes.margin}
-            value={values.cwGroups}
-            onChange={handleChange('cwGroups')}
-            margin="normal"
-            variant="outlined"
-            type="number"
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-          <TextField
-            id="funds"
-            label="FUNDS"
-            className={classes.margin}
-            value={values.funds}
-            onChange={handleChange('funds')}
-            margin="normal"
-            variant="outlined"
-            type="number"
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
+          {textField('cwGroups', 'CW GROUPS')}
+          {textField('funds', 'FUNDS')}
 
           <div>
             <Fab variant="extended" className={classes.button}>

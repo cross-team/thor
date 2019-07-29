@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
@@ -18,6 +18,22 @@ const useStyles = makeStyles(theme => ({
 
 export default function UserSettings(props) {
   const classes = useStyles()
+  const [users, setUsers] = useState([
+    'Jacklyn Cameo',
+    'Jasmin Dimick',
+    'Carolyn Feller',
+    'John Harris',
+    'Jaqueline Harrison',
+    'Lawrence Lambright',
+  ])
+  const listItems = users.map(user => (
+    <ListItem button>
+      <ListItemText primary={user} />
+      <ListItemIcon>
+        <ArrowForwardIcon />
+      </ListItemIcon>
+    </ListItem>
+  ))
 
   return (
     <div className={classes.root}>
@@ -43,42 +59,7 @@ export default function UserSettings(props) {
             <AddIcon />
           </ListItemIcon>
         </ListItem>
-        <ListItem button>
-          <ListItemText primary="Jacklyn Cameo" />
-          <ListItemIcon>
-            <ArrowForwardIcon />
-          </ListItemIcon>
-        </ListItem>
-        <ListItem button>
-          <ListItemText primary="Jasmin Dimick" />
-          <ListItemIcon>
-            <ArrowForwardIcon />
-          </ListItemIcon>
-        </ListItem>
-        <ListItem button>
-          <ListItemText primary="Carolyn Feller" />
-          <ListItemIcon>
-            <ArrowForwardIcon />
-          </ListItemIcon>
-        </ListItem>
-        <ListItem button>
-          <ListItemText primary="John Harris" />
-          <ListItemIcon>
-            <ArrowForwardIcon />
-          </ListItemIcon>
-        </ListItem>
-        <ListItem button>
-          <ListItemText primary="Jaqueline Harrison" />
-          <ListItemIcon>
-            <ArrowForwardIcon />
-          </ListItemIcon>
-        </ListItem>
-        <ListItem button>
-          <ListItemText primary="Lawrence Lambright" />
-          <ListItemIcon>
-            <ArrowForwardIcon />
-          </ListItemIcon>
-        </ListItem>
+        {listItems}
       </List>
     </div>
   )
