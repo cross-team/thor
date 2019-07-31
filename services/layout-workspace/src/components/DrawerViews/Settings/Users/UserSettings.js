@@ -18,14 +18,14 @@ const useStyles = makeStyles(theme => ({
 
 export default function UserSettings(props) {
   const classes = useStyles()
-  const [users, setUsers] = useState([
+  let users = [
     'Jacklyn Cameo',
     'Jasmin Dimick',
     'Carolyn Feller',
     'John Harris',
     'Jaqueline Harrison',
     'Lawrence Lambright',
-  ])
+  ]
   const listItems = users.map(user => (
     <ListItem button>
       <ListItemText primary={user} />

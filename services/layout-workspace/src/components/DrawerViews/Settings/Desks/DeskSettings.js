@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function DeskSettings(props) {
   const classes = useStyles()
-  const [desks, setDesks] = useState(['FTL', 'DUB', 'EDI', 'NEL', 'CMP', 'HK', 'CAL', 'SHL', 'KOR'])
+  let desks = ['FTL', 'DUB', 'EDI', 'NEL', 'CMP', 'HK', 'CAL', 'SHL', 'KOR']
   const listItems = desks.map(desk => (
     <ListItem button>
       <ListItemText primary={desk} />
