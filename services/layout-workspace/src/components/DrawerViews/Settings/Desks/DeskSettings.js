@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
@@ -18,6 +18,15 @@ const useStyles = makeStyles(theme => ({
 
 export default function DeskSettings(props) {
   const classes = useStyles()
+  let desks = ['FTL', 'DUB', 'EDI', 'NEL', 'CMP', 'HK', 'CAL', 'SHL', 'KOR']
+  const listItems = desks.map(desk => (
+    <ListItem button>
+      <ListItemText primary={desk} />
+      <ListItemIcon>
+        <ArrowForwardIcon />
+      </ListItemIcon>
+    </ListItem>
+  ))
 
   return (
     <div className={classes.root}>
@@ -44,60 +53,7 @@ export default function DeskSettings(props) {
             <AddIcon />
           </ListItemIcon>
         </ListItem>
-        <ListItem button>
-          <ListItemText primary="FTL" />
-          <ListItemIcon>
-            <ArrowForwardIcon />
-          </ListItemIcon>
-        </ListItem>
-        <ListItem button>
-          <ListItemText primary="DUB" />
-          <ListItemIcon>
-            <ArrowForwardIcon />
-          </ListItemIcon>
-        </ListItem>
-        <ListItem button>
-          <ListItemText primary="EDI" />
-          <ListItemIcon>
-            <ArrowForwardIcon />
-          </ListItemIcon>
-        </ListItem>
-        <ListItem button>
-          <ListItemText primary="NEL" />
-          <ListItemIcon>
-            <ArrowForwardIcon />
-          </ListItemIcon>
-        </ListItem>
-        <ListItem button>
-          <ListItemText primary="CMP" />
-          <ListItemIcon>
-            <ArrowForwardIcon />
-          </ListItemIcon>
-        </ListItem>
-        <ListItem button>
-          <ListItemText primary="HK" />
-          <ListItemIcon>
-            <ArrowForwardIcon />
-          </ListItemIcon>
-        </ListItem>
-        <ListItem button>
-          <ListItemText primary="CAL" />
-          <ListItemIcon>
-            <ArrowForwardIcon />
-          </ListItemIcon>
-        </ListItem>
-        <ListItem button>
-          <ListItemText primary="SHL" />
-          <ListItemIcon>
-            <ArrowForwardIcon />
-          </ListItemIcon>
-        </ListItem>
-        <ListItem button>
-          <ListItemText primary="KOR" />
-          <ListItemIcon>
-            <ArrowForwardIcon />
-          </ListItemIcon>
-        </ListItem>
+        {listItems}
       </List>
     </div>
   )

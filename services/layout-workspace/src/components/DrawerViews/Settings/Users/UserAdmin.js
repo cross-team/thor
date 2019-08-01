@@ -50,6 +50,21 @@ export default function UserAdmin(props) {
     setValues({ ...values, [name]: event.target.value })
   }
 
+  const textField = (id, label) => (
+    <TextField
+      id={id}
+      label={label}
+      className={classes.textField}
+      value={values[id]}
+      onChange={handleChange({ id })}
+      margin="normal"
+      variant="outlined"
+      InputLabelProps={{
+        shrink: true,
+      }}
+    />
+  )
+
   return (
     <div className={classes.root}>
       {/* This div contains the heading of the drawers view */}
@@ -66,54 +81,11 @@ export default function UserAdmin(props) {
 
       {/* This form contains the inputs and buttons for adding a new user */}
       <form className={classes.form}>
-        <TextField
-          id="fname"
-          label="FIRST NAME"
-          className={classes.textField}
-          value={values.fname}
-          onChange={handleChange('fname')}
-          margin="normal"
-          variant="outlined"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
-        <TextField
-          id="lname"
-          label="LAST NAME"
-          className={classes.textField}
-          value={values.lname}
-          onChange={handleChange('lname')}
-          margin="normal"
-          variant="outlined"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
-        <TextField
-          id="role"
-          label="ROLE"
-          className={classes.textField}
-          value={values.role}
-          onChange={handleChange('role')}
-          margin="normal"
-          variant="outlined"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
-        <TextField
-          id="location"
-          label="LOCATION"
-          className={classes.textField}
-          value={values.location}
-          onChange={handleChange('location')}
-          margin="normal"
-          variant="outlined"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
+        {textField('fname', 'FIRST NAME')}
+        {textField('lname', 'LAST NAME')}
+        {textField('role', 'ROLE')}
+        {textField('location', 'LOCATION')}
+
         <FormGroup>
           <FormControlLabel
             className={classes.switch}
