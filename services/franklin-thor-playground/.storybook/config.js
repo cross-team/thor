@@ -15,6 +15,7 @@ function loadStories() {
   require('stories/FTICancelAlert')
   require('stories/FTICard')
   require('stories/FTIKanBanColumn')
+  require('stories/FTIKanBanBoard')
   require('stories/FTITable')
   require('stories/MuiButton')
   require('stories/MuiCheckboxes')

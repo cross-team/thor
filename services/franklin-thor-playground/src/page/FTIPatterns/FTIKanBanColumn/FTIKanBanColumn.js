@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   makeStyles,
   Paper,
@@ -9,6 +9,7 @@ import {
   MenuItem,
 } from '@franklin-thor/core/'
 import FTICard from '../FTICard/FTICard'
+import PropTypes from 'prop-types'
 
 const useStyles = makeStyles({
   column: {
@@ -25,8 +26,10 @@ const useStyles = makeStyles({
   },
 })
 
-export default function FTIKanBanColumn() {
-  const classes = useStyles()
+export default function FTIKanBanColumn(props) {
+  const [state, setState] = React.useState({
+    mouseIsHovering: false,
+  })
   const [values, setValues] = React.useState({
     order: 'size',
   })
@@ -38,12 +41,34 @@ export default function FTIKanBanColumn() {
     }))
   }
 
+  const classes = useStyles()
+
+  useEffect(() => {
+    setState({ ...state, mouseIsHovering: false })
+  }, [props])
+
+  const generateKanbanCards = () => {
+    console.log('***********', props.orders)
+    return props.orders.slice(0).map(order => {
+      return <FTICard order={order} key={order.orderNum} onDragEnd={props.onDragEnd} />
+    })
+  }
+
   return (
-    <div className={classes.root}>
-      <Paper className={classes.column}>
-        <Paper>
+    <div
+      className={classes.root}
+      onDragEnter={e => {
+        setState({ ...state, mouseIsHovering: true })
+        props.onDragEnter(e, props.stage)
+      }}
+      onDragExit={e => {
+        setState({ ...state, mouseIsHovering: true })
+      }}
+    >
+      <div className={classes.container}>
+        <Paper className={classes.header}>
           <div className={classes.topContainer}>
-            <Typography variant="body2">Desk Orders</Typography>
+            <Typography variant="body2">{props.name}</Typography>
             <Switch defaultChecked value="checkedF" color="default" />
           </div>
           <form>
@@ -72,24 +97,16 @@ export default function FTIKanBanColumn() {
             </FormControl>
           </form>
         </Paper>
-        <FTICard
-          actNum="01234-56789"
-          type="buy"
-          traderName="MSFT"
-          progress="77"
-          current="16,000"
-          max="20,000"
-          money="300,000"
-          orderNum="17608"
-          automated="true"
-          group="H1H"
-          location="WZM"
-          trader="DL1"
-          priceCurrent="101.82"
-          priceChange="+4.15"
-          percentChange="4.47%"
-        />
-      </Paper>
+        {generateKanbanCards()}
+      </div>
     </div>
   )
+}
+
+FTIKanBanColumn.propTypes = {
+  name: PropTypes.string,
+  onDragEnd: PropTypes.func,
+  onDragEnter: PropTypes.func,
+  orders: PropTypes.array,
+  stage: PropTypes.number,
 }
