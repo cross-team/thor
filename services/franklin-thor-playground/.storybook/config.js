@@ -17,6 +17,7 @@ function loadStories() {
   require('stories/FTIKanBanColumn')
   require('stories/FTIKanBanBoard')
   require('stories/FTITable')
+  require('stories/FTITraderSelect')
   require('stories/MuiButton')
   require('stories/MuiCheckboxes')
   require('stories/MuiPickers')
