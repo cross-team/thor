@@ -1,5 +1,6 @@
 import React, { Component, useEffect } from 'react'
 import KanBanCard from '../KanBanCard/KanBanCard'
+import { FTICard } from '@franklin-thor/fti'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
@@ -53,7 +54,7 @@ export default function KanBanColumn(props) {
 
   const generateKanbanCards = () => {
     return props.orders.slice(0).map(order => {
-      return <KanBanCard order={order} key={order.orderNum} onDragEnd={props.onDragEnd} />
+      return <FTICard order={order} key={order.orderNum} onDragEnd={props.onDragEnd} />
     })
   }
 
