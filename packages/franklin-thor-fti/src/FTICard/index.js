@@ -148,6 +148,7 @@ export default function FTICard(props) {
 }
 
 FTICard.propTypes = {
+  onDragEnd: PropTypes.func,
   order: {
     actNum: PropTypes.number,
     automated: PropTypes.bool,

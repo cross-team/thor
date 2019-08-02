@@ -3,12 +3,12 @@ import { makeStyles } from '@material-ui/core/styles'
 import { FTIKanBanColumn } from '@franklin-thor/fti'
 import PropTypes from 'prop-types'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
   boardStyle: {
     display: 'flex',
     width: '100%',
   },
-}))
+})
 
 export default function FTIKanBanBoard(props) {
   const [isLoading, setIsLoading] = useState(true)

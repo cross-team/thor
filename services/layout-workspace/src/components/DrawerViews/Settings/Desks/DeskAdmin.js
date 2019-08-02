@@ -12,7 +12,7 @@ import Select from '@material-ui/core/Select'
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
 import DrawerHeading from '../../../DrawerHeading/DrawerHeading'
-import { FTITraderSelect } from 'f@franklin-thor/fti'
+import { FTITraderSelect } from '@franklin-thor/fti'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -95,10 +95,6 @@ export default function DeskAdmin(props) {
 
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value })
-  }
-
-  const handleDelete = () => {
-    alert('You clicked the delete icon.')
   }
 
   const textField = (id, label) => (

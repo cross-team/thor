@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export default function DeskHeading(props) {
+export default function DrawerHeading(props) {
   const classes = useStyles()
 
   return (
