@@ -1,7 +1,7 @@
-import React, { Component, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import KanBanColumn from '../KanBanColumn/KanBanColumn'
-import orderList from '../../assets/orderList'
+import { FTIKanBanColumn } from '@franklin-thor/fti'
+import PropTypes from 'prop-types'
 
 const useStyles = makeStyles(theme => ({
   boardStyle: {
@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export default function KanbanBoard(props) {
+export default function KanBanBoard(props) {
   const [isLoading, setIsLoading] = useState(true)
   const [orders, setOrders] = useState([])
   const [draggedOverCol, setDraggedOverCol] = useState(0)
@@ -24,17 +24,16 @@ export default function KanbanBoard(props) {
   ]
 
   useEffect(() => {
-    setOrders(orderList)
-    console.log('after  setOrders( orderList )')
+    setOrders(props.data)
     setIsLoading(false)
   }, [])
 
-  //this is called when a Kanban card is dragged over a column (called by column)
+  // this is called when a Kanban card is dragged over a column (called by column)
   const handleOnDragEnter = (e, stageValue) => {
     setDraggedOverCol(stageValue)
   }
 
-  //this is called when a Kanban card dropped over a column (called by card)
+  // this is called when a Kanban card dropped over a column (called by card)
   const handleOnDragEnd = (e, order) => {
     const updatedOrders = orders.slice(0)
     updatedOrders.find(orderObject => {
@@ -47,7 +46,7 @@ export default function KanbanBoard(props) {
     <div className={classes.boardStyle}>
       {columns.map(column => {
         return (
-          <KanBanColumn
+          <FTIKanBanColumn
             name={column.name}
             stage={column.stage}
             orders={orders.filter(order => {
@@ -61,4 +60,8 @@ export default function KanbanBoard(props) {
       })}
     </div>
   )
+}
+
+KanBanBoard.propTypes = {
+  data: PropTypes.object,
 }

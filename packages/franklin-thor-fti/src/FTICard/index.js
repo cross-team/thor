@@ -74,7 +74,7 @@ export default function FTICard(props) {
     // props.traderName will contain a string with the trader's name
     //
     <div
-      draggable={true}
+      draggable
       onDragEnd={e => {
         props.onDragEnd(e, props.order)
       }}

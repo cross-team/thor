@@ -1,30 +1,34 @@
 import React, { useEffect } from 'react'
-import {
-  makeStyles,
-  Paper,
-  Typography,
-  Switch,
-  Select,
-  FormControl,
-  MenuItem,
-} from '@franklin-thor/core/'
 import FTICard from '../FTICard/FTICard'
+import { makeStyles } from '@material-ui/core/styles'
+import Paper from '@material-ui/core/Paper'
+import Typography from '@material-ui/core/Typography'
+import Switch from '@material-ui/core/Switch'
+import FormControl from '@material-ui/core/FormControl'
+import Select from '@material-ui/core/Select'
+import MenuItem from '@material-ui/core/MenuItem'
 import PropTypes from 'prop-types'
 
-const useStyles = makeStyles({
-  column: {
-    flexBasis: '25%',
+const useStyles = makeStyles(theme => ({
+  container: {
+    width: '100%',
+    backgroundColor: '#191918',
   },
   root: {
     display: 'flex',
-    height: '100%',
+    width: '100%',
+    height: '86vh',
     alignItems: 'stretch',
   },
   topContainer: {
     display: 'flex',
     justifyContent: 'space-between',
   },
-})
+  header: {
+    backgroundColor: '#262524',
+    padding: '8px 16px 8px 16px',
+  },
+}))
 
 export default function FTIKanBanColumn(props) {
   const [state, setState] = React.useState({
@@ -48,7 +52,6 @@ export default function FTIKanBanColumn(props) {
   }, [props])
 
   const generateKanbanCards = () => {
-    console.log('***********', props.orders)
     return props.orders.slice(0).map(order => {
       return <FTICard order={order} key={order.orderNum} onDragEnd={props.onDragEnd} />
     })

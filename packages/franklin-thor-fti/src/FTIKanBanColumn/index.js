@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { FTICard } from '@franklin-thor/fti'
+import FTICard from '../FTICard'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export default function KanBanColumn(props) {
+export default function FTIKanBanColumn(props) {
   const [state, setState] = React.useState({
     mouseIsHovering: false,
   })
@@ -106,7 +106,7 @@ export default function KanBanColumn(props) {
   )
 }
 
-KanBanColumn.propTypes = {
+FTIKanBanColumn.propTypes = {
   name: PropTypes.string,
   onDragEnd: PropTypes.func,
   onDragEnter: PropTypes.func,

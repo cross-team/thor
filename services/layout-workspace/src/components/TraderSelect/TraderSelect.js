@@ -10,7 +10,6 @@ import {
   Checkbox,
   Chip,
 } from '@material-ui/core'
-import { log } from 'handlebars'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -40,13 +39,7 @@ const useStyles = makeStyles(theme => ({
 export default function TraderSelect(props) {
   const classes = useStyles()
   const [checked, setChecked] = React.useState([])
-  const traders = {
-    0: '[CDA] Chistopher Darcy',
-    1: '[DJB] Don Johnson',
-    2: '[JKI] Jason Killian',
-    3: '[BMA] Beth Mason',
-    4: '[NRO] Nancy Robertson',
-  }
+  const traders = props.traders
   const traderKeys = Object.keys(traders)
   const traderValues = Object.values(traders)
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { FTIKanBanColumn } from '@franklin-thor/fti'
+import FTIKanBanColumn from '../FTIKanBanColumn'
 import PropTypes from 'prop-types'
 
 const useStyles = makeStyles(theme => ({

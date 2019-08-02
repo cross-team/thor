@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import FTIKanBanColumn from '../../page/FTIPatterns/FTIKanBanColumn/FTIKanBanColumn'
 import FTIKanBanBoard from '../../page/FTIPatterns/FTIKanBanBoard/FTIKanBanBoard'
-import orderList from '../../page/FTIPatterns/FTIKanBanBoard/orderList'
+import orderList from '../FTIKanBanBoard/orderList'
 import { ThemeProvider } from '@material-ui/styles'
 import theme from '../../themes/default'
 
