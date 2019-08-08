@@ -12,7 +12,7 @@ import Select from '@material-ui/core/Select'
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
 import DrawerHeading from '../../../DrawerHeading/DrawerHeading'
-import TraderSelect from '../../../TraderSelect/TraderSelect'
+import { FTITraderSelect } from '@franklin-thor/fti'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -65,6 +65,14 @@ export default function DeskAdmin(props) {
     funds: '',
   })
 
+  const traders = {
+    0: '[CDA] Chistopher Darcy',
+    1: '[DJB] Don Johnson',
+    2: '[JKI] Jason Killian',
+    3: '[BMA] Beth Mason',
+    4: '[NRO] Nancy Robertson',
+  }
+
   const [checked, setChecked] = React.useState([0])
   const handleToggle = value => () => {
     const currentIndex = checked.indexOf(value)
@@ -87,10 +95,6 @@ export default function DeskAdmin(props) {
 
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value })
-  }
-
-  const handleDelete = () => {
-    alert('You clicked the delete icon.')
   }
 
   const textField = (id, label) => (
@@ -157,9 +161,9 @@ export default function DeskAdmin(props) {
           {textField('autoBroker', 'AUTO PLACE BROKER/EMS')}
           {textField('autoId', 'AUTO PLACE COMP ID')}
 
-          <TraderSelect label="INCLUDE TRADERS" />
-          <TraderSelect label="INCLUDE LOW TOUCH MANAGERS" />
-          <TraderSelect label="INCLUDE NO TOUCH MANAGERS" />
+          <FTITraderSelect label="INCLUDE TRADERS" traders={traders} />
+          <FTITraderSelect label="INCLUDE LOW TOUCH MANAGERS" traders={traders} />
+          <FTITraderSelect label="INCLUDE NO TOUCH MANAGERS" traders={traders} />
 
           <FormControl variant="outlined" className={classes.margin}>
             <InputLabel ref={inputLabel} htmlFor="traderId" shrink="true">

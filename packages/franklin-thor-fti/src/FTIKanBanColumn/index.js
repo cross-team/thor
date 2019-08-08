@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { FTICard } from '@franklin-thor/fti'
+import FTICard from '../FTICard'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
@@ -9,7 +9,7 @@ import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 import PropTypes from 'prop-types'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
   container: {
     width: '100%',
     backgroundColor: '#191918',
@@ -28,27 +28,20 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: '#262524',
     padding: '8px 16px 8px 16px',
   },
-}))
+})
 
-export default function KanBanColumn(props) {
-  const [state, setState] = React.useState({
-    mouseIsHovering: false,
-  })
-  const [values, setValues] = React.useState({
-    order: 'size',
-  })
+export default function FTIKanBanColumn(props) {
+  const [mouseIsHovering, setMouseIsHovering] = React.useState(false)
+  const [orderValue, setOrderValue] = React.useState('size')
 
   function handleChange(event) {
-    setValues(oldValues => ({
-      ...oldValues,
-      [event.target.name]: event.target.value,
-    }))
+    setOrderValue(event.target.value)
   }
 
   const classes = useStyles()
 
   useEffect(() => {
-    setState({ ...state, mouseIsHovering: false })
+    setMouseIsHovering(false)
   }, [props])
 
   const generateKanbanCards = () => {
@@ -61,11 +54,11 @@ export default function KanBanColumn(props) {
     <div
       className={classes.root}
       onDragEnter={e => {
-        setState({ ...state, mouseIsHovering: true })
+        setMouseIsHovering(true)
         props.onDragEnter(e, props.stage)
       }}
       onDragExit={e => {
-        setState({ ...state, mouseIsHovering: true })
+        setMouseIsHovering(true)
       }}
     >
       <div className={classes.container}>
@@ -77,7 +70,7 @@ export default function KanBanColumn(props) {
           <form>
             <FormControl className={classes.formControl}>
               <Select
-                value={values.order}
+                value={orderValue}
                 onChange={handleChange}
                 displayEmpty
                 name="order"
@@ -106,7 +99,7 @@ export default function KanBanColumn(props) {
   )
 }
 
-KanBanColumn.propTypes = {
+FTIKanBanColumn.propTypes = {
   name: PropTypes.string,
   onDragEnd: PropTypes.func,
   onDragEnter: PropTypes.func,

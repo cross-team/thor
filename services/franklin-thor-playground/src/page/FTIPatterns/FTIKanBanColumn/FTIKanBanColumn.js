@@ -1,55 +1,76 @@
-import React from 'react'
-import {
-  makeStyles,
-  Paper,
-  Typography,
-  Switch,
-  Select,
-  FormControl,
-  MenuItem,
-} from '@franklin-thor/core/'
+import React, { useEffect } from 'react'
 import FTICard from '../FTICard/FTICard'
+import { makeStyles } from '@material-ui/core/styles'
+import Paper from '@material-ui/core/Paper'
+import Typography from '@material-ui/core/Typography'
+import Switch from '@material-ui/core/Switch'
+import FormControl from '@material-ui/core/FormControl'
+import Select from '@material-ui/core/Select'
+import MenuItem from '@material-ui/core/MenuItem'
+import PropTypes from 'prop-types'
 
 const useStyles = makeStyles({
-  column: {
-    flexBasis: '25%',
+  container: {
+    width: '100%',
+    backgroundColor: '#191918',
   },
   root: {
     display: 'flex',
-    height: '100%',
+    width: '100%',
+    height: '86vh',
     alignItems: 'stretch',
   },
   topContainer: {
     display: 'flex',
     justifyContent: 'space-between',
   },
+  header: {
+    backgroundColor: '#262524',
+    padding: '8px 16px 8px 16px',
+  },
 })
 
-export default function FTIKanBanColumn() {
-  const classes = useStyles()
-  const [values, setValues] = React.useState({
-    order: 'size',
-  })
+export default function FTIKanBanColumn(props) {
+  const [mouseIsHovering, setMouseIsHovering] = React.useState(false)
+  const [orderValue, setOrderValue] = React.useState('size')
 
   function handleChange(event) {
-    setValues(oldValues => ({
-      ...oldValues,
-      [event.target.name]: event.target.value,
-    }))
+    setOrderValue(event.target.value)
+  }
+
+  const classes = useStyles()
+
+  useEffect(() => {
+    setMouseIsHovering(false)
+  }, [props])
+
+  const generateKanbanCards = () => {
+    return props.orders.slice(0).map(order => {
+      return <FTICard order={order} key={order.orderNum} onDragEnd={props.onDragEnd} />
+    })
   }
 
   return (
-    <div className={classes.root}>
-      <Paper className={classes.column}>
-        <Paper>
+    <div
+      className={classes.root}
+      onDragEnter={e => {
+        setMouseIsHovering(true)
+        props.onDragEnter(e, props.stage)
+      }}
+      onDragExit={e => {
+        setMouseIsHovering(true)
+      }}
+    >
+      <div className={classes.container}>
+        <Paper className={classes.header}>
           <div className={classes.topContainer}>
-            <Typography variant="body2">Desk Orders</Typography>
+            <Typography variant="body2">{props.name}</Typography>
             <Switch defaultChecked value="checkedF" color="default" />
           </div>
           <form>
             <FormControl className={classes.formControl}>
               <Select
-                value={values.order}
+                value={orderValue}
                 onChange={handleChange}
                 displayEmpty
                 name="order"
@@ -72,24 +93,16 @@ export default function FTIKanBanColumn() {
             </FormControl>
           </form>
         </Paper>
-        <FTICard
-          actNum="01234-56789"
-          type="buy"
-          traderName="MSFT"
-          progress="77"
-          current="16,000"
-          max="20,000"
-          money="300,000"
-          orderNum="17608"
-          automated="true"
-          group="H1H"
-          location="WZM"
-          trader="DL1"
-          priceCurrent="101.82"
-          priceChange="+4.15"
-          percentChange="4.47%"
-        />
-      </Paper>
+        {generateKanbanCards()}
+      </div>
     </div>
   )
+}
+
+FTIKanBanColumn.propTypes = {
+  name: PropTypes.string,
+  onDragEnd: PropTypes.func,
+  onDragEnter: PropTypes.func,
+  orders: PropTypes.array,
+  stage: PropTypes.number,
 }

@@ -35,7 +35,9 @@ const useStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    // maxWidth: '344px'
+    minWidth: '256px',
+    margin: '8px',
+    backgroundColor: '#262524',
   },
   rightContainer: {
     display: 'flex',
@@ -71,35 +73,40 @@ export default function FTICard(props) {
     // props.actNum will contain a string with the trader's account number
     // props.traderName will contain a string with the trader's name
     //
-    <div>
+    <div
+      draggable
+      onDragEnd={e => {
+        props.onDragEnd(e, props.order)
+      }}
+    >
       <Card className={classes.cardContainer}>
         <CardContent className={classes.leftContent}>
           <div className={classes.container}>
             <FontAwesomeIcon icon={faFile} className={classes.icon} />
-            <Typography variant="caption">{props.actNum}</Typography>
+            <Typography variant="caption">{props.order.actNum}</Typography>
           </div>
           <div className={classes.container}>
-            <FTIBadge type={props.type} />
-            <Typography variant="h4">{props.traderName}</Typography>
+            <FTIBadge type={props.order.type} />
+            <Typography variant="h4">{props.order.traderName}</Typography>
           </div>
           <LinearProgress
             className={classes.progress}
             variant="determinate"
-            value={props.progress}
+            value={props.order.progress}
           />
           <Typography variant="caption">
-            {props.current} OF {props.max} - {props.progress}%
+            {props.order.current} OF {props.order.max} - {props.order.progress}%
           </Typography>
           <br />
-          <Typography variant="caption">USD {props.money}</Typography>
+          <Typography variant="caption">USD {props.order.money}</Typography>
         </CardContent>
         <CardContent className={classes.rightContent}>
           <div className={classes.rightContainer}>
             <div>
               <FontAwesomeIcon icon={faTicket} className={classes.icon} />
-              <Typography variant="caption">{props.orderNum}</Typography>
+              <Typography variant="caption">{props.order.orderNum}</Typography>
             </div>
-            {props.automated ? (
+            {props.order.automated ? (
               <Avatar className={classes.avatar}>
                 <FontAwesomeIcon icon={faRetweet} className={classes.icon} />
               </Avatar>
@@ -111,26 +118,26 @@ export default function FTICard(props) {
             <div>
               <div className={classes.container}>
                 <FontAwesomeIcon icon={faUsers} className={classes.icon} />
-                <Typography variant="caption">{props.group}</Typography>
+                <Typography variant="caption">{props.order.group}</Typography>
               </div>
               <div className={classes.container}>
                 <FontAwesomeIcon icon={faBuilding} className={classes.icon} />
-                <Typography variant="caption">{props.location}</Typography>
+                <Typography variant="caption">{props.order.location}</Typography>
               </div>
               <div className={classes.container}>
                 <FontAwesomeIcon icon={faUserCircle} className={classes.icon} />
-                <Typography variant="caption">{props.trader}</Typography>
+                <Typography variant="caption">{props.order.trader}</Typography>
               </div>
             </div>
             <div className={classes.rightTextContainer}>
               <div className={classes.rightText}>
-                <Typography variant="h4">{props.priceCurrent}</Typography>
+                <Typography variant="h4">{props.order.priceCurrent}</Typography>
               </div>
               <div className={classes.rightText}>
-                <Typography variant="body2">{props.priceChange}</Typography>
+                <Typography variant="body2">{props.order.priceChange}</Typography>
               </div>
               <div className={classes.rightText}>
-                <Typography variant="body2">{props.percentChange}</Typography>
+                <Typography variant="body2">{props.order.percentChange}</Typography>
               </div>
             </div>
           </div>
@@ -141,19 +148,22 @@ export default function FTICard(props) {
 }
 
 FTICard.propTypes = {
-  actNum: PropTypes.number,
-  automated: PropTypes.bool,
-  current: PropTypes.number,
-  group: PropTypes.string,
-  location: PropTypes.string,
-  max: PropTypes.number,
-  money: PropTypes.number,
-  orderNum: PropTypes.number,
-  percentChange: PropTypes.string,
-  priceChange: PropTypes.string,
-  priceCurrent: PropTypes.number,
-  progress: PropTypes.number,
-  trader: PropTypes.string,
-  traderName: PropTypes.string,
-  type: PropTypes.string,
+  onDragEnd: PropTypes.func,
+  order: {
+    actNum: PropTypes.number,
+    automated: PropTypes.bool,
+    current: PropTypes.number,
+    group: PropTypes.string,
+    location: PropTypes.string,
+    max: PropTypes.number,
+    money: PropTypes.number,
+    orderNum: PropTypes.number,
+    percentChange: PropTypes.string,
+    priceChange: PropTypes.string,
+    priceCurrent: PropTypes.number,
+    progress: PropTypes.number,
+    trader: PropTypes.string,
+    traderName: PropTypes.string,
+    type: PropTypes.string,
+  },
 }

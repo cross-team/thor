@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { FTIKanBanColumn } from '@franklin-thor/fti'
+import FTIKanBanColumn from '../FTIKanBanColumn'
 import PropTypes from 'prop-types'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
   boardStyle: {
     display: 'flex',
     width: '100%',
   },
-}))
+})
 
-export default function KanBanBoard(props) {
+export default function FTIKanBanBoard(props) {
   const [isLoading, setIsLoading] = useState(true)
   const [orders, setOrders] = useState([])
   const [draggedOverCol, setDraggedOverCol] = useState(0)
@@ -62,6 +62,6 @@ export default function KanBanBoard(props) {
   )
 }
 
-KanBanBoard.propTypes = {
+FTIKanBanBoard.propTypes = {
   data: PropTypes.object,
 }

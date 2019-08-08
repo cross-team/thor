@@ -1,11 +1,9 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
-import IconButton from '@material-ui/core/IconButton'
-import ClearIcon from '@material-ui/icons/ClearRounded'
-import ArrowBackIcon from '@material-ui/icons/ArrowBackIosRounded'
+import { Typography, IconButton, makeStyles } from '@franklin-thor/core'
+import { FontAwesomeIcon, faTimes, faChevronLeft } from '@franklin-thor/icons'
+import PropTypes from 'prop-types'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
   heading: {
     width: '100%',
     height: '120px',
@@ -32,9 +30,9 @@ const useStyles = makeStyles(theme => ({
   backArrow: {
     paddingLeft: '16px',
   },
-}))
+})
 
-export default function DrawerHeading(props) {
+export default function FTIDrawerHeading(props) {
   const classes = useStyles()
 
   return (
@@ -48,7 +46,7 @@ export default function DrawerHeading(props) {
             onClick={props.updateView(props.parent)}
             className={classes.backArrow}
           >
-            <ArrowBackIcon />
+            <FontAwesomeIcon icon={faChevronLeft} />
           </IconButton>
         )}
         <IconButton
@@ -57,7 +55,7 @@ export default function DrawerHeading(props) {
           aria-label="List"
           onClick={props.toggleDrawer(false)}
         >
-          <ClearIcon />
+          <FontAwesomeIcon icon={faTimes} />
         </IconButton>
       </div>
       <Typography variant="h5" className={classes.headingText}>
@@ -65,4 +63,12 @@ export default function DrawerHeading(props) {
       </Typography>
     </div>
   )
+}
+
+FTIDrawerHeading.propTypes = {
+  isChild: PropTypes.bool,
+  parent: PropTypes.string,
+  title: PropTypes.string,
+  toggleDrawer: PropTypes.func,
+  updateView: PropTypes.func,
 }
