@@ -1,6 +1,7 @@
 {
-  "name": "@franklin-thor/fti",
+  "name": "@cross-team/fti",
   "author": "Cross Team",
+  "private": true,
   "version": "1.1.0",
   "main": "./build",
   "description": "Franklin Templeton Custom Components",

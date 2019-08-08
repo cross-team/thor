@@ -1,6 +1,7 @@
 {
-  "name": "@franklin-thor/core",
+  "name": "@cross-team/core",
   "author": "Cross Team",
+  "private": true,
   "version": "1.1.0",
   "main": "./build",
   "description": "React components that implement Google's Material Design.",
