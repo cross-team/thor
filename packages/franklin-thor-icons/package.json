@@ -1,7 +1,6 @@
 {
   "name": "@cross.team/icons",
   "author": "Cross Team",
-  "private": true,
   "version": "1.1.1",
   "main": "./build",
   "description": "Icons for Franklin Templeton",
