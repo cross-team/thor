@@ -8,9 +8,9 @@ const bool = true
 const dummy = () => {}
 
 theme.then(apiTheme =>
-  storiesOf('FTICard', module)
+  storiesOf('FTIDrawerHeading', module)
     .addDecorator(getStory => <ThemeProvider theme={apiTheme}>{getStory()}</ThemeProvider>)
-    .add('FTI Card', () => (
+    .add('FTI DrawerHeading', () => (
       <FTIDrawerHeading
         isChild={bool}
         parent=""

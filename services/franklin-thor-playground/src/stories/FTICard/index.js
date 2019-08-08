@@ -1,6 +1,5 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-// import { boolean, text, select } from '@storybook/addon-knobs';
 import FTICard from '../../page/FTIPatterns/FTICard/FTICard'
 import FTIKanBanBoard from '../../page/FTIPatterns/FTIKanBanBoard/FTIKanBanBoard'
 import { ThemeProvider } from '@material-ui/styles'
