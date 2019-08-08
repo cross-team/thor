@@ -44,5 +44,5 @@
     "babel-jest": "^24.8.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24"
   },
-  "gitHead": "42e1facd606ef66dca238725bdb842043c5cc55f"
+  "gitHead": "c7db1279afa0ab262bff91df98c65c10b9b1bf1b"
 }
