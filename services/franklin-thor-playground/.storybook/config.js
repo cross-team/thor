@@ -18,6 +18,7 @@ function loadStories() {
   require('stories/FTIKanBanBoard')
   require('stories/FTITable')
   require('stories/FTITraderSelect')
+  require('stories/FTIDrawerHeading')
   require('stories/MuiButton')
   require('stories/MuiCheckboxes')
   require('stories/MuiPickers')
