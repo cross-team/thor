@@ -1,6 +1,5 @@
 {
   "name": "@franklin-thor/core",
-  "private": true,
   "author": "Cross Team",
   "version": "1.1.0",
   "main": "./build",
