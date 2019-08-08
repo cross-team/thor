@@ -2,7 +2,7 @@
   "name": "@franklin-thor/fti",
   "private": true,
   "author": "Cross Team",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "./build",
   "description": "Franklin Templeton Custom Components",
   "repository": {
