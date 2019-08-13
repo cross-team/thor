@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@cross.team/core": "^1.1.6",
+    "@cross.team/icons": "^1.1.3",
     "prop-types": "^15.7.2"
   },
   "sideEffects": false,
