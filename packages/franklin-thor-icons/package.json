@@ -37,7 +37,7 @@
   },
   "sideEffects": false,
   "publishConfig": {
-    "access": "public"
+    "access": "restricted"
   },
   "engines": {
     "node": ">=6.0.0"
