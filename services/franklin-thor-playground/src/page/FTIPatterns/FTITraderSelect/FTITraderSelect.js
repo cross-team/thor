@@ -10,6 +10,7 @@ import {
   Checkbox,
   Chip,
 } from '@material-ui/core'
+import PropTypes from 'prop-types'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -36,7 +37,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export default function TraderSelect(props) {
+export default function FTITraderSelect(props) {
   const classes = useStyles()
   const [checked, setChecked] = React.useState([])
   const traders = props.traders
@@ -68,7 +69,6 @@ export default function TraderSelect(props) {
         <List className={classes.root}>
           {traderKeys.map(value => {
             const labelId = `checkbox-list-label-${value}`
-            console.log(traders)
             return (
               <ListItem key={value} role={undefined} dense button onClick={handleToggle(value)}>
                 <ListItemIcon>
@@ -88,4 +88,9 @@ export default function TraderSelect(props) {
       </Paper>
     </div>
   )
+}
+
+FTITraderSelect.propTypes = {
+  label: PropTypes.string,
+  traders: PropTypes.object,
 }
