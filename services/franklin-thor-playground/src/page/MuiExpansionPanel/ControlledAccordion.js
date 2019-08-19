@@ -5,7 +5,7 @@ import {
   ExpansionPanelDetails,
   ExpansionPanelSummary,
   Typography,
-} from '@franklin-thor/core'
+} from '@cross.team/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
 const useStyles = makeStyles(theme => ({

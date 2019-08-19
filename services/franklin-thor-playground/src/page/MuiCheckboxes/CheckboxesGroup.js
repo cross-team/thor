@@ -7,7 +7,7 @@ import {
   FormControlLabel,
   FormLabel,
   makeStyles,
-} from '@franklin-thor/core'
+} from '@cross.team/core'
 
 const useStyles = makeStyles(theme => ({
   root: {

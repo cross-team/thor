@@ -1,6 +1,6 @@
 import React from 'react'
-import { Card, CardContent, Typography, LinearProgress } from '@franklin-thor/core'
-import { FTIBadge } from '@franklin-thor/fti'
+import { Card, CardContent, Typography, LinearProgress } from '@cross.team/core'
+import { FTIBadge } from '@cross.team/fti'
 import { makeStyles } from '@material-ui/styles/'
 import AccountIcon from '@material-ui/icons/InsertDriveFileOutlined'
 import SwapIcon from '@material-ui/icons/SwapHorizontalCircle'

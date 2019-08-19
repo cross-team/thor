@@ -9,7 +9,7 @@ import {
   Checkbox,
   Button,
   Paper,
-} from '@franklin-thor/core'
+} from '@cross.team/core'
 
 const useStyles = makeStyles(theme => ({
   root: {

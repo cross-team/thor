@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Grid, Button, Tooltip } from '@franklin-thor/core'
+import { makeStyles, Grid, Button, Tooltip } from '@cross.team/core'
 
 const useStyles = makeStyles({
   root: {

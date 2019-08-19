@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Popover, Typography, Button } from '@franklin-thor/core'
+import { makeStyles, Popover, Typography, Button } from '@cross.team/core'
 
 const useStyles = makeStyles(theme => ({
   typography: {

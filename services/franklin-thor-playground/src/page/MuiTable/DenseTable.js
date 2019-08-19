@@ -7,7 +7,7 @@ import {
   TableHead,
   TableRow,
   Paper,
-} from '@franklin-thor/core'
+} from '@cross.team/core'
 
 const useStyles = makeStyles(theme => ({
   root: {

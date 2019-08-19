@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, CircularProgress } from '@franklin-thor/core'
+import { makeStyles, CircularProgress } from '@cross.team/core'
 
 const useStyles = makeStyles(theme => ({
   progress: {

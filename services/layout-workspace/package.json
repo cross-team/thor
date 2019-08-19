@@ -4,11 +4,10 @@
   "private": true,
   "dependencies": {
     "react-scripts": "3.0.1",
-    "typeface-roboto": "0.0.54"
-  },
-  "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "typeface-roboto": "0.0.54",
+    "@cross.team/core": "../../packages/franklin-thor/",
+    "@cross.team/fti": "../../packages/franklin-thor-fti/",
+    "@cross.team/icons": "../../packages/franklin-thor-icons"
   },
   "scripts": {
     "start": "react-scripts start",

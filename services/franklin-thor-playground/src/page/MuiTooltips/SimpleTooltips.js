@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Fab, IconButton, Tooltip } from '@franklin-thor/core'
+import { makeStyles, Fab, IconButton, Tooltip } from '@cross.team/core'
 import AddIcon from '@material-ui/icons/Add'
 import DeleteIcon from '@material-ui/icons/Delete'
 
