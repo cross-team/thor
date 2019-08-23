@@ -1,6 +1,6 @@
 import React from 'react'
 // import Button from '@material-ui/core/Button';
-import { Button, makeStyles } from '@franklin-thor/core'
+import { Button, makeStyles } from '@cross.team/core'
 
 const useStyles = makeStyles(theme => ({
   button: {

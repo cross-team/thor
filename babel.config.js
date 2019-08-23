@@ -1,9 +1,9 @@
-let defaultPresets;
+let defaultPresets
 
 // It's something that matches the latest official supported features of JavaScript.
 // Nothing more (stage-1, etc), nothing less (require, etc).
 if (process.env.BABEL_ENV === 'es') {
-  defaultPresets = [];
+  defaultPresets = []
 } else {
   defaultPresets = [
     [
@@ -12,12 +12,12 @@ if (process.env.BABEL_ENV === 'es') {
         modules: ['esm', 'production-umd'].includes(process.env.BABEL_ENV) ? false : 'commonjs',
       },
     ],
-  ];
+  ]
 }
 
 const defaultAlias = {
-  '@franklin-thor/core': './packages/franklin-thor/src',
-};
+  '@cross.team/core': './packages/franklin-thor/src',
+}
 
 const productionPlugins = [
   'babel-plugin-transform-react-constant-elements',
@@ -29,7 +29,7 @@ const productionPlugins = [
       mode: 'unsafe-wrap',
     },
   ],
-];
+]
 
 module.exports = {
   presets: defaultPresets.concat(['@babel/preset-react']),
@@ -88,4 +88,4 @@ module.exports = {
       // plugins: productionPlugins,
     },
   },
-};
+}

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Fab, makeStyles } from '@franklin-thor/core'
-import { Delete, Edit, Navigation, FontAwesomeIcon, faCoffee } from '@franklin-thor/icons'
+import { Fab, makeStyles } from '@cross.team/core'
+import { Delete, Edit, Navigation, FontAwesomeIcon, faCoffee } from '@cross.team/icons'
 // import AddIcon from '@material-ui/icons/Add'
 
 const useStyles = makeStyles(theme => ({

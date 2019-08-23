@@ -1,6 +1,6 @@
 import React from 'react'
-import { Typography, IconButton, makeStyles } from '@franklin-thor/core'
-import { FontAwesomeIcon, faTimes, faChevronLeft } from '@franklin-thor/icons'
+import { Typography, IconButton, makeStyles } from '@cross.team/core'
+import { FontAwesomeIcon, faTimes, faChevronLeft } from '@cross.team/icons'
 import PropTypes from 'prop-types'
 
 const useStyles = makeStyles({

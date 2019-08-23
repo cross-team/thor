@@ -8,7 +8,7 @@ import {
   Typography,
   CardActionArea,
   CardMedia,
-} from '@franklin-thor/core'
+} from '@cross.team/core'
 
 const useStyles = makeStyles({
   card: {

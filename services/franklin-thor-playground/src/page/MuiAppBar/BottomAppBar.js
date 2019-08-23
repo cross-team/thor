@@ -14,7 +14,7 @@ import {
   ListItemText,
   ListSubheader,
   Avatar,
-} from '@franklin-thor/core'
+} from '@cross.team/core'
 import MenuIcon from '@material-ui/icons/Menu'
 import AddIcon from '@material-ui/icons/Add'
 import SearchIcon from '@material-ui/icons/Search'

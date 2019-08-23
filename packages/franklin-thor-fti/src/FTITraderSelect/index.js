@@ -1,6 +1,6 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
 import {
+  makeStyles,
   Typography,
   Paper,
   List,
@@ -9,7 +9,7 @@ import {
   ListItemText,
   Checkbox,
   Chip,
-} from '@material-ui/core'
+} from '@cross.team/core'
 import PropTypes from 'prop-types'
 
 const useStyles = makeStyles(theme => ({

@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  makeStyles,
-  Card,
-  CardContent,
-  Typography,
-  LinearProgress,
-  Avatar,
-} from '@franklin-thor/core/'
+import { makeStyles, Card, CardContent, Typography, LinearProgress, Avatar } from '@cross.team/core'
 import {
   FontAwesomeIcon,
   faTicket,
@@ -15,7 +8,7 @@ import {
   faBuilding,
   faUserCircle,
   faFile,
-} from '@franklin-thor/icons'
+} from '@cross.team/icons'
 import FTIBadge from '../FTIBadge'
 import PropTypes from 'prop-types'
 

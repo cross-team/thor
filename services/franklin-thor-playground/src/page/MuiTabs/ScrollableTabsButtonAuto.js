@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { makeStyles, AppBar, Tabs, Tab, Typography } from '@franklin-thor/core'
+import { makeStyles, AppBar, Tabs, Tab, Typography } from '@cross.team/core'
 
 function TabContainer(props) {
   return (

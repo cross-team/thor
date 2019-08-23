@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextField, makeStyles } from '@franklin-thor/core'
+import { TextField, makeStyles } from '@cross.team/core'
 
 const useStyles = makeStyles(theme => ({
   container: {

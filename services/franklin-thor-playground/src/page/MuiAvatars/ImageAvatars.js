@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Avatar, Grid } from '@franklin-thor/core'
+import { makeStyles, Avatar, Grid } from '@cross.team/core'
 
 const useStyles = makeStyles({
   avatar: {

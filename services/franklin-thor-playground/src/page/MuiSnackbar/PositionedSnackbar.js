@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Snackbar } from '@franklin-thor/core'
+import { Button, Snackbar } from '@cross.team/core'
 
 export default function PositionedSnackbar() {
   const [state, setState] = React.useState({

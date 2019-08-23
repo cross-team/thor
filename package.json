@@ -87,8 +87,7 @@
     "node": ">=8.0.0"
   },
   "workspaces": [
-    "packages/*",
-    "services/*"
+    "packages/*"
   ],
   "dependencies": {}
 }

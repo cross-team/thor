@@ -1,4 +1,4 @@
-# @franklin-thor/icons
+# @cross.team/icons
 
 React components that implement Google's Material Design.
 
@@ -8,8 +8,8 @@ Install the package in your project directory with:
 
 ```sh
 // with npm
-npm install @franklin-thor/icons
+npm install @cross.team/icons
 
 // with yarn
-yarn add @franklin-thor/icons
+yarn add @cross.team/icons
 ```

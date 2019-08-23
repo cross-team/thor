@@ -1,5 +1,5 @@
 import React from 'react'
-import { Checkbox, FormControl, FormGroup, FormControlLabel, FormLabel } from '@franklin-thor/core'
+import { Checkbox, FormControl, FormGroup, FormControlLabel, FormLabel } from '@cross.team/core'
 
 function FormControlLabelPosition() {
   const [value, setValue] = React.useState('female')

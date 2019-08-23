@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch } from '@franklin-thor/core'
+import { Switch } from '@cross.team/core'
 
 export default function Switches() {
   const [state, setState] = React.useState({

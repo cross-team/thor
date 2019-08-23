@@ -8,7 +8,7 @@ import {
   Select,
   makeStyles,
   withStyles,
-} from '@franklin-thor/core'
+} from '@cross.team/core'
 
 const BootstrapInput = withStyles(theme => ({
   root: {

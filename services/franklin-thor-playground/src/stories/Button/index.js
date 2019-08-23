@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 // import { boolean, text, select } from '@storybook/addon-knobs';
-import Button from '@franklin-thor/core/Button'
+import Button from '@cross.team/core/Button'
 import defaultTheme from '../../themes/default'
 import { ThemeProvider } from '@material-ui/styles'
 

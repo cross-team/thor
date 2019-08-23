@@ -1,5 +1,5 @@
 import React from 'react'
-import { Paper, Breadcrumbs, Link, Typography, makeStyles } from '@franklin-thor/core'
+import { Paper, Breadcrumbs, Link, Typography, makeStyles } from '@cross.team/core'
 
 const useStyles = makeStyles(theme => ({
   root: {

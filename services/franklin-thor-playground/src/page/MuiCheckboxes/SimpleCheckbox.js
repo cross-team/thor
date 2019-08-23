@@ -1,5 +1,5 @@
 import React from 'react'
-import { Checkbox } from '@franklin-thor/core'
+import { Checkbox } from '@cross.team/core'
 
 export default function Checkboxes() {
   const [state, setState] = React.useState({

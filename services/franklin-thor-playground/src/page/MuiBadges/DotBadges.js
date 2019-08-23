@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Badge, Typography } from '@franklin-thor/core'
+import { makeStyles, Badge, Typography } from '@cross.team/core'
 import MailIcon from '@material-ui/icons/Mail'
 
 const useStyles = makeStyles(theme => ({

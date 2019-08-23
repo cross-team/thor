@@ -1,8 +1,8 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import MaterialTable from 'material-table'
-import { Typography, IconButton } from '@franklin-thor/core/build'
-import { FontAwesomeIcon, faCommentAltLines } from '@franklin-thor/icons'
+import { Typography, IconButton } from '@cross.team/core/build'
+import { FontAwesomeIcon, faCommentAltLines } from '@cross.team/icons'
 import FTIBadge from '../FTIBadge/FTIBadge'
 
 const useStyles = makeStyles({

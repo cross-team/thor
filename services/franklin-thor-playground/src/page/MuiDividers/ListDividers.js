@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, List, ListItem, ListItemText, Divider } from '@franklin-thor/core'
+import { makeStyles, List, ListItem, ListItemText, Divider } from '@cross.team/core'
 
 const useStyles = makeStyles(theme => ({
   root: {

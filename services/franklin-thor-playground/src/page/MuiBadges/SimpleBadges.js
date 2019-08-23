@@ -8,7 +8,7 @@ import {
   Tabs,
   Typography,
   Button,
-} from '@franklin-thor/core'
+} from '@cross.team/core'
 import MailIcon from '@material-ui/icons/Mail'
 
 const useStyles = makeStyles(theme => ({

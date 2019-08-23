@@ -5,12 +5,11 @@ RUN npm i yarn -g --loglevel notice
 WORKDIR /src
 COPY package.json lerna.json babel.config.js CHANGELOG.md LICENSE scripts/copy-files.js ./
 
-COPY services/franklin-thor-playground/package.json ./services/franklin-thor-playground/
 COPY services/franklin-thor-playground/nginx.conf ./services/franklin-thor-playground/
 
-COPY packages/franklin-thor/package.json ./packages/franklin-thor/
-
 COPY . ./
+RUN  rm services/franklin-thor-playground/package.json
+COPY services/franklin-thor-playground/docker/package.json ./services/franklin-thor-playground/
 
 RUN lerna bootstrap
 
@@ -23,9 +22,10 @@ RUN cd packages/franklin-thor-fti/build && yarn link
 RUN cd packages/franklin-thor-icons && yarn run build
 RUN cd packages/franklin-thor-icons/build && yarn link
 
-RUN cd services/franklin-thor-playground && yarn link "@franklin-thor/core"
-RUN cd services/franklin-thor-playground && yarn link "@franklin-thor/fti"
-RUN cd services/franklin-thor-playground && yarn link "@franklin-thor/icons"
+RUN cd services/franklin-thor-playground && yarn link "@cross.team/core"
+RUN cd services/franklin-thor-playground && yarn link "@cross.team/fti"
+RUN cd services/franklin-thor-playground && yarn link "@cross.team/icons"
+RUN cd services/franklin-thor-playground && yarn install
 RUN cd services/franklin-thor-playground && yarn run dist
 
 # Stage 2 - the production environment

@@ -26,9 +26,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
-    "@cross.team/core": "../../packages/franklin-thor/",
-    "@cross.team/fti": "../../packages/franklin-thor-fti/",
-    "@cross.team/icons": "../../packages/franklin-thor-icons",
     "@material-ui/icons": "^4.0.1",
     "@storybook/addon-actions": "^5.0.11",
     "@storybook/addon-console": "^1.1.0",

@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Switch, Paper, Zoom, FormControlLabel } from '@franklin-thor/core'
+import { makeStyles, Switch, Paper, Zoom, FormControlLabel } from '@cross.team/core'
 
 const useStyles = makeStyles(theme => ({
   root: {

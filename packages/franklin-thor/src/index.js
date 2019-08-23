@@ -117,3 +117,5 @@ export {
   GridListTile,
   GridListTileBar,
 } from '@material-ui/core'
+
+export { ThemeProvider } from '@material-ui/styles'
