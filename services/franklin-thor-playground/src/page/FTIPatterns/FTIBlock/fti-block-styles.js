@@ -2,8 +2,8 @@ import { makeStyles } from '@cross.team/core'
 
 const useStyles = makeStyles({
   paper: {
-    border: 'solid #4e4e4e 0.5px',
-    borderRadius: '8px !important',
+    border: 'solid #4e4e4e 1px',
+    borderRadius: '14px !important',
   },
   contentContainer: {
     padding: '6px',
@@ -11,7 +11,23 @@ const useStyles = makeStyles({
   },
   brokerContainer: {
     display: 'flex',
-    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  priceAndAvg: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
+    flex: '6',
+    marginRight: '10px',
+  },
+  statusInfo: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
+    flex: '2',
+    width: '100%',
   },
   iconContainer: {
     marginRight: '10px',
@@ -21,15 +37,19 @@ const useStyles = makeStyles({
   infoContainer: {
     flex: '1',
   },
+  progressContainer: {
+    position: 'relative',
+    width: '80%',
+  },
+  topContainer: {
+    display: 'flex',
+  },
   divider: {
-    borderTop: 'solid #2d2c2c 0.5px',
+    borderTop: 'solid #2d2c2c 1px',
     borderRight: 'none',
     borderLeft: 'none',
-    borderBottom: 'solid #565656 0.5px',
+    borderBottom: 'solid #565656 1px',
     height: '1px',
-  },
-  currencyType: {
-    marginRight: '4px',
   },
   bottomContainer: {
     display: 'flex',
@@ -38,6 +58,20 @@ const useStyles = makeStyles({
   percentChange: {
     display: 'flex',
     alignItems: 'center',
+  },
+  progress: {
+    height: '3.3px',
+    backgroundColor: '#E05554',
+  },
+  avatar: {
+    position: 'absolute',
+    top: '-6px',
+    left: '-15px',
+    width: '15px',
+    height: '15px',
+    fontSize: '12px',
+    fontWeight: 'bold',
+    backgroundColor: '#E05554',
   },
   upArrow: {
     width: 0,
