@@ -3,46 +3,52 @@ import { makeStyles } from '@cross.team/core'
 const useStyles = makeStyles({
   paper: {
     border: 'solid #4e4e4e 1px',
-    borderRadius: '14px !important',
+    borderRadius: '14px !important', // using !important to override library styles
   },
   contentContainer: {
     padding: '6px',
     display: 'flex',
-  },
-  brokerContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-  priceAndAvg: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'flex-end',
-    flex: '6',
-    marginRight: '10px',
-  },
-  statusInfo: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'flex-end',
-    flex: '2',
-    width: '100%',
   },
   iconContainer: {
     marginRight: '10px',
     display: 'flex',
     alignItems: 'center',
   },
+  topContainer: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  brokerContainer: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  orderDetails: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+  },
+  priceAndAvg: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
+    marginRight: '36px',
+  },
+  statusInfo: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
+  },
+  fontAwesome: {
+    height: '25px !important', // using !important to override library styles
+    width: '25px !important', // using !important to override library styles
+  },
   infoContainer: {
     flex: '1',
   },
   progressContainer: {
     position: 'relative',
-    width: '80%',
-  },
-  topContainer: {
-    display: 'flex',
+    width: '110%',
   },
   divider: {
     borderTop: 'solid #2d2c2c 1px',
@@ -55,15 +61,16 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
   },
-  percentChange: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  progress: {
+  progress: props => ({
     height: '3.3px',
-    backgroundColor: '#E05554',
-  },
-  avatar: {
+    backgroundColor: props.progressType ? '#581A19' : '#044132',
+
+    // Overrides default progress styling for MatUi, if upgrading check for breaking changes here!
+    '& div:first-child': {
+      backgroundColor: props.progressType ? '#E05554' : '#11C197',
+    },
+  }),
+  avatar: props => ({
     position: 'absolute',
     top: '-6px',
     left: '-15px',
@@ -71,8 +78,11 @@ const useStyles = makeStyles({
     height: '15px',
     fontSize: '12px',
     fontWeight: 'bold',
-    backgroundColor: '#E05554',
-  },
+    backgroundColor: props.progressType ? '#E05554' : '#11C197',
+  }),
+  changeColor: props => ({
+    color: props.progressType ? '#A64444' : '#1A8F72',
+  }),
   upArrow: {
     width: 0,
     height: 0,
@@ -89,11 +99,11 @@ const useStyles = makeStyles({
     borderTop: '5px solid #f00',
     marginRight: '4px',
   },
-  orderNumber: {
-    color: 'grey',
+  darkFont: {
+    color: '#9D9A95',
   },
-  orderText: {
-    marginRight: '4px',
+  lightFont: {
+    color: '#ffffff',
   },
 })
 
