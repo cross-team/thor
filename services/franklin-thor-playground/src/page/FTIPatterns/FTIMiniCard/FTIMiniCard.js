@@ -12,50 +12,51 @@ import {} from '@franklin-thor/icons'
 import FTIBadge from '../FTIBadge/FTIBadge'
 import PropTypes from 'prop-types'
 
-const useStyles = makeStyles({
-  icon: {
-    width: '12px',
-    height: '12px',
-  },
-  container: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  progress: {
-    width: '100px',
-  },
-  cardContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    minWidth: '256px',
-    margin: '8px',
-    backgroundColor: '#262524',
-  },
-  rightContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  leftContent: {
-    flexBasis: '50%',
-  },
-  rightContent: {
-    flexBasis: '50%',
-  },
-  avatar: {
-    width: '20px',
-    height: '20px',
-  },
-  rightTextContainer: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  rightText: {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'flex-end',
-  },
+const useStyles = makeStyles(theme => {
+  console.log(theme)
+
+  return {
+    icon: {
+      width: '12px',
+      height: '12px',
+    },
+    container: {
+      display: 'flex',
+      alignItems: 'center',
+    },
+    progress: {
+      width: '100px',
+    },
+    cardContainer: {
+      width: '237px',
+      margin: '8px',
+      backgroundColor: theme.palette['card-bg-color'],
+      border: `1px solid ${theme.palette['card-border-color']}`,
+      borderRadius: '8px',
+      height: '37px',
+      display: 'flex',
+      alignItems: 'center',
+    },
+    identifier: {
+      color: theme.palette.light['900'],
+      fontFamily: theme.typography['identifier:fontFamily'],
+      fontSize: theme.typography['identifier:fontSize'],
+      fontWeight: theme.typography['identifier:fontWeight'],
+      lineHeight: theme.typography['identifier:lineHeight'],
+    },
+    data: {
+      color: theme.palette.light['900'],
+      fontFamily: 'Roboto',
+      fontSize: '8px',
+      fontWeight: '500',
+      lineHeight: '8px',
+    },
+    leftContent: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+    },
+  }
 })
 
 export default function FTIMiniCard(props) {
@@ -77,11 +78,13 @@ export default function FTIMiniCard(props) {
         props.onDragEnd(e, props.order)
       }}
     >
-      <Card className={classes.cardContainer}>
-        <CardContent className={classes.leftContent}>
-          <Checkbox color="default" value={checked} onChange={handleChange} />
-        </CardContent>
-      </Card>
+      <div className={classes.cardContainer}>
+        <Checkbox color="default" value={checked} onChange={handleChange} />
+        <div className={classes.leftContent}>
+          <Typography className={classes.identifier}>IDENTIFIER</Typography>
+          <Typography className={classes.data}>DATA-SM</Typography>
+        </div>
+      </div>
     </div>
   )
 }
