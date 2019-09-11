@@ -89,5 +89,7 @@
   "workspaces": [
     "packages/*"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "@cross.team/fti": "^1.1.8"
+  }
 }

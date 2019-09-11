@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import FTIDrawerHeading from '../../page/FTIPatterns/FTIDrawerHeading/FTIDrawerHeading'
+import { FTIDrawerHeading } from '@cross.team/fti'
 import { ThemeProvider } from '@material-ui/styles'
 import theme from '../../themes/default'
 
@@ -15,10 +15,10 @@ theme.then(apiTheme =>
       <FTIDrawerHeading
         isChild={bool}
         parent=""
-        title="Heading Title"
+        styleProps={styleProps}
+        title="Drawer Heading"
         toggleDrawer={dummy}
         updateView={dummy}
-        styleProps={styleProps}
       />
     )),
 )
