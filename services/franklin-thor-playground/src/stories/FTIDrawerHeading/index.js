@@ -6,6 +6,7 @@ import theme from '../../themes/default'
 
 const bool = true
 const dummy = () => {}
+const styleProps = { env: 'development' }
 
 theme.then(apiTheme =>
   storiesOf('FTIDrawerHeading', module)
@@ -17,6 +18,7 @@ theme.then(apiTheme =>
         title="Heading Title"
         toggleDrawer={dummy}
         updateView={dummy}
+        styleProps={styleProps}
       />
     )),
 )
