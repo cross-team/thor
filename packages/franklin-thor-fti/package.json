@@ -1,7 +1,7 @@
 {
   "name": "@cross.team/fti",
   "author": "Cross Team",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "main": "./build",
   "description": "Franklin Templeton Custom Components",
   "repository": {
@@ -25,8 +25,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "@cross.team/core": "^1.1.7",
-    "@cross.team/icons": "^1.1.4",
+    "@cross.team/core": "^1.1.8",
+    "@cross.team/icons": "^1.1.5",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
