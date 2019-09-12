@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Paper, Typography, LinearProgress, Avatar } from '@cross.team/core'
 import { FontAwesomeIcon, faLayerGroup } from '@cross.team/icons'
-import useStyles from './fti-block-styles'
+import useStyles from './block-card-styles'
 import currencyCodes from './currency-codes'
 
-export default function FTIBlock({ blockCardData }) {
+export default function BlockCard({ blockCardData }) {
   const {
     average,
     broker,
@@ -104,7 +104,7 @@ export default function FTIBlock({ blockCardData }) {
   )
 }
 
-FTIBlock.propTypes = {
+BlockCard.propTypes = {
   blockCardData: PropTypes.shape({
     average: PropTypes.number,
     broker: PropTypes.string,
