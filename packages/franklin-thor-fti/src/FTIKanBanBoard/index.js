@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@cross.team/core'
 import FTIKanBanColumn from '../FTIKanBanColumn'
 import PropTypes from 'prop-types'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, makeStyles } from '@franklin-thor/core'
+import { Button, makeStyles } from '@cross.team/core'
 
 const useStyles = makeStyles(theme => ({
   button: {

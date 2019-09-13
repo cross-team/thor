@@ -1,7 +1,7 @@
 import React from 'react'
 import TopNav from '../components/TopNav/TopNav'
 import FilterBar from '../components/FilterBar/FilterBar'
-import { FTIKanBanBoard } from '@franklin-thor/fti'
+import { FTIKanBanBoard } from '@cross.team/fti'
 import orderList from '../assets/orderList'
 
 function Shell() {

@@ -6,7 +6,7 @@ import {
   Typography,
   LinearProgress,
   Avatar,
-} from '@franklin-thor/core/'
+} from '@cross.team/core/'
 import {
   FontAwesomeIcon,
   faTicket,
@@ -15,7 +15,7 @@ import {
   faBuilding,
   faUserCircle,
   faFile,
-} from '@franklin-thor/icons'
+} from '@cross.team/icons'
 import FTIBadge from '../FTIBadge/FTIBadge'
 import PropTypes from 'prop-types'
 

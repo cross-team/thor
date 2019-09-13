@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { FTICard } from '@franklin-thor/fti'
+import { FTICard } from '@cross.team/fti'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'

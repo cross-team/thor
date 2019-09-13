@@ -12,7 +12,7 @@ import Select from '@material-ui/core/Select'
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
 import DrawerHeading from '../../../DrawerHeading/DrawerHeading'
-import { FTITraderSelect } from '@franklin-thor/fti'
+import { FTITraderSelect } from '@cross.team/fti'
 
 const useStyles = makeStyles(theme => ({
   root: {

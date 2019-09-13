@@ -6,7 +6,7 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
-} from '@franklin-thor/core'
+} from '@cross.team/core'
 
 export default function AlertDialog() {
   const [open, setOpen] = React.useState(false)

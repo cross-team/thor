@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Button, Snackbar, IconButton } from '@franklin-thor/core'
+import { makeStyles, Button, Snackbar, IconButton } from '@cross.team/core'
 import CloseIcon from '@material-ui/icons/Close'
 
 const useStyles = makeStyles(theme => ({

@@ -10,7 +10,7 @@ import {
   Badge,
   MenuItem,
   Menu,
-} from '@franklin-thor/core'
+} from '@cross.team/core'
 import MenuIcon from '@material-ui/icons/Menu'
 import SearchIcon from '@material-ui/icons/Search'
 import AccountCircle from '@material-ui/icons/AccountCircle'

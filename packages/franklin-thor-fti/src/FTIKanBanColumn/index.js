@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react'
 import FTICard from '../FTICard'
-import { makeStyles } from '@material-ui/core/styles'
-import Paper from '@material-ui/core/Paper'
-import Typography from '@material-ui/core/Typography'
-import Switch from '@material-ui/core/Switch'
-import FormControl from '@material-ui/core/FormControl'
-import Select from '@material-ui/core/Select'
-import MenuItem from '@material-ui/core/MenuItem'
+import {
+  makeStyles,
+  Paper,
+  Typography,
+  Switch,
+  FormControl,
+  Select,
+  MenuItem,
+} from '@cross.team/core'
 import PropTypes from 'prop-types'
 
 const useStyles = makeStyles({

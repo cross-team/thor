@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Portal, Button, Typography } from '@franklin-thor/core'
+import { makeStyles, Portal, Button, Typography } from '@cross.team/core'
 
 const useStyles = makeStyles(theme => ({
   alert: {

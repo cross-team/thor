@@ -1,16 +1,16 @@
 import React from 'react'
-import { Typography, IconButton, makeStyles } from '@franklin-thor/core'
-import { FontAwesomeIcon, faTimes, faChevronLeft } from '@franklin-thor/icons'
+import { Typography, IconButton, makeStyles } from '@cross.team/core'
+import { FontAwesomeIcon, faTimes, faChevronLeft } from '@cross.team/icons'
 import PropTypes from 'prop-types'
 
-const useStyles = makeStyles({
-  heading: {
+const useStyles = makeStyles(theme => ({
+  heading: props => ({
     width: '100%',
     height: '120px',
     display: 'block',
     position: 'relative',
-    backgroundColor: '#3377FF',
-  },
+    backgroundColor: theme.palette[props.env],
+  }),
   headingText: {
     position: 'absolute',
     bottom: '0',
@@ -30,10 +30,10 @@ const useStyles = makeStyles({
   backArrow: {
     paddingLeft: '16px',
   },
-})
+}))
 
 export default function FTIDrawerHeading(props) {
-  const classes = useStyles()
+  const classes = useStyles(props.styleProps)
 
   return (
     <div className={classes.heading}>
@@ -68,6 +68,7 @@ export default function FTIDrawerHeading(props) {
 FTIDrawerHeading.propTypes = {
   isChild: PropTypes.bool,
   parent: PropTypes.string,
+  styleProps: PropTypes.object,
   title: PropTypes.string,
   toggleDrawer: PropTypes.func,
   updateView: PropTypes.func,
