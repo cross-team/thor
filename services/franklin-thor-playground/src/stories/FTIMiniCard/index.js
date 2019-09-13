@@ -1,33 +1,28 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import FTIMiniCard from '../../page/FTIPatterns/FTIMiniCard/FTIMiniCard'
-import FTIKanBanBoard from '../../page/FTIPatterns/FTIKanBanBoard/FTIKanBanBoard'
-import { ThemeProvider } from '@material-ui/styles'
+import FTIMini from '../../page/FTIPatterns/FTIMini/fti-mini'
 import theme from '../../themes/default'
+import { ThemeProvider } from '@cross.team/core'
 
-const order = {
-  type: 'buy',
-  actNum: '01234-56789',
-  traderName: 'MSFT',
-  progress: 77,
-  current: 16000,
-  max: 20000,
-  money: 300000,
-  orderNum: 17608,
-  automated: true,
-  group: 'H1H',
-  location: 'WZM',
-  trader: 'DL1',
-  priceCurrent: 101.82,
-  priceChange: '+4.15',
-  percentChange: 4.47,
-  order_stage: 1,
+const miniCardData = {
+  average: 7.33,
+  broker: 'CHARLES SCHWAB',
+  buy: true,
+  currencyCode: 'USD',
+  companyName: 'CA INVESTMENT SERVICES',
+  fulfilled: 4000,
+  orders: '20',
+  percentChange: 3.8,
+  placed: 2421,
+  price: 4.4,
+  status: 'PARTIALLY FILLED',
+  symbol: 'MDR',
+  totalAmount: 1987091,
+  trader: 'LT2',
 }
 
-theme.then(apiTheme =>
-  storiesOf('FTIMiniCard', module)
+theme.then(apiTheme => {
+  return storiesOf('FTIMini', module)
     .addDecorator(getStory => <ThemeProvider theme={apiTheme}>{getStory()}</ThemeProvider>)
-    .add('FTI Mini Card', () => (
-      <FTIMiniCard order={order} key={order.orderNum} onDragEnd={FTIKanBanBoard.handleOnDragEnd} />
-    )),
-)
+    .add('FTI Mini Card', () => <FTIMini miniCardData={miniCardData} />)
+})
