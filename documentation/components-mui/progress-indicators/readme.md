@@ -6,6 +6,16 @@ Reference: https://material.io/design/components/progress-indicators.html
 
 
 
+Example usage within fti-blotter:
+
+![05_progress-indicator](assets/05_progress-indicator.png)
+
+(Reference https://projects.invisionapp.com/share/ZRTLB6O7VJB)
+
+
+
+
+
 ------
 
 # Progress indicators 
@@ -13,7 +23,6 @@ Reference: https://material.io/design/components/progress-indicators.html
 ## Progress indicators express an unspecified wait time or display the length of a process.
 
 <video class="video-player__video animatable js-video-player js-video-load anim-appear" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 1 !important; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
-
 CONTENTS[Usage](https://material.io/design/components/progress-indicators.html#usage)[Linear progress indicators](https://material.io/design/components/progress-indicators.html#linear-progress-indicators)[Circular progress indicators](https://material.io/design/components/progress-indicators.html#circular-progress-indicators)[Specs](https://material.io/design/components/progress-indicators.html#specs)[Implementation](https://material.io/design/components/progress-indicators.html#implementation)
 
 ------
@@ -65,7 +74,6 @@ READ MORE
 Material Design offers two visually distinct types of progress indicators: linear and circular progress indicators. Only one type should represent each kind of activity in an app. For example, if a refresh action displays a circular indicator on one screen, that same action shouldn’t use a linear indicator elsewhere in the app.
 
 <video class="video-player__video animatable js-video-player js-video-load anim-appear" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 1 !important; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
-
 Linear indicatorCircular indicator
 
 ## Determinate and indeterminate
@@ -81,13 +89,11 @@ Progress indicators may be determinate or indeterminate:
 **Indeterminate indicators** express an unspecified amount of wait time. They should be used when progress isn’t detectable, or if it’s not necessary to indicate how long an activity will take.
 
 <video class="video-player__video animatable js-video-player js-video-load anim-appear" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 1 !important; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
-
 Determinate progress indicators fill from 0 to 100%.Indeterminate progress indicators move along a fixed track, growing and shrinking in size.
 
 As more information about a process becomes available, a progress indicator can switch from an indeterminate to a determinate state.
 
 <video class="video-player__video animatable js-video-player js-video-load anim-appear" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 1 !important; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
-
 A linear progress indicator changes from indeterminate to determinate while loading a screen.
 
 ------
@@ -140,11 +146,9 @@ Linear progress indicators support both determinate and indeterminate operations
 ------
 
 <video class="video-player__video animatable js-video-player js-video-load anim-appear" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 1 !important; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
-
 Determinate linear progress indicator
 
 <video class="video-player__video animatable js-video-player js-video-load anim-appear" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 1 !important; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
-
 Indeterminate linear progress indicator
 
 
@@ -164,11 +168,9 @@ The placement of a linear progress indicator can indicate the scope of a process
 ------
 
 <video aria-describedby="linear-progress-indicators-figure-caption-0" class="video-player__video animatable js-video-player js-video-load anim-appear" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 1 !important; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
-
 To indicate that loading affects the whole screen, a linear indicator can be placed in the background.
 
 <video aria-describedby="linear-progress-indicators-figure-caption-1" class="video-player__video animatable js-video-player js-video-load anim-appear" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 1 !important; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
-
 To focus user attention, a linear indicator is recommended for displaying item expansion onto larger surfaces, such as desktop.
 
 ------
@@ -207,11 +209,9 @@ Circular progress indicators support both determinate and indeterminate processe
 ------
 
 <video class="video-player__video animatable js-video-player js-video-load anim-appear" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 1 !important; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
-
 Determinate circular progress indicator
 
 <video class="video-player__video animatable js-video-player js-video-load anim-appear" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 1 !important; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
-
 Indeterminate circular progress indicator
 
 
@@ -230,11 +230,9 @@ Circular progress indicators are positioned to indicate the process that they re
 ------
 
 <video aria-describedby="circular-progress-indicators-figure-caption-0" class="video-player__video animatable js-video-player js-video-load anim-appear" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 1 !important; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
-
 A circular indicator centered on screen indicates an initial loading process.
 
 <video aria-describedby="circular-progress-indicators-figure-caption-1" class="video-player__video animatable js-video-player js-video-load anim-appear" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 1 !important; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
-
 An indicator appears where new items will appear, at the end of the current items grid.
 
 [ButtonsButtons allow users to take actions with a single tap.Related Article*arrow_downward*](https://material.io/design/components/buttons.html#buttons)
@@ -248,13 +246,11 @@ A circular indicator can be integrated into a button or actionable icon to expre
 They should be used for short, indeterminate activities (between 2-5 seconds). Longer activities may require alternate methods of communication, such as snackbars or notifications.
 
 <video aria-describedby="circular-progress-indicators-figure-caption-2" class="video-player__video animatable js-video-player js-video-load anim-appear" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 1 !important; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
-
 Do.
 
 Use circular indicators for short, indeterminate activities (< 5 seconds) requiring user attention.
 
 <video aria-describedby="circular-progress-indicators-figure-caption-3" class="video-player__video animatable js-video-player js-video-load anim-appear" loop="" muted="" preload="metadata" tabindex="0" style="background-repeat: no-repeat; box-sizing: border-box; display: block; opacity: 1 !important; position: absolute; top: 0px; transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1) 0s, top 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s; bottom: 0px; left: 0px; right: 0px; max-width: 100%;"></video>
-
 Don’t.
 
 Don’t apply progress indicators to every button in your app. They can unnecessarily interrupt the user’s task.
