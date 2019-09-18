@@ -29,7 +29,7 @@ RUN cd services/franklin-thor-playground && yarn install
 RUN cd services/franklin-thor-playground && yarn run dist
 
 # Stage 2 - the production environment
-FROM nginx:1.15-alpine
+FROM nginx:1.17-alpine
 COPY --from=build-deps /src/services/franklin-thor-playground/build /var/www
 COPY --from=build-deps /src/services/franklin-thor-playground/nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80
