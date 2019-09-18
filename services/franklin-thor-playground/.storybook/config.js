@@ -14,6 +14,7 @@ function loadStories() {
   require('stories/FTIBadge')
   require('stories/FTICancelAlert')
   require('stories/FTICard')
+  require('stories/FTIMiniCard')
   require('stories/FTIKanBanColumn')
   require('stories/FTIKanBanBoard')
   require('stories/FTITable')
