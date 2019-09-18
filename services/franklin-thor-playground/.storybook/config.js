@@ -11,6 +11,7 @@ addParameters({
 })
 
 function loadStories() {
+  require('stories/FTIBlock')
   require('stories/FTIBadge')
   require('stories/FTICancelAlert')
   require('stories/FTICard')
