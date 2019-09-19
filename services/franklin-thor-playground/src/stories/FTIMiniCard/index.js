@@ -1,7 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-// import FTIMini from '../../page/FTIPatterns/FTIMini/fti-mini'
-import { MiniCard } from '@cross.team/fti'
+import FTIMini from '../../page/FTIPatterns/FTIMini/fti-mini'
 import theme from '../../themes/default'
 import { ThemeProvider } from '@cross.team/core'
 
@@ -25,5 +24,5 @@ const miniCardData = {
 theme.then(apiTheme => {
   return storiesOf('MiniCard', module)
     .addDecorator(getStory => <ThemeProvider theme={apiTheme}>{getStory()}</ThemeProvider>)
-    .add('FTI Mini Card', () => <MiniCard miniCardData={miniCardData} />)
+    .add('FTI Mini Card', () => <FTIMini miniCardData={miniCardData} />)
 })
