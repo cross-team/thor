@@ -5,7 +5,6 @@ const useStyles = makeStyles(theme => ({
     border: 'solid 1px',
     borderColor: theme.palette['card-border-color'],
     backgroundColor: theme.palette['card-bg-color'],
-    width: '236px',
     borderRadius: '12px !important', // using !important to override library styles
   },
   contentContainer: {

@@ -1,10 +1,9 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 // import { boolean, text, select } from '@storybook/addon-knobs';
-// import FTIBlock from '../../page/FTIPatterns/FTIBlock/fti-block'
+import FTIBlock from '../../page/FTIPatterns/FTIBlock/fti-block'
 import theme from '../../themes/default'
 import { ThemeProvider } from '@cross.team/core'
-import { FTIBlockCard } from '@cross.team/fti'
 
 const blockCardData = {
   average: 7.33,
@@ -26,5 +25,5 @@ const blockCardData = {
 theme.then(apiTheme => {
   return storiesOf('FTIBlock', module)
     .addDecorator(getStory => <ThemeProvider theme={apiTheme}>{getStory()}</ThemeProvider>)
-    .add('FTI Badge Buy', () => <FTIBlockCard blockCardData={blockCardData} />)
+    .add('FTI Block Card', () => <FTIBlock blockCardData={blockCardData} />)
 })

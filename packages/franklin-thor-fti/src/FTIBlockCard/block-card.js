@@ -46,7 +46,7 @@ export default function BlockCard({ blockCardData }) {
                   {trader}
                 </Typography>
                 <Typography>{symbol}</Typography>
-                <Typography className={classes.darkFont} variant={'caption'}>
+                <Typography className={classes.darkFont} variant={'caption'} noWrap>
                   {companyName}
                 </Typography>
               </div>
@@ -66,7 +66,9 @@ export default function BlockCard({ blockCardData }) {
                 </Typography>
               </div>
               <div className={classes.statusInfo}>
-                <Typography variant={'caption'}>{status}</Typography>
+                <Typography variant={'caption'} noWrap>
+                  {status}
+                </Typography>
                 <div className={classes.progressContainer}>
                   <Avatar className={classes.avatar} color={'primary'}>
                     {buy ? 'B' : 'S'}
