@@ -1,12 +1,15 @@
 import { makeStyles } from '@cross.team/core'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   paper: {
-    border: 'solid #4e4e4e 1px',
-    borderRadius: '14px !important', // using !important to override library styles
+    border: 'solid 1px',
+    borderColor: theme.palette['card-border-color'],
+    backgroundColor: theme.palette['card-bg-color'],
+    width: '236px',
+    borderRadius: '12px !important', // using !important to override library styles
   },
   contentContainer: {
-    padding: '6px',
+    padding: '4px',
     display: 'flex',
   },
   iconContainer: {
@@ -32,12 +35,14 @@ const useStyles = makeStyles({
     justifyContent: 'space-between',
     alignItems: 'flex-end',
     marginRight: '36px',
+    minWidth: '70px',
   },
   statusInfo: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
+    minWidth: '80px',
   },
   fontAwesome: {
     height: '25px !important', // using !important to override library styles
@@ -101,15 +106,16 @@ const useStyles = makeStyles({
   },
   darkFont: {
     color: '#9D9A95',
+    whiteSpace: 'nowrap',
   },
   lightFont: {
-    color: '#ffffff',
+    color: '#fff',
   },
   orderContainer: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-end',
   },
-})
+}))
 
 export default useStyles
