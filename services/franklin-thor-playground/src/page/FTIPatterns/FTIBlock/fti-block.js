@@ -46,9 +46,10 @@ export default function FTIBlock({ blockCardData }) {
                   {trader}
                 </Typography>
                 <Typography>{symbol}</Typography>
-                <Typography className={classes.darkFont} variant={'caption'} noWrap>
+                {/* <Typography className={classes.darkFont} variant={'caption'} noWrap>
                   {companyName}
-                </Typography>
+                </Typography> */}
+                <div className={classes.companyText}>{companyName}</div>
               </div>
             </div>
             <div className={classes.orderDetails}>

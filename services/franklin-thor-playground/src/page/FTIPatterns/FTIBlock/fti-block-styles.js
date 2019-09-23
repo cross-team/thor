@@ -10,6 +10,7 @@ const useStyles = makeStyles(theme => ({
   contentContainer: {
     padding: '4px',
     display: 'flex',
+    overflow: 'hidden',
   },
   iconContainer: {
     marginRight: '10px',
@@ -21,8 +22,19 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-between',
   },
   brokerContainer: {
-    display: 'flex',
+    display: 'block',
     justifyContent: 'space-between',
+  },
+  companyText: {
+    color: '#9D9A95',
+    fontFamily: 'Roboto, sans-serif',
+    fontWeight: '400',
+    fontSize: '0.75rem',
+    lineHeight: '1.66',
+    letterSpacing: '0.03333em',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
   },
   orderDetails: {
     display: 'flex',
@@ -105,7 +117,6 @@ const useStyles = makeStyles(theme => ({
   },
   darkFont: {
     color: '#9D9A95',
-    whiteSpace: 'nowrap',
   },
   lightFont: {
     color: '#fff',
