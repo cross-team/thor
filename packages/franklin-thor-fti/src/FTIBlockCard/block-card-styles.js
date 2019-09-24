@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   companyText: {
     display: 'block',
     color: '#9D9A95',
-    width: '180px',
+    width: '120px',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',

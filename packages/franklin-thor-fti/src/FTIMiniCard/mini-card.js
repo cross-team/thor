@@ -52,6 +52,7 @@ export default function FTIMini({ miniCardData }) {
               <div className={classes.priceAndAvg}>
                 <Typography
                   variant={'caption'}
+                  noWrap
                 >{`${currencyCode} ${currencyCodes[currencyCode]}${price}`}</Typography>
                 <Typography className={classes.changeColor} variant={'caption'}>
                   {!styleProps.progressType && '-'}

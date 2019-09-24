@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-between',
   },
   backArrow: {
-    paddingLeft: '16px',
+    marginLeft: '0px',
   },
 }))
 
