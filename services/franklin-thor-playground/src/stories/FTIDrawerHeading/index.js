@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { FTIDrawerHeading } from '@cross.team/fti'
+import FTIDrawerHeading from '../../page/FTIPatterns/FTIDrawerHeading/FTIDrawerHeading'
 import { ThemeProvider } from '@material-ui/styles'
 import theme from '../../themes/default'
 
