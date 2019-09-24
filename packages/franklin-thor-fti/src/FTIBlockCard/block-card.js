@@ -46,8 +46,8 @@ export default function BlockCard({ blockCardData }) {
                   {trader}
                 </Typography>
                 <Typography>{symbol}</Typography>
-                <Typography className={classes.darkFont} variant={'caption'} noWrap>
-                  {companyName}
+                <Typography variant={'caption'}>
+                  <span className={classes.companyText}>{companyName}</span>
                 </Typography>
               </div>
             </div>

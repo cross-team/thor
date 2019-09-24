@@ -1,13 +1,16 @@
 import { makeStyles } from '@cross.team/core'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   paper: {
-    border: 'solid #4e4e4e 1px',
-    borderRadius: '14px !important', // using !important to override library styles
+    border: 'solid 1px',
+    borderColor: theme.palette['card-border-color'],
+    backgroundColor: theme.palette['card-bg-color'],
+    borderRadius: '12px !important', // using !important to override library styles
   },
   contentContainer: {
-    padding: '6px',
+    padding: '4px',
     display: 'flex',
+    overflow: 'hidden',
   },
   iconContainer: {
     marginRight: '10px',
@@ -19,8 +22,16 @@ const useStyles = makeStyles({
     justifyContent: 'space-between',
   },
   brokerContainer: {
-    display: 'flex',
+    display: 'block',
     justifyContent: 'space-between',
+  },
+  companyText: {
+    display: 'block',
+    color: '#9D9A95',
+    width: '180px',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
   },
   orderDetails: {
     display: 'flex',
@@ -32,12 +43,14 @@ const useStyles = makeStyles({
     justifyContent: 'space-between',
     alignItems: 'flex-end',
     marginRight: '36px',
+    minWidth: '70px',
   },
   statusInfo: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
+    minWidth: '80px',
   },
   fontAwesome: {
     height: '25px !important', // using !important to override library styles
@@ -110,6 +123,6 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     justifyContent: 'flex-end',
   },
-})
+}))
 
 export default useStyles

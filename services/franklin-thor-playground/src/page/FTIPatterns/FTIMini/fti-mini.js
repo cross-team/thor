@@ -43,8 +43,8 @@ export default function FTIMini({ miniCardData }) {
                   {trader}
                 </Typography>
                 <Typography>{symbol}</Typography>
-                <Typography className={classes.darkFont} variant={'caption'}>
-                  {companyName}
+                <Typography variant={'caption'}>
+                  <span className={classes.companyText}>{companyName}</span>
                 </Typography>
               </div>
             </div>

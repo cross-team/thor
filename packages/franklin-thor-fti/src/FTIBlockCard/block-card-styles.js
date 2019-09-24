@@ -26,15 +26,12 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-between',
   },
   companyText: {
+    display: 'block',
     color: '#9D9A95',
-    fontFamily: 'Roboto, sans-serif',
-    fontWeight: '400',
-    fontSize: '0.75rem',
-    lineHeight: '1.66',
-    letterSpacing: '0.03333em',
-    textOverflow: 'ellipsis',
+    width: '180px',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
+    textOverflow: 'ellipsis',
   },
   orderDetails: {
     display: 'flex',
@@ -125,6 +122,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-end',
+    textAlign: 'right',
   },
 }))
 

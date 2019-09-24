@@ -2,7 +2,7 @@ import { makeStyles } from '@cross.team/core'
 
 const useStyles = makeStyles(theme => ({
   paper: {
-    border: 'solid #4e4e4e 1px',
+    border: 'solid 1px',
     borderColor: theme.palette['card-border-color'],
     backgroundColor: theme.palette['card-bg-color'],
     borderRadius: '12px !important', // using !important to override library styles
@@ -22,8 +22,16 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-between',
   },
   brokerContainer: {
-    display: 'flex',
+    display: 'block',
     justifyContent: 'space-between',
+  },
+  companyText: {
+    display: 'block',
+    color: '#9D9A95',
+    width: '180px',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
   },
   orderDetails: {
     display: 'flex',
