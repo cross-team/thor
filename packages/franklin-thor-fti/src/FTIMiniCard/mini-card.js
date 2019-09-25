@@ -24,6 +24,9 @@ export default function FTIMini({ miniCardData }) {
   const classes = useStyles(styleProps)
 
   const numberWithCommas = x => {
+    if (x === null) {
+      return '0'
+    }
     const parts = x.toString().split('.')
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',')
     return parts.join('.')
