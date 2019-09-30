@@ -41,33 +41,36 @@ export default function FTIMini({ miniCardData }) {
         <div className={classes.infoContainer}>
           <div className={classes.topContainer}>
             <div className={classes.brokerContainer}>
-              <div>
-                <Typography className={classes.darkFont} variant={'caption'}>
-                  {trader}
-                </Typography>
-                <Typography>{symbol}</Typography>
-                <Typography variant={'caption'}>
-                  <span className={classes.companyText}>{companyName}</span>
-                </Typography>
-              </div>
+              <Typography className={`${classes.darkFont} ${classes.caption}`} variant={'caption'}>
+                {trader}
+              </Typography>
+              <Typography className={classes.identifier}>{symbol}</Typography>
+              <Typography variant={'caption'}>
+                <span className={classes.companyText}>{companyName}</span>
+              </Typography>
             </div>
             <div className={classes.orderDetails}>
               <div className={classes.priceAndAvg}>
                 <Typography
-                  variant={'caption'}
+                  className={classes.caption}
                   noWrap
                 >{`${currencyCode} ${currencyCodes[currencyCode]}${price}`}</Typography>
-                <Typography className={classes.changeColor} variant={'caption'}>
+                <Typography
+                  className={`${classes.changeColor} ${classes.caption}`}
+                  variant={'caption'}
+                >
                   {!styleProps.progressType && '-'}
                   {`${percentChange}%`}
                 </Typography>
-                <Typography variant={'caption'}>
+                <Typography className={classes.caption}>
                   <span className={classes.darkFont}>{`${'AVG '}`}</span>
                   {average}
                 </Typography>
               </div>
               <div className={classes.statusInfo}>
-                <Typography variant={'caption'}>{status}</Typography>
+                <Typography className={classes.caption} noWrap>
+                  {status}
+                </Typography>
                 <div className={classes.progressContainer}>
                   <Avatar className={classes.avatar} color={'primary'}>
                     {buy ? 'B' : 'S'}
@@ -78,7 +81,10 @@ export default function FTIMini({ miniCardData }) {
                     value={Math.floor((placed / fulfilled) * 100)}
                   />
                 </div>
-                <Typography className={classes.darkFont} variant={'caption'}>
+                <Typography
+                  className={`${classes.darkFont} ${classes.caption}`}
+                  variant={'caption'}
+                >
                   {`${numberWithCommas(placed)} OF ${numberWithCommas(fulfilled)}`}
                 </Typography>
               </div>
