@@ -6,6 +6,7 @@ const useStyles = makeStyles(theme => ({
     borderColor: theme.palette['card-border-color'],
     backgroundColor: theme.palette['card-bg-color'],
     borderRadius: '12px !important', // using !important to override library styles
+    width: '256px',
   },
   contentContainer: {
     padding: '4px',
@@ -22,16 +23,19 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-between',
   },
   brokerContainer: {
-    display: 'block',
+    display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'space-between',
   },
   companyText: {
     display: 'block',
     color: '#9D9A95',
-    width: '120px',
+    width: '80px',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
+    fontSize: '8px',
+    lineHeight: '8px',
   },
   orderDetails: {
     display: 'flex',
@@ -42,8 +46,8 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
-    marginRight: '36px',
-    minWidth: '70px',
+    marginRight: '16px',
+    marginLeft: '4px',
   },
   statusInfo: {
     display: 'flex',
@@ -53,8 +57,8 @@ const useStyles = makeStyles(theme => ({
     minWidth: '80px',
   },
   fontAwesome: {
-    height: '25px !important', // using !important to override library styles
-    width: '25px !important', // using !important to override library styles
+    height: '16px !important', // using !important to override library styles
+    width: '16px !important', // using !important to override library styles
   },
   infoContainer: {
     flex: '1',
@@ -64,18 +68,20 @@ const useStyles = makeStyles(theme => ({
     width: '110%',
   },
   divider: {
-    borderTop: 'solid #2d2c2c 1px',
+    borderTop: 'solid rgba(0,0,0,0.4) 1px',
     borderRight: 'none',
     borderLeft: 'none',
-    borderBottom: 'solid #565656 1px',
-    height: '1px',
+    borderBottom: 'solid rgba(255,255,255,0.1) 1px',
+    height: '0px',
+    marginTop: '4px',
+    marginBottom: '4px',
   },
   bottomContainer: {
     display: 'flex',
     justifyContent: 'space-between',
   },
   progress: props => ({
-    height: '3.3px',
+    height: '2px',
     backgroundColor: props.progressType ? '#044132' : '#581A19',
 
     // Overrides default progress styling for MatUi, if upgrading check for breaking changes here!
@@ -85,11 +91,12 @@ const useStyles = makeStyles(theme => ({
   }),
   avatar: props => ({
     position: 'absolute',
-    top: '-6px',
-    left: '-15px',
-    width: '16px',
-    height: '16px',
-    fontSize: '12px',
+    top: '-3px',
+    left: '-7px',
+    width: '8px',
+    height: '8px',
+    fontSize: '6px',
+    lineHeight: '8px',
     fontWeight: 'bold',
     backgroundColor: props.progressType ? '#11C197' : '#E05554',
   }),
@@ -116,12 +123,24 @@ const useStyles = makeStyles(theme => ({
     color: '#9D9A95',
   },
   lightFont: {
-    color: '#ffffff',
+    color: '#fff',
   },
   orderContainer: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-end',
+    textAlign: 'right',
+  },
+  identifier: {
+    fontSize: '14px',
+    lineHeight: '16px',
+  },
+  caption: {
+    fontSize: '8px',
+    lineHeight: '8px',
+  },
+  topMargin: {
+    marginTop: '4px',
   },
 }))
 
