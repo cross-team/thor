@@ -6,7 +6,6 @@ const useStyles = makeStyles(theme => ({
     borderColor: theme.palette['card-border-color'],
     backgroundColor: theme.palette['card-bg-color'],
     borderRadius: '12px !important', // using !important to override library styles
-    width: '256px',
   },
   contentContainer: {
     padding: '4px',
@@ -26,11 +25,12 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
+    maxWidth: '76px',
   },
   companyText: {
     display: 'block',
     color: '#9D9A95',
-    width: '80px',
+    maxWidth: '76px',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
@@ -46,7 +46,6 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
-    marginRight: '16px',
     marginLeft: '4px',
   },
   statusInfo: {
@@ -65,7 +64,7 @@ const useStyles = makeStyles(theme => ({
   },
   progressContainer: {
     position: 'relative',
-    width: '110%',
+    width: '84%',
   },
   divider: {
     borderTop: 'solid rgba(0,0,0,0.4) 1px',
@@ -82,6 +81,7 @@ const useStyles = makeStyles(theme => ({
   },
   progress: props => ({
     height: '2px',
+    width: '100%',
     backgroundColor: props.progressType ? '#044132' : '#581A19',
 
     // Overrides default progress styling for MatUi, if upgrading check for breaking changes here!
