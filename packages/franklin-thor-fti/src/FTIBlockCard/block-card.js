@@ -59,7 +59,6 @@ export default function BlockCard({ blockCardData }) {
                   className={`${classes.changeColor} ${classes.caption}`}
                   variant={'caption'}
                 >
-                  {!styleProps.progressType && '-'}
                   {`${percentChange}%`}
                 </Typography>
                 <Typography className={classes.caption}>
@@ -121,7 +120,7 @@ BlockCard.propTypes = {
     companyName: PropTypes.string,
     currencyCode: PropTypes.string,
     fulfilled: PropTypes.number,
-    orders: PropTypes.string,
+    orders: PropTypes.number,
     percentChange: PropTypes.number,
     placed: PropTypes.number,
     price: PropTypes.number,

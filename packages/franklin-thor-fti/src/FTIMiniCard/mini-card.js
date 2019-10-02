@@ -59,7 +59,6 @@ export default function FTIMini({ miniCardData }) {
                   className={`${classes.changeColor} ${classes.caption}`}
                   variant={'caption'}
                 >
-                  {!styleProps.progressType && '-'}
                   {`${percentChange}%`}
                 </Typography>
                 <Typography className={classes.caption}>
@@ -104,13 +103,11 @@ FTIMini.propTypes = {
     companyName: PropTypes.string,
     currencyCode: PropTypes.string,
     fulfilled: PropTypes.number,
-    orders: PropTypes.string,
     percentChange: PropTypes.number,
     placed: PropTypes.number,
     price: PropTypes.number,
     status: PropTypes.string,
     symbol: PropTypes.string,
-    totalAmount: PropTypes.number,
     trader: PropTypes.string,
   }),
 }

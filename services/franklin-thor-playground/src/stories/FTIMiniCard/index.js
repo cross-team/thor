@@ -11,13 +11,11 @@ const miniCardData = {
   currencyCode: 'USD',
   companyName: 'CA INVESTMENT SERVICES',
   fulfilled: 4000,
-  orders: '20',
   percentChange: 3.8,
   placed: 2421,
   price: 4.4,
   status: 'PARTIALLY FILLED',
   symbol: 'MDR',
-  totalAmount: 1987091,
   trader: 'LT2',
 }
 
