@@ -101,7 +101,7 @@ export default function BlockCard({ blockCardData }) {
                 <Typography
                   className={`${classes.topMargin} ${classes.lightFont} ${classes.caption}`}
                 >
-                  {`${currencyCode} ${currencyCodes[currencyCode]}${numberWithCommas(totalAmount)}`}
+                  {`USD ${numberWithCommas(totalAmount)}`}
                 </Typography>
               </div>
             </div>
