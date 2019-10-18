@@ -42,7 +42,7 @@ export default function FTIDrawerHeading(props) {
           <IconButton
             edge="start"
             color="inherit"
-            aria-label="List"
+            aria-label="back-button"
             onClick={props.updateView(props.parent)}
             className={classes.backArrow}
           >
@@ -52,7 +52,7 @@ export default function FTIDrawerHeading(props) {
         <IconButton
           edge="start"
           color="inherit"
-          aria-label="List"
+          aria-label="close-settings"
           onClick={props.toggleDrawer(false)}
         >
           <FontAwesomeIcon icon={faTimes} />
