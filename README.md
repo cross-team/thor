@@ -2,58 +2,9 @@
 
 ## Introduction
 
-Thor is the development stack for the components, icons and theming for the react application fti-blotter.  
+**Thor** is the development stack for the components, icons and theming for the react application fti-blotter.   
 
-[Storybook](https://storybook.js.org/) provides a sandbox to build UI components in isolation.  We use storybook to preview developed components before publishing them to the application.  
-
-## Architecture
-
-### Services
-
-The services directory consists of the franklin-thor-playground folder which contains all of the storybook files used to create the storybook display of all of the components.
-
-To run storybook locally on your machine, navigate to the `thor/services/franklin-thor-playground/` directory and run `yarn install` then `yarn start`. This will start up the development environment for you to start working on components in.
-
-The `thor/services/franklin-thor-playground/src/` directory contains two directories that would be relevant to someone trying to develop components in storybook: page and stories.
-
-The `thor/services/franklin-thor-playground/src/page/` directory contains the source code for all of the components displayed in storybook, as well as all of the custom components which live in the `thor/services/franklin-thor-playground/src/page/FTIPatterns/` directory. Each folder within `thor/services/franklin-thor-playground/src/page/FTIPatterns/` has a `ComponentName.js` file that contains the source code for that component and this is where you will do the majority of your component development for storybook.
-
-The `thor/services/franklin-thor-playground/src/stories/` directory is where each component in the page directory is called and pulled into the storybook display. Each story has it's own directory that contain an index.js that creates the story using the components exported from the page directory. This is where you can set any props that you want to be passed to your component when it's rendered.
-
-Finally the storybook config file at `thor/services/franklin-thor-playground/.storybook/config.js` loads all of the stories that are to be shown into the storybook display. You should only need to access this file if you are adding a new component to storybook and need to add its story to the display.
-
-### Packages
-
-Inside the package directory there are three folders, each one containing the source code for one of the npm packages published from thor. The packages are as follows:
-
-
-Directory: thor/packages/franklin-thor-fti
-npm Package: @cross.team/fti
-Description: Provides all of the custom components created for the fti blotter application
-
-Directory: thor/packages/franklin-thor-icons
-npm Package: @cross.team/icons
-Description: Provides all of the font awesome icons used across the application
-
-Directory: thor/packages/franklin-thor
-npm Package: @cross.team/core
-Description: Provides all of the core MUI components used across the fti blotter application
-
-### Workflow
-
-The typical workflow for editing a custom component or adding a new one starts by developing that component in the `thor/services/franklin-thor-playground` directory. To learn more about this refer to the Services section.
-
-Once the component is developed and working in storybook, you can copy the source code for that component into the franklin-thor-fti package. You can do this by:
-- Navigating to the `thor/packages/franklin-thor-fti/src` directory and, if there isn't one already, create a folder for the component you created and paste the component source code into an index.js file within that component's directory. 
-- There is also an index.js file at `thor/packages/franklin-thor-fti/src/index.js` that exports each of the components inside the src folder, so make sure to add the necessary line of code to export your component in that file.
-
-#### Publish New Version of Package to NPM
-
-Once the source code is copied:
-- update the package version inside the package.json file at `thor/packages/franklin-thor-fti/package.json`
-- save the package.json file
-- run `yarn build`
-- run `yarn publish`
+**Thor-Playground** is the name of the Storybook instance in services/franklin-thor-playground.  [Storybook](https://storybook.js.org/) provides a sandbox to build UI components in isolation.  We use storybook to preview developed components before publishing them to the application. 
 
 
 ## Setting up the Development Environment
@@ -131,16 +82,57 @@ required to be used with the playground.
 **Why**
 **When**
 
-
-### Thor-Playground
-
-Thor-Playground is the name of the Storybook sandbox in services/franklin-thor-playground.  
-
-
-
-### Conclusion
-
 At this point your development environment should be ready and operational with the following packages installed:
 
 - **Thor**: Your component library
 - **Thor-playground**: The component library storyboard and playground
+
+
+## Architecture
+
+### Services
+
+The services directory consists of the franklin-thor-playground folder which contains all of the storybook files used to create the storybook display of all of the components.
+
+To run storybook locally on your machine, navigate to the `thor/services/franklin-thor-playground/` directory and run `yarn install` then `yarn start`. This will start up the development environment for you to start working on components in.
+
+The `thor/services/franklin-thor-playground/src/` directory contains two directories that would be relevant to someone trying to develop components in storybook: page and stories.
+
+The `thor/services/franklin-thor-playground/src/page/` directory contains the source code for all of the components displayed in storybook, as well as all of the custom components which live in the `thor/services/franklin-thor-playground/src/page/FTIPatterns/` directory. Each folder within `thor/services/franklin-thor-playground/src/page/FTIPatterns/` has a `ComponentName.js` file that contains the source code for that component and this is where you will do the majority of your component development for storybook.
+
+The `thor/services/franklin-thor-playground/src/stories/` directory is where each component in the page directory is called and pulled into the storybook display. Each story has it's own directory that contain an index.js that creates the story using the components exported from the page directory. This is where you can set any props that you want to be passed to your component when it's rendered.
+
+Finally the storybook config file at `thor/services/franklin-thor-playground/.storybook/config.js` loads all of the stories that are to be shown into the storybook display. You should only need to access this file if you are adding a new component to storybook and need to add its story to the display.
+
+### Packages
+
+Inside the package directory there are three folders, each one containing the source code for one of the npm packages published from thor. The packages are as follows:
+
+
+Directory: thor/packages/franklin-thor-fti
+npm Package: @cross.team/fti
+Description: Provides all of the custom components created for the fti blotter application
+
+Directory: thor/packages/franklin-thor-icons
+npm Package: @cross.team/icons
+Description: Provides all of the font awesome icons used across the application
+
+Directory: thor/packages/franklin-thor
+npm Package: @cross.team/core
+Description: Provides all of the core MUI components used across the fti blotter application
+
+### Workflow
+
+The typical workflow for editing a custom component or adding a new one starts by developing that component in the `thor/services/franklin-thor-playground` directory. To learn more about this refer to the Services section.
+
+Once the component is developed and working in storybook, you can copy the source code for that component into the franklin-thor-fti package. You can do this by:
+- Navigating to the `thor/packages/franklin-thor-fti/src` directory and, if there isn't one already, create a folder for the component you created and paste the component source code into an index.js file within that component's directory. 
+- There is also an index.js file at `thor/packages/franklin-thor-fti/src/index.js` that exports each of the components inside the src folder, so make sure to add the necessary line of code to export your component in that file.
+
+#### Publish New Version of Package to NPM
+
+Once the source code is copied:
+- update the package version inside the package.json file at `thor/packages/franklin-thor-fti/package.json`
+- save the package.json file
+- run `yarn build`
+- run `yarn publish`
