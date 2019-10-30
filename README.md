@@ -104,6 +104,7 @@ You can also download the repo directly as a zip file if this option is made ava
 
 The outcome of any one of these approaches is the codebase being loaded into the folder or your choice; thereby creating a **local repo**.
 
+
 ### Apply Lerna to your Local Repo
 
 Inside the local repo root folder run:
@@ -112,28 +113,30 @@ Inside the local repo root folder run:
 lerna bootstrap
 ```
 
-This command will search through the current local repo and install any dependencies and cross-dependencies
+This command will search through the current local repo and install any dependencies and cross-dependencies.
+
+**Why**
+**When**
+
 
 ### Build Thor Packages
 
-Change to the following folders and run a build
-
-Navigate to: /**packages/franklin-thor/**
-run: `yarn run build`
-
-Navigate to: /**packages/franklin-thor-fti/**
-run: `yarn run build`
-
-Navigate to: /**packages/franklin-thor-icons/**
-run: `yarn run build`
-
 To build all packages run: `yarn build:all` in root directory.
+
+If `yarn build:all` was not used to build all the packages and the build of the Thor packages were done independently, use `yarn build:clean`.
+
+This will remove the node_modules related to the packages and reinstall them with appropriate build files,
+required to be used with the playground.
+
+**Why**
+**When**
+
 
 ### Thor-Playground
 
-If `yarn build:all` was not used to build all the packages and the build of the Thor packages were done independently, use `yarn build:clean`.
-This will remove the node_modules related to the packages and reinstall them with appropriate build files,
-required to be used with the playground.
+Thor-Playground is the name of the Storybook sandbox in services/franklin-thor-playground.  
+
+
 
 ### Conclusion
 
@@ -141,9 +144,3 @@ At this point your development environment should be ready and operational with 
 
 - **Thor**: Your component library
 - **Thor-playground**: The component library storyboard and playground
-
-## Running the Development Environment
-
-## Development
-
-## Deployment: Publishing to NPM
