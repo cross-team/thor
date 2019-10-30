@@ -1,5 +1,26 @@
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
+## Introduction
+
+Thor is the development stack for the components, icons and theming for the react application fti-blotter.  
+
+## Architecture
+
+`Describe architecture; how the packages and services are linked.`  Link to https://github.com/cross-team/thor/blob/documentation/services/franklin-thor-playground/README.md 
+
+## Workflow
+
+`Describe work flow at a high level` 
+
+### Packages
+
+`List out and describle all packages` 
+
+### Services
+
+`List out and describle all services` 
+
+
 ## Setting up the Development Environment
 
 ### Start with your base
@@ -8,10 +29,19 @@ Before you start using Thor or Thor-playground you must have the following insta
 
 **We assume a clean machine and that these commands will be executed from the Command Line.**
 
-- [NodeJS](https://nodejs.org/en/): We started using node 10.15.
-- [Docker](https://www.docker.com/products/docker-desktop): We use Docker containers to and run Thor-playground locally.
-- [Git](https://git-scm.com/downloads): Git is our version control tool
+- [NodeJS](https://nodejs.org/en/): We started using node 10.15.  Installing NodeJS will install the needed npm package manager.
 - [Yarn](https://yarnpkg.com/en/docs/install#mac-stable): Yarn is a modern package management application.
+
+In initial development, repositories were created in Github, using git for version control:
+- [Git](https://git-scm.com/downloads): Git is our version control tool
+
+To install from the Franklin environment, you can clone the repositories from Bitbucket:
+- [Bitbucket: Order Management - UI Project Overview](http://stash.noam.corp.frk.com:7990/projects/OMU): View all repositories in Franklin's environment for this project.  
+- [Sourcetree](http://www.sourcetreeapp.com/): Download and install Sourcetree to manage the Bitbucket repositories.  It serves a function similar to Github Desktop.  For more information, see the Franklin Confluence document [Using Bitbucket](http://confluence.corp.frk.com:8090/display/IMDL/Using+Bitbucket).
+
+We use Storybook to view components in the thor component library.  To run Storybook locally from the thor repository, you must have the following installed on your development machine:
+
+- [Docker](https://www.docker.com/products/docker-desktop): We use Docker containers to and run Thor-playground locally.
 
 Once these software applications are installed onto your local development machine continue by following the next steps:
 
@@ -76,3 +106,9 @@ At this point your development environment should be ready and operational with 
 
 - **Thor**: Your component library
 - **Thor-playground**: The component library storyboard and playground
+
+## Running the Development Environment
+
+## Development
+
+## Deployment: Publishing to NPM
