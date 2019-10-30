@@ -12,7 +12,7 @@ Thor is the development stack for the components, icons and theming for the reac
 
 The typical workflow for editing a custom component or adding a new one starts by developing that component in the `thor/services/franklin-thor-playground` directory. To learn more about this refer to the Services section.
 
-Once the component is developed and working storybook, you can copy the source code for that component into the franklin-thor-fti package. You can do this by navigating to the `thor/packages/franklin-thor-fti/src` directory and, if there isn't one already, create a folder for the component you created and paste the component src code into an index.js file within that component's directory. There is also an index.js file at `thor/packages/franklin-thor-fti/src/index.js` that exports each of the components inside the src folder, so make sure to add the necessary line of code to export your component in that file.
+Once the component is developed and working in storybook, you can copy the source code for that component into the franklin-thor-fti package. You can do this by navigating to the `thor/packages/franklin-thor-fti/src` directory and, if there isn't one already, create a folder for the component you created and paste the component src code into an index.js file within that component's directory. There is also an index.js file at `thor/packages/franklin-thor-fti/src/index.js` that exports each of the components inside the src folder, so make sure to add the necessary line of code to export your component in that file.
 
 Once the source code is copied you can update the package version inside package.json file at `thor/packages/franklin-thor-fti/package.json`, save it, and run `npm publish`
 
