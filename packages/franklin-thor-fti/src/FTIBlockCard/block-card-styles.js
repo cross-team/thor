@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: '14px',
     display: 'flex',
     alignItems: 'center',
-    justifyContent:  'center'
+    justifyContent: 'center',
   },
   topContainer: {
     display: 'flex',
@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
   orderDetails: {
     display: 'flex',
     justifyContent: 'flex-end',
-    padding: '2px'
+    padding: '2px',
   },
   priceAndAvg: {
     display: 'flex',
@@ -95,7 +95,7 @@ const useStyles = makeStyles(theme => ({
   avatar: props => ({
     position: 'absolute',
     top: '-3px',
-    left: `${props.progressPosition}%` || '-7px',
+    left: props.progressPosition ? `${props.progressPosition}%` : '-7px',
     width: '8px',
     height: '8px',
     fontSize: '6px',
