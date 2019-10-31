@@ -6,17 +6,14 @@ const useStyles = makeStyles(theme => ({
   },
   contentContainer: {
     padding: '5px',
-    paddingBottom: '7px',
+    paddingBottom: '5px',
     display: 'flex',
     overflow: 'hidden',
   },
   iconContainer: {
-    paddingLeft: '2px',
-    paddingRight: '7px',
-    marginBottom: '14px',
+    marginRight: '10px',
     display: 'flex',
     alignItems: 'center',
-    justifyContent:  'center'
   },
   topContainer: {
     display: 'flex',
@@ -95,7 +92,7 @@ const useStyles = makeStyles(theme => ({
   avatar: props => ({
     position: 'absolute',
     top: '-3px',
-    left: props.progrossPosition ? `${props.progrossPosition}%` : '-7px',
+    left: props.progressPosition ? `${props.progressPosition}%` : '-7px',
     width: '8px',
     height: '8px',
     fontSize: '6px',
@@ -129,13 +126,10 @@ const useStyles = makeStyles(theme => ({
   lightFont: {
     color: '#fff',
   },
-  leftOrderContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
   orderContainer: {
     display: 'flex',
     flexDirection: 'column',
+    justifyContent: 'flex-end',
     textAlign: 'right',
   },
   identifier: {
