@@ -2,6 +2,7 @@ import { makeStyles } from '@cross.team/core'
 
 const useStyles = makeStyles(theme => ({
   paper: {
+    backgroundColor: theme.palette['card-bg-color'],
     borderRadius: '12px !important', // using !important to override library styles
   },
   contentContainer: {

@@ -2,6 +2,7 @@ import { makeStyles } from '@cross.team/core'
 
 const useStyles = makeStyles(theme => ({
   paper: {
+    backgroundColor: theme.palette['card-bg-color'],
     borderRadius: '12px !important', // using !important to override library styles
   },
   contentContainer: {
@@ -39,7 +40,7 @@ const useStyles = makeStyles(theme => ({
   orderDetails: {
     display: 'flex',
     justifyContent: 'flex-end',
-    padding: '2px'
+    padding: '2px',
   },
   priceAndAvg: {
     display: 'flex',
