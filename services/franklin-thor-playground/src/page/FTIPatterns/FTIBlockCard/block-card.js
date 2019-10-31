@@ -136,7 +136,6 @@ BlockCard.propTypes = {
     currencyCode: PropTypes.string,
     fulfilled: PropTypes.number,
     orders: PropTypes.number,
-    orderDate: PropTypes.string,
     percentChange: PropTypes.number,
     placed: PropTypes.number,
     price: PropTypes.number,

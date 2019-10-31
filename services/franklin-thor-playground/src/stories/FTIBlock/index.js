@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 // import { boolean, text, select } from '@storybook/addon-knobs';
-import FTIBlock from '../../page/FTIPatterns/FTIBlock/fti-block'
+import FTIBlock from '../../page/FTIPatterns/FTIBlockCard/block-card'
 import theme from '../../themes/default'
 import { ThemeProvider } from '@cross.team/core'
 
@@ -13,6 +13,7 @@ const blockCardData = {
   companyName: 'CA INVESTMENT SERVICES',
   fulfilled: 4000,
   orders: 20,
+  orderDate: '2019-08-09T12:17:38.000+0000',
   percentChange: 3.8,
   placed: 2421,
   price: 4.4,
