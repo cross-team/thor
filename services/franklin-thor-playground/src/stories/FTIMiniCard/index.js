@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import FTIMini from '../../page/FTIPatterns/FTIMini/fti-mini'
+import FTIMini from '../../page/FTIPatterns/FTIMiniCard'
 import theme from '../../themes/default'
 import { ThemeProvider } from '@cross.team/core'
 

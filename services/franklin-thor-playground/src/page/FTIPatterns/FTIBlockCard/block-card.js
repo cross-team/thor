@@ -24,11 +24,11 @@ export default function BlockCard({ blockCardData }) {
     trader,
   } = blockCardData
   const progress = Math.floor((placed / fulfilled) * 100)
-  const progressPosition = progress * (9 / 10)
+  const progressPosition = (progress * (9/10))
 
   const styleProps = {
     progressType: buy,
-    progressPosition,
+    progressPosition
   }
   const classes = useStyles(styleProps)
 
@@ -103,7 +103,9 @@ export default function BlockCard({ blockCardData }) {
           <div className={classes.bottomContainer}>
             <div className={classes.leftOrderContainer}>
               <Typography className={classes.caption}>{broker}</Typography>
-              <Typography className={`${classes.topMargin} ${classes.darkFont} ${classes.caption}`}>
+            <Typography
+                className={`${classes.topMargin} ${classes.darkFont} ${classes.caption}`}
+              >
                 {formatDate(orderDate).toLocaleString()}
               </Typography>
             </div>
@@ -111,7 +113,9 @@ export default function BlockCard({ blockCardData }) {
               <Typography className={classes.caption}>
                 {`USD $${numberWithCommas(totalAmount)}`}
               </Typography>
-              <Typography className={`${classes.topMargin} ${classes.darkFont} ${classes.caption}`}>
+              <Typography
+                className={`${classes.topMargin} ${classes.darkFont} ${classes.caption}`}
+              >
                 {`${'# ORDERS'}`}
                 <span className={classes.lightFont}>{` ${orders}`}</span>
               </Typography>
@@ -131,7 +135,6 @@ BlockCard.propTypes = {
     companyName: PropTypes.string,
     currencyCode: PropTypes.string,
     fulfilled: PropTypes.number,
-    orderDate: PropTypes.string,
     orders: PropTypes.number,
     percentChange: PropTypes.number,
     placed: PropTypes.number,
