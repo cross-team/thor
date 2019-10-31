@@ -66,8 +66,8 @@ lerna bootstrap
 
 This command will search through the current local repo and install any dependencies and cross-dependencies.
 
-**Why**
-**When**
+**Why** You run this command because it installs all of the dependencies in the repo that allow you to build and publish packages.
+**When** This command should be run right after you clone your local repo before you nuild all of your thor packages.
 
 
 ### Build Thor Packages
@@ -79,8 +79,8 @@ If `yarn build:all` was not used to build all the packages and the build of the 
 This will remove the node_modules related to the packages and reinstall them with appropriate build files,
 required to be used with the playground.
 
-**Why**
-**When**
+**Why** This builds all of the local resources used by the components within the packages and in storybook. This is run so that none of the components break due to missing packages.
+**When** You run this command after your `lerna bootstrap` and before you start developing. You should also run this command whenever you make changes within the packages so that those changes can be reflected across thor and/or be published to npm.
 
 At this point your development environment should be ready and operational with the following packages installed:
 
