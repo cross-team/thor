@@ -19,8 +19,10 @@ export default function FTIMini({ miniCardData }) {
     symbol,
     trader,
   } = miniCardData
+  const progress = Math.floor((placed / fulfilled) * 100)
+  const progressPosition = (progress * (9 / 10))
 
-  const styleProps = { progressType: buy }
+  const styleProps = { progressType: buy, progressPosition }
   const classes = useStyles(styleProps)
 
   const numberWithCommas = x => {

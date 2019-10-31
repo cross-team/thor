@@ -2,13 +2,11 @@ import { makeStyles } from '@cross.team/core'
 
 const useStyles = makeStyles(theme => ({
   paper: {
-    border: 'solid 1px',
-    borderColor: theme.palette['card-border-color'],
-    backgroundColor: theme.palette['card-bg-color'],
     borderRadius: '12px !important', // using !important to override library styles
   },
   contentContainer: {
-    padding: '4px',
+    padding: '5px',
+    paddingBottom: '5px',
     display: 'flex',
     overflow: 'hidden',
   },
@@ -28,6 +26,7 @@ const useStyles = makeStyles(theme => ({
     maxWidth: '76px',
   },
   companyText: {
+    marginTop: '2px',
     display: 'block',
     color: '#9D9A95',
     maxWidth: '76px',
@@ -40,6 +39,7 @@ const useStyles = makeStyles(theme => ({
   orderDetails: {
     display: 'flex',
     justifyContent: 'flex-end',
+    padding: '2px'
   },
   priceAndAvg: {
     display: 'flex',
@@ -92,12 +92,13 @@ const useStyles = makeStyles(theme => ({
   avatar: props => ({
     position: 'absolute',
     top: '-3px',
-    left: '-7px',
+    left: props.progressPosition ? `${props.progressPosition}%` : '-7px',
     width: '8px',
     height: '8px',
     fontSize: '6px',
     lineHeight: '8px',
     fontWeight: 'bold',
+    zIndex: '1',
     backgroundColor: props.progressType ? '#11C197' : '#E05554',
   }),
   changeColor: props => ({
