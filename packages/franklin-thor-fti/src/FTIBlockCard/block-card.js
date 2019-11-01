@@ -37,9 +37,18 @@ export default function BlockCard({ blockCardData }) {
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',')
     return parts.join('.')
   }
+  const currencyTwoDecimals = number => {
+    const formattedNumber = number.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    })
+    return formattedNumber
+  }
 
   const formatDate = date => {
-    return new Date(date).toLocaleString()
+    return new Date(date).toLocaleString(undefined, {
+      timeZone: 'UTC',
+    })
   }
 
   return (
@@ -61,10 +70,9 @@ export default function BlockCard({ blockCardData }) {
             </div>
             <div className={classes.orderDetails}>
               <div className={classes.priceAndAvg}>
-                <Typography
-                  className={classes.caption}
-                  noWrap
-                >{`${currencyCode} ${currencyCodes[currencyCode]}${price}`}</Typography>
+                <Typography className={classes.caption} noWrap>{`${currencyCode} ${
+                  currencyCodes[currencyCode]
+                }${currencyTwoDecimals(price)}`}</Typography>
                 <Typography
                   className={`${classes.changeColor} ${classes.caption}`}
                   variant={'caption'}
@@ -109,7 +117,7 @@ export default function BlockCard({ blockCardData }) {
             </div>
             <div className={classes.orderContainer}>
               <Typography className={classes.caption}>
-                {`USD $${numberWithCommas(totalAmount)}`}
+                {`USD $${currencyTwoDecimals(totalAmount)}`}
               </Typography>
               <Typography className={`${classes.topMargin} ${classes.darkFont} ${classes.caption}`}>
                 {`${'# ORDERS'}`}

@@ -19,7 +19,7 @@ const blockCardData = {
   price: 4.4,
   status: 'PARTIALLY FILLED',
   symbol: 'MDR',
-  totalAmount: 1987091,
+  totalAmount: 1987091.567,
   trader: 'LT2',
 }
 
