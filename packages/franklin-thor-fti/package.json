@@ -1,7 +1,7 @@
 {
   "name": "@cross.team/fti",
   "author": "Cross Team",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "main": "./build",
   "description": "Franklin Templeton Custom Components",
   "repository": {
