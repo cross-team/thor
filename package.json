@@ -15,7 +15,10 @@
     "build:all": "cd packages/franklin-thor && yarn build && cd ../ && cd franklin-thor-icons && yarn build && cd ../ && cd franklin-thor-fti && yarn build && cd .. && cd .. && lerna clean --yes && lerna bootstrap",
     "build:clean": "lerna clean --yes && lerna bootstrap",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "dist": "NODE_ENV=production npm-run-all clean build",
+    "clean": "rimraf build",
+    "build": "cross-env NODE_PATH=src build-storybook -s public -c .storybook -o build"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
