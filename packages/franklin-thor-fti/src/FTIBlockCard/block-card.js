@@ -15,7 +15,6 @@ export default function BlockCard({ blockCardData }) {
     fulfilled,
     orders,
     orderDate,
-    percentChange,
     placed,
     price,
     status,
@@ -77,7 +76,7 @@ export default function BlockCard({ blockCardData }) {
                   className={`${classes.changeColor} ${classes.caption}`}
                   variant={'caption'}
                 >
-                  {`${percentChange}%`}
+                  {`${progress}%`}
                 </Typography>
                 <Typography className={classes.caption}>
                   <span className={classes.darkFont}>{`${'AVG '}`}</span>
