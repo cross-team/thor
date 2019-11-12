@@ -24,7 +24,7 @@ const blockCardData = {
 }
 
 theme.then(apiTheme => {
-  return storiesOf('FTIBlock', module)
+  return storiesOf('FTIBlockCard', module)
     .addDecorator(getStory => <ThemeProvider theme={apiTheme}>{getStory()}</ThemeProvider>)
     .add('FTI Block Card', () => <FTIBlock blockCardData={blockCardData} />)
 })

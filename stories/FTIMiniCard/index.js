@@ -20,7 +20,7 @@ const miniCardData = {
 }
 
 theme.then(apiTheme => {
-  return storiesOf('MiniCard', module)
+  return storiesOf('FTIMiniCard', module)
     .addDecorator(getStory => <ThemeProvider theme={apiTheme}>{getStory()}</ThemeProvider>)
     .add('FTI Mini Card', () => <FTIMini miniCardData={miniCardData} />)
 })
