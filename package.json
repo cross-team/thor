@@ -13,7 +13,9 @@
     "prettier": "npx babel-node ./scripts/prettier.js",
     "prettier:all": "npx babel-node ./scripts/prettier.js write",
     "build:all": "cd packages/franklin-thor && yarn build && cd ../ && cd franklin-thor-icons && yarn build && cd ../ && cd franklin-thor-fti && yarn build && cd .. && cd .. && lerna clean --yes && lerna bootstrap",
-    "build:clean": "lerna clean --yes && lerna bootstrap"
+    "build:clean": "lerna clean --yes && lerna bootstrap",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -25,6 +27,13 @@
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^5.2.6",
+    "@storybook/addon-console": "^1.1.0",
+    "@storybook/addon-info": "^5.0.11",
+    "@storybook/addon-knobs": "^5.0.11",
+    "@storybook/addon-notes": "^5.1.3",
+    "@storybook/react": "^5.2.6",
+    "@storybook/theming": "^5.0.11",
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.5",
     "babel-plugin-istanbul": "^5.1.4",
@@ -90,5 +99,7 @@
     "packages/*"
   ],
   "dependencies": {
+    "@storybook/addon-links": "^5.2.6",
+    "axios": "^0.19.0"
   }
 }
