@@ -25,7 +25,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@cross.team/core": "^1.1.8",
+    "@cross.team/core": "1.1.9",
     "@cross.team/icons": "^1.1.5",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
