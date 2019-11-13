@@ -92,13 +92,13 @@ At this point your development environment should be ready and operational with 
 
 ### Storybook
 
+To run storybook locally on your machine, navigate to the root directory of thor and run `npm run storybook`. This will start up the development environment for you to start working on components in.
+
 The files used by storybook are contained in the `stories`, `page`, `themes`, and `.storybook` directories. 
 - `stories` contains a folder for each story that contains an `index.js` that create the stories to be loaded into storybook. This is where you can pass any necessay props to the components that you want to render in your storybook demo. This is also where you would wrap your stories in the theme exported by `themes` if you wanted the components in that story to have that theme. The custom FTI components being used in these stories are pulled from `thor/packages/franklin-thor-fti/src/` while the MUI components come from `page`.
 - `page` contains a series of folders (one for each MUI story in storybook) that contain the code examples for the MUI components that are being rendered in `stories`.
 - `themes` contains all of the api calls to be made to the token API and exports the generated theme.
 - `.storybook` contains all of the addons and configuration files for storybook. The config file at `thor/.storybook/config.js` is where storybook loads in all of the stories from the `stories` folder into the storybook app. This is also where you can add or remove any stories from the app.
-
-To run storybook locally on your machine, navigate to the root directory of thor and run `npm run storybook`. This will start up the development environment for you to start working on components in.
 
 ### Packages
 
