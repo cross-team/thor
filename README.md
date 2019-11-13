@@ -90,19 +90,15 @@ At this point your development environment should be ready and operational with 
 
 ## Architecture
 
-### Services
+### Storybook
 
-The services directory consists of the franklin-thor-playground folder which contains all of the storybook files used to create the storybook display of all of the components.
+The files used by storybook are contained in the `stories`, `page`, `themes`, and `.storybook` directories. 
+- `stories` contains a folder for each story that contains an `index.js` that create the stories to be loaded into storybook. This is where you can pass any necessay props to the components that you want to render in your storybook demo. This is also where you would wrap your stories in the theme exported by `themes` if you wanted the components in that story to have that theme. The custom FTI components being used in these stories are pulled from `thor/packages/franklin-thor-fti/src/` while the MUI components come from `page`.
+- `page` contains a series of folders (one for each MUI story in storybook) that contain the code examples for the MUI components that are being rendered in `stories`.
+- `themes` contains all of the api calls to be made to the token API and exports the generated theme.
+- `.storybook` contains all of the addons and configuration files for storybook. The config file at `thor/.storybook/config.js` is where storybook loads in all of the stories from the `stories` folder into the storybook app. This is also where you can add or remove any stories from the app.
 
-To run storybook locally on your machine, navigate to the `thor/services/franklin-thor-playground/` directory and run `yarn install` then `yarn start`. This will start up the development environment for you to start working on components in.
-
-The `thor/services/franklin-thor-playground/src/` directory contains two directories that would be relevant to someone trying to develop components in storybook: page and stories.
-
-The `thor/services/franklin-thor-playground/src/page/` directory contains the source code for all of the components displayed in storybook, as well as all of the custom components which live in the `thor/services/franklin-thor-playground/src/page/FTIPatterns/` directory. Each folder within `thor/services/franklin-thor-playground/src/page/FTIPatterns/` has a `ComponentName.js` file that contains the source code for that component and this is where you will do the majority of your component development for storybook.
-
-The `thor/services/franklin-thor-playground/src/stories/` directory is where each component in the page directory is called and pulled into the storybook display. Each story has it's own directory that contain an index.js that creates the story using the components exported from the page directory. This is where you can set any props that you want to be passed to your component when it's rendered.
-
-Finally the storybook config file at `thor/services/franklin-thor-playground/.storybook/config.js` loads all of the stories that are to be shown into the storybook display. You should only need to access this file if you are adding a new component to storybook and need to add its story to the display.
+To run storybook locally on your machine, navigate to the root directory of thor and run `npm run storybook`. This will start up the development environment for you to start working on components in.
 
 ### Packages
 
@@ -111,7 +107,7 @@ Inside the package directory there are three folders, each one containing the so
 
 Directory: thor/packages/franklin-thor-fti
 npm Package: @cross.team/fti
-Description: Provides all of the custom components created for the fti blotter application
+Description: Provides all of the custom components created for the fti blotter application. This is also where you would do any custom component development to be loaded into storybook.
 
 Directory: thor/packages/franklin-thor-icons
 npm Package: @cross.team/icons
