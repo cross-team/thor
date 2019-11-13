@@ -20,9 +20,9 @@ RUN cd packages/franklin-thor-fti/build && yarn link
 RUN cd packages/franklin-thor-icons && yarn run build
 RUN cd packages/franklin-thor-icons/build && yarn link
 
-RUN cd . && yarn link “@cross.team/core”
-RUN cd . && yarn link “@cross.team/fti”
-RUN cd . && yarn link “@cross.team/icons”
+RUN cd . && yarn link "@cross.team/core"
+RUN cd . && yarn link "@cross.team/fti"
+RUN cd . && yarn link "@cross.team/icons"
 RUN yarn install
 RUN yarn run dist
 
@@ -31,4 +31,4 @@ FROM nginx:1.17-alpine
 COPY --from=build-deps /src/build /var/www
 COPY --from=build-deps /src/nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80
-CMD [“nginx”, “-g”, “daemon off;“]
+CMD ["nginx", "-g", "daemon off;"]
