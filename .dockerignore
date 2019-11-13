@@ -1,10 +1,13 @@
 */
 
 # add project directories to include here
-!/services/franklin-thor-playground
 !/packages/franklin-thor
 !/packages/franklin-thor-fti
 !/packages/franklin-thor-icons
+!/stories/
+!/themes/
+!/.storybook
+!/page/
 !lerna.json
 !.npmrc
 !/scripts/copy-files.js
