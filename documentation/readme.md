@@ -165,31 +165,33 @@ The ddesigns
 
 ### Components & Patterns
 
-#### Material Components
+#### Material Components Documentation
 
-[App Bars: Bottom](components-mui/app-bars-bottom/readme.md)
-[App Bars: Top]()
-[Backdrop]()
-[Banners]()
-[Bottom Navigation]()
-[Buttons](components-mui/buttons/documentation.md)
-[Buttons: Floating Action Button]()
-[Cards]()
-[Chips]()
-[Data Tables]()
-[Dialogs]()
-[Dividers]()
-[Image Lists]()
-[Lists]()
-[Menus]()
-[Navigation Drawer]()
-[Progress Indicators]()
-[Selection Controls]()
-[Sheets: Bottom]()
-[Sheets: Side]()
-[Sliders]()
-[Snackbars]()
-[Tabs]()
+- [App Bars: Bottom](components-mui/app-bars-bottom/readme.md)
+- [App Bars: Top](components-mui/app-bars-top/readme.md)
+- [Backdrop](components-mui/backdrop/readme.md)
+- [Banners](components-mui/banners/readme.md)
+- [Bottom Navigation](components-mui/bottom-navigation/readme.md)
+- [Buttons](components-mui/buttons/documentation.md)
+- [Buttons: Floating Action Button](components-mui/buttons-floating-action-button/readme.md)
+- [Cards](components-mui/cards/readme.md)
+- [Chips](components-mui/chips/readme.md)
+- [Data Tables](components-mui/data-tables/readme.md)
+- [Dialogs](components-mui/dialogs/readme.md)
+- [Dividers](components-mui/dividers/readme.md)
+- [Image Lists](components-mui/image-lists/readme.md)
+- [Lists](components-mui/lists/readme.md)
+- [Menus](components-mui/menus/readme.md)
+- [Navigation Drawer](components-mui/navigation-drawer/readme.md)
+- [Progress Indicators](components-mui/progress-indicators/readme.md)
+- [Selection Controls](components-mui/selection-controls/readme.md)
+- [Sheets: Bottom](components-mui/sheets-bottom/readme.md)
+- [Sheets: Side](components-mui/sheets-side/readme.md)
+- [Sliders](components-mui/sliders/readme.md)
+- [Snackbars](components-mui/snackbars/readme.md)
+- [Tabs](components-mui/tabs/readme.md)
+- [Tabs](components-mui/text-fields/readme.md)
+- [Tabs](components-mui/tooltips/readme.md)
 
-#### Franklin Custom Components
+#### Franklin Custom Components Documentation
 
