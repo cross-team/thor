@@ -165,9 +165,9 @@ The ddesigns
 
 ### Components & Patterns
 
-#### Material.io components
+#### Material Components
 
-[App Bars: Bottom]()
+[App Bars: Bottom](components-mui/app-bars-bottom/readme.md)
 [App Bars: Top]()
 [Backdrop]()
 [Banners]()
@@ -190,29 +190,6 @@ The ddesigns
 [Sliders]()
 [Snackbars]()
 [Tabs]()
-[Text Fields]()
-[Tooltips]()
 
-#### Material UI Components
-
-##### Container
-
-##### Grid
-
-##### Hidden
-
-##### Buttons
-
-##### Checkboxes
-
-##### Selects
-
-##### Switches
-
-##### Text Fields
-
-#### Custom components
-
-#### Patterns & Master Patterns
-
+#### Franklin Custom Components
 
