@@ -7,13 +7,15 @@
 Project Thor is Cross.Team's nickname for the next version of Franklin Templeton's (FTI) Equity Trading Blotter's frontend.  This project is one part of FTI's larger Equity Trading Modernization Project (ETM).
 
 The goals of the project are to:
+
 - increase the efficiency and effectiveness of users of the blotter by updating the user experience (UX) and user interface (UI)
 - maximize performance of the blotter's frontend
 - minimize design and development maintenance of the blotter once deployed.  
 
 To meet these goals, the project will be delivered as a design system that will:
+
 - utilize a design language to systematize the design process
-- align the design and development process.  i.e. designs are componetized just like components in code.   
+- align the design and development process.  i.e. designs are componetized just like components in code.
 - build
 
 ---
@@ -68,7 +70,9 @@ Documentation should be scaffolded in the same way the code is.  Like this docum
 ---
 
 ## Definitions
+
 (See Rudy's Definitions)
+
 - Token
 - Component
 - Pattern
@@ -117,7 +121,23 @@ Documentation should be scaffolded in the same way the code is.  Like this docum
 
 ### Figma
 
+This project was designed in [Figma](https://www.figma.com/) with the   
+
+There is a 
+
+[About the Figma + Material Theme Configuration Kit](https://www.figma.com/blog/material-design-figma-styles/)
+
+
+
 #### Using Teams, Files & Libraries in Figma
+
+See [Getting Started with Team Library](https://help.figma.com/article/29-team-library)
+
+The ddesigns 
+
+
+
+
 
 #### Using Color Styles in Figma
 
