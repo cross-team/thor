@@ -1,69 +1,38 @@
-# FTI Component: 
+# FTI Component: FTIMiniCard
 
-------
+## Design
 
-## Architecture & Definition
+Exported @2x size:
 
+![FTIMiniCard.png](assets/FTIMiniCard.png)
 
-
-
-
-------
+For more, see the component in Storybook.
 
 ## Description
 
+The FTIMiniCard is designed to display a single order in the kanban view.
 
+The component is used in the following cases:
 
-------
+- New Orders Card
 
-## Theming
+## Data Model
 
-### Shape
+### New Orders Card
 
+The following data model was copied into this documentation as of 2019-11-27.  To see real-time model here: fti-sdk/lib/datasources/fti/orders_new/model/index.js
 
-
-
-
-### Color
-
-
-
-### Typography
-
-
-
-
-
-------
-
-## Behavior
-
-| Characteristic         | Description |
-| ---------------------- | ----------- |
-| Selectable (Clickable) |             |
-| Dynamic or Static      |             |
-|                        |             |
-
-
-
-Dynamic or Static:
-
-
-
-The above text is static: 
-
-
-
-
-
-Behavior Reference: 
-
-
-
-## Usage
-
-| Variation | Usage | Token | Text | Color | Swatch |
-| --------- | ----- | ----- | ---- | ----- | ------ |
-|           |       |       |      |       |        |
-|           |       |       |      |       |        |
-
+```id: 'txser',
+  trader_id: 'pby',
+  currency_code: 'isscurr',
+  symbol_price1: 'currprice',
+  symbol_price2: 'usValue',
+  buy: 'bs',
+  status_fix: 'tstatus',
+  symbol: 'reuters',
+  percentage_change: '*pctChg',
+  company_name1: 'issue1',
+  avg: 'averagePrice',
+  units: '',
+  total_units: 'units',
+  ```
