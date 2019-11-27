@@ -25,8 +25,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "@cross.team/core": "1.1.9",
-    "@cross.team/icons": "^1.1.5",
+    "@cross.team/core": "file:../../packages/franklin-thor",
+    "@cross.team/icons": "file:../../packages/franklin-thor-icons",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
