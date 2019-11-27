@@ -1,32 +1,14 @@
 # FTI Component: Badge
 
-## Architecture & Definition
-
-MUI Component (Avatar) > FTI Component (Badge)
-
-## Description
-
-## Theming
-
-### Shape
-
-### Color
-
-### Typography
-
-## Behavior
-
-| Characteristic         | Description |
-| ---------------------- | ----------- |
-| Selectable (Clickable) | No          |
-| Dynamic or Static      | Static      |
-|                        |             |
-
-Dynamic or Static: n/a
+## Design
 
 ![fti-badge](assets/fti-badge.png)
 
 Behavior Reference: [MUI: Letter Avatar](https://material-ui.com/components/avatars/#letter-avatars)
+
+## Description
+
+Material-UI avatar component used as buy/sell badge.
 
 ## Usage
 

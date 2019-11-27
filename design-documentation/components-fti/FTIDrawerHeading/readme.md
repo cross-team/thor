@@ -1,69 +1,13 @@
-# FTI Component: 
+# FTI Component: FTIDrawerHeading
 
-------
+## Design
 
-## Architecture & Definition
+Exported @2x size:
 
+![FTIDrawerHeading.png](assets/FTIDrawerHeading.png)
 
-
-
-
-------
+Behavior Reference: [MUI: Drawer](https://material-ui.com/components/drawers/)
 
 ## Description
 
-
-
-------
-
-## Theming
-
-### Shape
-
-
-
-
-
-### Color
-
-
-
-### Typography
-
-
-
-
-
-------
-
-## Behavior
-
-| Characteristic         | Description |
-| ---------------------- | ----------- |
-| Selectable (Clickable) |             |
-| Dynamic or Static      |             |
-|                        |             |
-
-
-
-Dynamic or Static:
-
-
-
-The above text is static: 
-
-
-
-
-
-Behavior Reference: 
-
-
-
-## Usage
-
-| Variation | Usage | Token | Text | Color | Swatch |
-| --------- | ----- | ----- | ---- | ----- | ------ |
-|           |       |       |      |       |        |
-|           |       |       |      |       |        |
-
+Material-UI drawer component used as drawer heading.  

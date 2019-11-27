@@ -81,88 +81,84 @@ For example, by using color tokens as a single source of truth in our design fil
 
 ---
 
-## Design System Architecture
-
-![Thor Design System Architecture Overview](assets/thor-design-system-arch-overview.png "Architecture Overview")
-
 ## Designing the Design System
 
-### Principles
+We are using [Material Design](https://material.io/) as the design foundation of the thor design system.  Material provides guidelines on [design](https://material.io/design/) and [development](https://material.io/develop/) to build a consistent visual language and [component-driven](https://material.io/components/) architecture.  
 
-#### Atomic Design
+### Material
 
-#### Color
+> Material is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.
 
-#### Typography
+References:
 
-#### Shape
-
-#### Grid (Size and Space)
-
-#### Components
-
-### What is Material?
-
-#### Material
-
->Material is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.
-
-[material.io](https://material.io/)
+- [material.io](https://material.io/)
 
 #### Material-UI
 
->The worlds most popular React UI framework.
+> The worlds most popular React UI framework.
+> React components for faster and easier web development. Build your own design system, or start with Material Design.
 
->React components for faster and easier web development. Build your own design system, or start with Material Design.
+References:
 
-[material-ui.com](https://material-ui.com/)
-[material-ui repository](https://github.com/mui-org/material-ui)
+- [material-ui.com](https://material-ui.com/)
+- [material-ui repository](https://github.com/mui-org/material-ui)
 
 ### Figma
 
-This project was designed in [Figma](https://www.figma.com/) with the   
+Before development, we used the design tool [Figma](https://www.figma.com/) to prototype designs.  
 
-There is a 
+#### How to Use Figma
 
-[About the Figma + Material Theme Configuration Kit](https://www.figma.com/blog/material-design-figma-styles/)
+On how to use Figma, see [https://help.figma.com/](https://help.figma.com/).
 
+#### Figma File Structure
 
+There are two files in the Figma 'Franklin Templeton' [project](https://help.figma.com/article/394-projects-in-figma):
 
-#### Using Teams, Files & Libraries in Figma
+- "1 - Design Master"
+- "2 - Views (HighQualityScreens)"
 
-See [Getting Started with Team Library](https://help.figma.com/article/29-team-library)
+As a backup, we have directly uploaded original Figma files to this repository.  [See thor/design-documentation/figma](/figma/readme.md)
 
-The ddesigns 
+In "1 - Design Master", color and typography tokens are defined as styles that may be accessed by any file in the 'Franklin Templeton' project.  Components are similarly defined in "1 - Design Master" and available to all files in the project.  
 
+In this way, styles and components are defined in one place and are nested throughout the design, as in development, to be pushed throughout the rest of the design.
 
+#### Material Design Theme Kit & Set Product Figma Material Design System
 
+Material design system [theming](https://material.io/design/material-theming/overview.html) is intended to be customized as needed.  
 
+In development, the Material-UI **theme provider** is used to customzize material's [default theme](https://material-ui.com/customization/default-theme/).  
 
-#### Using Color Styles in Figma
+In design, we use the [Material Design Configuration Kit](https://www.figma.com/resources/assets/material-design-themeing-ui-kit/) as a base for the project:
 
-#### Using Text Styles in Figma
+![screenshot_figma_theme.png](assets/screenshot_figma_theme.png)
 
-#### Using the Grid System in Figma
+This kit forms the foundation of the entire design.  Styles are defined and all default material design component states are included in the file.  For more information on how to use the kit, see [About the Figma + Material Theme Configuration Kit](https://www.figma.com/blog/material-design-figma-styles/)
 
-#### Using Theme Styles Configuration
+We modifed this kit for the uses of this project.
 
-#### Figma Material UI Theme Kit Version
+In addition, we added a proprietary Material UI kit from Set Product to add components not included in the Theme Configuration Kit.  Both orginial kit/template files are also uploaded to this repository:
 
-#### FTI Custom Components and Patterns
+- Material Design Theme Kit (Copy).fig
+- Figma_Material_Design_System.zip
 
-#### Font Awesome Icon Font Version
+#### Font Awesome
 
+We use the icon font 'font awesome' to design with icons in Figma.  Install font awesome font packages locally to your computer to design with Font Awesome icons.  For more, see [Using Font Awesome](font-awesome/readme.md).
 
+---
 
-## The Design System
+## The Thor Design System
+
+### Design System Architecture
+
+![Thor Design System Architecture Overview](assets/thor-design-system-arch-overview.png "Architecture Overview")
 
 ### Design Tokens
 
-#### [Color](tokens/color/documentation.md)
-
-#### [Typography](tokens/typography/documentation.md)
-
-
+- See [Color](tokens/color/documentation.md)
+- See [Typography](tokens/typography/documentation.md)
 
 ### Components
 
