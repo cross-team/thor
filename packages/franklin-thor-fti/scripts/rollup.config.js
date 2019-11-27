@@ -34,6 +34,7 @@ const commonjsOptions = {
       'isLazy',
       'isMemo',
       'isValidElementType',
+      'isFragment',
     ],
   },
 }
