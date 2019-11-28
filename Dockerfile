@@ -9,7 +9,7 @@ COPY nginx.conf ./
 
 COPY . ./
 
-RUN lerna bootstrap
+RUN yarn run build:clean
 
 RUN cd packages/franklin-thor && yarn run build
 RUN cd packages/franklin-thor/build && yarn link
