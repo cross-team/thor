@@ -11,7 +11,7 @@ COPY . ./
 
 RUN yarn install
 
-RUN yarn run dist
+RUN yarn run build-storybook
 
 # Stage 2 - the production environment
 FROM nginx:1.17-alpine
