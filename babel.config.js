@@ -51,19 +51,6 @@ module.exports = {
           'babel-plugin-module-resolver',
           {
             root: ['./'],
-            alias: defaultAlias,
-          },
-        ],
-      ],
-    },
-    development: {
-      plugins: [
-        [
-          'babel-plugin-module-resolver',
-          {
-            alias: {
-              ...defaultAlias,
-            },
           },
         ],
       ],
