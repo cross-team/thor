@@ -9,6 +9,8 @@ COPY nginx.conf ./
 
 COPY . ./
 
+RUN yarn build:clean
+
 RUN yarn run dist
 
 # Stage 2 - the production environment
