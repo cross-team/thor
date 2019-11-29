@@ -15,6 +15,7 @@
 !LICENSE
 !babel.config.js
 !package.json
+!package-lock.json
 !nginx.conf
 
 # exclude these even in the included project directories
