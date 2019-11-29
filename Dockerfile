@@ -1,5 +1,5 @@
 # Stage 1 - the build process
-FROM node:10.15-alpine as build-deps
+FROM node:12.2.0-alpine as build-deps
 WORKDIR /src
 COPY nginx.conf ./
 
