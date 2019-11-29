@@ -9,7 +9,7 @@ COPY nginx.conf ./
 
 COPY . ./
 
-RUN yarn build:clean
+RUN yarn install
 
 RUN yarn run dist
 
