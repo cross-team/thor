@@ -15,9 +15,9 @@ if (process.env.BABEL_ENV === 'es') {
   ]
 }
 
-const defaultAlias = {
-  '@cross.team/core': './packages/franklin-thor/src',
-}
+// const defaultAlias = {
+//   '@cross.team/core': './packages/franklin-thor/src',
+// }
 
 const productionPlugins = [
   'babel-plugin-transform-react-constant-elements',
