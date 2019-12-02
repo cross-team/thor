@@ -2,10 +2,9 @@
 
 ## Introduction
 
-**Thor** is the development stack for the components, icons and theming for the react application fti-blotter.   
+**Thor** is the development stack for the components, icons and theming for the react application fti-blotter.
 
-**Thor-Playground** is the name of the Storybook instance in services/franklin-thor-playground.  [Storybook](https://storybook.js.org/) provides a sandbox to build UI components in isolation.  We use storybook to preview developed components before publishing them to the application. 
-
+**Thor-Playground** is the name of the Storybook instance in services/franklin-thor-playground.  [Storybook](https://storybook.js.org/) provides a sandbox to build UI components in isolation.  We use storybook to preview developed components before publishing them to the application.
 
 ## Setting up the Development Environment
 
@@ -19,9 +18,11 @@ Before you start using Thor or Thor-playground you must have the following insta
 - [Yarn](https://yarnpkg.com/en/docs/install#mac-stable): Yarn is a modern package management application.
 
 In initial development, repositories were created in Github, using git for version control:
+
 - [Git](https://git-scm.com/downloads): Git is our version control tool
 
 To install from the Franklin environment, you can clone the repositories from Bitbucket:
+
 - [Bitbucket: Order Management - UI Project Overview](http://stash.noam.corp.frk.com:7990/projects/OMU): View all repositories in Franklin's environment for this project.  
 - [Sourcetree](http://www.sourcetreeapp.com/): Download and install Sourcetree to manage the Bitbucket repositories.  It serves a function similar to Github Desktop.  For more information, see the Franklin Confluence document [Using Bitbucket](http://confluence.corp.frk.com:8090/display/IMDL/Using+Bitbucket).
 
@@ -55,7 +56,6 @@ You can also download the repo directly as a zip file if this option is made ava
 
 The outcome of any one of these approaches is the codebase being loaded into the folder or your choice; thereby creating a **local repo**.
 
-
 ### Apply Lerna to your Local Repo
 
 Inside the local repo root folder run:
@@ -68,7 +68,6 @@ This command will search through the current local repo and install any dependen
 
 **Why** You run this command because it installs all of the dependencies in the repo that allow you to build and publish packages.
 **When** This command should be run right after you clone your local repo before you nuild all of your thor packages.
-
 
 ### Build Thor Packages
 
@@ -87,7 +86,6 @@ At this point your development environment should be ready and operational with 
 - **Thor**: Your component library
 - **Thor-playground**: The component library storyboard and playground
 
-
 ## Architecture
 
 ### Storybook
@@ -95,6 +93,7 @@ At this point your development environment should be ready and operational with 
 To run storybook locally on your machine, navigate to the root directory of thor and run `npm run storybook`. This will start up the development environment for you to start working on components in.
 
 The files used by storybook are contained in the `stories`, `page`, `themes`, and `.storybook` directories that live in the root of thor:
+
 - `stories` contains a folder for each story that contains an `index.js` that create the stories to be loaded into storybook. This is where you can pass any necessay props to the components that you want to render in your storybook demo. This is also where you would wrap your stories in the theme exported by `themes` if you wanted the components in that story to have that theme. The custom FTI components being used in these stories are pulled from `thor/packages/franklin-thor-fti/src/` while the MUI components come from `page`.
 - `page` contains a series of folders (one for each MUI story in storybook) that contain the code examples for the MUI components that are being rendered in `stories`.
 - `themes` contains all of the api calls to be made to the token API and exports the generated theme.
@@ -103,7 +102,6 @@ The files used by storybook are contained in the `stories`, `page`, `themes`, an
 ### Packages
 
 Inside the package directory there are three folders, each one containing the source code for one of the npm packages published from thor. The packages are as follows:
-
 
 Directory: thor/packages/franklin-thor-fti
 npm Package: @cross.team/fti
@@ -122,12 +120,14 @@ Description: Provides all of the core MUI components used across the fti blotter
 The typical workflow for editing a custom component or adding a new one starts by developing that component in the `thor/services/franklin-thor-playground` directory. To learn more about this refer to the Services section.
 
 Once the component is developed and working in storybook, you can copy the source code for that component into the franklin-thor-fti package. You can do this by:
+
 - Navigating to the `thor/packages/franklin-thor-fti/src` directory and, if there isn't one already, create a folder for the component you created and paste the component source code into an index.js file within that component's directory. 
 - There is also an index.js file at `thor/packages/franklin-thor-fti/src/index.js` that exports each of the components inside the src folder, so make sure to add the necessary line of code to export your component in that file.
 
 #### Publish New Version of Package to NPM
 
 Once the source code is copied:
+
 - update the package version inside the package.json file at `thor/packages/franklin-thor-fti/package.json`
 - save the package.json file
 - run `yarn build`
