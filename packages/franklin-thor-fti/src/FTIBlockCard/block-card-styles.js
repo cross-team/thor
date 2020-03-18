@@ -1,4 +1,4 @@
-import { makeStyles } from '@cross.team/core'
+import { makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   paper: {

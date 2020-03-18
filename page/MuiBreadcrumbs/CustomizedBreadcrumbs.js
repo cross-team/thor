@@ -1,6 +1,6 @@
 import React from 'react'
 import { emphasize } from '@material-ui/core/styles'
-import { Paper, Breadcrumbs, Chip, Avatar, makeStyles, withStyles } from '@cross.team/core'
+import { Paper, Breadcrumbs, Chip, Avatar, makeStyles, withStyles } from '@material-ui/core'
 import HomeIcon from '@material-ui/icons/Home'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 

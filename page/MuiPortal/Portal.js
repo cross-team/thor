@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Portal, Button, Typography } from '@cross.team/core'
+import { makeStyles, Portal, Button, Typography } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   alert: {

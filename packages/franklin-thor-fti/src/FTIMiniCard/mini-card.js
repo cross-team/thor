@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Paper, Typography, LinearProgress, Avatar } from '@cross.team/core'
-import { FontAwesomeIcon, faTicket } from '@cross.team/icons'
+import { Paper, Typography, LinearProgress, Avatar } from '@material-ui/core'
+import { FontAwesomeIcon, faTicket } from '@material-ui/icons'
 import useStyles from './mini-card-styles'
 import currencyCodes from './currency-codes'
 
@@ -20,7 +20,7 @@ export default function FTIMini({ miniCardData }) {
     trader,
   } = miniCardData
   const progress = Math.floor((placed / fulfilled) * 100)
-  const progressPosition = (progress * (9 / 10))
+  const progressPosition = progress * (9 / 10)
 
   const styleProps = { progressType: buy, progressPosition }
   const classes = useStyles(styleProps)

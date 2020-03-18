@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Card, CardActions, CardContent, Button, Typography } from '@cross.team/core'
+import { makeStyles, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core'
 
 const useStyles = makeStyles({
   card: {

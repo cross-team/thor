@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, LinearProgress } from '@cross.team/core'
+import { makeStyles, LinearProgress } from '@material-ui/core'
 
 const useStyles = makeStyles({
   root: {

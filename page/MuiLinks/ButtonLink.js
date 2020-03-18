@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 import React from 'react'
-import { Link } from '@cross.team/core'
+import { Link } from '@material-ui/core'
 
 export default function ButtonLink() {
   return (

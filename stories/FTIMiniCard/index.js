@@ -1,8 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import FTIMini from '../../packages/franklin-thor-fti/src/FTIMiniCard'
-import theme from '../../themes/default'
-import { ThemeProvider } from '@cross.team/core'
+import MoonProvider from '../../themes/moonProvider'
 
 const miniCardData = {
   average: 7.33,
@@ -19,8 +18,8 @@ const miniCardData = {
   trader: 'LT2',
 }
 
-theme.then(apiTheme => {
-  return storiesOf('FTIMiniCard', module)
-    .addDecorator(getStory => <ThemeProvider theme={apiTheme}>{getStory()}</ThemeProvider>)
-    .add('FTI Mini Card', () => <FTIMini miniCardData={miniCardData} />)
-})
+storiesOf('FTIMiniCard', module).add('FTI Mini Card', () => (
+  <MoonProvider>
+    <FTIMini miniCardData={miniCardData} />
+  </MoonProvider>
+))

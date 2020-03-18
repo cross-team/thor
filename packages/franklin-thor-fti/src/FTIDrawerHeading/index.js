@@ -1,6 +1,6 @@
 import React from 'react'
-import { Typography, IconButton, makeStyles } from '@cross.team/core'
-import { FontAwesomeIcon, faTimes, faChevronLeft } from '@cross.team/icons'
+import { Typography, IconButton, makeStyles } from '@material-ui/core'
+import { FontAwesomeIcon, faTimes, faChevronLeft } from '@material-ui/icons'
 import PropTypes from 'prop-types'
 
 const useStyles = makeStyles(theme => ({

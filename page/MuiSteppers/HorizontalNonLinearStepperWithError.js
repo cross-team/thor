@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Button, Stepper, Step, StepLabel, Typography } from '@cross.team/core'
+import { makeStyles, Button, Stepper, Step, StepLabel, Typography } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   root: {

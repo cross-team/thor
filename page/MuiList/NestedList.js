@@ -7,7 +7,7 @@ import {
   ListItemIcon,
   ListItemText,
   Collapse,
-} from '@cross.team/core'
+} from '@material-ui/core'
 import InboxIcon from '@material-ui/icons/MoveToInbox'
 import DraftsIcon from '@material-ui/icons/Drafts'
 import SendIcon from '@material-ui/icons/Send'

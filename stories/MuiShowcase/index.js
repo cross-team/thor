@@ -1,9 +1,10 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import Showcase from '../../page/Showcase'
-// import DefaultTokens from 'themes/default.tokens';
-// import { muiTheme } from 'storybook-addon-material-ui';
+import MoonProvider from '../../themes/moonProvider'
 
-storiesOf('Showcase', module)
-  // .addDecorator(muiTheme([DefaultTokens]))
-  .add('theme', () => <Showcase />)
+storiesOf('MuiShowcase', module).add('Showcase', () => (
+  <MoonProvider>
+    <Showcase />
+  </MoonProvider>
+))

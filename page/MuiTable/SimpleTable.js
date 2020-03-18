@@ -7,7 +7,7 @@ import {
   TableHead,
   TableRow,
   Paper,
-} from '@cross.team/core'
+} from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   root: {

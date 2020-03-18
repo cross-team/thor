@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, List, ListItem, ListItemIcon, ListItemText, Divider } from '@cross.team/core'
+import { makeStyles, List, ListItem, ListItemIcon, ListItemText, Divider } from '@material-ui/core'
 import InboxIcon from '@material-ui/icons/Inbox'
 import DraftsIcon from '@material-ui/icons/Drafts'
 

@@ -1,14 +1,16 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-// import { boolean, text, select } from '@storybook/addon-knobs';
-import { ThemeProvider } from '@material-ui/styles'
-import theme from '../../themes/default'
+import MoonProvider from '../../themes/moonProvider'
 import CustomizedBreadcrumbs from '../../page/MuiBreadcrumbs/CustomizedBreadcrumbs'
 import SimpleBreadcrumbs from '../../page/MuiBreadcrumbs/SimpleBreadcrumbs'
 
-theme.then(apiTheme =>
-  storiesOf('MuiBreadcrumbs', module)
-    .addDecorator(getStory => <ThemeProvider theme={apiTheme}>{getStory()}</ThemeProvider>)
-    .add('Customized Breadcrumbs', () => <CustomizedBreadcrumbs />)
-    .add('Simple Breadcrumbs', () => <SimpleBreadcrumbs />),
-)
+storiesOf('MuiBreadcrumbs', module).add('Simple Breadcrumbs', () => (
+  <MoonProvider>
+    <SimpleBreadcrumbs />
+  </MoonProvider>
+))
+storiesOf('MuiBreadcrumbs', module).add('Customized Breadcrumbs', () => (
+  <MoonProvider>
+    <CustomizedBreadcrumbs />
+  </MoonProvider>
+))

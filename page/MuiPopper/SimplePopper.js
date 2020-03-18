@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Popper, Typography, Button, Fade, Paper } from '@cross.team/core'
+import { makeStyles, Popper, Typography, Button, Fade, Paper } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   typography: {

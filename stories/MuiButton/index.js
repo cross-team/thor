@@ -1,20 +1,34 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { ThemeProvider } from '@material-ui/styles'
-// import { boolean, text, select } from '@storybook/addon-knobs';
+import MoonProvider from '../../themes/moonProvider'
 import ContainButtons from '../../page/MuiButtons/ContainButtons'
 import TextButtons from '../../page/MuiButtons/TextButtons'
 import OutlinedButtons from '../../page/MuiButtons/OutlinedButtons'
 import FloatingActionButtons from '../../page/MuiButtons/FloatingActionButtons'
 import ComplexButtons from '../../page/MuiButtons/ComplexButtons'
-import theme from '../../themes/default'
 
-theme.then(apiTheme =>
-  storiesOf('MuiButton', module)
-    .addDecorator(getStory => <ThemeProvider theme={apiTheme}>{getStory()}</ThemeProvider>)
-    .add('Text Buttons', () => <TextButtons />)
-    .add('Complex Buttons', () => <ComplexButtons />)
-    .add('Contained Buttons', () => <ContainButtons />)
-    .add('Outlined Buttons', () => <OutlinedButtons />)
-    .add('Floating Action Buttons', () => <FloatingActionButtons />),
-)
+storiesOf('MuiButton', module).add('Text Buttons', () => (
+  <MoonProvider>
+    <TextButtons />
+  </MoonProvider>
+))
+storiesOf('MuiButton', module).add('Complex Buttons', () => (
+  <MoonProvider>
+    <ComplexButtons />
+  </MoonProvider>
+))
+storiesOf('MuiButton', module).add('Contained Buttons', () => (
+  <MoonProvider>
+    <ContainButtons />
+  </MoonProvider>
+))
+storiesOf('MuiButton', module).add('Outlined Buttons', () => (
+  <MoonProvider>
+    <OutlinedButtons />
+  </MoonProvider>
+))
+storiesOf('MuiButton', module).add('Floating Action Buttons', () => (
+  <MoonProvider>
+    <FloatingActionButtons />
+  </MoonProvider>
+))

@@ -8,7 +8,7 @@ import {
   Select,
   makeStyles,
   withStyles,
-} from '@cross.team/core'
+} from '@material-ui/core'
 
 const BootstrapInput = withStyles(theme => ({
   root: {

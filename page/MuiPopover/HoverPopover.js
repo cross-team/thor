@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Popover, Typography } from '@cross.team/core'
+import { makeStyles, Popover, Typography } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   popover: {

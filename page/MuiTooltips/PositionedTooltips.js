@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Grid, Button, Tooltip } from '@cross.team/core'
+import { makeStyles, Grid, Button, Tooltip } from '@material-ui/core'
 
 const useStyles = makeStyles({
   root: {

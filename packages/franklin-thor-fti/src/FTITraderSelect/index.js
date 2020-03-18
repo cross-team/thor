@@ -9,7 +9,7 @@ import {
   ListItemText,
   Checkbox,
   Chip,
-} from '@cross.team/core'
+} from '@material-ui/core'
 import PropTypes from 'prop-types'
 
 const useStyles = makeStyles(theme => ({

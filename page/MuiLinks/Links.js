@@ -1,6 +1,6 @@
 /* eslint-disable no-script-url */
 import React from 'react'
-import { Link, Typography, makeStyles } from '@cross.team/core'
+import { Link, Typography, makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   link: {

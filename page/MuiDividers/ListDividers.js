@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, List, ListItem, ListItemText, Divider } from '@cross.team/core'
+import { makeStyles, List, ListItem, ListItemText, Divider } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   root: {

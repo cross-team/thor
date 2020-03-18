@@ -1,14 +1,16 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-// import { boolean, text, select } from '@storybook/addon-knobs';
-import { ThemeProvider } from '@material-ui/styles'
-import theme from '../../themes/default'
+import MoonProvider from '../../themes/moonProvider'
 import LabelBottomNavigation from '../../page/MuiBottomNavigation/LabelBottomNavigation'
 import SimpleBottomNavigation from '../../page/MuiBottomNavigation/SimpleBottomNavigation'
 
-theme.then(apiTheme =>
-  storiesOf('MuiBottomNavigation', module)
-    .addDecorator(getStory => <ThemeProvider theme={apiTheme}>{getStory()}</ThemeProvider>)
-    .add('Bottom Navigation', () => <LabelBottomNavigation />)
-    .add('Bottom Navigation with no Label', () => <SimpleBottomNavigation />),
-)
+storiesOf('MuiBottomNavigation', module).add('Bottom Navigation', () => (
+  <MoonProvider>
+    <LabelBottomNavigation />
+  </MoonProvider>
+))
+storiesOf('MuiBottomNavigation', module).add('Bottom Navigation with no Label', () => (
+  <MoonProvider>
+    <SimpleBottomNavigation />
+  </MoonProvider>
+))

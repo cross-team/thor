@@ -8,7 +8,7 @@ import {
   Typography,
   CardActionArea,
   CardMedia,
-} from '@cross.team/core'
+} from '@material-ui/core'
 
 const useStyles = makeStyles({
   card: {

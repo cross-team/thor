@@ -6,7 +6,7 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
-} from '@cross.team/core'
+} from '@material-ui/core'
 
 export default function AlertDialog() {
   const [open, setOpen] = React.useState(false)

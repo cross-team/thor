@@ -1,14 +1,16 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-// import { boolean, text, select } from '@storybook/addon-knobs';
-import { ThemeProvider } from '@material-ui/styles'
-import theme from '../../themes/default'
+import MoonProvider from '../../themes/moonProvider'
 import CustomizedSwitches from '../../page/MuiSwitches/CustomSwitches'
 import SimpleSwitches from '../../page/MuiSwitches/SimpleSwitches'
 
-theme.then(apiTheme =>
-  storiesOf('MuiSwitches', module)
-    .addDecorator(getStory => <ThemeProvider theme={apiTheme}>{getStory()}</ThemeProvider>)
-    .add('Custom Switches', () => <CustomizedSwitches />)
-    .add('Simple Switches', () => <SimpleSwitches />),
-)
+storiesOf('MuiSwitches', module).add('Custom Switches', () => (
+  <MoonProvider>
+    <CustomizedSwitches />
+  </MoonProvider>
+))
+storiesOf('MuiSwitches', module).add('Simple Switches', () => (
+  <MoonProvider>
+    <SimpleSwitches />
+  </MoonProvider>
+))

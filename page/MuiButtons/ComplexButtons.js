@@ -1,5 +1,5 @@
 import React from 'react'
-import { ButtonBase, Typography, makeStyles } from '@cross.team/core'
+import { ButtonBase, Typography, makeStyles } from '@material-ui/core'
 
 const images = [
   {

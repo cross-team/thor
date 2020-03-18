@@ -7,7 +7,7 @@ import {
   FormControlLabel,
   FormLabel,
   makeStyles,
-} from '@cross.team/core'
+} from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   root: {

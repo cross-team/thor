@@ -1,5 +1,12 @@
 import React from 'react'
-import { makeStyles, Card, CardContent, Typography, LinearProgress, Avatar } from '@cross.team/core'
+import {
+  makeStyles,
+  Card,
+  CardContent,
+  Typography,
+  LinearProgress,
+  Avatar,
+} from '@material-ui/core'
 import {
   FontAwesomeIcon,
   faTicket,
@@ -8,7 +15,7 @@ import {
   faBuilding,
   faUserCircle,
   faFile,
-} from '@cross.team/icons'
+} from '@material-ui/icons'
 import FTIBadge from '../FTIBadge'
 import PropTypes from 'prop-types'
 

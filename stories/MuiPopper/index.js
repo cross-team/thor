@@ -1,14 +1,16 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-// import { boolean, text, select } from '@storybook/addon-knobs';
-import { ThemeProvider } from '@material-ui/styles'
-import theme from '../../themes/default'
+import MoonProvider from '../../themes/moonProvider'
 import SimplePopper from '../../page/MuiPopper/SimplePopper'
 import MinimalPopper from '../../page/MuiPopper/MinimalPopper'
 
-theme.then(apiTheme =>
-  storiesOf('MuiPopper', module)
-    .addDecorator(getStory => <ThemeProvider theme={apiTheme}>{getStory()}</ThemeProvider>)
-    .add('Simple Popper', () => <SimplePopper />)
-    .add('Minimal Popper', () => <MinimalPopper />),
-)
+storiesOf('MuiPopper', module).add('Simple Popper', () => (
+  <MoonProvider>
+    <SimplePopper />
+  </MoonProvider>
+))
+storiesOf('MuiPopper', module).add('Minimal Popper', () => (
+  <MoonProvider>
+    <MinimalPopper />
+  </MoonProvider>
+))

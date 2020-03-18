@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Avatar, Grid } from '@cross.team/core'
+import { makeStyles, Avatar, Grid } from '@material-ui/core'
 
 const useStyles = makeStyles({
   avatar: {

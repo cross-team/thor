@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Paper, Typography, LinearProgress, Avatar } from '@cross.team/core'
-import { FontAwesomeIcon, faLayerGroup } from '@cross.team/icons'
+import { Paper, Typography, LinearProgress, Avatar } from '@material-ui/core'
+import { FontAwesomeIcon, faLayerGroup } from '@material-ui/icons'
 import useStyles from './block-card-styles'
 import currencyCodes from './currency-codes'
 

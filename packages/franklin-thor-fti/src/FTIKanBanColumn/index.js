@@ -8,7 +8,7 @@ import {
   FormControl,
   Select,
   MenuItem,
-} from '@cross.team/core'
+} from '@material-ui/core'
 import PropTypes from 'prop-types'
 
 const useStyles = makeStyles({

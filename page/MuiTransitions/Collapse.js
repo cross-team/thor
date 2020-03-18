@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Switch, Paper, Collapse, FormControlLabel } from '@cross.team/core'
+import { makeStyles, Switch, Paper, Collapse, FormControlLabel } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   root: {

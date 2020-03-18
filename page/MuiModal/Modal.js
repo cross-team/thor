@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Typography, Modal, Button } from '@cross.team/core'
+import { makeStyles, Typography, Modal, Button } from '@material-ui/core'
 
 function rand() {
   return Math.round(Math.random() * 20) - 10

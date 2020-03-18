@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Chip, Button, Grid, Divider, Typography } from '@cross.team/core'
+import { makeStyles, Chip, Button, Grid, Divider, Typography } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   root: {

@@ -1,5 +1,12 @@
 import React from 'react'
-import { withStyles, FormGroup, FormControlLabel, Switch, Grid, Typography } from '@cross.team/core'
+import {
+  withStyles,
+  FormGroup,
+  FormControlLabel,
+  Switch,
+  Grid,
+  Typography,
+} from '@material-ui/core'
 import { purple } from '@material-ui/core/colors'
 
 const PurpleSwitch = withStyles({

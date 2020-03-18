@@ -106,6 +106,7 @@
     "@cross.team/fti": "file:packages/franklin-thor-fti",
     "@cross.team/icons": "file:packages/franklin-thor-icons",
     "@storybook/addon-links": "^5.2.6",
-    "axios": "^0.19.0"
+    "axios": "^0.19.0",
+    "react-helmet": "^5.2.1"
   }
 }

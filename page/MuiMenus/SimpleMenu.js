@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Menu, MenuItem } from '@cross.team/core'
+import { Button, Menu, MenuItem } from '@material-ui/core'
 
 export default function SimpleMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null)

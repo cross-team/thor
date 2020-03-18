@@ -5,7 +5,7 @@ import {
   ExpansionPanel,
   ExpansionPanelDetails,
   ExpansionPanelSummary,
-} from '@cross.team/core'
+} from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
 // import ExpansionPanel from '@material-ui/core/ExpansionPanel';

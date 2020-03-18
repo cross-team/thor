@@ -1,16 +1,22 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-// import { boolean, text, select } from '@storybook/addon-knobs';
-import { ThemeProvider } from '@material-ui/styles'
-import theme from '../../themes/default'
+import MoonProvider from '../../themes/moonProvider'
 import SimpleCheckbox from '../../page/MuiCheckboxes/SimpleCheckbox'
 import CheckboxesGroup from '../../page/MuiCheckboxes/CheckboxesGroup'
 import FormControlLabelPosition from '../../page/MuiCheckboxes/FormControlLabelPosition'
 
-theme.then(apiTheme =>
-  storiesOf('MuiCheckboxes', module)
-    .addDecorator(getStory => <ThemeProvider theme={apiTheme}>{getStory()}</ThemeProvider>)
-    .add('Simple Checkbox', () => <SimpleCheckbox />)
-    .add('Checkboxes Group', () => <CheckboxesGroup />)
-    .add('Label Placement', () => <FormControlLabelPosition />),
-)
+storiesOf('MuiCheckboxes', module).add('Simple Checkbox', () => (
+  <MoonProvider>
+    <SimpleCheckbox />
+  </MoonProvider>
+))
+storiesOf('MuiCheckboxes', module).add('Checkboxes Group', () => (
+  <MoonProvider>
+    <CheckboxesGroup />
+  </MoonProvider>
+))
+storiesOf('MuiCheckboxes', module).add('Label Placement', () => (
+  <MoonProvider>
+    <FormControlLabelPosition />
+  </MoonProvider>
+))

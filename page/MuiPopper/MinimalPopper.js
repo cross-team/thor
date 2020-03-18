@@ -1,5 +1,5 @@
 import React from 'react'
-import { Popper } from '@cross.team/core'
+import { Popper } from '@material-ui/core'
 
 function MinimalPopper() {
   const [anchorEl, setAnchorEl] = React.useState(null)

@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Avatar, Grid } from '@cross.team/core'
+import { makeStyles, Avatar, Grid } from '@material-ui/core'
 import { green, pink } from '@material-ui/core/colors'
 import FolderIcon from '@material-ui/icons/Folder'
 import PageviewIcon from '@material-ui/icons/Pageview'

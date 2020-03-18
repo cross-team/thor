@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Avatar, Chip } from '@cross.team/core'
+import { makeStyles, Avatar, Chip } from '@material-ui/core'
 import FaceIcon from '@material-ui/icons/Face'
 import DoneIcon from '@material-ui/icons/Done'
 
